@@ -1,0 +1,449 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Improve long-term after-tax family wealth without allowing tax considerations to override investment suitability, risk management or legal ownership.",
+    "principle": "Optimize after-tax outcomes legally; do not make poor investments merely to save tax."
+  },
+
+  "scope": {
+    "appliesTo": [
+      "KAPIL_INVESTMENT_ACCOUNTS",
+      "MOTHER_INVESTMENT_ACCOUNTS",
+      "MUTUAL_FUNDS",
+      "ETFS",
+      "DIRECT_EQUITY",
+      "INTERNATIONAL_INVESTMENTS",
+      "GOLD",
+      "FIXED_INCOME",
+      "EPF",
+      "PPF",
+      "NPS",
+      "REAL_ESTATE",
+      "FUTURE_BUSINESS_CAPITAL"
+    ]
+  },
+
+  "corePrinciples": [
+    "LEGAL_OWNERSHIP_DETERMINES_TAXPAYER",
+    "FAMILY_LEVEL_PLANNING_DOES_NOT_ERASE_ACCOUNT_OWNERSHIP",
+    "VERIFY_CURRENT_TAX_LAW_BEFORE_MATERIAL_TRANSACTIONS",
+    "MINIMIZE_UNNECESSARY_TAXABLE_CHURN",
+    "USE_NEW_CASH_FLOWS_FOR_REBALANCING_WHERE_PRACTICAL",
+    "CONSIDER_POST_TAX_RETURN_NOT ONLY PRE_TAX_RETURN",
+    "DO_NOT_DELAY A NECESSARY RISK_REDUCTION_SOLELY_TO AVOID TAX",
+    "DOCUMENT_MATERIAL_TAX_ASSUMPTIONS"
+  ],
+
+  "ownershipPolicy": {
+    "principle": "Kapil's and mother's assets must be tracked separately for legal, tax and succession purposes.",
+
+    "requiredRecords": [
+      "LEGAL_OWNER",
+      "SOURCE_OF_FUNDS",
+      "ACCOUNT_HOLDER",
+      "BENEFICIAL_OWNER_WHERE_RELEVANT",
+      "TAXPAYER",
+      "NOMINEE",
+      "SUCCESSION_DOCUMENTATION"
+    ],
+
+    "rules": [
+      "DO_NOT_TREAT_MOTHER_OWNED_MONEY_AS LEGALLY_INTERCHANGEABLE_WITH_KAPIL_OWNED_MONEY",
+      "DO_NOT_MOVE_LARGE_AMOUNTS_BETWEEN_FAMILY_MEMBERS_WITHOUT REVIEWING_TAX_AND_DOCUMENTATION",
+      "MAINTAIN_SEPARATE_PORTFOLIO_RECORDS_EVEN_IF KAPIL_MANAGES_BOTH"
+    ]
+  },
+
+  "taxVerificationPolicy": {
+    "requiredBefore": [
+      "MATERIAL_ASSET_SALE",
+      "LARGE_PORTFOLIO_RESTRUCTURING",
+      "INTERNATIONAL_INVESTMENT",
+      "LARGE_FAMILY_TRANSFER",
+      "REAL_ESTATE_TRANSACTION",
+      "BUSINESS_CAPITAL_TRANSFER",
+      "ESTATE_OR_SUCCESSION_RESTRUCTURING"
+    ],
+
+    "preferredSources": [
+      "INCOME_TAX_DEPARTMENT",
+      "CBDT",
+      "SEBI",
+      "PFRDA",
+      "EPFO",
+      "PRODUCT_OFFER_DOCUMENTS",
+      "QUALIFIED_CA_OR_TAX_PROFESSIONAL"
+    ],
+
+    "rule": "Never rely on a stored FWOS tax rate when a current transaction is being executed."
+  },
+
+  "capitalGainsPolicy": {
+    "principles": [
+      "IDENTIFY_ASSET_CLASS_AND APPLICABLE_TAX_TREATMENT",
+      "IDENTIFY_HOLDING_PERIOD",
+      "CALCULATE_REALIZED_AND_UNREALIZED_GAINS",
+      "CONSIDER_AVAILABLE_CAPITAL_LOSSES",
+      "COMPARE_TAX_COST_WITH PORTFOLIO_RISK_OF DELAYING_ACTION"
+    ],
+
+    "salePriorityFactors": [
+      "INVESTMENT_THESIS",
+      "RISK_REDUCTION",
+      "CONCENTRATION",
+      "GOAL_REQUIREMENT",
+      "ASSET_ALLOCATION",
+      "TAX_COST"
+    ],
+
+    "rule": "Tax cost is important but subordinate to material portfolio risk and broken investment theses."
+  },
+
+  "taxLossHarvesting": {
+    "status": "PERMITTED_CONDITIONALLY",
+
+    "requirements": [
+      "LOSS_IS_REAL_AND ECONOMICALLY JUSTIFIED",
+      "SALE_DOES_NOT DAMAGE_STRATEGIC_ASSET_ALLOCATION",
+      "TRANSACTION_COSTS_ARE REASONABLE",
+      "CURRENT_TAX_RULES_HAVE BEEN VERIFIED"
+    ],
+
+    "rules": [
+      "DO_NOT_CREATE_EXCESSIVE_CHURN_ONLY_FOR TAX_LOSS HARVESTING",
+      "DO_NOT_SELL A GOOD_LONG_TERM_ASSET_WITHOUT A REPLACEMENT_PLAN_IF EXPOSURE_IS STILL REQUIRED",
+      "MAINTAIN_TRANSACTION_AND_COST_BASIS_RECORDS"
+    ]
+  },
+
+  "gainRealizationPolicy": {
+    "status": "CONDITIONAL",
+
+    "possibleReasons": [
+      "USE_AVAILABLE_TAX_EXEMPTION_OR_THRESHOLD_IF CURRENT_LAW_SUPPORTS_IT",
+      "REDUCE_CONCENTRATION",
+      "FUND_A GOAL",
+      "REBALANCE_PORTFOLIO",
+      "EXIT_A WEAK_OR_REDUNDANT_HOLDING"
+    ],
+
+    "rule": "Do not realize gains merely to use a tax threshold if transaction costs, market exposure loss or portfolio disruption outweigh the benefit."
+  },
+
+  "rebalancingTaxPolicy": {
+    "preferredSequence": [
+      "USE_MONTHLY_SIP_AND_NEW_CASH_FLOW",
+      "REDIRECT_FUTURE_CONTRIBUTIONS",
+      "USE_DIVIDENDS_OR DISTRIBUTIONS",
+      "USE_MATURITIES_AND CASH_FLOWS",
+      "SELL_OVERWEIGHT_ASSETS_IF NECESSARY"
+    ],
+
+    "principle": "Prefer tax-efficient rebalancing, but execute sales when allocation or concentration risk materially requires it.",
+
+    "reference": "data/rebalancing-policy.json"
+  },
+
+  "indianEquityPolicy": {
+    "appliesTo": [
+      "DIRECT_LISTED_EQUITY",
+      "EQUITY_MUTUAL_FUNDS",
+      "EQUITY_ETFS"
+    ],
+
+    "rules": [
+      "VERIFY_CURRENT_EQUITY_TAX_CLASSIFICATION",
+      "VERIFY_CURRENT_SHORT_TERM_AND_LONG_TERM_HOLDING_PERIOD_RULES",
+      "VERIFY_CURRENT_CAPITAL_GAINS_RATES_AND EXEMPTIONS",
+      "ACCOUNT_FOR_SECURITIES_TRANSACTION_TAX_WHERE APPLICABLE",
+      "AVOID_UNNECESSARY_PORTFOLIO_CHURN"
+    ]
+  },
+
+  "mutualFundPolicy": {
+    "rules": [
+      "VERIFY_TAX_CLASSIFICATION_OF EACH SCHEME",
+      "DO_NOT_ASSUME ALL_MUTUAL_FUNDS_HAVE THE SAME TAX TREATMENT",
+      "CHECK_EQUITY_PERCENTAGE_AND PRODUCT_STRUCTURE",
+      "CONSIDER_EXIT_LOAD_AND TAX TOGETHER",
+      "DIRECT_PLAN_PREFERRED_WHERE SUITABLE",
+      "GROWTH_OPTION_PREFERRED_FOR LONG_TERM_ACCUMULATION_WHERE SUITABLE"
+    ]
+  },
+
+  "etfPolicy": {
+    "rules": [
+      "VERIFY_ASSET_CLASS_SPECIFIC_TAXATION",
+      "INCLUDE_BROKERAGE_AND MARKET_TRANSACTION_COSTS",
+      "CONSIDER_BID_ASK_SPREAD",
+      "MAINTAIN_ACCURATE_COST_BASIS"
+    ]
+  },
+
+  "goldTaxPolicy": {
+    "coveredStructures": [
+      "GOLD_ETF",
+      "GOLD_MUTUAL_FUND_OR_FOF",
+      "SOVEREIGN_GOLD_BOND",
+      "PHYSICAL_GOLD"
+    ],
+
+    "rules": [
+      "DO_NOT_ASSUME IDENTICAL_TAXATION_ACROSS GOLD VEHICLES",
+      "VERIFY_PURCHASE_DATE_SPECIFIC_RULES_WHERE GRANDFATHERING_OR TRANSITIONAL_RULES MAY APPLY",
+      "VERIFY_SGB_INTEREST_AND REDEMPTION_TREATMENT",
+      "CONSIDER_STORAGE_AND TRANSACTION_COSTS_FOR PHYSICAL_GOLD"
+    ],
+
+    "principle": "Select the gold vehicle based on total suitability, liquidity, cost and tax treatment rather than tax alone."
+  },
+
+  "internationalInvestmentPolicy": {
+    "coveredStructures": [
+      "INDIAN_INTERNATIONAL_MUTUAL_FUND",
+      "FUND_OF_FUNDS",
+      "INDIAN_LISTED_INTERNATIONAL_ETF",
+      "DIRECT_OVERSEAS_SECURITIES"
+    ],
+
+    "mandatoryChecks": [
+      "CURRENT_INDIAN_TAX_TREATMENT",
+      "LRS_RULES_IF APPLICABLE",
+      "TCS_RULES_IF APPLICABLE",
+      "FOREIGN_DIVIDEND_TAXATION",
+      "FOREIGN_TAX_CREDIT",
+      "DISCLOSURE_REQUIREMENTS",
+      "FOREIGN_ASSET_REPORTING",
+      "ESTATE_OR SUCCESSION_RISK",
+      "CURRENCY_CONVERSION_COSTS"
+    ],
+
+    "rule": "Direct overseas investing requires additional tax and compliance review compared with domestic wrappers."
+  },
+
+  "motherAccountPolicy": {
+    "status": "SEPARATE_TAX_AND_OWNERSHIP_UNIT",
+
+    "considerations": [
+      "MOTHER_CURRENT_AND FUTURE_TAXABLE_INCOME",
+      "INTEREST_INCOME",
+      "CAPITAL_GAINS",
+      "AGE_BASED_TAX_RULES_IF APPLICABLE",
+      "LIQUIDITY_REQUIREMENTS",
+      "HEALTHCARE_AND LIFETIME_SECURITY",
+      "SUCCESSION"
+    ],
+
+    "rules": [
+      "DO_NOT_SELECT_INVESTMENTS_ONLY BECAUSE MOTHER_IS RETIRED",
+      "DO_NOT_USE_MOTHER_ACCOUNT_ONLY AS A TAX_ARBITRAGE VEHICLE",
+      "HER_FINANCIAL_SECURITY_AND LEGAL_OWNERSHIP_TAKE_PRIORITY",
+      "INTERNATIONAL_INVESTMENT_IN HER ACCOUNT REQUIRES SUITABILITY_AND TAX_REVIEW"
+    ]
+  },
+
+  "epfPolicy": {
+    "status": "CORE_RETIREMENT_ASSET",
+
+    "rules": [
+      "TRACK_EMPLOYEE_AND EMPLOYER_CONTRIBUTIONS",
+      "VERIFY_CURRENT_TAX_RULES_FOR HIGH_EMPLOYEE_CONTRIBUTIONS_IF RELEVANT",
+      "VERIFY_WITHDRAWAL_AND INTEREST_TAXATION_BEFORE EARLY_EXIT",
+      "INCLUDE_EPF_IN TOTAL_DEBT_ALLOCATION"
+    ]
+  },
+
+  "ppfPolicy": {
+    "status": "CORE_LONG_TERM_DEBT_ASSET",
+    "currentKnownValue": 1730000,
+
+    "rules": [
+      "TRACK_MATURITY_AND EXTENSION_OPTIONS",
+      "VERIFY_CURRENT_CONTRIBUTION_LIMITS",
+      "INCLUDE_PPF_IN TOTAL_FIXED_INCOME_ALLOCATION",
+      "DO_NOT_ADD ONLY FOR TAX_SAVING_IF ASSET_ALLOCATION_DOES_NOT REQUIRE IT"
+    ]
+  },
+
+  "npsPolicy": {
+    "status": "CORE_RETIREMENT_ASSET",
+    "currentKnownValue": 1400000,
+    "currentAllocation": {
+      "equity": 0.63,
+      "corporateDebt": 0.12,
+      "governmentSecurities": 0.25
+    },
+
+    "rules": [
+      "VERIFY_CURRENT_CONTRIBUTION_DEDUCTION_RULES",
+      "VERIFY_EMPLOYER_CONTRIBUTION_TREATMENT",
+      "VERIFY_EXIT_AND ANNUITY_RULES_BEFORE RETIREMENT_DECISIONS",
+      "INCLUDE_NPS_UNDERLYING_ASSETS_IN TOTAL_ASSET_ALLOCATION"
+    ]
+  },
+
+  "fixedIncomePolicy": {
+    "rules": [
+      "COMPARE_POST_TAX_RETURN",
+      "CONSIDER TAX_BRACKET",
+      "CONSIDER LIQUIDITY",
+      "CONSIDER CREDIT_AND DURATION_RISK",
+      "DO_NOT_CHASE_PRE_TAX_YIELD_WITHOUT POST_TAX_AND RISK_ANALYSIS"
+    ]
+  },
+
+  "realEstateTaxPolicy": {
+    "coveredAssets": [
+      "FARIDABAD_2BHK",
+      "BUILT_HOME_OR LAND_PROPERTY",
+      "POTENTIAL_LUCKNOW_PLOT"
+    ],
+
+    "mandatoryChecks": [
+      "LEGAL_OWNER",
+      "ACQUISITION_COST",
+      "IMPROVEMENT_COST_RECORDS",
+      "STAMP_DUTY_AND REGISTRATION",
+      "CAPITAL_GAINS_RULES",
+      "TDS_REQUIREMENTS_IF APPLICABLE",
+      "SALE_PROCEEDS_REINVESTMENT_OPTIONS",
+      "INHERITANCE_COST_BASIS_RULES"
+    ],
+
+    "rule": "Maintain permanent documentation for property acquisition, improvement, ownership and sale."
+  },
+
+  "businessCapitalTaxPolicy": {
+    "maximumIndicativeCapital": 5000000,
+
+    "mandatoryReviewBeforeDeployment": [
+      "BUSINESS_STRUCTURE",
+      "SOURCE_OF CAPITAL",
+      "OWNER_OF CAPITAL",
+      "LOAN_VERSUS EQUITY_CHARACTER",
+      "GST_AND BUSINESS_TAX IMPLICATIONS",
+      "PERSONAL_AND BUSINESS_ACCOUNT_SEPARATION"
+    ],
+
+    "rule": "Business capital deployment requires separate professional tax and legal review."
+  },
+
+  "dividendAndIncomePolicy": {
+    "rules": [
+      "TRACK_DIVIDENDS_AND OTHER_TAXABLE_DISTRIBUTIONS",
+      "INCLUDE_CASH_INCOME_IN ANNUAL_TAX_ESTIMATES",
+      "DO_NOT_PREFER_HIGH_DIVIDEND_PRODUCTS_SOLELY_FOR PSYCHOLOGICAL_INCOME",
+      "FOCUS_ON TOTAL_AFTER_TAX_RETURN"
+    ]
+  },
+
+  "recordKeeping": {
+    "minimumRecords": [
+      "PURCHASE_DATE",
+      "PURCHASE_COST",
+      "TRANSACTION_COST",
+      "SALE_DATE",
+      "SALE_VALUE",
+      "REALIZED_GAIN_OR LOSS",
+      "ASSET_CLASS",
+      "LEGAL_OWNER",
+      "TAX_CLASSIFICATION",
+      "SUPPORTING_STATEMENT"
+    ],
+
+    "propertyRecords": [
+      "PURCHASE_DEED",
+      "STAMP_DUTY",
+      "REGISTRATION_COST",
+      "IMPROVEMENT_INVOICES",
+      "LOAN_DOCUMENTS_IF ANY"
+    ],
+
+    "retentionRule": "Maintain records for the legally required period and longer where needed to establish long-term asset cost basis."
+  },
+
+  "annualTaxReview": {
+    "frequency": "ANNUALLY_BEFORE_FINANCIAL_YEAR_END",
+
+    "checklist": [
+      "ESTIMATE_TOTAL_TAXABLE_INCOME",
+      "REVIEW_REALIZED_CAPITAL_GAINS",
+      "REVIEW_REALIZED_CAPITAL_LOSSES",
+      "REVIEW_POTENTIAL_TAX_LOSS_HARVESTING",
+      "REVIEW_CONCENTRATED_POSITIONS",
+      "REVIEW_AVAILABLE_DEDUCTIONS",
+      "REVIEW_ADVANCE_TAX_REQUIREMENTS",
+      "VERIFY_FOREIGN_ASSET_DISCLOSURES_IF APPLICABLE",
+      "REVIEW_NPS_EPF_AND PPF_CONTRIBUTIONS",
+      "PLAN_NEXT_YEAR_CASH_FLOWS"
+    ]
+  },
+
+  "transactionTaxChecklist": [
+    "WHO_LEGALLY_OWNS_THE_ASSET?",
+    "WHAT_IS_THE_ASSET_TAX_CLASSIFICATION?",
+    "WHAT_IS_THE_ACQUISITION_DATE?",
+    "WHAT_IS_THE_COST_BASIS?",
+    "WHAT_IS_THE_CURRENT_UNREALIZED_GAIN_OR LOSS?",
+    "WHAT_TAX_WOULD THE TRANSACTION CREATE?",
+    "IS_ANY LOSS_OFFSET AVAILABLE?",
+    "IS_THE_TRANSACTION NECESSARY NOW?",
+    "WOULD DELAY CREATE MATERIAL_PORTFOLIO_RISK?",
+    "HAS_CURRENT_TAX_LAW_BEEN VERIFIED?"
+  ],
+
+  "prohibitedPractices": [
+    "TAX_EVASION",
+    "FALSE_OWNERSHIP_RECORDS",
+    "UNEXPLAINED_FAMILY_FUND_TRANSFERS",
+    "INVESTING_IN AN_UNSUITABLE_PRODUCT_ONLY_FOR TAX_BENEFIT",
+    "EXCESSIVE_TRADING_FOR SMALL_TAX_ADVANTAGES",
+    "ASSUMING_OLD_TAX_RULES_REMAIN_CURRENT",
+    "IGNORING_FOREIGN_ASSET_REPORTING_REQUIREMENTS",
+    "MIXING_PERSONAL_AND FUTURE_BUSINESS_FINANCES_WITHOUT DOCUMENTATION"
+  ],
+
+  "professionalAdviceTriggers": [
+    "LARGE_PROPERTY_TRANSACTION",
+    "INHERITANCE_OR ESTATE_RESTRUCTURING",
+    "DIRECT_OVERSEAS_INVESTMENT",
+    "MATERIAL_FOREIGN_ASSETS",
+    "LARGE_TRANSFER_BETWEEN FAMILY_MEMBERS",
+    "BUSINESS_FORMATION_OR CAPITALIZATION",
+    "COMPLEX_CAPITAL_GAINS",
+    "MAJOR_PORTFOLIO_RESTRUCTURING"
+  ],
+
+  "references": {
+    "assetAllocation": "data/asset-allocation.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "directStockExitPolicy": "data/direct-stock-exit-policy.json",
+    "investmentDecisionChecklist": "data/investment-decision-checklist.json",
+    "approvedInvestmentUniverse": "data/approved-investment-universe.json",
+    "estatePlanningChecklist": "data/estate-planning-checklist.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_INSURANCE_AND_RISK_MANAGEMENT_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_ESTATE_PLANNING_CHECKLIST"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_ANNUAL_REVIEW_CHECKLIST"
+    },
+    {
+      "priority": 4,
+      "action": "BUILD_CURRENT_TAX_RULE_REFERENCE_SEPARATELY_FROM PERMANENT_POLICY"
+    }
+  ]
+}

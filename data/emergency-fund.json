@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Provide immediately accessible capital for genuine financial emergencies without forced sale of long-term investments.",
+    "emergencyFundIsNot": [
+      "MARKET_CRASH_BUYING_CAPITAL",
+      "BUSINESS_STARTUP_CAPITAL",
+      "PLANNED_PROPERTY_PURCHASE_CAPITAL",
+      "VACATION_FUND",
+      "LONG_TERM_INVESTMENT_PORTFOLIO"
+    ]
+  },
+
+  "currentPosition": {
+    "personalSavingsAccount": {
+      "minimum": 300000,
+      "maximum": 500000,
+      "availability": "IMMEDIATE"
+    },
+    "dedicatedEmergencyFund": {
+      "value": 0,
+      "status": "NOT_FORMALLY_SEPARATED"
+    },
+    "motherOwnedSavings": {
+      "value": 8000000,
+      "ownerId": "MOTHER",
+      "countAsKapilEmergencyFund": false,
+      "role": "SECONDARY_EXTENDED_FAMILY_RESILIENCE_ONLY"
+    }
+  },
+
+  "expenseBasis": {
+    "typicalMonthlyHouseholdExpense": 75000,
+    "planningMonthlyExpenseRange": {
+      "minimum": 120000,
+      "baseCase": 135000,
+      "maximum": 150000
+    },
+    "recommendedCalculationBasis": "ESSENTIAL_MONTHLY_EXPENSES",
+    "essentialMonthlyExpenses": null,
+    "status": "DETAILED_EXPENSE_BREAKDOWN_PENDING"
+  },
+
+  "targetFramework": {
+    "minimumMonths": 6,
+    "baseCaseMonths": 9,
+    "maximumMonths": 12,
+
+    "provisionalScenariosUsingTypicalExpenses": {
+      "sixMonths": 450000,
+      "nineMonths": 675000,
+      "twelveMonths": 900000
+    },
+
+    "provisionalScenariosUsingPlanningExpenseBaseCase": {
+      "sixMonths": 810000,
+      "nineMonths": 1215000,
+      "twelveMonths": 1620000
+    },
+
+    "currentProvisionalTargetRange": {
+      "minimum": 600000,
+      "preferred": 900000,
+      "maximum": 1200000,
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "recommendedStructure": {
+    "tier1ImmediateCash": {
+      "target": 300000,
+      "purpose": "Immediate access for urgent expenses",
+      "preferredVehicles": [
+        "SAVINGS_ACCOUNT",
+        "SWEEP_FIXED_DEPOSIT"
+      ],
+      "accessTime": "IMMEDIATE"
+    },
+
+    "tier2EmergencyReserve": {
+      "targetRange": {
+        "minimum": 300000,
+        "maximum": 600000
+      },
+      "purpose": "Secondary emergency liquidity",
+      "preferredVehicles": [
+        "SWEEP_FIXED_DEPOSIT",
+        "SHORT_TERM_BANK_FIXED_DEPOSIT",
+        "SUITABLE_LOW_VOLATILITY_LIQUID_INSTRUMENT_AFTER_TAX_AND_RISK_REVIEW"
+      ],
+      "accessTime": "SAME_DAY_TO_FEW_DAYS"
+    },
+
+    "tier3ExtendedContingency": {
+      "targetRange": {
+        "minimum": 0,
+        "maximum": 300000
+      },
+      "purpose": "Additional reserve if career or family risk increases",
+      "status": "OPTIONAL"
+    }
+  },
+
+  "provisionalRecommendation": {
+    "target": 900000,
+    "reasoning": [
+      "TWO_YOUNG_DEPENDENT_CHILDREN",
+      "IT_AND_AI_RELATED_CAREER_UNCERTAINTY",
+      "SIGNIFICANT_MONTHLY_INVESTMENT_CAPACITY",
+      "DUAL_INCOME_HOUSEHOLD",
+      "CGHS_AND_EMPLOYER_HEALTH_SUPPORT",
+      "NO_KNOWN_MAJOR_DEBT",
+      "SIGNIFICANT_EXISTING_FINANCIAL_ASSETS"
+    ],
+
+    "currentFundingGap": {
+      "ifCurrentCashIs300000": 600000,
+      "ifCurrentCashIs500000": 400000
+    },
+
+    "status": "PENDING_FINAL_VALIDATION"
+  },
+
+  "fundingPolicy": {
+    "primarySource": "MONTHLY_SURPLUS",
+    "secondarySource": "EXISTING_PERSONAL_SAVINGS",
+
+    "principles": [
+      "FORMALLY_DESIGNATE_EXISTING_PERSONAL_CASH_BEFORE_BUILDING_FROM_ZERO",
+      "DO_NOT_COUNT_MOTHER_OWNED_ASSETS_AS PERSONAL_EMERGENCY_FUND",
+      "DO_NOT_SELL_LONG_TERM_EQUITY SOLELY_TO BUILD THE FUND UNLESS LIQUIDITY_RISK_IS_MATERIAL",
+      "BUILD_REMAINING_GAP_FROM_FUTURE_CASH_FLOW",
+      "PAUSE_ADDITIONAL_EMERGENCY_FUND_CONTRIBUTIONS_AFTER_TARGET_IS_REACHED"
+    ]
+  },
+
+  "useRules": {
+    "qualifyingEmergencies": [
+      "JOB_LOSS_OR_MAJOR_INCOME_INTERRUPTION",
+      "URGENT_MEDICAL_EXPENSE_NOT_IMMEDIATELY_COVERED",
+      "ESSENTIAL_MAJOR_HOME_REPAIR",
+      "URGENT_FAMILY_CRISIS",
+      "OTHER_UNEXPECTED_ESSENTIAL_EXPENSE"
+    ],
+
+    "nonQualifyingUses": [
+      "BUYING_EQUITY_DURING_MARKET_CORRECTIONS",
+      "STARTING_A_BUSINESS",
+      "BUYING_THE_LUCKNOW_PLOT",
+      "ROUTINE_TRAVEL",
+      "DISCRETIONARY_PURCHASES",
+      "PLANNED_EDUCATION_EXPENSES"
+    ]
+  },
+
+  "replenishmentPolicy": {
+    "afterUse": "HIGH_PRIORITY",
+    "target": "RESTORE_TO_POLICY_TARGET",
+    "fundingPriority": [
+      "REDUCE_OPTIONAL_INVESTMENTS_IF_NEEDED",
+      "USE_MONTHLY_SURPLUS",
+      "DEFER_OPPORTUNITY_FUND_REPLENISHMENT"
+    ]
+  },
+
+  "relationshipWithOpportunityFund": {
+    "mustRemainSeparate": true,
+    "emergencyFundTarget": 900000,
+    "opportunityFundTargetRange": {
+      "minimum": 500000,
+      "maximum": 1000000
+    },
+    "combinedPotentialCashRequirementRange": {
+      "minimum": 1400000,
+      "maximum": 1900000
+    },
+    "warning": "Holding both funds at maximum levels may create excessive long-term cash drag and must be evaluated against total portfolio size."
+  },
+
+  "reviewTriggers": [
+    "JOB_CHANGE",
+    "BUSINESS_LAUNCH",
+    "SPOUSE_EMPLOYMENT_CHANGE",
+    "NEW_MAJOR_LOAN",
+    "SIGNIFICANT_INCREASE_IN_MONTHLY_EXPENSES",
+    "LOSS_OR_REDUCTION_OF_CGHS_OR_EMPLOYER_HEALTH_COVER",
+    "MAJOR_CHANGE_IN_FAMILY_DEPENDANTS"
+  ],
+
+  "dataGaps": [
+    "Essential monthly household expense",
+    "Spouse monthly income",
+    "Spouse job and pension security details",
+    "Exact CGHS coverage",
+    "Annual irregular essential expenses",
+    "Existing bank sweep or fixed deposit facilities"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "DESIGN_OPPORTUNITY_FUND_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "FINALIZE_EMERGENCY_FUND_AFTER_EXPENSE_ANALYSIS"
+    },
+    {
+      "priority": 3,
+      "action": "SEPARATE_EMERGENCY_AND_OPPORTUNITY_CAPITAL_OPERATIONALLY"
+    }
+  ]
+}

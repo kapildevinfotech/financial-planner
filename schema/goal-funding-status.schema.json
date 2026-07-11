@@ -1,0 +1,526 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/goal-funding-status.schema.json",
+  "title": "FWOS Goal Funding Status Schema",
+  "description": "Validation schema for goal funding, assigned assets, future contributions, projected corpus, funding ratios and shortfalls.",
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate",
+    "currency",
+    "goalFunding"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "currency": {
+      "$ref": "fwos.schema.json#/$defs/currencyCode"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "PROVISIONAL",
+        "ACTIVE",
+        "PENDING_PORTFOLIO_MAPPING",
+        "PENDING_VERIFICATION"
+      ]
+    },
+
+    "goalFunding": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/goalFundingRecord"
+      }
+    },
+
+    "portfolioFundingSummary": {
+      "$ref": "#/$defs/portfolioFundingSummary"
+    },
+
+    "assumptions": {
+      "$ref": "#/$defs/assumptions"
+    },
+
+    "dataQuality": {
+      "$ref": "#/$defs/dataQuality"
+    },
+
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+
+  "$defs": {
+    "goalFundingRecord": {
+      "type": "object",
+
+      "required": [
+        "goalId",
+        "fundingStatus"
+      ],
+
+      "properties": {
+        "goalId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "goalName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "priority": {
+          "oneOf": [
+            {
+              "$ref": "fwos.schema.json#/$defs/goalPriority"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+
+        "targetYear": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 2000,
+          "maximum": 2200
+        },
+
+        "yearsRemaining": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "requiredCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "minimumAcceptableCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "currentAssignedAssets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assignedAsset"
+          }
+        },
+
+        "currentAssignedValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "futureContributionPlan": {
+          "$ref": "#/$defs/contributionPlan"
+        },
+
+        "projectedExistingAssetsAtGoal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "projectedFutureContributionsAtGoal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "projectedTotalCorpusAtGoal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "fundingRatioPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "shortfallAmount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "surplusAmount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "fundingStatus": {
+          "$ref": "fwos.schema.json#/$defs/goalFundingStatus"
+        },
+
+        "confidenceLevel": {
+          "type": "string",
+          "enum": [
+            "HIGH",
+            "MODERATE",
+            "LOW",
+            "UNMEASURED"
+          ]
+        },
+
+        "recommendedAction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "lastCalculatedDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "assignedAsset": {
+      "type": "object",
+
+      "required": [
+        "holdingId"
+      ],
+
+      "properties": {
+        "holdingId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "productName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "assignedCurrentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "assignedPercentOfHolding": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "expectedAnnualReturnPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -100,
+          "maximum": 100
+        },
+
+        "projectedValueAtGoal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "contributionPlan": {
+      "type": "object",
+
+      "properties": {
+        "monthlyContribution": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "annualContribution": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "annualStepUpPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "expectedAnnualReturnPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -100,
+          "maximum": 100
+        },
+
+        "contributionStartDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "contributionEndDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "contributionFrequency": {
+          "type": "string",
+          "enum": [
+            "MONTHLY",
+            "QUARTERLY",
+            "ANNUALLY",
+            "IRREGULAR",
+            "NONE"
+          ]
+        },
+
+        "source": {
+          "type": "string",
+          "enum": [
+            "MONTHLY_SURPLUS",
+            "EXISTING_CORPUS",
+            "MOTHER_ASSETS",
+            "BUSINESS_INCOME",
+            "ASSET_SALE",
+            "MIXED",
+            "TO_BE_DECIDED"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "portfolioFundingSummary": {
+      "type": "object",
+
+      "properties": {
+        "totalRequiredCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "totalCurrentAssignedAssets": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "totalProjectedCorpusAtGoalDates": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "criticalGoalsOnTrack": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "criticalGoalsUnderfunded": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "unmeasuredGoals": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "assumptions": {
+      "type": "object",
+
+      "properties": {
+        "returnBasis": {
+          "type": "string",
+          "enum": [
+            "NOMINAL_PRE_TAX",
+            "NOMINAL_POST_TAX",
+            "REAL_RETURN",
+            "MIXED",
+            "TO_BE_DEFINED"
+          ]
+        },
+
+        "contributionTiming": {
+          "type": "string",
+          "enum": [
+            "BEGINNING_OF_PERIOD",
+            "END_OF_PERIOD",
+            "MID_PERIOD",
+            "TO_BE_DEFINED"
+          ]
+        },
+
+        "taxIncludedInProjection": {
+          "type": "boolean"
+        },
+
+        "feesIncludedInProjection": {
+          "type": "boolean"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "dataQuality": {
+      "type": "object",
+
+      "properties": {
+        "overallStatus": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "INCOMPLETE",
+            "PENDING_PORTFOLIO_MAPPING",
+            "PENDING_GOAL_QUANTIFICATION",
+            "PENDING_VERIFICATION"
+          ]
+        },
+
+        "unmappedAssetCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "unmeasuredGoalCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "criticalMissingInputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+
+      "additionalProperties": true
+    }
+  },
+
+  "additionalProperties": true
+}

@@ -1,0 +1,284 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_PENDING_GOAL_AND_PORTFOLIO_VALIDATION",
+
+  "scope": {
+    "primaryPortfolioOwner": "KAPIL",
+    "includeInStrategicAllocation": [
+      "TAXABLE_INVESTMENTS",
+      "MUTUAL_FUNDS",
+      "ETFS",
+      "DIRECT_STOCKS",
+      "EPF",
+      "PPF",
+      "NPS",
+      "INVESTMENT_GOLD",
+      "DEDICATED_CASH_AND_OPPORTUNITY_CAPITAL"
+    ],
+    "excludeFromStrategicAllocation": [
+      "PRIMARY_USE_REAL_ESTATE",
+      "PERSONAL_USE_ASSETS",
+      "MOTHER_OWNED_ASSETS",
+      "EMERGENCY_FUND",
+      "JEWELLERY_NOT_HELD_AS_INVESTMENT"
+    ]
+  },
+
+  "strategicAssetAllocation": {
+    "indianEquity": {
+      "target": 0.55,
+      "minimum": 0.50,
+      "maximum": 0.60,
+      "status": "PROVISIONAL"
+    },
+    "internationalEquity": {
+      "target": 0.10,
+      "minimum": 0.08,
+      "maximum": 0.12,
+      "status": "PROVISIONAL"
+    },
+    "gold": {
+      "target": 0.07,
+      "minimum": 0.05,
+      "maximum": 0.10,
+      "status": "PROVISIONAL"
+    },
+    "debt": {
+      "target": 0.23,
+      "minimum": 0.20,
+      "maximum": 0.30,
+      "status": "PROVISIONAL"
+    },
+    "cashAndOpportunityCapital": {
+      "target": 0.05,
+      "minimum": 0.03,
+      "maximum": 0.08,
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "aggregateRiskLimits": {
+    "totalEquity": {
+      "definition": "INDIAN_EQUITY_PLUS_INTERNATIONAL_EQUITY",
+      "strategicTarget": 0.65,
+      "preferredRange": {
+        "minimum": 0.50,
+        "maximum": 0.65
+      },
+      "hardLimitStatus": "NOT_YET_DEFINED"
+    },
+    "singleStock": {
+      "maximumPortfolioWeight": null,
+      "status": "PENDING_POLICY"
+    },
+    "directStocksCombined": {
+      "maximumPortfolioWeight": null,
+      "status": "PENDING_POLICY"
+    },
+    "sectorAndThematicEquity": {
+      "maximumPortfolioWeight": null,
+      "status": "PENDING_POLICY"
+    }
+  },
+
+  "classificationRules": [
+    {
+      "instrument": "INDIAN_EQUITY_MUTUAL_FUND",
+      "allocationBucket": "INDIAN_EQUITY",
+      "weight": 1.0
+    },
+    {
+      "instrument": "INDIAN_EQUITY_ETF",
+      "allocationBucket": "INDIAN_EQUITY",
+      "weight": 1.0
+    },
+    {
+      "instrument": "INDIAN_DIRECT_STOCK",
+      "allocationBucket": "INDIAN_EQUITY",
+      "weight": 1.0
+    },
+    {
+      "instrument": "CPSE_ETF",
+      "allocationBucket": "INDIAN_EQUITY",
+      "secondaryClassification": "THEMATIC_PSU",
+      "weight": 1.0
+    },
+    {
+      "instrument": "BHARAT_22_ETF",
+      "allocationBucket": "INDIAN_EQUITY",
+      "secondaryClassification": "CONCENTRATED_INDEX",
+      "weight": 1.0
+    },
+    {
+      "instrument": "INTERNATIONAL_EQUITY_FUND_OR_ETF",
+      "allocationBucket": "INTERNATIONAL_EQUITY",
+      "weight": 1.0
+    },
+    {
+      "instrument": "EPF",
+      "allocationBucket": "DEBT",
+      "weight": 1.0
+    },
+    {
+      "instrument": "PPF",
+      "allocationBucket": "DEBT",
+      "weight": 1.0
+    },
+    {
+      "instrument": "NPS_EQUITY",
+      "allocationBucket": "INDIAN_EQUITY",
+      "weight": 1.0
+    },
+    {
+      "instrument": "NPS_CORPORATE_DEBT",
+      "allocationBucket": "DEBT",
+      "weight": 1.0
+    },
+    {
+      "instrument": "NPS_GOVERNMENT_SECURITIES",
+      "allocationBucket": "DEBT",
+      "weight": 1.0
+    },
+    {
+      "instrument": "INVESTMENT_GOLD",
+      "allocationBucket": "GOLD",
+      "weight": 1.0
+    },
+    {
+      "instrument": "DEDICATED_OPPORTUNITY_FUND",
+      "allocationBucket": "CASH_AND_OPPORTUNITY_CAPITAL",
+      "weight": 1.0
+    }
+  ],
+
+  "knownCurrentAllocationInputs": {
+    "equityPortfolio": {
+      "approximateValue": 7500000,
+      "classification": "MOSTLY_OR_ENTIRELY_EQUITY",
+      "status": "HOLDINGS_RECONCILIATION_PENDING"
+    },
+    "epf": {
+      "value": 3000000,
+      "allocation": {
+        "debt": 3000000
+      }
+    },
+    "ppf": {
+      "value": 1730000,
+      "allocation": {
+        "debt": 1730000
+      }
+    },
+    "nps": {
+      "value": 1400000,
+      "allocationPercentages": {
+        "equity": 0.63,
+        "corporateDebt": 0.12,
+        "governmentSecurities": 0.25
+      },
+      "derivedApproximateValues": {
+        "indianEquity": 882000,
+        "debt": 518000
+      }
+    },
+    "personalSavings": {
+      "valueRange": {
+        "minimum": 300000,
+        "maximum": 500000
+      },
+      "classificationStatus": "PARTLY_EMERGENCY_LIQUIDITY_NOT_YET_STRATEGICALLY_CLASSIFIED"
+    }
+  },
+
+  "provisionalCurrentAllocation": {
+    "basis": "KNOWN_USER_FINANCIAL_ASSETS_ONLY",
+    "warning": "This calculation assumes the reported ₹75 lakh equity portfolio is fully equity and excludes unknown gold or other investments.",
+
+    "usingMinimumCashBalance": {
+      "totalFinancialAssets": 13930000,
+      "indianAndUnclassifiedEquity": 8382000,
+      "debt": 5248000,
+      "cash": 300000,
+      "percentages": {
+        "equity": 0.6017,
+        "debt": 0.3767,
+        "cash": 0.0215
+      }
+    },
+
+    "usingMaximumCashBalance": {
+      "totalFinancialAssets": 14130000,
+      "indianAndUnclassifiedEquity": 8382000,
+      "debt": 5248000,
+      "cash": 500000,
+      "percentages": {
+        "equity": 0.5932,
+        "debt": 0.3714,
+        "cash": 0.0354
+      }
+    }
+  },
+
+  "interpretation": {
+    "currentKnownPosition": [
+      "Known financial assets appear to be approximately 59% to 60% equity before adding new international equity or gold.",
+      "EPF, PPF and the debt components of NPS already create a substantial debt allocation.",
+      "Adding international equity without considering total equity exposure could push aggregate equity above the intended range.",
+      "Gold allocation cannot be evaluated until existing investment gold is quantified.",
+      "Personal savings currently serve a liquidity role and should not automatically be treated as opportunity capital."
+    ],
+    "importantConstraint": "New investment decisions must be based on the total portfolio rather than assigning the entire ₹1.25 lakh monthly surplus independently of existing assets."
+  },
+
+  "rebalancingPolicy": {
+    "primaryMethod": "NEW_CASH_FLOWS_FIRST",
+    "secondaryMethod": "REDIRECT_SIPS",
+    "assetSales": "USE_WHEN_REQUIRED_AFTER_CONSIDERING_TAX_AND_PORTFOLIO_QUALITY",
+    "reviewFrequency": "AT_LEAST_ANNUALLY_AND_ON_MAJOR_CASH_FLOW_EVENTS",
+    "thresholdMethod": "PENDING_FINALIZATION"
+  },
+
+  "goalAlignment": {
+    "status": "PENDING",
+    "requiredBeforeFinalAllocation": [
+      "EDUCATION_CORPUS_CALCULATIONS",
+      "FINANCIAL_INDEPENDENCE_CALCULATION",
+      "EMERGENCY_FUND_POLICY",
+      "BUSINESS_CAPITAL_POLICY",
+      "COMPLETE_PORTFOLIO_INVENTORY"
+    ]
+  },
+
+  "dataGaps": [
+    "Indian versus international split of existing ₹75 lakh equity portfolio",
+    "Complete mutual fund holdings",
+    "Complete ETF holdings",
+    "Complete direct stock holdings",
+    "Existing investment gold",
+    "Emergency fund classification",
+    "Exact opportunity fund amount",
+    "Goal-wise asset allocation"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "RECONCILE_COMPLETE_CURRENT_PORTFOLIO"
+    },
+    {
+      "priority": 2,
+      "action": "CALCULATE_GOAL_CORPUS_REQUIREMENTS"
+    },
+    {
+      "priority": 3,
+      "action": "VALIDATE_65_PERCENT_TOTAL_EQUITY_TARGET"
+    },
+    {
+      "priority": 4,
+      "action": "DESIGN_MONTHLY_125000_ALLOCATION"
+    }
+  ]
+}

@@ -1,0 +1,495 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/rebalancing-policy.schema.json",
+  "title": "FWOS Rebalancing Policy Schema",
+  "description": "Validation schema for strategic allocation bands, drift monitoring, contribution-first rebalancing, sell-based rebalancing, review cycles and exceptions.",
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate",
+    "status",
+    "policy",
+    "assetClassBands"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "PROVISIONAL",
+        "ACTIVE",
+        "PENDING_REVIEW",
+        "SUPERSEDED",
+        "ARCHIVED"
+      ]
+    },
+
+    "policy": {
+      "$ref": "#/$defs/policy"
+    },
+
+    "assetClassBands": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/assetClassBand"
+      }
+    },
+
+    "rebalancingEvents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rebalancingEvent"
+      }
+    },
+
+    "dataQuality": {
+      "$ref": "#/$defs/dataQuality"
+    },
+
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+
+  "$defs": {
+    "policy": {
+      "type": "object",
+
+      "required": [
+        "primaryMethod",
+        "reviewFrequency",
+        "executionPriority"
+      ],
+
+      "properties": {
+        "objective": {
+          "type": "string"
+        },
+
+        "primaryMethod": {
+          "type": "string",
+          "enum": [
+            "CONTRIBUTION_FIRST",
+            "HYBRID",
+            "SELL_AND_BUY"
+          ]
+        },
+
+        "reviewFrequency": {
+          "type": "string",
+          "enum": [
+            "MONTHLY",
+            "QUARTERLY",
+            "SEMI_ANNUALLY",
+            "ANNUALLY"
+          ]
+        },
+
+        "formalReviewMonths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          }
+        },
+
+        "executionPriority": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "REDIRECT_NEW_CONTRIBUTIONS",
+              "USE_AVAILABLE_CASH",
+              "USE_DEPLOYMENT_RESERVE",
+              "REDUCE_OVERWEIGHT_ASSET",
+              "SELL_ONLY_IF_REQUIRED"
+            ]
+          }
+        },
+
+        "minimumTradeAmount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "taxAware": {
+          "type": "boolean"
+        },
+
+        "transactionCostAware": {
+          "type": "boolean"
+        },
+
+        "marketForecastRequired": {
+          "type": "boolean"
+        },
+
+        "automaticExecutionAllowed": {
+          "type": "boolean"
+        },
+
+        "humanReviewRequiredForSales": {
+          "type": "boolean"
+        },
+
+        "principles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "assetClassBand": {
+      "type": "object",
+
+      "required": [
+        "assetClass",
+        "targetPercent",
+        "minimumPercent",
+        "maximumPercent"
+      ],
+
+      "properties": {
+        "assetClass": {
+          "$ref": "fwos.schema.json#/$defs/assetClass"
+        },
+
+        "targetPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "minimumPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "maximumPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "absoluteDriftTriggerPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "relativeDriftTriggerPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "currentPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "driftFromTargetPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -100,
+          "maximum": 100
+        },
+
+        "bandStatus": {
+          "type": "string",
+          "enum": [
+            "BELOW_MINIMUM",
+            "WITHIN_BAND",
+            "ABOVE_MAXIMUM",
+            "UNKNOWN"
+          ]
+        },
+
+        "preferredCorrectionMethod": {
+          "type": "string",
+          "enum": [
+            "NEW_CONTRIBUTIONS",
+            "CASH_DEPLOYMENT",
+            "DEPLOYMENT_RESERVE",
+            "SELL_OVERWEIGHT_ASSET",
+            "HYBRID",
+            "REVIEW_REQUIRED"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "rebalancingEvent": {
+      "type": "object",
+
+      "required": [
+        "eventId",
+        "evaluationDate",
+        "triggerType",
+        "decision"
+      ],
+
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "evaluationDate": {
+          "type": "string",
+          "format": "date"
+        },
+
+        "triggerType": {
+          "type": "string",
+          "enum": [
+            "SCHEDULED_REVIEW",
+            "BAND_BREACH",
+            "LARGE_CASH_FLOW",
+            "GOAL_CHANGE",
+            "RISK_PROFILE_CHANGE",
+            "PORTFOLIO_STRUCTURE_CHANGE",
+            "MANUAL_REVIEW"
+          ]
+        },
+
+        "triggerDetails": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "preRebalanceAllocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/allocationSnapshot"
+          }
+        },
+
+        "recommendedTrades": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rebalancingAction"
+          }
+        },
+
+        "decision": {
+          "type": "string",
+          "enum": [
+            "NO_ACTION",
+            "REDIRECT_CONTRIBUTIONS",
+            "DEPLOY_CASH",
+            "EXECUTE_REBALANCE",
+            "DEFER",
+            "REQUIRE_HUMAN_REVIEW"
+          ]
+        },
+
+        "decisionRationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "taxImpactReviewed": {
+          "type": "boolean"
+        },
+
+        "estimatedTaxImpact": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "executionStatus": {
+          "type": "string",
+          "enum": [
+            "NOT_REQUIRED",
+            "NOT_STARTED",
+            "IN_PROGRESS",
+            "COMPLETED",
+            "DEFERRED"
+          ]
+        },
+
+        "postRebalanceAllocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/allocationSnapshot"
+          }
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "allocationSnapshot": {
+      "type": "object",
+
+      "required": [
+        "assetClass",
+        "allocationPercent"
+      ],
+
+      "properties": {
+        "assetClass": {
+          "$ref": "fwos.schema.json#/$defs/assetClass"
+        },
+
+        "allocationPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+
+      "additionalProperties": false
+    },
+
+    "rebalancingAction": {
+      "type": "object",
+
+      "required": [
+        "assetClass",
+        "action"
+      ],
+
+      "properties": {
+        "assetClass": {
+          "$ref": "fwos.schema.json#/$defs/assetClass"
+        },
+
+        "productId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "action": {
+          "type": "string",
+          "enum": [
+            "BUY",
+            "SELL",
+            "REDIRECT_CONTRIBUTION",
+            "STOP_NEW_CONTRIBUTION",
+            "HOLD"
+          ]
+        },
+
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "priority": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "dataQuality": {
+      "type": "object",
+
+      "properties": {
+        "overallStatus": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "INCOMPLETE",
+            "PENDING_PORTFOLIO_VALUATION",
+            "PENDING_TARGET_ALLOCATION",
+            "PENDING_VERIFICATION"
+          ]
+        },
+
+        "criticalMissingData": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+
+      "additionalProperties": true
+    }
+  },
+
+  "additionalProperties": true
+}

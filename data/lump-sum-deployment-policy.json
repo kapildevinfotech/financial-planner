@@ -1,0 +1,373 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Deploy large cash inflows systematically according to goals, liquidity needs and strategic asset allocation without relying on short-term market predictions.",
+    "principle": "The source and purpose of money must be identified before deciding how to invest it."
+  },
+
+  "scope": {
+    "includedInflows": [
+      "ANNUAL_BONUS",
+      "VARIABLE_PAY",
+      "LARGE_ACCUMULATED_SALARY_SURPLUS",
+      "INVESTMENT_MATURITY_PROCEEDS",
+      "ASSET_SALE_PROCEEDS",
+      "INHERITANCE",
+      "BUSINESS_INCOME_SURPLUS",
+      "OTHER_UNCOMMITTED_LARGE_CASH_INFLOW"
+    ],
+
+    "excludedFromAutomaticInvestment": [
+      "EMERGENCY_FUND",
+      "LUCKNOW_PLOT_CAPITAL",
+      "PRECOMMITTED_BUSINESS_CAPITAL",
+      "NEAR_TERM_EDUCATION_GOAL_MONEY",
+      "TAX_LIABILITIES",
+      "KNOWN_MAJOR_EXPENSES"
+    ]
+  },
+
+  "lumpSumDefinition": {
+    "relativeRule": "ANY_NON_RECURRING_INFLOW_LARGE_ENOUGH_TO_MATERIALLY_CHANGE_PORTFOLIO_ALLOCATION",
+    "provisionalAbsoluteThreshold": 500000,
+    "belowThreshold": "MAY_BE_HANDLED_THROUGH_NORMAL_MONTHLY_DEPLOYMENT_POLICY"
+  },
+
+  "ownershipRule": {
+    "principle": "Determine legal and beneficial ownership before deployment.",
+
+    "rules": [
+      "KAPIL_OWNED_MONEY_IS_MANAGED_UNDER_KAPIL_PORTFOLIO_POLICY",
+      "MOTHER_OWNED_MONEY_REMAINS_A_SEPARATE_PORTFOLIO",
+      "FAMILY_LEVEL_ANALYSIS_DOES_NOT_REMOVE_ACCOUNT_OWNERSHIP_DISTINCTIONS",
+      "TAXATION_AND_SUCCESSION_CONSEQUENCES_MUST_BE_CONSIDERED_BEFORE_MOVING_MONEY_BETWEEN_FAMILY_MEMBERS"
+    ]
+  },
+
+  "preDeploymentClassification": {
+    "required": true,
+
+    "categories": [
+      {
+        "category": "LIQUIDITY_REQUIRED_WITHIN_3_YEARS",
+        "defaultTreatment": "CAPITAL_PRESERVATION"
+      },
+      {
+        "category": "GOAL_REQUIRED_WITHIN_3_TO_7_YEARS",
+        "defaultTreatment": "GOAL_SPECIFIC_MODERATE_OR_LOW_RISK_ALLOCATION"
+      },
+      {
+        "category": "LONG_TERM_CAPITAL_7_PLUS_YEARS",
+        "defaultTreatment": "STRATEGIC_ASSET_ALLOCATION"
+      },
+      {
+        "category": "PERMANENT_SURPLUS_CAPITAL",
+        "defaultTreatment": "LONG_TERM_WEALTH_PORTFOLIO"
+      }
+    ]
+  },
+
+  "deploymentHierarchy": [
+    {
+      "priority": 1,
+      "action": "RESERVE_TAX_AND_KNOWN_LIABILITIES"
+    },
+    {
+      "priority": 2,
+      "action": "RESTORE_EMERGENCY_FUND_IF_BELOW_TARGET"
+    },
+    {
+      "priority": 3,
+      "action": "FUND_NEAR_TERM_COMMITTED_GOALS"
+    },
+    {
+      "priority": 4,
+      "action": "CORRECT_CRITICAL_GOAL_FUNDING_SHORTFALLS"
+    },
+    {
+      "priority": 5,
+      "action": "CORRECT_STRATEGIC_ASSET_ALLOCATION_GAPS"
+    },
+    {
+      "priority": 6,
+      "action": "RESTORE_OPPORTUNITY_FUND_IF_APPROPRIATE"
+    },
+    {
+      "priority": 7,
+      "action": "CONSIDER_OPTIONAL_SATELLITE_INVESTMENTS"
+    }
+  ],
+
+  "defaultDeploymentMethod": {
+    "principle": "For long-term money, immediate deployment according to strategic asset allocation is the default unless risk capacity or behavioural constraints justify staging.",
+
+    "marketTiming": false,
+
+    "rules": [
+      "DO_NOT_WAIT_INDEFINITELY_FOR_A_MARKET_CRASH",
+      "DO_NOT_DEPLOY_ALL_MONEY_INTO_THE_RECENT_BEST_PERFORMING_ASSET",
+      "DO_NOT_SELECT_FUNDS_BEFORE_DETERMINING_ASSET_CLASS_ALLOCATION",
+      "DO_NOT_HOLD_LONG_TERM_CASH_WITHOUT_A_DEFINED_REASON"
+    ]
+  },
+
+  "deploymentModes": {
+    "immediate": {
+      "preferredWhen": [
+        "MONEY_HAS_LONG_INVESTMENT_HORIZON",
+        "STRATEGIC_ALLOCATION_IS_CLEAR",
+        "INVESTOR_CAN_TOLERATE_SHORT_TERM_MARKET_DECLINES",
+        "DEPLOYMENT_WILL_NOT_CREATE_CONCENTRATION"
+      ],
+
+      "method": "DEPLOY_TO_TARGET_OR_UNDERWEIGHT_ASSET_CLASSES"
+    },
+
+    "staged": {
+      "preferredWhen": [
+        "LUMP_SUM_IS_BEHAVIOURALLY_SIGNIFICANT",
+        "IMMEDIATE_DEPLOYMENT_COULD_CAUSE_INVESTOR_REGRET_AND_PLAN_ABANDONMENT",
+        "PORTFOLIO_TRANSITION_REQUIRES MULTIPLE_STEPS",
+        "NEAR_TERM_UNCERTAINTY_REQUIRES TEMPORARY_LIQUIDITY"
+      ],
+
+      "defaultMaximumDeploymentPeriodMonths": 6,
+
+      "exceptionalMaximumDeploymentPeriodMonths": 12,
+
+      "rule": "Staging is a behavioural and risk-management tool, not a claim that future market prices will be lower."
+    }
+  },
+
+  "provisionalSizeFramework": [
+    {
+      "lumpSumRange": "BELOW_500000",
+      "defaultApproach": "DEPLOY_WITH_NORMAL_CASH_FLOW_REBALANCING"
+    },
+    {
+      "lumpSumRange": "500000_TO_2500000",
+      "defaultApproach": "IMMEDIATE_OR_UP_TO_3_MONTH_STAGED_DEPLOYMENT"
+    },
+    {
+      "lumpSumRange": "2500000_TO_10000000",
+      "defaultApproach": "FORMAL_ASSET_ALLOCATION_REVIEW_AND_OPTIONAL_3_TO_6_MONTH_STAGING"
+    },
+    {
+      "lumpSumRange": "ABOVE_10000000",
+      "defaultApproach": "FULL_FAMILY_BALANCE_SHEET_GOAL_TAX_AND_RISK_REVIEW_BEFORE_DEPLOYMENT"
+    }
+  ],
+
+  "marketConditionFramework": {
+    "marketNearAllTimeHigh": {
+      "action": "FOLLOW_STRATEGIC_ASSET_ALLOCATION",
+      "rule": "ALL_TIME_HIGH_ALONE_IS_NOT_A_REASON_TO_AVOID_LONG_TERM_INVESTING"
+    },
+
+    "marketDownLessThan10Percent": {
+      "action": "NORMAL_DEPLOYMENT_POLICY"
+    },
+
+    "marketDown10To20Percent": {
+      "action": "CHECK_CRASH_PLAYBOOK_AND_PORTFOLIO_UNDERWEIGHTS"
+    },
+
+    "marketDown20PercentOrMore": {
+      "action": "COORDINATE_LUMP_SUM_DEPLOYMENT_WITH_REBALANCING_AND_CRASH_PLAYBOOK",
+      "warning": "DO_NOT_DOUBLE_COUNT_THE_SAME_CAPITAL_AS_BOTH_LUMP_SUM_AND_OPPORTUNITY_FUND"
+    }
+  },
+
+  "assetAllocationMethod": {
+    "preferredMethod": "GAP_WEIGHTED_DEPLOYMENT",
+
+    "steps": [
+      "CALCULATE_CURRENT_PORTFOLIO_VALUE",
+      "ADD_DEPLOYABLE_LUMP_SUM_TO_TOTAL_CAPITAL_BASE",
+      "CALCULATE_TARGET_ASSET_CLASS_VALUES",
+      "IDENTIFY_UNDERWEIGHT_ASSET_CLASSES",
+      "APPLY_GOAL_SPECIFIC_REQUIREMENTS",
+      "CHECK_CONCENTRATION_LIMITS",
+      "ALLOCATE_CAPITAL_TO_HIGHEST_PRIORITY_GAPS"
+    ]
+  },
+
+  "sourceSpecificRules": {
+    "bonusOrVariablePay": {
+      "default": "TREAT_AS_NEW_INVESTABLE_CASH_AFTER_TAX_AND_PLANNED_EXPENSES"
+    },
+
+    "assetSaleProceeds": {
+      "default": "REASSESS_TOTAL_BALANCE_SHEET_BEFORE_REDEPLOYMENT"
+    },
+
+    "investmentMaturity": {
+      "default": "DO_NOT_AUTOMATICALLY_RENEW_OR_REINVEST_IN_THE_SAME_PRODUCT"
+    },
+
+    "inheritance": {
+      "default": "NO_RUSHED_INVESTMENT_DECISION",
+      "requiredReview": [
+        "OWNERSHIP",
+        "TAX",
+        "ESTATE_STRUCTURE",
+        "GOALS",
+        "ASSET_ALLOCATION"
+      ]
+    },
+
+    "businessIncome": {
+      "default": "SEPARATE_BUSINESS_WORKING_CAPITAL_AND_TAX_REQUIREMENTS_BEFORE_PERSONAL_INVESTMENT"
+    }
+  },
+
+  "businessCapitalInteraction": {
+    "maximumPotentialRequirement": 5000000,
+
+    "rule": "If a business launch becomes reasonably probable within 3 to 5 years, required business capital must be ring-fenced progressively rather than left dependent on equity market conditions.",
+
+    "prohibitedAction": "ASSUME_LONG_TERM_EQUITY_CAN_ALWAYS_BE_SOLD_AT_A_FAVOURABLE_PRICE_WHEN_BUSINESS_CAPITAL_IS_NEEDED"
+  },
+
+  "lucknowPlotInteraction": {
+    "estimatedCostRange": {
+      "minimum": 4000000,
+      "maximum": 5000000
+    },
+
+    "currentExpectedFundingSource": "MOTHER_OWNED_ASSETS",
+
+    "rule": "Plot capital must remain separate from Kapil's long-term portfolio unless the funding plan formally changes."
+  },
+
+  "opportunityFundInteraction": {
+    "targetRange": {
+      "minimum": 500000,
+      "maximum": 1000000
+    },
+
+    "rule": "A new lump sum must not automatically be converted into additional market-timing cash if the opportunity fund is already adequately funded."
+  },
+
+  "concentrationControls": {
+    "requiredBeforeDeployment": true,
+
+    "checks": [
+      "SINGLE_STOCK_LIMIT",
+      "DIRECT_STOCK_TOTAL_LIMIT",
+      "SECTOR_LIMIT",
+      "PSU_EXPOSURE",
+      "CPSE_ETF_EXPOSURE",
+      "BHARAT_22_ETF_EXPOSURE",
+      "MID_AND_SMALL_CAP_EXPOSURE",
+      "INTERNATIONAL_EXPOSURE",
+      "FUND_OVERLAP"
+    ]
+  },
+
+  "temporaryParkingPolicy": {
+    "allowed": true,
+
+    "purpose": [
+      "SHORT_STAGED_DEPLOYMENT",
+      "PENDING_TAX_CALCULATION",
+      "PENDING_GOAL_OR_ASSET_ALLOCATION_DECISION"
+    ],
+
+    "preferredCharacteristics": [
+      "HIGH_LIQUIDITY",
+      "LOW_VOLATILITY",
+      "LOW_CREDIT_RISK",
+      "CLEAR_TAX_TREATMENT"
+    ],
+
+    "rule": "Temporary parking must have a defined purpose and review date."
+  },
+
+  "decisionChecklist": [
+    "WHO_OWNS_THE_MONEY?",
+    "IS_ANY_PART_REQUIRED_FOR_TAX?",
+    "IS_ANY_PART_REQUIRED_WITHIN_5_YEARS?",
+    "IS_THE_EMERGENCY_FUND_COMPLETE?",
+    "ARE_ANY_GOALS_MATERIALLY_UNDERFUNDED?",
+    "WHAT_IS_CURRENT_ASSET_ALLOCATION?",
+    "WHICH_ASSET_CLASSES_ARE UNDERWEIGHT?",
+    "WILL_DEPLOYMENT_CREATE_CONCENTRATION?",
+    "IS_STAGING_REQUIRED_FOR A VALID RISK_OR_BEHAVIOURAL_REASON?",
+    "HAS_THE_DECISION_BEEN_DOCUMENTED?"
+  ],
+
+  "prohibitedActions": [
+    "INVEST_WITHOUT_IDENTIFYING_THE_PURPOSE_OF_THE_MONEY",
+    "WAIT_INDEFINITELY_FOR_A_CRASH",
+    "DEPLOY_BASED_ONLY_ON_MARKET_PREDICTIONS",
+    "PUT_THE_ENTIRE_LUMP_SUM_INTO_ONE_STOCK_SECTOR_OR_THEME",
+    "USE_MOTHER_OWNED_CAPITAL_WITHOUT_CLEAR_OWNERSHIP_AND_PURPOSE",
+    "IGNORE_TAX_LIABILITIES",
+    "DOUBLE_COUNT_CAPITAL_ACROSS_MULTIPLE_FINANCIAL_BUCKETS",
+    "CHANGE_LONG_TERM_STRATEGY_BECAUSE_OF_SHORT_TERM_HEADLINES"
+  ],
+
+  "decisionLog": {
+    "requiredForLumpSumsAbove": 500000,
+
+    "record": [
+      "DATE",
+      "SOURCE",
+      "LEGAL_OWNER",
+      "GROSS_AMOUNT",
+      "TAX_RESERVE",
+      "COMMITTED_AMOUNT",
+      "DEPLOYABLE_AMOUNT",
+      "CURRENT_ASSET_ALLOCATION",
+      "TARGET_ALLOCATION",
+      "DEPLOYMENT_METHOD",
+      "DEPLOYMENT_SCHEDULE",
+      "DESTINATIONS",
+      "RATIONALE"
+    ]
+  },
+
+  "references": {
+    "assetAllocation": "data/asset-allocation.json",
+    "goals": "data/goals.json",
+    "monthlySipPolicy": "data/monthly-sip-policy.json",
+    "emergencyFund": "data/emergency-fund.json",
+    "opportunityFund": "data/opportunity-fund.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "concentrationLimits": "data/concentration-limits.json",
+    "crashPlaybook": "data/crash-playbook.json"
+  },
+
+  "dataGaps": [
+    "Final strategic asset allocation",
+    "Complete current portfolio",
+    "Final goal corpus calculations",
+    "Final business launch probability and timeline",
+    "Final account ownership structure"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_INVESTMENT_DECISION_CHECKLIST"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_APPROVED_INVESTMENT_UNIVERSE"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_DIRECT_STOCK_EXIT_POLICY"
+    },
+    {
+      "priority": 4,
+      "action": "CREATE_TAX_OPTIMIZATION_POLICY"
+    }
+  ]
+}

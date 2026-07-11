@@ -1,0 +1,495 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_PENDING_GOAL_COST_MODEL",
+
+  "purpose": {
+    "primaryObjective": "Measure the funding status of each major financial goal using current assets, future contributions, inflation and expected investment returns.",
+    "principle": "Separate goal definition, corpus calculation, asset assignment and progress measurement."
+  },
+
+  "calculationFramework": {
+    "futureCostFormula": "CURRENT_COST * (1 + INFLATION_RATE) ^ YEARS_TO_GOAL",
+    "futureValueOfCurrentAssetsFormula": "CURRENT_ASSIGNED_ASSETS * (1 + EXPECTED_RETURN) ^ YEARS_TO_GOAL",
+    "futureValueOfContributionsFormula": "CALCULATED_USING_PERIODIC_CONTRIBUTIONS_AND_EXPECTED_RETURN",
+    "fundingRatioFormula": "(PROJECTED_CURRENT_ASSETS_FV + PROJECTED_CONTRIBUTIONS_FV) / REQUIRED_GOAL_CORPUS",
+    "shortfallFormula": "MAX(0, REQUIRED_GOAL_CORPUS - PROJECTED_AVAILABLE_CORPUS)",
+    "surplusFormula": "MAX(0, PROJECTED_AVAILABLE_CORPUS - REQUIRED_GOAL_CORPUS)"
+  },
+
+  "planningAssumptions": {
+    "generalInflationPercent": null,
+    "indiaEducationInflationPercent": null,
+    "foreignEducationInflationPercent": null,
+    "marriageInflationPercent": null,
+    "preTaxOrPostTaxReturnBasis": "TO_BE_STANDARDIZED",
+    "returnAssumptionsSource": "TO_BE_DEFINED",
+    "reviewFrequency": "ANNUAL_OR_ON_MAJOR_CHANGE"
+  },
+
+  "goals": [
+    {
+      "goalId": "REYANSH_GRADUATION",
+      "goalCategory": "CHILD_EDUCATION",
+      "beneficiary": "REYANSH",
+      "priority": "CRITICAL",
+      "currentAgeYears": 6,
+      "estimatedYearsToGoal": 12,
+      "targetYear": 2038,
+
+      "educationScope": [
+        "IIT",
+        "NIT",
+        "TOP_GOVERNMENT_COLLEGE",
+        "TOP_PRIVATE_COLLEGE"
+      ],
+
+      "costModel": {
+        "currentEquivalentCost": null,
+        "inflationPercent": null,
+        "futureRequiredCorpus": null,
+        "status": "PENDING_COST_RESEARCH"
+      },
+
+      "funding": {
+        "currentAssignedAssets": 0,
+        "currentAssignedAssetReferences": [],
+        "dedicatedMonthlyContribution": null,
+        "projectedCurrentAssetsFutureValue": null,
+        "projectedContributionsFutureValue": null,
+        "projectedAvailableCorpus": null,
+        "fundingRatioPercent": null,
+        "projectedShortfall": null,
+        "projectedSurplus": null
+      },
+
+      "status": "UNMEASURED"
+    },
+
+    {
+      "goalId": "NIKESH_GRADUATION",
+      "goalCategory": "CHILD_EDUCATION",
+      "beneficiary": "NIKESH",
+      "priority": "CRITICAL",
+      "currentAgeYears": 3,
+      "estimatedYearsToGoal": 15,
+      "targetYear": 2041,
+
+      "educationScope": [
+        "IIT",
+        "NIT",
+        "TOP_GOVERNMENT_COLLEGE",
+        "TOP_PRIVATE_COLLEGE"
+      ],
+
+      "costModel": {
+        "currentEquivalentCost": null,
+        "inflationPercent": null,
+        "futureRequiredCorpus": null,
+        "status": "PENDING_COST_RESEARCH"
+      },
+
+      "funding": {
+        "currentAssignedAssets": 0,
+        "currentAssignedAssetReferences": [],
+        "dedicatedMonthlyContribution": null,
+        "projectedCurrentAssetsFutureValue": null,
+        "projectedContributionsFutureValue": null,
+        "projectedAvailableCorpus": null,
+        "fundingRatioPercent": null,
+        "projectedShortfall": null,
+        "projectedSurplus": null
+      },
+
+      "status": "UNMEASURED"
+    },
+
+    {
+      "goalId": "REYANSH_MASTERS",
+      "goalCategory": "CHILD_EDUCATION",
+      "beneficiary": "REYANSH",
+      "priority": "HIGH",
+      "estimatedYearsToGoal": 15,
+      "targetYear": 2041,
+
+      "educationScope": {
+        "india": true,
+        "foreignEducationPossible": true,
+        "fundingIntent": "SUPPORT_IF_MERITED_AND_DESIRED"
+      },
+
+      "costModel": {
+        "indiaScenario": {
+          "currentEquivalentCost": null,
+          "inflationPercent": null,
+          "futureRequiredCorpus": null
+        },
+        "foreignScenario": {
+          "currentEquivalentCost": null,
+          "inflationPercent": null,
+          "currencyRiskTreatment": "TO_BE_DEFINED",
+          "futureRequiredCorpus": null
+        },
+        "planningScenario": "TO_BE_SELECTED"
+      },
+
+      "funding": {
+        "currentAssignedAssets": 0,
+        "dedicatedMonthlyContribution": null,
+        "projectedAvailableCorpus": null,
+        "fundingRatioPercent": null,
+        "projectedShortfall": null
+      },
+
+      "status": "UNMEASURED"
+    },
+
+    {
+      "goalId": "NIKESH_MASTERS",
+      "goalCategory": "CHILD_EDUCATION",
+      "beneficiary": "NIKESH",
+      "priority": "HIGH",
+      "estimatedYearsToGoal": 18,
+      "targetYear": 2044,
+
+      "educationScope": {
+        "india": true,
+        "foreignEducationPossible": true,
+        "fundingIntent": "SUPPORT_IF_MERITED_AND_DESIRED"
+      },
+
+      "costModel": {
+        "indiaScenario": {
+          "currentEquivalentCost": null,
+          "inflationPercent": null,
+          "futureRequiredCorpus": null
+        },
+        "foreignScenario": {
+          "currentEquivalentCost": null,
+          "inflationPercent": null,
+          "currencyRiskTreatment": "TO_BE_DEFINED",
+          "futureRequiredCorpus": null
+        },
+        "planningScenario": "TO_BE_SELECTED"
+      },
+
+      "funding": {
+        "currentAssignedAssets": 0,
+        "dedicatedMonthlyContribution": null,
+        "projectedAvailableCorpus": null,
+        "fundingRatioPercent": null,
+        "projectedShortfall": null
+      },
+
+      "status": "UNMEASURED"
+    },
+
+    {
+      "goalId": "FINANCIAL_INDEPENDENCE",
+      "goalCategory": "RETIREMENT_AND_FINANCIAL_INDEPENDENCE",
+      "beneficiary": "KAPIL_AND_SPOUSE",
+      "priority": "CRITICAL",
+
+      "timeline": {
+        "possibleEarlyTransition": "IF_BUSINESS_BECOMES_SUCCESSFUL",
+        "possibleITCareerUntilAge": 50,
+        "fixedRetirementDate": false
+      },
+
+      "currentLifestyle": {
+        "usualMonthlyExpenditure": 75000,
+        "planningMonthlyExpenditureBufferRange": {
+          "minimum": 120000,
+          "maximum": 150000
+        }
+      },
+
+      "costModel": {
+        "retirementAge": null,
+        "retirementYear": null,
+        "annualExpenseAtRetirement": null,
+        "requiredRetirementCorpus": null,
+        "retirementDurationYears": null,
+        "postRetirementReturnPercent": null,
+        "inflationPercent": null
+      },
+
+      "currentPotentialAssets": [
+        "EPF",
+        "PPF",
+        "NPS",
+        "LONG_TERM_EQUITY_PORTFOLIO"
+      ],
+
+      "funding": {
+        "currentAssignedAssets": null,
+        "projectedAvailableCorpus": null,
+        "fundingRatioPercent": null,
+        "projectedShortfall": null
+      },
+
+      "status": "PENDING_RETIREMENT_MODEL"
+    },
+
+    {
+      "goalId": "FUTURE_BUSINESS",
+      "goalCategory": "ENTREPRENEURSHIP",
+      "beneficiary": "KAPIL",
+      "priority": "OPTIONAL_STRATEGIC",
+
+      "businessConcepts": [
+        "DIAGNOSTIC_CENTRE",
+        "ULTRASOUND_CENTRE",
+        "PHARMACY",
+        "OTHER_NON_IT_BUSINESS"
+      ],
+
+      "capitalRequirement": {
+        "maximumIndicativeAmount": 5000000,
+        "preferredRange": {
+          "minimum": 3000000,
+          "maximum": 5000000
+        },
+        "recurringFundingExpected": false
+      },
+
+      "timeline": {
+        "targetYear": null,
+        "yearsToGoal": null,
+        "status": "UNDEFINED"
+      },
+
+      "fundingSourcesUnderConsideration": [
+        "FUTURE_SAVINGS",
+        "EQUITY_PORTFOLIO",
+        "MOTHER_FAMILY_RESOURCES"
+      ],
+
+      "fundingRule": "DO_NOT_RESERVE_A_FIXED_CORPUS_UNTIL_BUSINESS_PLAN_AND_TIMELINE_BECOME_CONCRETE",
+
+      "status": "CONTINGENT"
+    },
+
+    {
+      "goalId": "LUCKNOW_PLOT",
+      "goalCategory": "REAL_ESTATE",
+      "beneficiary": "FAMILY",
+      "priority": "MEDIUM",
+
+      "estimatedCostRange": {
+        "minimum": 4000000,
+        "maximum": 5000000
+      },
+
+      "expectedFundingSource": "MOTHER_ASSETS",
+      "impactOnKapilMonthlyInvestmentPlan": "NONE_CURRENTLY_EXPECTED",
+      "legalOwner": "TO_BE_DECIDED",
+      "status": "PLANNED_NOT_EXECUTED"
+    },
+
+    {
+      "goalId": "CHILDREN_MARRIAGE_SUPPORT",
+      "goalCategory": "FAMILY_SUPPORT",
+      "beneficiary": "REYANSH_AND_NIKESH",
+      "priority": "LOWER_THAN_EDUCATION_AND_FINANCIAL_INDEPENDENCE",
+
+      "fundingIntent": "PARTIAL_SUPPORT",
+      "timeline": "LONG_TERM",
+      "targetCorpus": null,
+
+      "fundingRule": "DO_NOT_COMPROMISE_EDUCATION_OR_FINANCIAL_INDEPENDENCE_TO_FULLY_FUND_MARRIAGE",
+
+      "status": "UNQUANTIFIED"
+    },
+
+    {
+      "goalId": "GENERATIONAL_WEALTH",
+      "goalCategory": "LEGACY",
+      "beneficiary": "NEXT_GENERATION",
+      "priority": "LONG_TERM",
+
+      "objective": "BUILD_AND_PRESERVE_REAL_WEALTH_BEYOND_LIFETIME_CONSUMPTION_NEEDS",
+
+      "targetCorpus": null,
+      "fundingRatioPercent": null,
+      "status": "OPEN_ENDED"
+    },
+
+    {
+      "goalId": "PHILANTHROPY",
+      "goalCategory": "LEGACY_AND_GIVING",
+      "beneficiary": "SOCIETY",
+      "priority": "ASPIRATIONAL",
+
+      "targetCorpus": null,
+      "annualGivingPolicy": null,
+      "activationCondition": "AFTER_CORE_FAMILY_GOALS_ARE_SECURE",
+
+      "status": "FUTURE"
+    }
+  ],
+
+  "goalPriorityHierarchy": [
+    "FAMILY_FINANCIAL_SECURITY",
+    "CHILDREN_CORE_EDUCATION",
+    "FINANCIAL_INDEPENDENCE",
+    "CHILDREN_HIGHER_EDUCATION",
+    "OPTIONAL_BUSINESS",
+    "PARTIAL_MARRIAGE_SUPPORT",
+    "GENERATIONAL_WEALTH",
+    "PHILANTHROPY"
+  ],
+
+  "assetAssignmentPolicy": {
+    "currentModel": "SHARED_PORTFOLIO_WITH_GOAL_LEVEL_ACCOUNTING",
+    "dedicatedFundPerGoalRequired": false,
+
+    "rules": [
+      "AVOID_UNNECESSARY_PRODUCT_PROLIFERATION",
+      "TRACK_GOAL_CLAIMS_AGAINST_A_COMMON_PORTFOLIO",
+      "DO_NOT_DOUBLE_COUNT_THE_SAME_ASSET_ACROSS_GOALS",
+      "ASSIGN_ASSETS_EXPLICITLY_WHEN_GOALS_APPROACH",
+      "REDUCE_RISK_AS_GOAL_DATE_APPROACHES",
+      "CRITICAL_GOALS_RECEIVE_PRIORITY_OVER_OPTIONAL_GOALS"
+    ]
+  },
+
+  "goalRiskGlidePathFramework": {
+    "moreThan10Years": {
+      "riskCapacity": "HIGHER",
+      "equityRole": "PRIMARY_GROWTH_ENGINE"
+    },
+    "sevenToTenYears": {
+      "action": "BEGIN_GOAL_SPECIFIC_RISK_REVIEW"
+    },
+    "fourToSevenYears": {
+      "action": "PROGRESSIVELY_INCREASE_CAPITAL_STABILITY"
+    },
+    "zeroToThreeYears": {
+      "action": "PROTECT_REQUIRED_GOAL_CORPUS_FROM_MAJOR_EQUITY_DRAWDOWN"
+    },
+    "note": "Exact equity-debt glide paths should be defined after corpus calculations and tax considerations."
+  },
+
+  "fundingStatusDefinitions": {
+    "OVERFUNDED": "PROJECTED_FUNDING_RATIO_GREATER_THAN_120_PERCENT",
+    "ON_TRACK": "PROJECTED_FUNDING_RATIO_BETWEEN_100_AND_120_PERCENT",
+    "WATCH": "PROJECTED_FUNDING_RATIO_BETWEEN_80_AND_100_PERCENT",
+    "UNDERFUNDED": "PROJECTED_FUNDING_RATIO_BELOW_80_PERCENT",
+    "UNMEASURED": "REQUIRED_INPUTS_NOT_YET_AVAILABLE"
+  },
+
+  "monthlySurplusContext": {
+    "currentMonthlySurplus": 125000,
+    "annualizedSurplus": 1500000,
+    "allocationStatus": "TO_BE_MAPPED_TO_GOALS_AND_ASSET_CLASSES",
+    "rule": "Monthly contributions should be optimized at total portfolio level rather than creating one investment product for every goal."
+  },
+
+  "stressTestsRequired": [
+    {
+      "scenario": "LOWER_RETURN",
+      "description": "Expected investment returns are lower than base assumptions."
+    },
+    {
+      "scenario": "HIGHER_EDUCATION_INFLATION",
+      "description": "Education costs rise faster than expected."
+    },
+    {
+      "scenario": "BOTH_CHILDREN_FOREIGN_MASTERS",
+      "description": "Both children pursue expensive foreign postgraduate education."
+    },
+    {
+      "scenario": "INCOME_GROWTH_ONLY_5_PERCENT",
+      "description": "Salary growth remains at the user's lower planning assumption."
+    },
+    {
+      "scenario": "EARLY_IT_CAREER_EXIT",
+      "description": "IT employment ends or is voluntarily exited earlier than expected."
+    },
+    {
+      "scenario": "BUSINESS_CAPITAL_WITHDRAWAL",
+      "description": "Up to INR 50 lakh is required for a future business."
+    },
+    {
+      "scenario": "MAJOR_MARKET_CRASH_NEAR_GOAL",
+      "description": "Equity markets fall materially shortly before an education goal."
+    }
+  ],
+
+  "dataQuality": {
+    "overallStatus": "INCOMPLETE",
+
+    "known": [
+      "CHILDREN_CURRENT_AGES",
+      "CORE_EDUCATION_HORIZONS",
+      "FOREIGN_MASTERS_POSSIBILITY",
+      "MONTHLY_SURPLUS",
+      "CURRENT_LIFESTYLE_EXPENDITURE",
+      "BUSINESS_CAPITAL_MAXIMUM",
+      "LUCKNOW_PLOT_COST_RANGE"
+    ],
+
+    "criticalMissingInputs": [
+      "CURRENT_COST_ASSUMPTION_FOR_GRADUATION",
+      "CURRENT_COST_ASSUMPTION_FOR_INDIAN_MASTERS",
+      "CURRENT_COST_ASSUMPTION_FOR_FOREIGN_MASTERS",
+      "EDUCATION_INFLATION_ASSUMPTIONS",
+      "EXPECTED_ASSET_CLASS_RETURNS",
+      "RETIREMENT_OR_FINANCIAL_INDEPENDENCE_TARGET_AGE",
+      "COMPLETE_CURRENT_PORTFOLIO",
+      "EXACT_GOAL_ASSET_ASSIGNMENT",
+      "FUTURE_MONTHLY_CONTRIBUTION_GROWTH_ASSUMPTION"
+    ]
+  },
+
+  "calculationSequence": [
+    "VERIFY_CURRENT_PORTFOLIO",
+    "FINALIZE_GOAL_COST_SCENARIOS",
+    "FINALIZE_INFLATION_ASSUMPTIONS",
+    "FINALIZE_EXPECTED_RETURN_ASSUMPTIONS",
+    "CALCULATE_FUTURE_GOAL_COSTS",
+    "ASSIGN_EXISTING_ASSETS_WITHOUT_DOUBLE_COUNTING",
+    "PROJECT_EXISTING_ASSET_GROWTH",
+    "PROJECT_FUTURE_CONTRIBUTIONS",
+    "CALCULATE_FUNDING_RATIOS",
+    "RUN_STRESS_TESTS",
+    "ADJUST_MONTHLY_DEPLOYMENT_IF_REQUIRED",
+    "REVIEW_ANNUALLY"
+  ],
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "goals": "data/goals.json",
+    "currentPortfolio": "data/current-portfolio.json",
+    "familyBalanceSheet": "data/family-balance-sheet.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "monthlySipPolicy": "data/monthly-sip-policy.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "FINALIZE_EDUCATION_COST_SCENARIOS"
+    },
+    {
+      "priority": 2,
+      "action": "FINALIZE_PLANNING_ASSUMPTIONS"
+    },
+    {
+      "priority": 3,
+      "action": "IMPORT_VERIFIED_CURRENT_PORTFOLIO"
+    },
+    {
+      "priority": 4,
+      "action": "CALCULATE_GOAL_FUNDING_RATIOS"
+    },
+    {
+      "priority": 5,
+      "action": "RUN_STRESS_TESTS"
+    }
+  ]
+}

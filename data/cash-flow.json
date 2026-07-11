@@ -1,0 +1,296 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "INITIAL_CASH_FLOW_MODEL",
+
+  "income": {
+    "kapil": {
+      "monthlyInHandSalary": 225000,
+      "annualizedInHandSalary": 2700000,
+      "status": "CONFIRMED"
+    },
+    "spouse": {
+      "employmentType": "GOVERNMENT_EMPLOYEE",
+      "monthlyIncome": null,
+      "annualIncome": null,
+      "status": "DATA_PENDING"
+    },
+    "otherIncome": {
+      "rentalIncome": null,
+      "investmentIncome": null,
+      "businessIncome": 0,
+      "status": "DATA_PENDING"
+    }
+  },
+
+  "expenses": {
+    "typicalMonthlyHouseholdExpense": {
+      "value": 75000,
+      "annualized": 900000,
+      "status": "CONFIRMED"
+    },
+
+    "planningMonthlyExpenseRange": {
+      "minimum": 120000,
+      "baseCase": 135000,
+      "maximum": 150000,
+      "basis": "CONSERVATIVE_FUTURE_FINANCIAL_PLANNING_BUFFER",
+      "status": "PROVISIONAL"
+    },
+
+    "expenseCategories": {
+      "housing": null,
+      "foodAndGroceries": null,
+      "utilities": null,
+      "childrenEducation": null,
+      "transport": null,
+      "medical": null,
+      "insurancePremiums": null,
+      "travel": null,
+      "discretionary": null,
+      "other": null
+    },
+
+    "detailedExpenseBreakdownStatus": "PENDING"
+  },
+
+  "monthlySurplus": {
+    "confirmedInvestmentCapacity": {
+      "value": 125000,
+      "annualized": 1500000,
+      "status": "CONFIRMED"
+    },
+
+    "arithmeticResidualBasedOnTypicalExpenses": {
+      "monthlyInHandIncome": 225000,
+      "typicalMonthlyExpense": 75000,
+      "theoreticalResidual": 150000,
+      "confirmedInvestmentCapacity": 125000,
+      "unallocatedMonthlyDifference": 25000,
+      "classification": "IRREGULAR_EXPENSE_AND_CASH_FLOW_BUFFER",
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "currentLiquidity": {
+    "personalSavingsAccount": {
+      "minimum": 300000,
+      "maximum": 500000,
+      "role": "IMMEDIATE_LIQUIDITY",
+      "status": "CONFIRMED_RANGE"
+    },
+
+    "dedicatedEmergencyFund": {
+      "value": 0,
+      "status": "NOT_FORMALLY_ESTABLISHED"
+    },
+
+    "dedicatedOpportunityFund": {
+      "value": 0,
+      "status": "NOT_FORMALLY_ESTABLISHED"
+    },
+
+    "motherOwnedSavings": {
+      "value": 8000000,
+      "ownership": "MOTHER",
+      "role": "EXTENDED_FAMILY_RESILIENCE_AND_PLANNED_PROPERTY_FUNDING",
+      "includeAsKapilEmergencyFund": false
+    }
+  },
+
+  "monthlyInvestmentPolicy": {
+    "availableMonthlyAmount": 125000,
+    "status": "ALLOCATION_PENDING_FINAL_GOAL_MODELLING",
+
+    "principles": [
+      "ALLOCATE_AT_TOTAL_PORTFOLIO_LEVEL",
+      "PRIORITIZE_ESSENTIAL_GOAL_FUNDING",
+      "USE_NEW_CASH_FLOWS_FOR_REBALANCING",
+      "DO_NOT_AUTOMATICALLY_SPLIT_EQUALLY_ACROSS_ASSET_CLASSES",
+      "DO_NOT_INCREASE_EQUITY_SIMPLY_BECAUSE_MARKETS_ARE RISING",
+      "DO_NOT_STOP_LONG_TERM_INVESTING_DUE_TO_NORMAL_MARKET_VOLATILITY"
+    ],
+
+    "provisionalPriorityOrder": [
+      {
+        "priority": 1,
+        "destination": "INSURANCE_AND_RISK_GAPS",
+        "notes": "Premium requirements are expenses, not investments."
+      },
+      {
+        "priority": 2,
+        "destination": "PERSONAL_EMERGENCY_RESERVE",
+        "condition": "UNTIL_TARGET_IS_REACHED"
+      },
+      {
+        "priority": 3,
+        "destination": "UNDERWEIGHT_STRATEGIC_ASSET_CLASSES"
+      },
+      {
+        "priority": 4,
+        "destination": "CHILDREN_EDUCATION_GOALS"
+      },
+      {
+        "priority": 5,
+        "destination": "FINANCIAL_INDEPENDENCE"
+      },
+      {
+        "priority": 6,
+        "destination": "OPTIONAL_GOALS_AND_OPPORTUNITY_CAPITAL"
+      }
+    ]
+  },
+
+  "salaryIncreasePolicy": {
+    "status": "PROVISIONAL",
+
+    "baseRule": {
+      "minimumPercentageOfNetSalaryIncreaseToInvest": 0.50,
+      "preferredPercentageOfNetSalaryIncreaseToInvest": 0.70
+    },
+
+    "remainingIncreaseMaySupport": [
+      "LIFESTYLE_IMPROVEMENT",
+      "CHILDREN_CURRENT_EDUCATION",
+      "TRAVEL",
+      "FAMILY_QUALITY_OF_LIFE"
+    ],
+
+    "principle": "Lifestyle inflation should grow materially slower than income."
+  },
+
+  "lumpSumAccumulationPolicy": {
+    "userPreferredBuildFrequency": "EVERY_3_TO_4_MONTHS",
+    "preferredOpportunityCapitalRange": {
+      "minimum": 500000,
+      "maximum": 1000000
+    },
+
+    "rules": [
+      "DO_NOT_ALLOW_LARGE_UNALLOCATED_CASH_BALANCES_WITHOUT_DEFINED_PURPOSE",
+      "EMERGENCY_FUND_AND_OPPORTUNITY_FUND_MUST_BE_SEPARATE",
+      "PLANNED_NEAR_TERM_EXPENSES_MUST_NOT_BE INVESTED_IN_VOLATILE_ASSETS",
+      "SURPLUS_BEYOND_REQUIRED_CASH_BUCKETS_SHOULD_BE_DEPLOYED_ACCORDING_TO_ASSET_ALLOCATION"
+    ]
+  },
+
+  "marketCorrectionDeployment": {
+    "status": "DETAILED_CRASH_PLAYBOOK_PENDING",
+
+    "referenceCorrectionLevels": [
+      0.05,
+      0.10,
+      0.15,
+      0.20,
+      0.30,
+      0.40,
+      0.50
+    ],
+
+    "principles": [
+      "CONTINUE_NORMAL_SIPS_DURING_CORRECTIONS",
+      "DEPLOY_ONLY_PREDEFINED_OPPORTUNITY_CAPITAL",
+      "DO_NOT_USE_EMERGENCY_RESERVES",
+      "DO_NOT_BORROW_TO_BUY_MARKET_DIPS",
+      "DO_NOT_ATTEMPT_TO IDENTIFY_THE_EXACT_BOTTOM",
+      "REPLENISH_OPPORTUNITY_CAPITAL_FROM_FUTURE_SURPLUS_AFTER_DEPLOYMENT"
+    ]
+  },
+
+  "businessFundingPolicy": {
+    "potentialCapitalRequirement": {
+      "minimum": 3000000,
+      "maximum": 5000000
+    },
+
+    "currentDedicatedMonthlyContribution": 0,
+
+    "potentialFundingSources": [
+      "SEPARATELY_ACCUMULATED_BUSINESS_CAPITAL",
+      "NON_ESSENTIAL_INVESTMENT_ASSETS",
+      "MOTHER_OWNED_ASSETS_IF_LEGALLY_AND_FAMILY_APPROVED"
+    ],
+
+    "prohibitedFundingSources": [
+      "EMERGENCY_FUND",
+      "NEAR_TERM_ESSENTIAL_EDUCATION_CORPUS"
+    ],
+
+    "status": "OPTIONAL_FUTURE_GOAL"
+  },
+
+  "cashFlowStressTests": [
+    {
+      "scenarioId": "STRESS-INCOME-20",
+      "scenario": "20_PERCENT_INCOME_REDUCTION",
+      "monthlyIncome": 180000,
+      "typicalMonthlyExpense": 75000,
+      "remainingBeforeInvestments": 105000,
+      "interpretation": "Investment contributions can be reduced without immediately disrupting typical household spending."
+    },
+    {
+      "scenarioId": "STRESS-INCOME-50",
+      "scenario": "50_PERCENT_INCOME_REDUCTION",
+      "monthlyIncome": 112500,
+      "typicalMonthlyExpense": 75000,
+      "remainingBeforeInvestments": 37500,
+      "interpretation": "Core lifestyle remains arithmetically supportable before considering irregular expenses, but investment capacity falls materially."
+    },
+    {
+      "scenarioId": "STRESS-KAPIL-INCOME-ZERO",
+      "scenario": "KAPIL_EMPLOYMENT_INCOME_LOSS",
+      "monthlyIncome": 0,
+      "spouseIncomeIncluded": false,
+      "interpretation": "Cannot be fully modelled until spouse income and household contribution are documented."
+    }
+  ],
+
+  "cashFlowStrengths": [
+    "HIGH_MONTHLY_SAVINGS_CAPACITY",
+    "LOW_CURRENT_LIFESTYLE_COST_RELATIVE_TO_INCOME",
+    "NO_KNOWN_MAJOR_DEBT_SERVICE",
+    "DUAL_INCOME_HOUSEHOLD",
+    "SIGNIFICANT_EXISTING_ASSET_BASE"
+  ],
+
+  "cashFlowRisks": [
+    "NO_FORMALLY_SEPARATED_EMERGENCY_FUND",
+    "SPOUSE_INCOME_NOT_YET_MODELLED",
+    "IRREGULAR_EXPENSES_NOT_CATEGORIZED",
+    "BUSINESS_CAPITAL_REQUIREMENT_COULD_BE_LARGE",
+    "FUTURE_CHILDREN_EDUCATION_COSTS_NOT_YET_QUANTIFIED"
+  ],
+
+  "dataGaps": [
+    "Spouse monthly income",
+    "Detailed household expense breakdown",
+    "Annual irregular expenses",
+    "Current school fees and expected education cash flows",
+    "Insurance premiums beyond LIC",
+    "Property maintenance costs",
+    "Rental income if any",
+    "Annual bonus or variable compensation",
+    "EPF and NPS monthly contributions already deducted before in-hand salary"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_EMERGENCY_FUND_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "CALCULATE_GOAL_WISE_REQUIRED_MONTHLY_INVESTMENT"
+    },
+    {
+      "priority": 3,
+      "action": "COMPARE_REQUIRED_SIP_WITH_125000_AVAILABLE_SURPLUS"
+    },
+    {
+      "priority": 4,
+      "action": "DESIGN_FINAL_MONTHLY_DEPLOYMENT_FRAMEWORK"
+    }
+  ]
+}

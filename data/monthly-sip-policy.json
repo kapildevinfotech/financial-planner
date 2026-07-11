@@ -1,0 +1,438 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Deploy the monthly investable surplus systematically toward long-term goals while correcting asset-allocation gaps.",
+    "principle": "Monthly investments should follow the portfolio plan, not recent returns, market predictions or fund rankings."
+  },
+
+  "monthlyCashFlow": {
+    "currentInvestableSurplus": 125000,
+    "frequency": "MONTHLY",
+    "status": "CURRENT_ESTIMATE",
+
+    "rule": "Recalculate investable surplus after major changes in income, expenses, debt, business plans or family obligations."
+  },
+
+  "deploymentHierarchy": [
+    {
+      "priority": 1,
+      "destination": "ESSENTIAL_CASH_FLOW_REQUIREMENTS",
+      "action": "ENSURE_MONTHLY_HOUSEHOLD_AND_NEAR_TERM_COMMITMENTS_ARE_FUNDED"
+    },
+    {
+      "priority": 2,
+      "destination": "EMERGENCY_FUND",
+      "action": "FILL_GAP_TO_APPROVED_TARGET_IF_BELOW_MINIMUM"
+    },
+    {
+      "priority": 3,
+      "destination": "CRITICAL_GOAL_FUNDING",
+      "action": "FUND_GOALS_WITH_IDENTIFIED_CONTRIBUTION_SHORTFALLS"
+    },
+    {
+      "priority": 4,
+      "destination": "STRATEGIC_ASSET_ALLOCATION",
+      "action": "DIRECT_NEW_MONEY_TO_UNDERWEIGHT_ASSET_CLASSES"
+    },
+    {
+      "priority": 5,
+      "destination": "OPPORTUNITY_FUND",
+      "action": "BUILD_WITHIN_APPROVED_LIMIT_WITHOUT_MATERIALLY_UNDERFUNDING_LONG_TERM_INVESTMENTS"
+    },
+    {
+      "priority": 6,
+      "destination": "OPTIONAL_SATELLITE_INVESTMENTS",
+      "action": "INVEST_ONLY_IF_CORE_PORTFOLIO_AND_GOALS_REMAIN_ON_TRACK"
+    }
+  ],
+
+  "strategicReference": {
+    "indianEquity": {
+      "target": 0.55,
+      "minimum": 0.50,
+      "maximum": 0.60
+    },
+    "internationalEquity": {
+      "target": 0.10,
+      "minimum": 0.08,
+      "maximum": 0.12
+    },
+    "gold": {
+      "target": 0.07,
+      "minimum": 0.05,
+      "maximum": 0.10
+    },
+    "debt": {
+      "target": 0.23,
+      "minimum": 0.20,
+      "maximum": 0.30
+    },
+    "cashAndOpportunityCapital": {
+      "target": 0.05,
+      "minimum": 0.03,
+      "maximum": 0.08
+    },
+
+    "status": "PROVISIONAL_PENDING_FINAL_ASSET_ALLOCATION"
+  },
+
+  "defaultMonthlyFramework": {
+    "status": "ILLUSTRATIVE_NOT_FIXED",
+
+    "monthlyAmount": 125000,
+
+    "allocation": [
+      {
+        "assetClass": "INDIAN_EQUITY",
+        "targetPercentage": 0.55,
+        "illustrativeAmount": 68750
+      },
+      {
+        "assetClass": "INTERNATIONAL_EQUITY",
+        "targetPercentage": 0.10,
+        "illustrativeAmount": 12500
+      },
+      {
+        "assetClass": "GOLD",
+        "targetPercentage": 0.07,
+        "illustrativeAmount": 8750
+      },
+      {
+        "assetClass": "DEBT",
+        "targetPercentage": 0.23,
+        "illustrativeAmount": 28750
+      },
+      {
+        "assetClass": "CASH_AND_OPPORTUNITY_CAPITAL",
+        "targetPercentage": 0.05,
+        "illustrativeAmount": 6250
+      }
+    ],
+
+    "warning": "These amounts are reference values only. Actual monthly deployment should account for existing EPF, PPF, NPS, portfolio drift and goal funding."
+  },
+
+  "preferredDynamicMethod": {
+    "method": "GAP_WEIGHTED_CASH_FLOW_REBALANCING",
+
+    "steps": [
+      "CALCULATE_CURRENT_INVESTABLE_PORTFOLIO_VALUE",
+      "CALCULATE_CURRENT_ASSET_CLASS_WEIGHTS",
+      "CALCULATE_TARGET_VALUES_USING_STRATEGIC_ALLOCATION",
+      "IDENTIFY_ASSET_CLASS_SHORTFALLS",
+      "APPLY_GOAL_FUNDING_PRIORITIES",
+      "ALLOCATE_NEW_MONTHLY_CASH_TO_HIGHEST_PRIORITY_SHORTFALLS",
+      "CHECK_CONCENTRATION_LIMITS_BEFORE_EXECUTION"
+    ],
+
+    "principle": "The monthly SIP split may change without changing the strategic asset allocation."
+  },
+
+  "existingRetirementContributionTreatment": {
+    "epf": {
+      "classification": "DEBT",
+      "includeEmployerContribution": true,
+      "includeEmployeeContribution": true,
+      "impactOnMonthlyAllocation": "REDUCES_NEED_FOR_ADDITIONAL_DEBT_IF_TOTAL_DEBT_IS_ALREADY_AT_OR_ABOVE_TARGET"
+    },
+
+    "nps": {
+      "currentCorpus": 1400000,
+      "currentAllocation": {
+        "equity": 0.63,
+        "corporateDebt": 0.12,
+        "governmentSecurities": 0.25
+      },
+
+      "classification": "LOOK_THROUGH_BY_ASSET_CLASS",
+      "impactOnMonthlyAllocation": "INCLUDE_NPS_CONTRIBUTIONS_AND_CORPUS_IN_TOTAL_ASSET_ALLOCATION"
+    },
+
+    "ppf": {
+      "currentCorpus": 1730000,
+      "classification": "DEBT",
+      "impactOnMonthlyAllocation": "INCLUDE_IN_TOTAL_DEBT_EXPOSURE"
+    }
+  },
+
+  "phaseBasedDeployment": {
+    "phase1LiquidityBuild": {
+      "condition": "EMERGENCY_FUND_BELOW_APPROVED_MINIMUM",
+
+      "action": [
+        "DIRECT_A_PORTION_OF_MONTHLY_SURPLUS_TO_EMERGENCY_FUND",
+        "CONTINUE_MINIMUM_REQUIRED_LONG_TERM_EQUITY_INVESTING",
+        "DO_NOT_PRIORITIZE_OPPORTUNITY_FUND_ABOVE_EMERGENCY_LIQUIDITY"
+      ]
+    },
+
+    "phase2NormalAccumulation": {
+      "condition": "EMERGENCY_FUND_AT_TARGET_AND_NO_MAJOR_NEAR_TERM_CAPITAL_REQUIREMENT",
+
+      "action": [
+        "FUND_GOAL_SHORTFALLS",
+        "USE_NEW_MONEY_FOR_ASSET_ALLOCATION_REBALANCING",
+        "BUILD_OR_MAINTAIN_OPPORTUNITY_FUND_WITHIN_POLICY"
+      ]
+    },
+
+    "phase3BusinessPreparation": {
+      "condition": "BUSINESS_LAUNCH_BECOMES_PROBABLE_WITHIN_3_TO_5_YEARS",
+
+      "action": [
+        "CREATE_SEPARATE_BUSINESS_CAPITAL_BUCKET",
+        "DO_NOT_DEPEND_ON SELLING_EQUITY_AT AN UNKNOWN FUTURE MARKET LEVEL",
+        "GRADUALLY_SHIFT REQUIRED_BUSINESS_CAPITAL_TO LOWER_VOLATILITY_ASSETS"
+      ]
+    },
+
+    "phase4GoalDeRisking": {
+      "condition": "MAJOR_EDUCATION_GOAL_ENTERS_ITS_GLIDE_PATH",
+
+      "action": [
+        "PRIORITIZE_GOAL_SPECIFIC_ASSET_ALLOCATION",
+        "REDUCE_DEPENDENCE_ON EQUITY FOR NEAR_TERM_REQUIRED_CORPUS",
+        "DO_NOT_RE_RISK_PROTECTED_GOAL_CAPITAL"
+      ]
+    }
+  },
+
+  "equitySipPolicy": {
+    "corePriority": [
+      "BROAD_DIVERSIFIED_INDIAN_INDEX_EXPOSURE",
+      "APPROVED_DIVERSIFIED_ACTIVE_FUND_IF_INCLUDED_IN_FINAL_STRATEGY"
+    ],
+
+    "satellitePriority": "LOWER_THAN_CORE",
+
+    "rules": [
+      "DO_NOT_ADD_NEW_FUNDS_WITHOUT_A_DEFINED_ROLE",
+      "DO_NOT_INCREASE_CPSE_ETF_OR_BHARAT_22_ETF_AUTOMATICALLY",
+      "DO_NOT_CHASE_RECENT_TOP_PERFORMERS",
+      "DIRECT_STOCK_PURCHASES_DO_NOT_REPLACE_CORE_SIPS",
+      "CHECK_MID_AND_SMALL_CAP_LIMITS_BEFORE_NEW_ALLOCATION"
+    ]
+  },
+
+  "internationalSipPolicy": {
+    "strategicTarget": 0.10,
+
+    "possibleOwnership": [
+      "KAPIL_ACCOUNT",
+      "MOTHER_ACCOUNT_SUBJECT_TO_OWNERSHIP_TAXATION_SUITABILITY_AND_REGULATORY_REVIEW"
+    ],
+
+    "rules": [
+      "ACCOUNT_OWNERSHIP_MUST_REFLECT_REAL_BENEFICIAL_OWNERSHIP",
+      "DO_NOT_TREAT_MOTHER_ACCOUNT_AS INTERCHANGEABLE_WITH_KAPIL_ACCOUNT",
+      "NASDAQ_100_IS_NOT_AUTOMATICALLY_THE_ENTIRE_INTERNATIONAL_STRATEGY",
+      "PRODUCT_AVAILABILITY_TAXATION_AND_REGULATORY_RULES_MUST_BE VERIFIED_BEFORE_IMPLEMENTATION"
+    ],
+
+    "status": "PRODUCT_SELECTION_PENDING"
+  },
+
+  "goldSipPolicy": {
+    "strategicTarget": 0.07,
+    "preferredRange": {
+      "minimum": 0.05,
+      "maximum": 0.10
+    },
+
+    "possibleVehicles": [
+      "GOLD_ETF",
+      "GOLD_FUND_OF_FUND",
+      "PHYSICAL_INVESTMENT_GOLD"
+    ],
+
+    "rules": [
+      "PERSONAL_USE_JEWELLERY_DOES_NOT_COUNT_AS STRATEGIC_GOLD_ALLOCATION",
+      "SELECT_VEHICLE_AFTER_COST_LIQUIDITY_TAX_AND_TRACKING_ANALYSIS",
+      "STOP_OR_REDUCE_NEW_GOLD_PURCHASES_IF GOLD_EXCEEDS_POLICY_MAXIMUM"
+    ],
+
+    "status": "VEHICLE_SELECTION_PENDING"
+  },
+
+  "debtSipPolicy": {
+    "principle": "Evaluate total debt accumulation before adding new debt products.",
+
+    "existingMajorDebtAssets": [
+      "EPF",
+      "PPF",
+      "NPS_CORPORATE_DEBT",
+      "NPS_GOVERNMENT_SECURITIES"
+    ],
+
+    "rules": [
+      "DO_NOT_ADD_DEBT_FUNDS_ONLY TO MATCH A MONTHLY PERCENTAGE",
+      "ACCOUNT_FOR AUTOMATIC EPF_AND_NPS_CONTRIBUTIONS",
+      "USE_SEPARATE_LOW_VOLATILITY_ASSETS_FOR_NEAR_TERM_GOALS_WHEN REQUIRED"
+    ]
+  },
+
+  "opportunityFundContributionPolicy": {
+    "targetRange": {
+      "minimum": 500000,
+      "maximum": 1000000
+    },
+
+    "provisionalBaseTarget": 750000,
+
+    "userPreferredFundingPattern": "EVERY_3_TO_4_MONTHS_FROM_ACCUMULATED_SURPLUS",
+
+    "rules": [
+      "DO_NOT_ALLOW_OPPORTUNITY_FUND_TO_GROW_ABOVE_POLICY_MAXIMUM",
+      "DO_NOT_STOP_CORE_SIPS_TO BUILD AN EXCESSIVE_CRASH_RESERVE",
+      "REPLENISH_AFTER_USE_FROM FUTURE_SURPLUS_WITHOUT_COMPROMISING_ESSENTIAL_GOALS"
+    ]
+  },
+
+  "marketConditionRules": {
+    "marketAtAllTimeHigh": {
+      "regularSips": "CONTINUE",
+      "action": "FOLLOW_ASSET_ALLOCATION"
+    },
+
+    "marketDown5Percent": {
+      "regularSips": "CONTINUE",
+      "specialDeployment": "NONE"
+    },
+
+    "marketDown10PercentOrMore": {
+      "regularSips": "CONTINUE",
+      "specialDeployment": "FOLLOW_OPPORTUNITY_FUND_AND_CRASH_PLAYBOOK"
+    },
+
+    "marketValuationAppearsExpensive": {
+      "action": "DO_NOT_STOP_LONG_TERM_SIPS_SOLELY_ON_VALUATION_OPINION"
+    }
+  },
+
+  "incomeChangeRules": {
+    "surplusIncrease": {
+      "action": "RECALCULATE_GOAL_SHORTFALLS_AND_ASSET_ALLOCATION_BEFORE_INCREASING_ALL_SIPS_PROPORTIONALLY"
+    },
+
+    "surplusDecrease": {
+      "priorityOrder": [
+        "ESSENTIAL_EXPENSES",
+        "INSURANCE_AND_RISK_PROTECTION",
+        "EMERGENCY_LIQUIDITY",
+        "CRITICAL_GOALS",
+        "LONG_TERM_WEALTH_BUILDING",
+        "OPPORTUNITY_FUND",
+        "OPTIONAL_SATELLITE_INVESTMENTS"
+      ]
+    },
+
+    "jobLoss": {
+      "action": "PAUSE_NORMAL_SIP_POLICY_AND_ACTIVATE_LIQUIDITY_PRESERVATION_MODE"
+    }
+  },
+
+  "annualStepUpPolicy": {
+    "status": "RECOMMENDED",
+
+    "defaultRule": "REVIEW_SIP_INCREASE_AFTER EACH MATERIAL SALARY INCREASE",
+
+    "candidateMinimumAnnualStepUp": 0.05,
+    "preferredIfCashFlowAllows": 0.10,
+
+    "rule": "Step-up should reflect actual income growth and goal funding needs rather than an automatic commitment that reduces household resilience."
+  },
+
+  "executionSchedule": {
+    "salaryReceived": "T0",
+
+    "sequence": [
+      "RETAIN_REQUIRED_MONTHLY_CASH_FLOW",
+      "FUND_ANY_HIGH_PRIORITY_LIQUIDITY_GAP",
+      "EXECUTE_CORE_SIPS",
+      "EXECUTE_OTHER_STRATEGIC_ASSET_PURCHASES",
+      "TRANSFER_APPROVED_AMOUNT_TO_OPPORTUNITY_FUND_IF_REQUIRED"
+    ],
+
+    "preferredExecutionWindow": "EARLY_IN_MONTH_AFTER_SALARY_RECEIPT",
+
+    "marketTiming": false
+  },
+
+  "monthlyReviewChecklist": [
+    "HAS_MONTHLY_INVESTABLE_SURPLUS_CHANGED?",
+    "IS_EMERGENCY_FUND_AT_REQUIRED_LEVEL?",
+    "ARE_ANY GOALS OFF_TRACK?",
+    "WHAT_IS CURRENT_ASSET_ALLOCATION?",
+    "WHICH_ASSET_CLASSES_ARE UNDERWEIGHT?",
+    "ARE_ANY CONCENTRATION_LIMITS BREACHED?",
+    "IS_OPPORTUNITY_FUND_WITHIN TARGET RANGE?",
+    "ARE THERE MAJOR CAPITAL NEEDS WITHIN 5_YEARS?"
+  ],
+
+  "prohibitedActions": [
+    "CHANGE_SIPS_BECAUSE_OF DAILY_MARKET_NEWS",
+    "STOP_INVESTING_WHILE_WAITING_FOR A CRASH",
+    "ADD_FUNDS_WITHOUT A DEFINED PORTFOLIO_ROLE",
+    "CHASE_ONE_YEAR_OR_THREE_YEAR PERFORMANCE",
+    "IGNORE_EXISTING_EPF_PPF_AND_NPS_WHEN_CALCULATING_ASSET_ALLOCATION",
+    "USE_MOTHER_OWNED_MONEY_AS IF IT WERE PERSONAL_MONTHLY_SURPLUS",
+    "OVERFUND_THE_OPPORTUNITY_BUCKET_AT_THE_EXPENSE_OF_LONG_TERM_COMPOUNDING"
+  ],
+
+  "decisionLog": {
+    "requiredForMaterialSipChanges": true,
+
+    "record": [
+      "DATE",
+      "MONTHLY_SURPLUS",
+      "CURRENT_ASSET_ALLOCATION",
+      "GOAL_FUNDING_STATUS",
+      "OLD_SIP_ALLOCATION",
+      "NEW_SIP_ALLOCATION",
+      "REASON_FOR_CHANGE"
+    ]
+  },
+
+  "references": {
+    "assetAllocation": "data/asset-allocation.json",
+    "goals": "data/goals.json",
+    "emergencyFund": "data/emergency-fund.json",
+    "opportunityFund": "data/opportunity-fund.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "concentrationLimits": "data/concentration-limits.json",
+    "crashPlaybook": "data/crash-playbook.json"
+  },
+
+  "dataGaps": [
+    "Complete current portfolio market values",
+    "Exact monthly EPF contribution",
+    "Exact monthly NPS contribution",
+    "Final goal-wise corpus requirements",
+    "Final approved strategic asset allocation",
+    "Final approved funds and investment vehicles"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_LUMP_SUM_DEPLOYMENT_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_INVESTMENT_DECISION_CHECKLIST"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_APPROVED_INVESTMENT_UNIVERSE"
+    },
+    {
+      "priority": 4,
+      "action": "CALCULATE_FINAL_RUPEE_SIP_ALLOCATION_AFTER_PORTFOLIO_IMPORT"
+    }
+  ]
+}

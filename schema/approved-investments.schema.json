@@ -1,0 +1,591 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/approved-investments.schema.json",
+  "title": "FWOS Approved Investments Schema",
+  "description": "Validation schema for the approved investment universe, product status, selection criteria, watchlists, legacy holdings and approval governance.",
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate",
+    "currency",
+    "status",
+    "approvedUniverse"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "currency": {
+      "$ref": "fwos.schema.json#/$defs/currencyCode"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "PROVISIONAL_PENDING_PRODUCT_SELECTION",
+        "ACTIVE",
+        "PENDING_REVIEW",
+        "SUPERSEDED",
+        "ARCHIVED"
+      ]
+    },
+
+    "purpose": {
+      "type": "object",
+      "properties": {
+        "primaryObjective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "principle": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "statusDefinitions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+
+    "portfolioArchitecture": {
+      "$ref": "#/$defs/portfolioArchitecture"
+    },
+
+    "approvedUniverse": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/investmentCategory"
+      }
+    },
+
+    "productApprovalChecklist": {
+      "$ref": "#/$defs/productApprovalChecklist"
+    },
+
+    "indexFundEvaluationFramework": {
+      "$ref": "#/$defs/evaluationFramework"
+    },
+
+    "etfEvaluationFramework": {
+      "$ref": "#/$defs/evaluationFramework"
+    },
+
+    "activeFundEvaluationFramework": {
+      "$ref": "#/$defs/evaluationFramework"
+    },
+
+    "directEquity": {
+      "$ref": "#/$defs/directEquityPolicy"
+    },
+
+    "prohibitedOrDefaultRejectedProducts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rejectedCategory"
+      }
+    },
+
+    "approvalGovernance": {
+      "$ref": "#/$defs/approvalGovernance"
+    },
+
+    "currentApprovalSummary": {
+      "$ref": "#/$defs/approvalSummary"
+    },
+
+    "dataQuality": {
+      "$ref": "#/$defs/dataQuality"
+    },
+
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+
+    "nextActions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    }
+  },
+
+  "$defs": {
+    "portfolioArchitecture": {
+      "type": "object",
+
+      "properties": {
+        "philosophy": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "preferredCharacteristics": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+
+        "defaultRule": {
+          "type": "string"
+        },
+
+        "activeFundRule": {
+          "type": "string"
+        },
+
+        "productCountRule": {
+          "type": "object",
+          "properties": {
+            "objective": {
+              "type": "string"
+            },
+            "maximumProducts": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "rule": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "investmentCategory": {
+      "type": "object",
+
+      "properties": {
+        "targetRole": {
+          "type": "string"
+        },
+
+        "preferredOwnership": {
+          "type": "string"
+        },
+
+        "preferredImplementationTypes": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "preferredExposureTypes": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "permittedCategories": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "permittedImplementationTypes": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "permittedInstruments": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "selectionCriteria": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "rules": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/product"
+          }
+        },
+
+        "candidateProducts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/product"
+          }
+        },
+
+        "knownExistingProducts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/product"
+          }
+        },
+
+        "existingCoreInstruments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/product"
+          }
+        },
+
+        "knownCandidate": {
+          "type": "object",
+          "additionalProperties": true
+        },
+
+        "currentKnownPosition": {
+          "type": "object",
+          "additionalProperties": true
+        },
+
+        "physicalGoldRule": {
+          "type": "string"
+        },
+
+        "status": {
+          "type": "string"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "product": {
+      "type": "object",
+
+      "required": [
+        "productId",
+        "productName",
+        "instrumentType"
+      ],
+
+      "properties": {
+        "productId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "productName": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "instrumentType": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "assetClass": {
+          "type": "string"
+        },
+
+        "subAssetClass": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "currentStatus": {
+          "type": "string"
+        },
+
+        "status": {
+          "type": "string"
+        },
+
+        "approvedForNewMoney": {
+          "type": "boolean"
+        },
+
+        "currentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "portfolioWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "allocationWithinNPSPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "reviewFactors": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "decisionRequired": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "approvalDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "lastReviewDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "nextReviewDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "productApprovalChecklist": {
+      "type": "object",
+
+      "properties": {
+        "mandatoryQuestions": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "approvalRule": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "evaluationFramework": {
+      "type": "object",
+
+      "properties": {
+        "priorityFactors": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "requiredEvidence": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "automaticRejectionReasons": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "rule": {
+          "type": "string"
+        },
+
+        "executionRule": {
+          "type": "string"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "directEquityPolicy": {
+      "type": "object",
+
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+
+        "approvedForUnrestrictedNewBuying": {
+          "type": "boolean"
+        },
+
+        "newInvestmentRule": {
+          "type": "string"
+        },
+
+        "requiredBeforeApproval": {
+          "$ref": "#/$defs/stringArray"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "rejectedCategory": {
+      "type": "object",
+
+      "required": [
+        "category",
+        "defaultStatus"
+      ],
+
+      "properties": {
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "defaultStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "exceptionRule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "approvalGovernance": {
+      "type": "object",
+
+      "properties": {
+        "newProductApproval": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "reviewTriggers": {
+          "$ref": "#/$defs/stringArray"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "approvalSummary": {
+      "type": "object",
+
+      "properties": {
+        "approvedForNewMoney": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "approvedHold": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "watchlist": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "legacyPendingReview": {
+          "$ref": "#/$defs/stringArray"
+        },
+
+        "pendingSelection": {
+          "$ref": "#/$defs/stringArray"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "dataQuality": {
+      "type": "object",
+
+      "properties": {
+        "overallStatus": {
+          "type": "string"
+        },
+
+        "criticalMissingData": {
+          "$ref": "#/$defs/stringArray"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "action": {
+      "type": "object",
+
+      "required": [
+        "priority",
+        "action"
+      ],
+
+      "properties": {
+        "priority": {
+          "type": "integer",
+          "minimum": 1
+        },
+
+        "action": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+
+  "additionalProperties": true
+}

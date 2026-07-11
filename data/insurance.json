@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PARTIAL_DATA_PROTECTION_REVIEW_REQUIRED",
+
+  "governance": {
+    "principle": "Insurance exists primarily to transfer financially catastrophic risks, not to maximize investment returns.",
+    "rules": [
+      "Insurance and investment decisions should generally be evaluated separately.",
+      "Existing policies must not be surrendered solely because a replacement appears superior without analysing surrender value, benefits, taxation and replacement risk.",
+      "Term insurance requirements must be based on financial dependency and goal funding rather than arbitrary income multiples alone.",
+      "Government and employer benefits must be documented before assuming they fully eliminate protection gaps.",
+      "Insurance requirements should be reviewed after major changes in income, dependants, assets, liabilities or employment."
+    ]
+  },
+
+  "lifeInsurance": {
+    "policies": [
+      {
+        "policyId": "KDY-LIC-001",
+        "ownerId": "KAPIL",
+        "insuredPersonId": "KAPIL",
+        "insurer": "LIC",
+        "policyType": "TRADITIONAL_LIFE_INSURANCE",
+        "exactPlanName": null,
+        "sumAssuredApproximate": 300000,
+        "annualPremiumApproximate": 17000,
+        "expectedMaturityYear": 2034,
+        "maturityValue": null,
+        "surrenderValue": null,
+        "paidUpValue": null,
+        "nominee": null,
+        "status": "ACTIVE_ASSUMED",
+        "portfolioRole": "EXISTING_LEGACY_POLICY",
+        "protectionAdequacy": "INADEQUATE_AS_PRIMARY_LIFE_COVER",
+        "action": "REVIEW_POLICY_DETAILS_BEFORE_ANY_CHANGE"
+      }
+    ],
+
+    "termInsurance": {
+      "kapil": {
+        "currentCover": 0,
+        "status": "NOT_HELD",
+        "needsAnalysisStatus": "HIGH_PRIORITY_PENDING"
+      },
+      "spouse": {
+        "currentCover": null,
+        "status": "UNKNOWN",
+        "needsAnalysisStatus": "PENDING"
+      }
+    }
+  },
+
+  "healthInsurance": {
+    "cghs": {
+      "coverageType": "GOVERNMENT_HEALTH_SCHEME",
+      "eligibilitySource": "SPOUSE_GOVERNMENT_EMPLOYMENT",
+      "coveredFamilyMembers": null,
+      "benefits": null,
+      "limitations": null,
+      "status": "AVAILABLE_DETAILS_PENDING"
+    },
+
+    "corporateHealthInsurance": {
+      "policyId": "KDY-CORPORATE-HEALTH-001",
+      "coverageType": "EMPLOYER_PROVIDED_GROUP_HEALTH_INSURANCE",
+      "sumInsuredApproximate": 500000,
+      "coveredMembers": null,
+      "roomRentLimit": null,
+      "coPayment": null,
+      "deductible": null,
+      "networkHospitals": null,
+      "employmentDependency": true,
+      "status": "ACTIVE_ASSUMED_DETAILS_PENDING"
+    },
+
+    "personalRetailHealthInsurance": {
+      "status": "NOT_REPORTED"
+    },
+
+    "superTopUp": {
+      "status": "NOT_REPORTED"
+    }
+  },
+
+  "otherProtection": {
+    "personalAccidentInsurance": {
+      "status": "NOT_REPORTED",
+      "reviewRequired": true
+    },
+    "disabilityIncomeProtection": {
+      "status": "NOT_REPORTED",
+      "reviewRequired": true
+    },
+    "criticalIllnessInsurance": {
+      "status": "NOT_REPORTED",
+      "reviewRequired": false,
+      "notes": [
+        "Need should be evaluated against existing healthcare access, liquidity and policy limitations rather than purchased automatically."
+      ]
+    },
+    "propertyInsurance": {
+      "faridabadFlat": {
+        "status": "UNKNOWN"
+      },
+      "builtResidentialProperty": {
+        "status": "UNKNOWN"
+      }
+    }
+  },
+
+  "protectionContext": {
+    "dependants": [
+      {
+        "personId": "REYANSH",
+        "currentAge": 6,
+        "financialDependency": "HIGH"
+      },
+      {
+        "personId": "NIKESH",
+        "currentAge": 3,
+        "financialDependency": "HIGH"
+      }
+    ],
+
+    "spouseEmployment": {
+      "type": "GOVERNMENT_EMPLOYEE",
+      "incomeDetails": null,
+      "pensionDetails": null,
+      "financialContributionToFamily": null
+    },
+
+    "knownKapilFinancialAssetsApproximate": {
+      "minimum": 13930000,
+      "maximum": 14130000
+    },
+
+    "knownKapilRealEstateApproximate": 9500000,
+
+    "knownMajorLiabilities": 0,
+
+    "liabilityStatus": "PENDING_FORMAL_CONFIRMATION"
+  },
+
+  "termInsuranceNeedsFramework": {
+    "status": "PENDING_CALCULATION",
+
+    "requiredInputs": [
+      "Annual family expenditure to be replaced",
+      "Years of dependency",
+      "Children's education funding gaps",
+      "Outstanding liabilities",
+      "Existing liquid financial assets available to dependants",
+      "Spouse income",
+      "Spouse pension and employment benefits",
+      "Existing life insurance",
+      "Desired financial independence support for surviving family"
+    ],
+
+    "calculationPrinciple": {
+      "grossRequirementIncludes": [
+        "FAMILY_INCOME_REPLACEMENT",
+        "ESSENTIAL_CHILDREN_EDUCATION_GAPS",
+        "LIABILITIES",
+        "FINAL_EXPENSE_AND_TRANSITION_BUFFER"
+      ],
+      "deductibleResourcesMayInclude": [
+        "LIQUID_FINANCIAL_ASSETS_AVAILABLE_TO_DEPENDANTS",
+        "EXISTING_LIFE_INSURANCE",
+        "CERTAIN_AND_RELIABLE_SURVIVOR_RESOURCES"
+      ],
+      "excludeOrDiscount": [
+        "PRIMARY_RESIDENCE_IF_NOT_INTENDED_FOR_SALE",
+        "UNCERTAIN_INHERITANCE",
+        "SPECULATIVE_BUSINESS_INCOME",
+        "ASSETS_REQUIRED_FOR_OTHER_DEPENDANTS"
+      ]
+    }
+  },
+
+  "preliminaryRiskAssessment": {
+    "lifeProtection": {
+      "status": "MATERIAL_GAP_LIKELY",
+      "reason": "Kapil has two young dependent children and no dedicated term insurance."
+    },
+    "medicalProtection": {
+      "status": "RELATIVELY_STRONG_BUT_REQUIRES_DOCUMENTATION",
+      "reason": "CGHS access and corporate health insurance provide meaningful protection, but exact coverage and employment dependency must be verified."
+    },
+    "emergencyLiquidity": {
+      "status": "SEPARATE_ANALYSIS_REQUIRED"
+    },
+    "disabilityAndAccidentRisk": {
+      "status": "UNASSESSED"
+    }
+  },
+
+  "priorityActions": [
+    {
+      "priority": 1,
+      "action": "CALCULATE_TERM_INSURANCE_REQUIREMENT",
+      "urgency": "HIGH"
+    },
+    {
+      "priority": 2,
+      "action": "DOCUMENT_CGHS_COVERAGE_AND_ELIGIBILITY",
+      "urgency": "MEDIUM"
+    },
+    {
+      "priority": 3,
+      "action": "COLLECT_CORPORATE_HEALTH_POLICY_DETAILS",
+      "urgency": "MEDIUM"
+    },
+    {
+      "priority": 4,
+      "action": "REVIEW_PERSONAL_ACCIDENT_AND_DISABILITY_PROTECTION",
+      "urgency": "MEDIUM"
+    },
+    {
+      "priority": 5,
+      "action": "REVIEW_PROPERTY_INSURANCE",
+      "urgency": "LOWER"
+    }
+  ],
+
+  "dataGaps": [
+    "Exact LIC policy name and policy document",
+    "LIC maturity benefit",
+    "LIC surrender and paid-up values",
+    "Spouse life insurance",
+    "CGHS beneficiary and coverage details",
+    "Corporate health policy wording",
+    "Spouse income and retirement benefits",
+    "Personal accident insurance",
+    "Property insurance",
+    "Final term insurance requirement"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_RISK_REGISTRY"
+    },
+    {
+      "priority": 2,
+      "action": "COMPLETE_TERM_INSURANCE_NEEDS_ANALYSIS"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_EMERGENCY_FUND_POLICY"
+    }
+  ]
+}

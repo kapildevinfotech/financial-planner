@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-11",
+  "currency": "INR",
+  "status": "PARTIAL_DATA",
+
+  "valuationPolicy": {
+    "financialAssets": "LATEST_AVAILABLE_VALUE",
+    "realEstate": "APPROXIMATE_MARKET_VALUE",
+    "personalUseAssets": "EXCLUDED_UNLESS_MATERIAL",
+    "motherOwnedAssets": "TRACKED_SEPARATELY",
+    "doubleCountingRule": "PORTFOLIO_ACCOUNTS_ARE_REFERENCED_NOT_DUPLICATED"
+  },
+
+  "assets": [
+    {
+      "assetId": "KDY-FINANCIAL-PORTFOLIO",
+      "ownerId": "KAPIL",
+      "assetGroup": "FINANCIAL_ASSETS",
+      "assetType": "PORTFOLIO_REFERENCE",
+      "sourceFile": "portfolio.json",
+      "approximateValueRange": {
+        "minimum": 13930000,
+        "maximum": 14130000
+      },
+      "includeInKapilNetWorth": true,
+      "includeInFamilyNetWorth": true,
+      "valuationStatus": "PARTIAL"
+    },
+    {
+      "assetId": "KDY-RE-001",
+      "ownerId": "KAPIL",
+      "assetGroup": "REAL_ESTATE",
+      "assetType": "RESIDENTIAL_FLAT",
+      "description": "2BHK flat in Faridabad",
+      "approximateMarketValue": 4500000,
+      "primaryPurpose": "REAL_ESTATE_ASSET",
+      "liquidity": "LOW",
+      "includeInKapilNetWorth": true,
+      "includeInInvestablePortfolio": false,
+      "valuationStatus": "APPROXIMATE"
+    },
+    {
+      "assetId": "KDY-RE-002",
+      "ownerId": "KAPIL",
+      "assetGroup": "REAL_ESTATE",
+      "assetType": "BUILT_RESIDENTIAL_PROPERTY",
+      "description": "Built residential home",
+      "approximateMarketValue": 5000000,
+      "primaryPurpose": "REAL_ESTATE_ASSET",
+      "liquidity": "LOW",
+      "includeInKapilNetWorth": true,
+      "includeInInvestablePortfolio": false,
+      "valuationStatus": "APPROXIMATE"
+    },
+    {
+      "assetId": "MOTHER-CASH-001",
+      "ownerId": "MOTHER",
+      "assetGroup": "FINANCIAL_ASSETS",
+      "assetType": "CASH_REFERENCE",
+      "sourceFile": "portfolio.json",
+      "approximateMarketValue": 8000000,
+      "includeInKapilNetWorth": false,
+      "includeInExtendedFamilyAssets": true,
+      "includeInFamilyResilienceAnalysis": true,
+      "valuationStatus": "APPROXIMATE"
+    }
+  ],
+
+  "plannedAssets": [
+    {
+      "assetId": "MOTHER-RE-PLANNED-001",
+      "plannedOwnerId": "MOTHER",
+      "assetGroup": "REAL_ESTATE",
+      "assetType": "RESIDENTIAL_PLOT",
+      "description": "Proposed Lucknow plot",
+      "estimatedPurchaseValueRange": {
+        "minimum": 4000000,
+        "maximum": 5000000
+      },
+      "expectedFundingSource": "MOTHER-CASH-001",
+      "expectedFundingAmount": 4000000,
+      "purchaseStatus": "PLANNED",
+      "includeInCurrentNetWorth": false
+    }
+  ],
+
+  "summary": {
+    "kapilKnownNetWorth": {
+      "minimumApproximateValue": 23430000,
+      "maximumApproximateValue": 23630000,
+      "displayRange": "₹2.34 crore to ₹2.36 crore",
+      "status": "BEFORE_LIABILITY_RECONCILIATION"
+    },
+    "kapilKnownRealEstate": {
+      "approximateValue": 9500000
+    },
+    "motherSeparatelyOwnedKnownAssets": {
+      "approximateValue": 8000000
+    }
+  },
+
+  "excludedOrPendingAssets": [
+    "Physical gold and jewellery",
+    "Vehicle",
+    "Household personal-use assets",
+    "Spouse-owned financial assets",
+    "Any additional bank accounts",
+    "Any other real estate",
+    "Future inheritance"
+  ],
+
+  "dataGaps": [
+    "Confirm legal ownership of both existing properties",
+    "Confirm whether either property generates rental income",
+    "Obtain updated real estate valuations",
+    "Record physical gold separately",
+    "Record spouse-owned assets",
+    "Confirm all liabilities before finalizing net worth"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_LIABILITIES_REGISTRY"
+    },
+    {
+      "priority": 2,
+      "action": "COMPLETE_PORTFOLIO_HOLDINGS"
+    },
+    {
+      "priority": 3,
+      "action": "RECONCILE_NET_WORTH"
+    }
+  ]
+}

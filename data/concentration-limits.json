@@ -1,0 +1,380 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY_PENDING_HOLDINGS_ANALYSIS",
+
+  "purpose": {
+    "primaryObjective": "Prevent excessive concentration in individual securities, sectors, themes, fund managers, market segments and geographies.",
+    "principle": "Diversification should reduce uncompensated risk without creating unnecessary portfolio complexity."
+  },
+
+  "measurementBasis": {
+    "primaryDenominator": "TOTAL_INVESTABLE_FINANCIAL_PORTFOLIO",
+    "secondaryDenominator": "RELEVANT_ASSET_CLASS",
+    "lookThroughAnalysisRequired": true,
+    "avoidDoubleCounting": true,
+
+    "rules": [
+      "MEASURE_DIRECT_AND_INDIRECT_EXPOSURE_WHERE_DATA_IS_AVAILABLE",
+      "ACCOUNT_FOR_OVERLAP_BETWEEN_MUTUAL_FUNDS_ETFS_AND_DIRECT_STOCKS",
+      "NPS_EQUITY_MUST_BE_INCLUDED_IN_TOTAL_EQUITY_EXPOSURE",
+      "EPF_PPF_AND_NPS_DEBT_MUST_BE_INCLUDED_IN_TOTAL_DEBT_EXPOSURE",
+      "MOTHER_OWNED_ASSETS_MUST_BE ANALYSED_SEPARATELY"
+    ]
+  },
+
+  "portfolioArchitecture": {
+    "preferredStructure": {
+      "core": {
+        "targetShareOfEquityPortfolio": {
+          "minimum": 0.70,
+          "preferred": 0.80,
+          "maximum": 0.90
+        },
+        "examples": [
+          "BROAD_MARKET_INDEX_FUNDS",
+          "DIVERSIFIED_CORE_EQUITY_FUNDS"
+        ]
+      },
+
+      "satellite": {
+        "targetShareOfEquityPortfolio": {
+          "minimum": 0.10,
+          "preferred": 0.20,
+          "maximum": 0.30
+        },
+        "examples": [
+          "DIRECT_STOCKS",
+          "FACTOR_STRATEGIES",
+          "ACTIVE_FUNDS",
+          "THEMATIC_OR_SECTOR_EXPOSURE"
+        ]
+      }
+    },
+
+    "status": "PROVISIONAL"
+  },
+
+  "singleStockLimits": {
+    "measurementBasis": "TOTAL_EQUITY_PORTFOLIO",
+
+    "preferredMaximumPerStock": 0.05,
+    "reviewThresholdPerStock": 0.07,
+    "hardMaximumPerStock": 0.10,
+
+    "exceptions": {
+      "allowed": false,
+      "rule": "Any exception requires documented investment thesis and explicit approval."
+    },
+
+    "actionOnBreach": [
+      "STOP_NEW_PURCHASES",
+      "REVIEW_INVESTMENT_THESIS",
+      "CONSIDER_GRADUAL_TAX_AWARE_REDUCTION"
+    ]
+  },
+
+  "directStockPortfolio": {
+    "measurementBasis": "TOTAL_EQUITY_PORTFOLIO",
+
+    "preferredMaximum": 0.15,
+    "provisionalHardMaximum": 0.25,
+
+    "principle": "Direct stocks are optional satellite holdings and must not compromise the core diversified portfolio.",
+
+    "rules": [
+      "NO_REQUIREMENT_TO_MAINTAIN_DIRECT_STOCK_ALLOCATION",
+      "NEW_DIRECT_STOCK_PURCHASES_REQUIRE_INVESTMENT_THESIS",
+      "DO_NOT_AVERAGE_DOWN_AUTOMATICALLY",
+      "DO_NOT_TREAT_PRICE_DECLINE_AS PROOF_OF_VALUE"
+    ]
+  },
+
+  "sectorLimits": {
+    "measurementBasis": "TOTAL_EQUITY_PORTFOLIO",
+
+    "preferredMaximumSingleSector": 0.25,
+    "reviewThresholdSingleSector": 0.30,
+
+    "rules": [
+      "BROAD_INDEX_WEIGHT_CAN_CREATE_TEMPORARY_EXCEPTIONS",
+      "ACTIVE_OVERWEIGHT_ABOVE_BROAD_MARKET_WEIGHT_REQUIRES_REVIEW",
+      "DIRECT_AND_INDIRECT_SECTOR_EXPOSURE_MUST_BE COMBINED"
+    ]
+  },
+
+  "thematicAndSectorFunds": {
+    "measurementBasis": "TOTAL_EQUITY_PORTFOLIO",
+
+    "preferredCombinedMaximum": 0.10,
+    "provisionalHardMaximum": 0.15,
+
+    "rules": [
+      "THEMATIC_FUNDS_ARE_SATELLITE_HOLDINGS",
+      "DO_NOT_USE_AS_CORE_PORTFOLIO",
+      "DO_NOT_ADD_MULTIPLE_THEMES_WITH_HIGH_UNDERLYING_OVERLAP"
+    ]
+  },
+
+  "psuExposure": {
+    "measurementBasis": "TOTAL_EQUITY_PORTFOLIO",
+
+    "includedHoldings": [
+      "CPSE_ETF",
+      "BHARAT_22_ETF",
+      "DIRECT_PSU_STOCKS",
+      "PSU_HEAVY_MUTUAL_FUNDS_OR_ETFS"
+    ],
+
+    "preferredCombinedMaximum": 0.10,
+    "reviewThreshold": 0.15,
+    "provisionalHardMaximum": 0.20,
+
+    "status": "HIGH_PRIORITY_CURRENT_PORTFOLIO_REVIEW",
+
+    "rules": [
+      "CPSE_ETF_AND_BHARAT_22_ETF_MUST_NOT_BE_ANALYSED_IN_ISOLATION",
+      "OVERLAPPING_UNDERLYING_PSU_HOLDINGS_MUST_BE AGGREGATED",
+      "STRONG_PAST_RETURNS_DO_NOT_JUSTIFY_UNLIMITED_ALLOCATION"
+    ]
+  },
+
+  "cpseEtf": {
+    "classification": "THEMATIC_PSU_EQUITY",
+    "portfolioRole": "SATELLITE",
+
+    "preferredMaximum": {
+      "basis": "TOTAL_EQUITY_PORTFOLIO",
+      "value": 0.05
+    },
+
+    "newInvestmentPolicy": "PENDING_CURRENT_WEIGHT_AND_THESIS_REVIEW"
+  },
+
+  "bharat22Etf": {
+    "classification": "CONCENTRATED_INDEX_WITH_SIGNIFICANT_PSU_EXPOSURE",
+    "portfolioRole": "SATELLITE",
+
+    "preferredMaximum": {
+      "basis": "TOTAL_EQUITY_PORTFOLIO",
+      "value": 0.05
+    },
+
+    "newInvestmentPolicy": "PENDING_CURRENT_WEIGHT_AND_OVERLAP_REVIEW"
+  },
+
+  "activeFundLimits": {
+    "preferredMaximumPerFund": {
+      "basis": "TOTAL_EQUITY_PORTFOLIO",
+      "value": 0.15
+    },
+
+    "rules": [
+      "FUND_COUNT_SHOULD_NOT_BE INCREASED WITHOUT A DISTINCT_PORTFOLIO_ROLE",
+      "HIGH_OVERLAP_WITH_CORE_INDEX_REQUIRES_JUSTIFICATION",
+      "ACTIVE_FUND_SELECTION_REQUIRES PROCESS_BASED_EVALUATION_NOT_RECENT_RETURNS"
+    ]
+  },
+
+  "indexFundLimits": {
+    "broadDiversifiedIndex": {
+      "maximum": "NO_FIXED_LOW_LIMIT",
+      "principle": "Broad diversified index funds may form the majority of the equity portfolio."
+    },
+
+    "narrowIndex": {
+      "classification": "SATELLITE_OR_SPECIALIZED",
+      "rule": "Apply concentration analysis based on underlying holdings."
+    }
+  },
+
+  "marketCapitalizationLimits": {
+    "largeCap": {
+      "role": "CORE",
+      "minimumPreferredShareOfIndianEquity": 0.50
+    },
+
+    "midCap": {
+      "preferredMaximumShareOfIndianEquity": 0.25
+    },
+
+    "smallCap": {
+      "preferredMaximumShareOfIndianEquity": 0.15,
+      "reviewThreshold": 0.20
+    },
+
+    "midAndSmallCapCombined": {
+      "preferredMaximumShareOfIndianEquity": 0.35
+    },
+
+    "status": "PROVISIONAL"
+  },
+
+  "internationalEquityLimits": {
+    "measurementBasis": "TOTAL_INVESTABLE_FINANCIAL_PORTFOLIO",
+
+    "strategicTarget": 0.10,
+    "minimum": 0.08,
+    "maximum": 0.12,
+
+    "singleCountryExposure": {
+      "exception": "UNITED_STATES_MAY_DOMINATE_GLOBAL_MARKET_CAP_WEIGHTED_EXPOSURE",
+      "status": "POLICY_TO_BE_FINALIZED"
+    },
+
+    "singleInternationalIndex": {
+      "preferredMaximumShareOfInternationalEquity": 1.00,
+      "condition": "INDEX_MUST_BE SUFFICIENTLY_DIVERSIFIED_AND_SUITABLE"
+    },
+
+    "nasdaq100": {
+      "classification": "CONCENTRATED_GROWTH_AND_TECH_HEAVY_INDEX",
+      "preferredRole": "SATELLITE_WITHIN_INTERNATIONAL_EQUITY",
+      "preferredMaximumShareOfInternationalEquity": 0.50,
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "goldLimits": {
+    "measurementBasis": "TOTAL_INVESTABLE_FINANCIAL_PORTFOLIO",
+
+    "target": 0.07,
+    "minimum": 0.05,
+    "maximum": 0.10,
+
+    "investmentFormsToCount": [
+      "GOLD_ETF",
+      "GOLD_MUTUAL_FUND",
+      "SGB_IF_HELD",
+      "PHYSICAL_INVESTMENT_GOLD"
+    ],
+
+    "exclude": [
+      "JEWELLERY_HELD_PRIMARILY_FOR_PERSONAL_USE"
+    ]
+  },
+
+  "fundHouseConcentration": {
+    "principle": "AMC diversification is secondary to portfolio diversification.",
+
+    "preferredMaximumShareOfMutualFundAndEtfAssetsWithSingleAmc": 0.50,
+
+    "rule": "Do not add inferior funds solely to diversify across fund houses."
+  },
+
+  "fundCountPolicy": {
+    "principle": "Each fund must have a distinct role.",
+
+    "preferredArchitecture": [
+      "CORE_INDIAN_EQUITY",
+      "OPTIONAL_ACTIVE_OR_FACTOR_SATELLITE",
+      "INTERNATIONAL_EQUITY",
+      "GOLD",
+      "DEBT_WHERE_REQUIRED_OUTSIDE_EPF_PPF_NPS"
+    ],
+
+    "rule": "Portfolio complexity must be justified by meaningful diversification or goal requirements."
+  },
+
+  "overlapPolicy": {
+    "reviewRequiredWhen": [
+      "MULTIPLE_FUNDS_HAVE_SIMILAR_MANDATES",
+      "DIRECT_STOCKS_OVERLAP_MATERIALLY_WITH_CONCENTRATED_ETFS",
+      "MULTIPLE_INDEX_FUNDS_TRACK_HIGHLY_SIMILAR_UNIVERSES"
+    ],
+
+    "metricsToCalculate": [
+      "TOP_10_HOLDINGS_OVERLAP",
+      "WEIGHTED_HOLDINGS_OVERLAP",
+      "SECTOR_OVERLAP",
+      "MARKET_CAP_OVERLAP"
+    ]
+  },
+
+  "breachManagement": {
+    "breachDoesNotAutomaticallyRequireImmediateSale": true,
+
+    "priorityOrder": [
+      "STOP_NEW_ALLOCATION_TO_OVERWEIGHT_EXPOSURE",
+      "REDIRECT_NEW_CASH_FLOWS",
+      "REVIEW_FUND_OR_SECURITY_QUALITY",
+      "CONSIDER_TAX_AWARE_GRADUAL_REDUCTION",
+      "SELL_IMMEDIATELY_ONLY_IF_INVESTMENT_THESIS_IS_MATERIALLY_BROKEN_OR_RISK_IS_UNACCEPTABLE"
+    ]
+  },
+
+  "grandfatheredHoldings": {
+    "allowed": true,
+
+    "principle": "Legacy holdings above preferred limits may be reduced gradually when immediate sale creates unnecessary tax or timing costs.",
+
+    "notAllowedWhen": [
+      "FUNDAMENTAL_THESIS_IS_BROKEN",
+      "FRAUD_OR_GOVERNANCE_RISK_IS_MATERIAL",
+      "CONCENTRATION_CREATES_UNACCEPTABLE_FAMILY_FINANCIAL_RISK"
+    ]
+  },
+
+  "knownPriorityAnalysis": [
+    {
+      "holding": "CPSE_ETF",
+      "requiredAnalysis": [
+        "CURRENT_WEIGHT",
+        "UNDERLYING_SECTOR_CONCENTRATION",
+        "PSU_OVERLAP",
+        "LIQUIDITY",
+        "TAX_COST_OF_REDUCTION"
+      ]
+    },
+    {
+      "holding": "BHARAT_22_ETF",
+      "requiredAnalysis": [
+        "CURRENT_WEIGHT",
+        "OVERLAP_WITH_CPSE_ETF",
+        "UNDERLYING_CONCENTRATION",
+        "PORTFOLIO_ROLE"
+      ]
+    },
+    {
+      "holding": "DIRECT_STOCK_PORTFOLIO",
+      "requiredAnalysis": [
+        "SINGLE_STOCK_WEIGHTS",
+        "SECTOR_WEIGHTS",
+        "OVERLAP_WITH_FUNDS_AND_ETFS",
+        "QUALITY_AND_INVESTMENT_THESIS"
+      ]
+    }
+  ],
+
+  "dataGaps": [
+    "Complete mutual fund holdings and values",
+    "Complete ETF holdings and values",
+    "Complete direct stock holdings and values",
+    "Current CPSE ETF value",
+    "Current Bharat 22 ETF value",
+    "Fund-level portfolio overlap",
+    "Sector-level look-through exposure",
+    "Market-cap exposure"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_CRASH_PLAYBOOK"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_MONTHLY_SIP_DEPLOYMENT_POLICY"
+    },
+    {
+      "priority": 3,
+      "action": "IMPORT_COMPLETE_PORTFOLIO_HOLDINGS"
+    },
+    {
+      "priority": 4,
+      "action": "RUN_CONCENTRATION_AND_OVERLAP_ANALYSIS"
+    }
+  ]
+}

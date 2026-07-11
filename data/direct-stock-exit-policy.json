@@ -1,0 +1,478 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Define disciplined rules for holding, adding, trimming, freezing or exiting direct equity positions.",
+    "principle": "Sell decisions should be driven primarily by thesis, valuation, portfolio construction and opportunity cost rather than short-term price movement."
+  },
+
+  "scope": {
+    "appliesTo": [
+      "ALL_EXISTING_DIRECT_STOCKS",
+      "ALL_FUTURE_DIRECT_STOCK_PURCHASES"
+    ],
+    "doesNotApplyTo": [
+      "MUTUAL_FUNDS",
+      "ETFS",
+      "NPS",
+      "EPF",
+      "PPF"
+    ]
+  },
+
+  "strategicRole": {
+    "classification": "OPTIONAL_SATELLITE",
+    "corePortfolioPriority": "INDEX_FIRST",
+    "minimumRequiredAllocation": 0,
+    "principle": "Direct stocks must justify their complexity and concentration risk relative to diversified alternatives."
+  },
+
+  "positionStatuses": [
+    "BUY_OR_ADD",
+    "HOLD",
+    "HOLD_BUT_DO_NOT_ADD",
+    "WATCHLIST_FOR_EXIT",
+    "TRIM",
+    "EXIT"
+  ],
+
+  "mandatoryStockRecord": {
+    "requiredFields": [
+      "COMPANY_NAME",
+      "TICKER",
+      "SECTOR",
+      "PURCHASE_DATE",
+      "AVERAGE_COST",
+      "CURRENT_VALUE",
+      "PORTFOLIO_WEIGHT",
+      "INVESTMENT_THESIS",
+      "KEY_RISKS",
+      "THESIS_BREAKERS",
+      "VALUATION_VIEW",
+      "POSITION_STATUS",
+      "LAST_REVIEW_DATE"
+    ]
+  },
+
+  "holdCriteria": {
+    "conditions": [
+      "INVESTMENT_THESIS_REMAINS_VALID",
+      "BUSINESS_QUALITY_REMAINS_ACCEPTABLE",
+      "MANAGEMENT_AND_GOVERNANCE_REMAIN_ACCEPTABLE",
+      "BALANCE_SHEET_RISK_REMAINS MANAGEABLE",
+      "POSITION_REMAINS_WITHIN_CONCENTRATION_LIMITS",
+      "BETTER_ALTERNATIVE_DOES_NOT_CLEARLY_JUSTIFY_TAX_AND_TRANSACTION_COSTS"
+    ],
+
+    "rule": "Price volatility alone is not a reason to sell."
+  },
+
+  "addCriteria": {
+    "allRequired": [
+      "THESIS_REVALIDATED",
+      "LATEST_MATERIAL_INFORMATION_REVIEWED",
+      "POST_PURCHASE_POSITION_WITHIN_LIMITS",
+      "VALUATION_ACCEPTABLE",
+      "NO_MATERIAL_GOVERNANCE_RED_FLAG",
+      "ASSET_ALLOCATION_SUPPORTS_ADDITIONAL_EQUITY",
+      "PURCHASE_PASSES_INVESTMENT_DECISION_CHECKLIST"
+    ],
+
+    "rule": "A falling share price is not sufficient justification for averaging down."
+  },
+
+  "holdButDoNotAddTriggers": [
+    "POSITION_IS_NEAR_MAXIMUM_ALLOWED_WEIGHT",
+    "VALUATION_IS_UNATTRACTIVE",
+    "THESIS_REMAINS_VALID_BUT_UNCERTAINTY_HAS_INCREASED",
+    "PORTFOLIO_HAS_EXCESS_SECTOR_EXPOSURE",
+    "NEW_CAPITAL_IS_BETTER_ALLOCATED_TO_UNDERWEIGHT_ASSET_CLASSES"
+  ],
+
+  "exitHierarchy": [
+    {
+      "priority": 1,
+      "trigger": "FRAUD_OR_SERIOUS_GOVERNANCE_FAILURE",
+      "defaultAction": "EXIT_OR_MATERIALLY_REDUCE_AS_SOON_AS_PRACTICABLE"
+    },
+    {
+      "priority": 2,
+      "trigger": "INVESTMENT_THESIS_BROKEN",
+      "defaultAction": "EXIT"
+    },
+    {
+      "priority": 3,
+      "trigger": "PERMANENT_BUSINESS_DETERIORATION",
+      "defaultAction": "EXIT_OR_MATERIALLY_REDUCE"
+    },
+    {
+      "priority": 4,
+      "trigger": "EXCESSIVE_CONCENTRATION",
+      "defaultAction": "TRIM"
+    },
+    {
+      "priority": 5,
+      "trigger": "EXTREME_VALUATION_WITH_WEAK_FORWARD_RETURN_EXPECTATION",
+      "defaultAction": "TRIM_OR_EXIT_AFTER_REVIEW"
+    },
+    {
+      "priority": 6,
+      "trigger": "SUPERIOR_ALTERNATIVE_AND_HIGH_OPPORTUNITY_COST",
+      "defaultAction": "CONSIDER_REPLACEMENT"
+    },
+    {
+      "priority": 7,
+      "trigger": "PORTFOLIO_SIMPLIFICATION",
+      "defaultAction": "CONSIDER_EXIT"
+    }
+  ],
+
+  "hardExitTriggers": {
+    "examples": [
+      "CONFIRMED_MATERIAL_FRAUD",
+      "SERIOUS_ACCOUNTING_MANIPULATION",
+      "MATERIAL_GOVERNANCE_FAILURE",
+      "THESIS_DESTROYING_REGULATORY_EVENT",
+      "STRUCTURAL_LOSS_OF_COMPETITIVE_POSITION",
+      "UNMANAGEABLE_BALANCE_SHEET_DETERIORATION",
+      "ORIGINAL_INVESTMENT_THESIS_PROVEN FUNDAMENTALLY WRONG"
+    ],
+
+    "rule": "Purchase price and unrealized loss must not prevent action when the fundamental thesis is broken."
+  },
+
+  "thesisBreakFramework": {
+    "business": [
+      "STRUCTURAL_REVENUE_DECLINE",
+      "PERMANENT_MARGIN_DAMAGING_CHANGE",
+      "LOSS_OF_KEY_COMPETITIVE_ADVANTAGE",
+      "BUSINESS_MODEL_DISRUPTION"
+    ],
+
+    "financial": [
+      "UNSUSTAINABLE_DEBT_INCREASE",
+      "PERSISTENT_CASH_FLOW_DIVERGENCE_FROM_REPORTED_PROFIT",
+      "SERIOUS_CAPITAL_ALLOCATION_FAILURE",
+      "REPEATED_DILUTION_WITHOUT_VALUE_CREATION"
+    ],
+
+    "management": [
+      "GOVERNANCE_FAILURE",
+      "MINORITY_SHAREHOLDER_ABUSE",
+      "MATERIAL_UNDISCLOSED_RELATED_PARTY_RISK",
+      "REPEATED_FAILURE_TO DELIVER_WITH LOSS_OF CREDIBILITY"
+    ],
+
+    "industry": [
+      "PERMANENT_ADVERSE_REGULATORY_CHANGE",
+      "STRUCTURAL_TECHNOLOGICAL_DISRUPTION",
+      "ECONOMIC_DETERIORATION THAT PERMANENTLY CHANGES INDUSTRY RETURNS"
+    ]
+  },
+
+  "nonExitReasons": [
+    "MARKET_CORRECTION",
+    "GENERAL_RECESSION_FEARS",
+    "WAR_HEADLINES_WITHOUT_THESIS_IMPACT",
+    "POPULAR_INVESTOR_BEARISH_COMMENT",
+    "SHORT_TERM_EARNINGS_MISS",
+    "TEMPORARY_PRICE_DECLINE",
+    "STOCK_HAS_NOT_MOVED_FOR SOME TIME",
+    "ANOTHER_STOCK_HAS RECENTLY PERFORMED BETTER"
+  ],
+
+  "lossHandling": {
+    "rules": [
+      "DO_NOT_HOLD_ONLY_TO GET_BACK_TO PURCHASE_PRICE",
+      "DO_NOT_SELL_ONLY BECAUSE THE POSITION IS IN LOSS",
+      "IGNORE_ANCHORING_TO AVERAGE_PURCHASE_PRICE",
+      "REASSESS_EXPECTED_FUTURE_RETURN_FROM CURRENT_PRICE"
+    ],
+
+    "keyQuestion": "If I did not already own this stock, would I buy it today at the current price and desired position size?"
+  },
+
+  "profitHandling": {
+    "rules": [
+      "DO_NOT_SELL_A HIGH_QUALITY_BUSINESS ONLY BECAUSE IT HAS RISEN",
+      "UNREALIZED_PROFIT_ALONE_IS NOT AN EXIT SIGNAL",
+      "TRIM_WHEN POSITION_SIZE CREATES UNACCEPTABLE PORTFOLIO RISK",
+      "VALUATION_BASED_TRIMMING_REQUIRES A DOCUMENTED CASE"
+    ]
+  },
+
+  "concentrationManagement": {
+    "reference": "data/concentration-limits.json",
+
+    "actions": [
+      {
+        "condition": "WITHIN_LIMIT",
+        "defaultAction": "NO_FORCED_ACTION"
+      },
+      {
+        "condition": "ABOVE_SOFT_LIMIT",
+        "defaultAction": "STOP_ADDING_AND_REVIEW"
+      },
+      {
+        "condition": "ABOVE_HARD_LIMIT",
+        "defaultAction": "CREATE_A CONTROLLED_TRIMMING_PLAN"
+      }
+    ],
+
+    "taxRule": "Tax impact may influence the timing of trimming but does not permanently override a material risk breach."
+  },
+
+  "valuationExitFramework": {
+    "principle": "Valuation alone rarely creates an automatic full-exit decision for a high-quality long-term business.",
+
+    "possibleActions": [
+      "HOLD",
+      "STOP_ADDING",
+      "TRIM",
+      "FULL_EXIT_IF_VALUATION_AND_BUSINESS_CASE_TOGETHER_NO_LONGER_SUPPORT OWNERSHIP"
+    ],
+
+    "requirements": [
+      "COMPARE_VALUATION_TO BUSINESS_QUALITY",
+      "COMPARE_VALUATION_TO GROWTH_AND_CASH_FLOW_OUTLOOK",
+      "COMPARE_EXPECTED_RETURN_TO ALTERNATIVES",
+      "AVOID_SINGLE_METRIC_DECISIONS"
+    ]
+  },
+
+  "opportunityCostFramework": {
+    "questions": [
+      "WHAT_IS_THE EXPECTED_RETURN_FROM HOLDING?",
+      "WHAT_IS_THE BEST REALISTIC ALTERNATIVE?",
+      "WHAT_TAX_AND_TRANSACTION_COSTS WOULD SWITCHING CREATE?",
+      "DOES_THE_ALTERNATIVE IMPROVE DIVERSIFICATION?",
+      "IS_THE_SWITCH_BASED_ON FUNDAMENTALS OR RECENT PERFORMANCE?"
+    ],
+
+    "rule": "Do not rotate frequently between investments based on short-term relative performance."
+  },
+
+  "portfolioSimplification": {
+    "objective": "Reduce unnecessary direct-stock complexity where conviction, portfolio role or expected benefit is insufficient.",
+
+    "candidateCharacteristics": [
+      "VERY_SMALL_IMMATERIAL_POSITION",
+      "NO_CURRENT_WRITTEN_THESIS",
+      "HIGH_OVERLAP_WITH_INDEX_CORE",
+      "LOW_CONVICTION",
+      "POOR_BUSINESS_QUALITY",
+      "POSITION_REQUIRES DISPROPORTIONATE MONITORING",
+      "HOLDING_EXISTS_ONLY BECAUSE OF HISTORICAL PURCHASE"
+    ],
+
+    "possibleActions": [
+      "EXIT",
+      "CONSOLIDATE",
+      "REDIRECT_PROCEEDS_TO CORE_PORTFOLIO"
+    ]
+  },
+
+  "exitExecution": {
+    "immediateExitPreferredWhen": [
+      "SERIOUS_GOVERNANCE_FAILURE",
+      "FRAUD",
+      "CRITICAL_THESIS_BREAK"
+    ],
+
+    "stagedExitMayBeUsedWhen": [
+      "POSITION_IS LARGE",
+      "LIQUIDITY_IS LIMITED",
+      "TAX_IMPACT_IS MATERIAL",
+      "TRIMMING_FOR CONCENTRATION RATHER THAN THESIS FAILURE"
+    ],
+
+    "rule": "Staged exit must not become an excuse to indefinitely retain a fundamentally broken investment."
+  },
+
+  "taxConsiderations": {
+    "principle": "Tax is a decision variable, not the investment thesis.",
+
+    "rules": [
+      "CONSIDER_SHORT_TERM_VERSUS_LONG_TERM_CAPITAL_GAINS_TREATMENT",
+      "CONSIDER_AVAILABLE_CAPITAL_LOSSES",
+      "AVOID_UNNECESSARY_TAXABLE_CHURN",
+      "DO_NOT_KEEP_A FUNDAMENTALLY_UNACCEPTABLE POSITION SOLELY TO AVOID TAX"
+    ],
+
+    "reference": "data/tax-optimization-policy.json"
+  },
+
+  "reviewFrequency": {
+    "routinePortfolioReview": "QUARTERLY",
+    "deepFundamentalReview": "ANNUALLY",
+    "eventDrivenReview": "AS_REQUIRED",
+
+    "eventTriggers": [
+      "QUARTERLY_OR_ANNUAL_RESULTS",
+      "MANAGEMENT_OR_PROMOTER_CHANGE",
+      "MAJOR_ACQUISITION_OR DIVESTMENT",
+      "MATERIAL_DEBT_CHANGE",
+      "REGULATORY_EVENT",
+      "GOVERNANCE_CONCERN",
+      "MATERIAL_CAPITAL_ALLOCATION_DECISION",
+      "STRUCTURAL_INDUSTRY_CHANGE"
+    ]
+  },
+
+  "decisionMatrix": [
+    {
+      "thesis": "STRONG",
+      "valuation": "ATTRACTIVE",
+      "positionSize": "WITHIN_LIMIT",
+      "defaultAction": "BUY_OR_ADD_SUBJECT_TO ASSET_ALLOCATION"
+    },
+    {
+      "thesis": "STRONG",
+      "valuation": "FAIR",
+      "positionSize": "WITHIN_LIMIT",
+      "defaultAction": "HOLD_OR_ADD_SELECTIVELY"
+    },
+    {
+      "thesis": "STRONG",
+      "valuation": "EXPENSIVE",
+      "positionSize": "WITHIN_LIMIT",
+      "defaultAction": "HOLD_BUT_DO_NOT_ADD"
+    },
+    {
+      "thesis": "STRONG",
+      "valuation": "ANY",
+      "positionSize": "ABOVE_LIMIT",
+      "defaultAction": "TRIM"
+    },
+    {
+      "thesis": "UNCERTAIN",
+      "valuation": "ANY",
+      "positionSize": "ANY",
+      "defaultAction": "HOLD_BUT_DO_NOT_ADD_AND_RESEARCH"
+    },
+    {
+      "thesis": "BROKEN",
+      "valuation": "ANY",
+      "positionSize": "ANY",
+      "defaultAction": "EXIT"
+    }
+  ],
+
+  "behaviouralGuardrails": [
+    "NO_REVENGE_TRADING",
+    "NO_AVERAGING_DOWN_AUTOMATICALLY",
+    "NO_SELLING_FROM PANIC",
+    "NO_HOLDING_TO BREAK EVEN",
+    "NO_PERFORMANCE_CHASING",
+    "NO_PORTFOLIO_CHANGES_BASED_ONLY_ON TV_SOCIAL_MEDIA_OR MARKET_COMMENTARY",
+    "NO_CONFUSING A GOOD_COMPANY_WITH A GOOD_POSITION_SIZE"
+  ],
+
+  "aiUsePolicy": {
+    "acceptableUses": [
+      "FINANCIAL_STATEMENT_SUMMARIZATION",
+      "COMPETITOR_COMPARISON",
+      "RISK_IDENTIFICATION",
+      "THESIS_CHALLENGE",
+      "VALUATION_SCENARIO_ANALYSIS",
+      "NEWS_AND_FILING_SUMMARIZATION"
+    ],
+
+    "requirements": [
+      "VERIFY_MATERIAL_FACTS",
+      "USE_PRIMARY_SOURCES",
+      "CHECK_INFORMATION_DATE",
+      "DISTINGUISH FACTS_FROM AI_INFERENCE"
+    ],
+
+    "prohibitedDecisionMethod": "BUY_OR_SELL_SOLELY_BECAUSE AN_AI_MODEL_RECOMMENDS_IT"
+  },
+
+  "existingPortfolioTransition": {
+    "status": "PENDING_COMPLETE_HOLDINGS_IMPORT",
+
+    "process": [
+      "IMPORT_ALL_DIRECT_STOCK_HOLDINGS",
+      "CALCULATE_CURRENT_VALUE_AND_PORTFOLIO_WEIGHT",
+      "CLASSIFY_BY_SECTOR_AND_FACTOR",
+      "WRITE_OR_RECONSTRUCT_THESIS",
+      "IDENTIFY_CONCENTRATION",
+      "CLASSIFY_EACH_POSITION",
+      "CREATE_EXIT_OR_HOLD_ACTION_PLAN"
+    ],
+
+    "classificationOptions": [
+      "CORE_QUALITY_HOLD",
+      "SATELLITE_HOLD",
+      "HOLD_BUT_DO_NOT_ADD",
+      "TRIM",
+      "EXIT",
+      "RESEARCH_REQUIRED"
+    ]
+  },
+
+  "decisionRecord": {
+    "requiredFor": [
+      "FULL_EXIT",
+      "MATERIAL_TRIM",
+      "AVERAGING_DOWN",
+      "POSITION_ABOVE_SOFT_CONCENTRATION_LIMIT"
+    ],
+
+    "fields": [
+      "DATE",
+      "STOCK",
+      "CURRENT_WEIGHT",
+      "ORIGINAL_THESIS",
+      "CURRENT_THESIS",
+      "WHAT_CHANGED",
+      "VALUATION_VIEW",
+      "CONCENTRATION_STATUS",
+      "TAX_IMPACT",
+      "ALTERNATIVE_USE_OF_CAPITAL",
+      "DECISION",
+      "RATIONALE"
+    ]
+  },
+
+  "references": {
+    "investmentDecisionChecklist": "data/investment-decision-checklist.json",
+    "approvedInvestmentUniverse": "data/approved-investment-universe.json",
+    "concentrationLimits": "data/concentration-limits.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "taxOptimizationPolicy": "data/tax-optimization-policy.json"
+  },
+
+  "dataGaps": [
+    "COMPLETE_DIRECT_STOCK_HOLDINGS",
+    "CURRENT_MARKET_VALUES",
+    "AVERAGE_PURCHASE_PRICES",
+    "CURRENT_PORTFOLIO_WEIGHTS",
+    "ORIGINAL_INVESTMENT_THESES",
+    "FINAL_DIRECT_EQUITY_ALLOCATION_LIMITS"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_TAX_OPTIMIZATION_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_INSURANCE_AND_RISK_MANAGEMENT_POLICY"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_ESTATE_PLANNING_CHECKLIST"
+    },
+    {
+      "priority": 4,
+      "action": "IMPORT_AND_CLASSIFY_DIRECT_STOCK_PORTFOLIO"
+    }
+  ]
+}

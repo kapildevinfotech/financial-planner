@@ -1,0 +1,660 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/investment-decision-checklist.schema.json",
+  "title": "FWOS Investment Decision Checklist Schema",
+  "description": "Validation schema for the structured Should I Buy This investment decision process.",
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate",
+    "checklistDefinition"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "PROVISIONAL",
+        "ACTIVE",
+        "SUPERSEDED",
+        "ARCHIVED"
+      ]
+    },
+
+    "checklistDefinition": {
+      "$ref": "#/$defs/checklistDefinition"
+    },
+
+    "decisionRecords": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decisionRecord"
+      }
+    },
+
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+
+  "$defs": {
+    "checklistDefinition": {
+      "type": "object",
+
+      "required": [
+        "mandatoryGates",
+        "scoredCriteria",
+        "decisionThresholds"
+      ],
+
+      "properties": {
+        "purpose": {
+          "type": "string"
+        },
+
+        "mandatoryGates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/mandatoryGate"
+          }
+        },
+
+        "scoredCriteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/scoredCriterion"
+          }
+        },
+
+        "automaticRejectionConditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rejectionCondition"
+          }
+        },
+
+        "decisionThresholds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/decisionThreshold"
+          }
+        },
+
+        "requiredValidationSources": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "mandatoryGate": {
+      "type": "object",
+
+      "required": [
+        "gateId",
+        "question",
+        "requiredAnswer"
+      ],
+
+      "properties": {
+        "gateId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "category": {
+          "type": "string"
+        },
+
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "requiredAnswer": {
+          "type": "string",
+          "enum": [
+            "YES",
+            "NO",
+            "NOT_APPLICABLE"
+          ]
+        },
+
+        "failureAction": {
+          "type": "string",
+          "enum": [
+            "REJECT",
+            "DEFER",
+            "REQUIRE_HUMAN_REVIEW",
+            "REQUIRE_MORE_RESEARCH"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "scoredCriterion": {
+      "type": "object",
+
+      "required": [
+        "criterionId",
+        "criterionName",
+        "weightPercent",
+        "minimumScore",
+        "maximumScore"
+      ],
+
+      "properties": {
+        "criterionId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "criterionName": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "description": {
+          "type": "string"
+        },
+
+        "weightPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "minimumScore": {
+          "type": "number"
+        },
+
+        "maximumScore": {
+          "type": "number"
+        },
+
+        "mandatoryMinimumScore": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "rejectionCondition": {
+      "type": "object",
+
+      "required": [
+        "conditionId",
+        "condition"
+      ],
+
+      "properties": {
+        "conditionId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "condition": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "action": {
+          "type": "string",
+          "enum": [
+            "REJECT",
+            "DEFER",
+            "REQUIRE_HUMAN_REVIEW"
+          ]
+        },
+
+        "exceptionAllowed": {
+          "type": "boolean"
+        },
+
+        "exceptionRequirements": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "decisionThreshold": {
+      "type": "object",
+
+      "required": [
+        "minimumScorePercent",
+        "decision"
+      ],
+
+      "properties": {
+        "minimumScorePercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "maximumScorePercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "decision": {
+          "$ref": "#/$defs/finalDecision"
+        }
+      },
+
+      "additionalProperties": false
+    },
+
+    "decisionRecord": {
+      "type": "object",
+
+      "required": [
+        "decisionId",
+        "decisionDate",
+        "investmentCandidate",
+        "gateResults",
+        "finalDecision"
+      ],
+
+      "properties": {
+        "decisionId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "decisionDate": {
+          "type": "string",
+          "format": "date"
+        },
+
+        "investmentCandidate": {
+          "$ref": "#/$defs/investmentCandidate"
+        },
+
+        "portfolioContext": {
+          "$ref": "#/$defs/portfolioContext"
+        },
+
+        "gateResults": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gateResult"
+          }
+        },
+
+        "scoreResults": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scoreResult"
+          }
+        },
+
+        "automaticRejectionResults": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rejectionResult"
+          }
+        },
+
+        "totalWeightedScorePercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "finalDecision": {
+          "$ref": "#/$defs/finalDecision"
+        },
+
+        "decisionRationale": {
+          "type": "string"
+        },
+
+        "humanReview": {
+          "$ref": "#/$defs/humanReview"
+        },
+
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "fwos.schema.json#/$defs/sourceRecord"
+          }
+        },
+
+        "reviewDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "investmentCandidate": {
+      "type": "object",
+
+      "required": [
+        "candidateId",
+        "name",
+        "instrumentType",
+        "assetClass"
+      ],
+
+      "properties": {
+        "candidateId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "instrumentType": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "assetClass": {
+          "$ref": "fwos.schema.json#/$defs/assetClass"
+        },
+
+        "proposedInvestmentAmount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "proposedPortfolioWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "proposedOwner": {
+          "oneOf": [
+            {
+              "$ref": "fwos.schema.json#/$defs/owner"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "portfolioContext": {
+      "type": "object",
+
+      "properties": {
+        "portfolioNeed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "intendedRole": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "fundingSource": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "existingOverlapPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "assetClassBeforePercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "assetClassAfterPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "gateResult": {
+      "type": "object",
+
+      "required": [
+        "gateId",
+        "answer",
+        "passed"
+      ],
+
+      "properties": {
+        "gateId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "answer": {
+          "type": "string",
+          "enum": [
+            "YES",
+            "NO",
+            "NOT_APPLICABLE",
+            "UNKNOWN"
+          ]
+        },
+
+        "passed": {
+          "type": "boolean"
+        },
+
+        "evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": false
+    },
+
+    "scoreResult": {
+      "type": "object",
+
+      "required": [
+        "criterionId",
+        "score"
+      ],
+
+      "properties": {
+        "criterionId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "score": {
+          "type": "number"
+        },
+
+        "weightedScore": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": false
+    },
+
+    "rejectionResult": {
+      "type": "object",
+
+      "required": [
+        "conditionId",
+        "triggered"
+      ],
+
+      "properties": {
+        "conditionId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "triggered": {
+          "type": "boolean"
+        },
+
+        "evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": false
+    },
+
+    "humanReview": {
+      "type": "object",
+
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+
+        "completed": {
+          "type": "boolean"
+        },
+
+        "reviewerType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "SELF",
+            "SEBI_REGISTERED_INVESTMENT_ADVISER",
+            "TAX_PROFESSIONAL",
+            "LEGAL_PROFESSIONAL",
+            "OTHER",
+            null
+          ]
+        },
+
+        "reviewNotes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "finalDecision": {
+      "type": "string",
+      "enum": [
+        "APPROVE",
+        "APPROVE_WITH_LIMITS",
+        "HOLD_EXISTING_ONLY",
+        "WATCHLIST",
+        "DEFER",
+        "REJECT",
+        "REQUIRE_MORE_RESEARCH",
+        "REQUIRE_HUMAN_REVIEW"
+      ]
+    }
+  },
+
+  "additionalProperties": true
+}

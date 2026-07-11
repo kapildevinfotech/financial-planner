@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-11",
+  "currency": "INR",
+  "status": "PENDING_CONFIRMATION",
+
+  "liabilityPolicy": {
+    "purpose": "Record all personal, household, property, business and contingent financial obligations.",
+    "zeroLiabilityRule": "No liabilities may be assumed merely because none have yet been reported.",
+    "creditCardRule": "Routine credit-card balances paid in full are tracked separately from long-term debt.",
+    "familyDebtRule": "Liabilities belonging to other family members must not be attributed to Kapil unless legally or financially guaranteed by him."
+  },
+
+  "liabilities": [],
+
+  "knownStatus": {
+    "homeLoan": "NOT_REPORTED",
+    "personalLoan": "NOT_REPORTED",
+    "vehicleLoan": "NOT_REPORTED",
+    "educationLoan": "NOT_REPORTED",
+    "businessLoan": "NOT_REPORTED",
+    "loanAgainstProperty": "NOT_REPORTED",
+    "loanAgainstSecurities": "NOT_REPORTED",
+    "creditCardRevolvingDebt": "NOT_REPORTED",
+    "familyBorrowings": "NOT_REPORTED",
+    "otherMaterialDebt": "NOT_REPORTED"
+  },
+
+  "contingentLiabilities": [],
+
+  "futurePotentialLiabilities": [
+    {
+      "liabilityId": "FUTURE-BUSINESS-FUNDING",
+      "type": "POTENTIAL_BUSINESS_CAPITAL_REQUIREMENT",
+      "estimatedAmountRange": {
+        "minimum": 3000000,
+        "maximum": 5000000
+      },
+      "currentStatus": "NOT_A_LIABILITY",
+      "notes": [
+        "Represents a possible future capital requirement.",
+        "Should not be included in current net worth.",
+        "Debt financing should be evaluated separately if the business plan becomes concrete."
+      ]
+    },
+    {
+      "liabilityId": "FUTURE-LUCKNOW-PLOT",
+      "type": "POTENTIAL_PROPERTY_PURCHASE",
+      "estimatedAmountRange": {
+        "minimum": 4000000,
+        "maximum": 5000000
+      },
+      "currentStatus": "NOT_A_LIABILITY",
+      "expectedFundingSource": "MOTHER_OWNED_ASSETS",
+      "notes": [
+        "Currently expected to be funded substantially from the mother's existing savings.",
+        "Any future loan component must be added to this registry."
+      ]
+    }
+  ],
+
+  "summary": {
+    "confirmedOutstandingLiabilities": 0,
+    "confirmedContingentLiabilities": 0,
+    "liabilityReconciliationStatus": "PENDING",
+    "provisionalDebtToAssetRatio": 0,
+    "warning": "The zero debt ratio is provisional until liabilities are explicitly confirmed."
+  },
+
+  "confirmationChecklist": [
+    {
+      "item": "Home loans on existing properties",
+      "status": "PENDING"
+    },
+    {
+      "item": "Vehicle loan",
+      "status": "PENDING"
+    },
+    {
+      "item": "Personal or consumer loans",
+      "status": "PENDING"
+    },
+    {
+      "item": "Outstanding credit-card debt not paid in full",
+      "status": "PENDING"
+    },
+    {
+      "item": "Loans against investments or property",
+      "status": "PENDING"
+    },
+    {
+      "item": "Financial guarantees for relatives or third parties",
+      "status": "PENDING"
+    },
+    {
+      "item": "Any informal family borrowing",
+      "status": "PENDING"
+    }
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CONFIRM_ALL_CURRENT_LIABILITIES"
+    },
+    {
+      "priority": 2,
+      "action": "UPDATE_NET_WORTH_AFTER_LIABILITY_RECONCILIATION"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_GOALS_REGISTRY"
+    }
+  ]
+}

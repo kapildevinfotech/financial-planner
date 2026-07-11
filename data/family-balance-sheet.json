@@ -1,0 +1,408 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "INCOMPLETE_PENDING_VERIFICATION",
+
+  "purpose": {
+    "primaryObjective": "Maintain an ownership-aware consolidated view of family assets, liabilities and net worth.",
+    "principle": "Legal ownership, personal net worth and broader family economic resources must remain separate views."
+  },
+
+  "reportingViews": {
+    "KAPIL_PERSONAL": {
+      "description": "Assets and liabilities legally owned by Kapil.",
+      "includeMotherAssets": false
+    },
+    "MOTHER_PERSONAL": {
+      "description": "Assets and liabilities legally owned by Kapil's mother.",
+      "includeKapilAssets": false
+    },
+    "HOUSEHOLD_CORE": {
+      "description": "Kapil, spouse and dependent children where ownership data is available.",
+      "includeMotherAssets": false
+    },
+    "EXTENDED_FAMILY_ECONOMIC": {
+      "description": "Broader economic view including mother's assets while preserving legal ownership labels.",
+      "legalConsolidation": false
+    }
+  },
+
+  "familyMembers": [
+    {
+      "memberId": "KAPIL",
+      "relationship": "SELF",
+      "financialRole": "PRIMARY_FINANCIAL_COORDINATOR"
+    },
+    {
+      "memberId": "SPOUSE",
+      "relationship": "SPOUSE",
+      "employment": "GOVERNMENT_EMPLOYEE",
+      "financialDataStatus": "INCOMPLETE"
+    },
+    {
+      "memberId": "REYANSH",
+      "relationship": "SON",
+      "ageYears": 6,
+      "dependent": true
+    },
+    {
+      "memberId": "NIKESH",
+      "relationship": "SON",
+      "ageYears": 3,
+      "dependent": true
+    },
+    {
+      "memberId": "MOTHER",
+      "relationship": "MOTHER",
+      "financialOwnership": "SEPARATE_LEGAL_OWNER"
+    }
+  ],
+
+  "assets": {
+    "kapil": {
+      "financialAssets": [
+        {
+          "assetId": "KAPIL_EQUITY_PORTFOLIO",
+          "category": "FINANCIAL_ASSET",
+          "subCategory": "MUTUAL_FUNDS_DIRECT_STOCKS_AND_ETFS",
+          "legalOwner": "KAPIL",
+          "approximateValue": 7500000,
+          "valueType": "HISTORICAL_APPROXIMATION",
+          "source": "USER_PROVIDED_CONTEXT",
+          "status": "REQUIRES_HOLDING_LEVEL_VERIFICATION"
+        },
+        {
+          "assetId": "KAPIL_EPF",
+          "category": "FINANCIAL_ASSET",
+          "subCategory": "EPF",
+          "legalOwner": "KAPIL",
+          "approximateValue": 3000000,
+          "valueType": "APPROXIMATE",
+          "status": "REQUIRES_VERIFICATION"
+        },
+        {
+          "assetId": "KAPIL_PPF",
+          "category": "FINANCIAL_ASSET",
+          "subCategory": "PPF",
+          "legalOwner": "KAPIL",
+          "approximateValue": 1730000,
+          "valueType": "APPROXIMATE",
+          "status": "REQUIRES_VERIFICATION"
+        },
+        {
+          "assetId": "KAPIL_NPS",
+          "category": "FINANCIAL_ASSET",
+          "subCategory": "NPS",
+          "legalOwner": "KAPIL",
+          "approximateValue": 1400000,
+          "valueType": "APPROXIMATE",
+          "allocation": {
+            "equityPercent": 63,
+            "corporateDebtPercent": 12,
+            "governmentSecuritiesPercent": 25
+          },
+          "status": "REQUIRES_VERIFICATION"
+        },
+        {
+          "assetId": "KAPIL_SAVINGS",
+          "category": "FINANCIAL_ASSET",
+          "subCategory": "SAVINGS_ACCOUNT",
+          "legalOwner": "KAPIL",
+          "valueRange": {
+            "minimum": 300000,
+            "maximum": 500000
+          },
+          "valueType": "TYPICAL_BALANCE_RANGE",
+          "status": "VARIABLE"
+        }
+      ],
+
+      "realEstate": [
+        {
+          "assetId": "FARIDABAD_2BHK",
+          "category": "REAL_ESTATE",
+          "description": "2BHK flat in Faridabad",
+          "legalOwner": "TO_BE_CONFIRMED",
+          "approximateMarketValue": 4500000,
+          "valueType": "USER_ESTIMATE",
+          "debtOutstanding": null,
+          "status": "OWNERSHIP_AND_VALUE_TO_BE_VERIFIED"
+        },
+        {
+          "assetId": "BUILT_HOME_PROPERTY",
+          "category": "REAL_ESTATE",
+          "description": "Land with built home",
+          "legalOwner": "TO_BE_CONFIRMED",
+          "approximateMarketValue": 5000000,
+          "valueType": "USER_ESTIMATE",
+          "debtOutstanding": null,
+          "status": "OWNERSHIP_AND_VALUE_TO_BE_VERIFIED"
+        }
+      ]
+    },
+
+    "spouse": {
+      "financialAssets": [],
+      "retirementBenefits": [],
+      "otherAssets": [],
+      "status": "DATA_NOT_YET_CAPTURED",
+      "note": "Spouse income and government employment are known, but asset and retirement benefit values are not yet recorded."
+    },
+
+    "children": {
+      "reynash": {
+        "legalOwner": "REYANSH",
+        "assets": [],
+        "status": "NO_DATA_CAPTURED"
+      },
+      "nikesh": {
+        "legalOwner": "NIKESH",
+        "assets": [],
+        "status": "NO_DATA_CAPTURED"
+      }
+    },
+
+    "mother": {
+      "financialAssets": [
+        {
+          "assetId": "MOTHER_SAVINGS",
+          "category": "FINANCIAL_ASSET",
+          "subCategory": "SAVINGS_ACCOUNT",
+          "legalOwner": "MOTHER",
+          "approximateValue": 8000000,
+          "valueType": "USER_PROVIDED_APPROXIMATION",
+          "status": "REQUIRES_CURRENT_VERIFICATION"
+        }
+      ],
+
+      "plannedUses": [
+        {
+          "purpose": "POTENTIAL_LUCKNOW_PLOT_PURCHASE",
+          "estimatedAmountRange": {
+            "minimum": 4000000,
+            "maximum": 5000000
+          },
+          "status": "PLANNED_NOT_EXECUTED"
+        }
+      ],
+
+      "inheritanceExpectation": {
+        "expectedBeneficiary": "KAPIL",
+        "certainty": "EXPECTED_NOT_CURRENT_OWNERSHIP",
+        "includeInKapilCurrentNetWorth": false,
+        "rule": "Expected inheritance must not be counted as Kapil's current personal net worth."
+      }
+    }
+  },
+
+  "liabilities": {
+    "kapil": [],
+    "spouse": [],
+    "mother": [],
+    "knownLiabilityStatus": "NO_MATERIAL_LIABILITIES_REPORTED",
+    "verificationRequired": true
+  },
+
+  "insuranceRelatedAssets": {
+    "licPolicy": {
+      "legalOwnerOrLifeAssured": "KAPIL",
+      "sumInsured": 300000,
+      "annualPremium": 17000,
+      "maturityYear": 2034,
+      "currentSurrenderValue": null,
+      "maturityValue": null,
+      "balanceSheetTreatment": "DO_NOT_ADD_SUM_INSURED_TO_NET_WORTH",
+      "status": "POLICY_VALUE_DATA_REQUIRED"
+    }
+  },
+
+  "knownNetWorthCalculations": {
+    "kapilPersonalFinancialAssets": {
+      "approximateMinimumExcludingSavings": 13630000,
+      "approximateRangeIncludingTypicalSavings": {
+        "minimum": 13930000,
+        "maximum": 14130000
+      },
+      "confidence": "LOW_TO_MODERATE",
+      "warning": "Equity portfolio figure may overlap with or differ from current holdings and must be verified."
+    },
+
+    "knownRealEstateGrossValue": {
+      "approximateValue": 9500000,
+      "ownershipVerified": false
+    },
+
+    "indicativeKapilPersonalNetWorth": {
+      "approximateRange": {
+        "minimum": 23430000,
+        "maximum": 23630000
+      },
+      "includeMotherAssets": false,
+      "includeSpouseAssets": false,
+      "assumesNoLiabilities": true,
+      "confidence": "LOW",
+      "warning": "This is an indicative arithmetic estimate, not a verified net worth figure."
+    },
+
+    "motherKnownFinancialAssets": {
+      "approximateValue": 8000000,
+      "includeInKapilPersonalNetWorth": false
+    },
+
+    "extendedFamilyKnownGrossAssets": {
+      "approximateRange": {
+        "minimum": 31430000,
+        "maximum": 31630000
+      },
+      "legalOwnershipConsolidated": false,
+      "includeSpouseAssets": false,
+      "warning": "This is an economic overview only and must not be treated as a single legally owned portfolio."
+    }
+  },
+
+  "ownershipRules": [
+    "ASSET_MUST_BE_REPORTED_UNDER_ITS_LEGAL_OWNER",
+    "EXPECTED_INHERITANCE_IS_NOT_CURRENT_NET_WORTH",
+    "MOTHER_ASSETS_MUST_NOT_BE_INCLUDED_IN_KAPIL_PERSONAL_NET_WORTH",
+    "JOINT_ASSETS_MUST_RECORD_ACTUAL_OWNERSHIP_STRUCTURE",
+    "NOMINATION_DOES_NOT_AUTOMATICALLY_DEFINE_BENEFICIAL_OWNERSHIP",
+    "FAMILY_ACCESS_TO_MONEY_DOES_NOT_CHANGE_LEGAL_OWNERSHIP",
+    "SOURCE_OF_FUNDS_AND LEGAL_OWNERSHIP_SHOULD_BE_DOCUMENTED_FOR_MAJOR_ASSET_PURCHASES"
+  ],
+
+  "liquidityClassification": {
+    "IMMEDIATE": [
+      "SAVINGS_ACCOUNT",
+      "OTHER_UNRESTRICTED_CASH"
+    ],
+    "MARKET_LIQUID": [
+      "LISTED_EQUITY",
+      "ETFS",
+      "OPEN_ENDED_MUTUAL_FUNDS"
+    ],
+    "RESTRICTED_OR_LONG_TERM": [
+      "EPF",
+      "PPF",
+      "NPS"
+    ],
+    "ILLIQUID": [
+      "REAL_ESTATE",
+      "PRIVATE_BUSINESS_INTEREST"
+    ]
+  },
+
+  "portfolioVsBalanceSheet": {
+    "currentPortfolioIncludes": [
+      "KAPIL_INVESTABLE_FINANCIAL_ASSETS"
+    ],
+    "familyBalanceSheetIncludes": [
+      "FINANCIAL_ASSETS",
+      "REAL_ESTATE",
+      "LIABILITIES",
+      "SEPARATE_OWNER_VIEWS"
+    ],
+    "rule": "Portfolio allocation decisions should not mechanically treat owner-occupied or strategic real estate as investable portfolio assets."
+  },
+
+  "futureBusinessCapital": {
+    "maximumIndicativeCapital": 5000000,
+    "currentStatus": "NO_SPECIFIC_BUSINESS_SELECTED",
+    "currentBalanceSheetClassification": "CONTINGENT_FUTURE_GOAL",
+    "rule": "Do not record future business capital as a liability until a specific commitment exists."
+  },
+
+  "plannedLucknowPlot": {
+    "estimatedPurchasePriceRange": {
+      "minimum": 4000000,
+      "maximum": 5000000
+    },
+    "expectedFundingSource": "MOTHER_ASSETS",
+    "currentStatus": "PLANNED",
+    "legalOwner": "TO_BE_DECIDED",
+
+    "requiredBeforeBalanceSheetUpdate": [
+      "CONFIRM_PURCHASE_COMPLETION",
+      "CONFIRM_LEGAL_OWNER",
+      "CONFIRM_ACTUAL_PURCHASE_COST",
+      "CONFIRM_SOURCE_OF_FUNDS",
+      "RECORD_REGISTRATION_AND TRANSACTION_COSTS",
+      "REDUCE_FUNDING_ACCOUNT_BALANCE",
+      "ADD_PROPERTY_ASSET"
+    ]
+  },
+
+  "dataQuality": {
+    "overallStatus": "INCOMPLETE",
+
+    "verified": [
+      "FAMILY_STRUCTURE",
+      "KNOWN_APPROXIMATE_PPF_VALUE",
+      "KNOWN_APPROXIMATE_EPF_VALUE",
+      "KNOWN_APPROXIMATE_NPS_VALUE",
+      "KNOWN_NPS_ALLOCATION",
+      "MOTHER_APPROXIMATE_SAVINGS",
+      "REPORTED_REAL_ESTATE_ESTIMATES"
+    ],
+
+    "criticalMissingData": [
+      "CURRENT_HOLDING_LEVEL_INVESTMENT_PORTFOLIO",
+      "EXACT_PROPERTY_LEGAL_OWNERSHIP",
+      "CURRENT_PROPERTY_VALUATIONS",
+      "ANY_PROPERTY_LIABILITIES",
+      "SPOUSE_FINANCIAL_ASSETS",
+      "SPOUSE_RETIREMENT_BENEFITS",
+      "CURRENT_MOTHER_ACCOUNT_BALANCE",
+      "COMPLETE_LIABILITY_CONFIRMATION",
+      "LIC_CURRENT_POLICY_VALUE"
+    ]
+  },
+
+  "updateProcess": [
+    "UPDATE_ALL_FINANCIAL_ASSET_VALUES",
+    "UPDATE_CURRENT_PORTFOLIO_TOTAL",
+    "VERIFY_PROPERTY_OWNERSHIP",
+    "UPDATE_REASONABLE_PROPERTY_VALUES",
+    "UPDATE_LIABILITIES",
+    "UPDATE_MOTHER_ASSETS_SEPARATELY",
+    "UPDATE_SPOUSE_ASSETS_IF INCLUDED",
+    "CALCULATE_OWNER_SPECIFIC_NET_WORTH",
+    "CALCULATE_HOUSEHOLD_CORE_NET_WORTH",
+    "CALCULATE_EXTENDED_FAMILY_ECONOMIC_VIEW",
+    "RECORD_AS_OF_DATE"
+  ],
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "dataIndex": "data/fwos-data-index.json",
+    "currentPortfolio": "data/current-portfolio.json",
+    "goals": "data/goals.json",
+    "emergencyFund": "data/emergency-fund.json",
+    "estatePlanning": "data/estate-planning-checklist.json",
+    "familyFinancialContinuity": "data/family-financial-continuity-checklist.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "VERIFY_COMPLETE_CURRENT_PORTFOLIO"
+    },
+    {
+      "priority": 2,
+      "action": "CONFIRM_LEGAL_OWNERSHIP_OF_REAL_ESTATE"
+    },
+    {
+      "priority": 3,
+      "action": "CAPTURE_SPOUSE_ASSETS_AND_RETIREMENT_BENEFITS"
+    },
+    {
+      "priority": 4,
+      "action": "VERIFY_MOTHER_CURRENT_ASSET_POSITION"
+    },
+    {
+      "priority": 5,
+      "action": "CREATE_GOAL_FUNDING_STATUS"
+    }
+  ]
+}

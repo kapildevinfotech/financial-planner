@@ -1,0 +1,363 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "INITIAL_RISK_REGISTER",
+
+  "governance": {
+    "purpose": "Identify, prioritize, monitor and mitigate risks that could prevent achievement of family financial goals.",
+    "reviewFrequency": "QUARTERLY_LIGHT_REVIEW_AND_ANNUAL_FULL_REVIEW",
+    "reviewTriggers": [
+      "JOB_LOSS_OR_MAJOR_INCOME_CHANGE",
+      "BUSINESS_LAUNCH",
+      "MAJOR_PROPERTY_PURCHASE",
+      "MAJOR_MARKET_DECLINE",
+      "SERIOUS_FAMILY_HEALTH_EVENT",
+      "CHANGE_IN_DEPENDANTS",
+      "NEW_LARGE_LIABILITY",
+      "MATERIAL_TAX_OR_REGULATORY_CHANGE"
+    ],
+    "ratingScale": {
+      "likelihood": ["LOW", "MEDIUM", "HIGH"],
+      "impact": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+      "priority": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    }
+  },
+
+  "riskProfile": {
+    "riskNeed": "MODERATE_TO_HIGH",
+    "riskAbility": "HIGH",
+    "riskWillingness": "MODERATE",
+    "behaviouralCapacity": "MODERATE_TO_HIGH",
+    "overallInterpretation": "Can accept meaningful long-term market volatility, but essential goals require explicit protection and goal-based de-risking."
+  },
+
+  "risks": [
+    {
+      "riskId": "RISK-INCOME-001",
+      "category": "HUMAN_CAPITAL",
+      "name": "IT Career and AI Disruption Risk",
+      "likelihood": "MEDIUM",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "currentControls": [
+        "ONGOING_AI_LEARNING",
+        "DUAL_INCOME_HOUSEHOLD",
+        "SIGNIFICANT_EXISTING_ASSETS"
+      ],
+      "mitigation": [
+        "MAINTAIN_CAREER_RELEVANCE",
+        "BUILD_STRONG_LIQUIDITY",
+        "AVOID_DEPENDENCE_ON_HIGH_SALARY_GROWTH",
+        "KEEP_NON_IT_BUSINESS_OPTIONALITY"
+      ],
+      "status": "ACTIVE_MONITORING"
+    },
+
+    {
+      "riskId": "RISK-LIQUIDITY-001",
+      "category": "LIQUIDITY",
+      "name": "Insufficient Dedicated Personal Emergency Reserve",
+      "likelihood": "MEDIUM",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "currentControls": [
+        "PERSONAL_SAVINGS_ACCOUNT_3_TO_5_LAKH",
+        "MOTHER_ASSETS_AVAILABLE_AS_INFORMAL_BACKUP"
+      ],
+      "weaknesses": [
+        "NO_DEDICATED_LIQUID_FUND",
+        "NO_PERSONAL_FIXED_DEPOSIT_RESERVE",
+        "DEPENDENCE_ON_MOTHER_OWNED_ASSETS_FOR_SECONDARY_LIQUIDITY"
+      ],
+      "mitigation": [
+        "CREATE_PERSONAL_EMERGENCY_FUND_POLICY",
+        "SEPARATE_EMERGENCY_RESERVE_FROM_OPPORTUNITY_CAPITAL"
+      ],
+      "status": "ACTION_REQUIRED"
+    },
+
+    {
+      "riskId": "RISK-LIFE-001",
+      "category": "INSURANCE",
+      "name": "Premature Death of Primary Earner",
+      "likelihood": "LOW",
+      "impact": "CRITICAL",
+      "priority": "CRITICAL",
+      "currentControls": [
+        "SIGNIFICANT_FINANCIAL_ASSETS",
+        "DUAL_INCOME_HOUSEHOLD",
+        "LIC_SUM_ASSURED_APPROXIMATELY_3_LAKH"
+      ],
+      "weaknesses": [
+        "NO_DEDICATED_TERM_INSURANCE",
+        "TWO_YOUNG_DEPENDENT_CHILDREN"
+      ],
+      "mitigation": [
+        "COMPLETE_HUMAN_LIFE_AND_GOAL_GAP_ANALYSIS",
+        "EVALUATE_TERM_INSURANCE"
+      ],
+      "status": "HIGH_PRIORITY_REVIEW"
+    },
+
+    {
+      "riskId": "RISK-MARKET-001",
+      "category": "MARKET",
+      "name": "Major Equity Market Drawdown",
+      "likelihood": "HIGH_OVER_LONG_HORIZON",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "currentControls": [
+        "LONG_INVESTMENT_HORIZON",
+        "EPF_AND_PPF_DEBT_BASE",
+        "WILLINGNESS_TO_CONTINUE_SIP",
+        "WILLINGNESS_TO_BUY_DURING_CORRECTIONS"
+      ],
+      "mitigation": [
+        "MAINTAIN_STRATEGIC_ASSET_ALLOCATION",
+        "USE_REBALANCING_RULES",
+        "CREATE_CRASH_PLAYBOOK",
+        "DE_RISK_NEAR_TERM_GOALS"
+      ],
+      "status": "MANAGE_NOT_AVOID"
+    },
+
+    {
+      "riskId": "RISK-CONCENTRATION-001",
+      "category": "PORTFOLIO",
+      "name": "Unknown Portfolio Concentration",
+      "likelihood": "UNKNOWN",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "knownConcerns": [
+        "CPSE_ETF",
+        "BHARAT_22_ETF",
+        "UNKNOWN_DIRECT_STOCK_CONCENTRATION",
+        "UNKNOWN_FUND_OVERLAP"
+      ],
+      "mitigation": [
+        "IMPORT_COMPLETE_HOLDINGS",
+        "MEASURE_SINGLE_STOCK_CONCENTRATION",
+        "MEASURE_SECTOR_CONCENTRATION",
+        "MEASURE_FUND_OVERLAP",
+        "DEFINE_CONCENTRATION_LIMITS"
+      ],
+      "status": "DATA_REQUIRED"
+    },
+
+    {
+      "riskId": "RISK-GOAL-001",
+      "category": "GOAL_FUNDING",
+      "name": "Children Education Goals Not Yet Quantified",
+      "likelihood": "HIGH_IF_UNPLANNED",
+      "impact": "CRITICAL",
+      "priority": "CRITICAL",
+      "weaknesses": [
+        "NO_GOAL_WISE_CORPUS",
+        "NO_DEDICATED_ASSET_MAPPING",
+        "FOREIGN_MASTERS_COST_UNCERTAINTY"
+      ],
+      "mitigation": [
+        "MODEL_MULTIPLE_EDUCATION_COST_SCENARIOS",
+        "CALCULATE_FUNDING_GAPS",
+        "CREATE_GOAL_SPECIFIC_GLIDE_PATHS"
+      ],
+      "status": "ACTION_REQUIRED"
+    },
+
+    {
+      "riskId": "RISK-INFLATION-001",
+      "category": "PURCHASING_POWER",
+      "name": "Long-Term Inflation",
+      "likelihood": "HIGH",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "mitigation": [
+        "MAINTAIN_SUFFICIENT_GROWTH_ASSETS",
+        "USE_INFLATION_ADJUSTED_GOAL_CALCULATIONS",
+        "REVIEW_GOAL_COSTS_REGULARLY"
+      ],
+      "status": "ONGOING"
+    },
+
+    {
+      "riskId": "RISK-SEQUENCE-001",
+      "category": "RETIREMENT",
+      "name": "Sequence of Returns Risk Near Financial Independence",
+      "likelihood": "MEDIUM",
+      "impact": "HIGH",
+      "priority": "MEDIUM_HIGH",
+      "mitigation": [
+        "CREATE_RETIREMENT_GLIDE_PATH",
+        "BUILD_EXPENSE_BUCKETS_BEFORE_RETIREMENT",
+        "AVOID_FORCED_EQUITY_SALES_DURING_MAJOR_DRAWDOWNS"
+      ],
+      "status": "FUTURE_PLANNING_REQUIRED"
+    },
+
+    {
+      "riskId": "RISK-BUSINESS-001",
+      "category": "BUSINESS",
+      "name": "Capital Loss from Future Business Venture",
+      "likelihood": "MEDIUM",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "maximumPotentialCapital": 5000000,
+      "mitigation": [
+        "DO_NOT_USE_EMERGENCY_FUND",
+        "DO_NOT_COMPROMISE_ESSENTIAL_EDUCATION_GOALS",
+        "DO_NOT_ASSUME_BUSINESS_SUCCESS_IN_BASE_FINANCIAL_PLAN",
+        "USE_SEPARATE_BUSINESS_CAPITAL_BUCKET",
+        "REQUIRE_FORMAL_FEASIBILITY_AND_DUE_DILIGENCE"
+      ],
+      "status": "OPTIONAL_FUTURE_RISK"
+    },
+
+    {
+      "riskId": "RISK-FAMILY-ASSET-001",
+      "category": "OWNERSHIP_AND_GOVERNANCE",
+      "name": "Mixing Personal and Mother-Owned Money",
+      "likelihood": "HIGH",
+      "impact": "MEDIUM_HIGH",
+      "priority": "HIGH",
+      "weaknesses": [
+        "NO_CLEAR_ECONOMIC_SEPARATION",
+        "POTENTIAL_GOAL_AND_TAX_CONFUSION",
+        "POTENTIAL_SUCCESSION_COMPLEXITY"
+      ],
+      "mitigation": [
+        "MAINTAIN_SEPARATE_OWNER_LEVEL_BALANCE_SHEETS",
+        "DOCUMENT_FUNDING_SOURCES",
+        "KEEP_INVESTMENT_OWNERSHIP_CLEAR",
+        "OBTAIN_TAX_AND_LEGAL_ADVICE_FOR_CROSS_OWNER_TRANSFERS"
+      ],
+      "status": "GOVERNANCE_IMPROVEMENT_REQUIRED"
+    },
+
+    {
+      "riskId": "RISK-BEHAVIOUR-001",
+      "category": "BEHAVIOURAL",
+      "name": "Market Noise and Advice Overload",
+      "likelihood": "MEDIUM",
+      "impact": "MEDIUM_HIGH",
+      "priority": "MEDIUM_HIGH",
+      "knownTriggers": [
+        "CRASH_PREDICTIONS",
+        "POPULAR_INVESTOR_OPINIONS",
+        "WAR_AND_GEOPOLITICAL_NEWS",
+        "MULTIPLE_CONFLICTING_AI_RECOMMENDATIONS"
+      ],
+      "currentStrengths": [
+        "WILLINGNESS_TO_CONTINUE_SIP",
+        "STRUCTURAL_PROBLEM_THRESHOLD_BEFORE_PANIC",
+        "SELF_VERIFICATION_OF_FACTS"
+      ],
+      "mitigation": [
+        "FOLLOW_WRITTEN_IPS",
+        "USE_INVESTMENT_DECISION_CHECKLIST",
+        "CREATE_NEVER_DO_LIST",
+        "REQUIRE_EVIDENCE_FOR_STRATEGY_CHANGES"
+      ],
+      "status": "MANAGED_BY_PROCESS"
+    },
+
+    {
+      "riskId": "RISK-AI-ADVICE-001",
+      "category": "DECISION_GOVERNANCE",
+      "name": "Incorrect or Hallucinated AI Financial Advice",
+      "likelihood": "MEDIUM",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "currentControls": [
+        "MULTIPLE_LLM_VALIDATION",
+        "PERSONAL_FACT_CHECKING",
+        "PREFERENCE_FOR_HUMAN_VALIDATION"
+      ],
+      "mitigation": [
+        "VERIFY_TIME_SENSITIVE_FACTS_FROM PRIMARY_SOURCES",
+        "SEPARATE_FACTS_FROM_ASSUMPTIONS",
+        "REQUIRE_CALCULATION_REPRODUCIBILITY",
+        "USE_HUMAN_PROFESSIONALS_FOR_HIGH_STAKES_DECISIONS"
+      ],
+      "status": "ONGOING_GOVERNANCE"
+    },
+
+    {
+      "riskId": "RISK-SUCCESSION-001",
+      "category": "ESTATE_PLANNING",
+      "name": "Incomplete Estate and Succession Planning",
+      "likelihood": "MEDIUM",
+      "impact": "HIGH",
+      "priority": "HIGH",
+      "mitigation": [
+        "CREATE_WILL",
+        "REVIEW_NOMINATIONS",
+        "CREATE_ASSET_AND_ACCOUNT_INVENTORY",
+        "DOCUMENT_DIGITAL_ASSET_ACCESS_PROCESS",
+        "PLAN_GUARDIANSHIP_AND_FINANCIAL_ADMINISTRATION_FOR_MINOR_CHILDREN"
+      ],
+      "status": "ASSESSMENT_PENDING"
+    },
+
+    {
+      "riskId": "RISK-PROPERTY-001",
+      "category": "REAL_ESTATE",
+      "name": "Increasing Illiquid Real Estate Exposure",
+      "likelihood": "MEDIUM",
+      "impact": "MEDIUM_HIGH",
+      "priority": "MEDIUM",
+      "knownExposure": {
+        "existingRealEstateApproximate": 9500000,
+        "proposedLucknowPlot": "₹40-50 lakh"
+      },
+      "mitigation": [
+        "ASSESS_PROPERTY_AT_TOTAL_FAMILY_BALANCE_SHEET_LEVEL",
+        "DO_NOT_TREAT_REAL_ESTATE_AS EMERGENCY_LIQUIDITY",
+        "EVALUATE_OPPORTUNITY_COST_BEFORE PURCHASE"
+      ],
+      "status": "MONITOR"
+    }
+  ],
+
+  "riskPrioritySummary": {
+    "criticalImmediate": [
+      "RISK-LIFE-001",
+      "RISK-GOAL-001"
+    ],
+    "highPriority": [
+      "RISK-INCOME-001",
+      "RISK-LIQUIDITY-001",
+      "RISK-MARKET-001",
+      "RISK-CONCENTRATION-001",
+      "RISK-INFLATION-001",
+      "RISK-BUSINESS-001",
+      "RISK-FAMILY-ASSET-001",
+      "RISK-AI-ADVICE-001",
+      "RISK-SUCCESSION-001"
+    ]
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "QUANTIFY_EDUCATION_GOALS"
+    },
+    {
+      "priority": 2,
+      "action": "CALCULATE_TERM_INSURANCE_NEED"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_EMERGENCY_FUND_POLICY"
+    },
+    {
+      "priority": 4,
+      "action": "IMPORT_AND_ANALYSE_COMPLETE_PORTFOLIO"
+    },
+    {
+      "priority": 5,
+      "action": "CREATE_CRASH_AND_REBALANCING_PLAYBOOK"
+    }
+  ]
+}

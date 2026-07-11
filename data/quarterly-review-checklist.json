@@ -1,0 +1,470 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "ACTIVE_FRAMEWORK",
+
+  "purpose": {
+    "primaryObjective": "Perform a lightweight portfolio and financial operating review every three to four months.",
+    "principle": "Monitor, deploy accumulated surplus, rebalance when required and fix material issues without unnecessarily changing the long-term strategy."
+  },
+
+  "reviewSchedule": {
+    "frequency": "EVERY_3_TO_4_MONTHS",
+    "targetReviewsPerYear": 3,
+    "suggestedMonths": [
+      "APRIL",
+      "AUGUST",
+      "DECEMBER"
+    ],
+    "annualReviewRelationship": "One review may be replaced by the comprehensive annual review."
+  },
+
+  "reviewTimeBudget": {
+    "targetMinutes": 60,
+    "maximumMinutes": 120,
+    "principle": "The quarterly review should remain operational and decision focused."
+  },
+
+  "reviewOrder": [
+    "DATA_UPDATE",
+    "CASH_FLOW",
+    "LIQUIDITY",
+    "GOAL_ALERTS",
+    "ASSET_ALLOCATION",
+    "ACCUMULATED_SURPLUS",
+    "REBALANCING",
+    "PORTFOLIO_EXCEPTIONS",
+    "RISK_AND_INSURANCE_ALERTS",
+    "ACTION_PLAN"
+  ],
+
+  "dataUpdate": {
+    "checklist": [
+      "UPDATE_CURRENT_DATE",
+      "UPDATE_MAJOR_ACCOUNT_BALANCES",
+      "UPDATE_MUTUAL_FUND_VALUES",
+      "UPDATE_ETF_VALUES",
+      "UPDATE_DIRECT_STOCK_VALUES",
+      "UPDATE_GOLD_VALUE",
+      "UPDATE_EPF_IF CURRENT_DATA_AVAILABLE",
+      "UPDATE_PPF_IF CURRENT_DATA_AVAILABLE",
+      "UPDATE_NPS_VALUE_AND ALLOCATION",
+      "UPDATE_CASH_AND LIQUIDITY",
+      "UPDATE_MATERIAL_LIABILITIES"
+    ],
+
+    "precisionRule": "Quarterly values may use reasonable current estimates where exact values are difficult to obtain, but material investment decisions require verified data."
+  },
+
+  "cashFlowReview": {
+    "baselineMonthlySurplus": 125000,
+
+    "checklist": [
+      "UPDATE_AVERAGE_MONTHLY_INCOME",
+      "UPDATE_AVERAGE_MONTHLY_EXPENDITURE",
+      "CALCULATE_ACTUAL_MONTHLY_SURPLUS",
+      "COMPARE_ACTUAL_SURPLUS_WITH BASELINE",
+      "IDENTIFY_LARGE_UPCOMING_EXPENSES",
+      "CHECK_SIP_SUSTAINABILITY"
+    ],
+
+    "alertConditions": [
+      "INCOME_DECLINE_GREATER_THAN_20_PERCENT",
+      "SUSTAINED_EXPENSE_INCREASE",
+      "MONTHLY_SURPLUS_MATERIALLY_BELOW_PLAN",
+      "EXPECTED_LARGE_CASH_REQUIREMENT_WITHIN_24_MONTHS"
+    ]
+  },
+
+  "liquidityReview": {
+    "knownPersonalSavingsAccountRange": {
+      "minimum": 300000,
+      "maximum": 500000
+    },
+
+    "checklist": [
+      "CHECK_PERSONAL_SAVINGS_BALANCE",
+      "CHECK_EMERGENCY_FUND_PROGRESS",
+      "CHECK_NEAR_TERM_CASH_REQUIREMENTS",
+      "CHECK_OPPORTUNITY_RESERVE",
+      "CONFIRM_NO_EMERGENCY_MONEY_WAS_USED_FOR_NORMAL_INVESTING"
+    ],
+
+    "rules": [
+      "MOTHER_ASSETS_DO_NOT_REPLACE_PERSONAL_EMERGENCY_LIQUIDITY",
+      "EMERGENCY_FUND_AND OPPORTUNITY_RESERVE_MUST_REMAIN_CONCEPTUALLY_SEPARATE"
+    ]
+  },
+
+  "goalAlertReview": {
+    "reference": "data/goals.json",
+
+    "quarterlyScope": [
+      "CHECK_FOR_MAJOR_GOAL_CHANGES",
+      "CHECK_FOR_NEW_GOALS",
+      "CHECK_FOR MATERIAL_CHANGE_IN EDUCATION_EXPECTATIONS",
+      "CHECK_FOR BUSINESS_PLAN_ACTIVATION"
+    ],
+
+    "notNormallyRequired": [
+      "FULL_GOAL_CORPUS_RECALCULATION",
+      "FULL_INFLATION_ASSUMPTION_REVIEW"
+    ],
+
+    "rule": "Detailed goal calculations belong primarily in the annual review unless a major change occurs."
+  },
+
+  "assetAllocationReview": {
+    "reference": "data/asset-allocation.json",
+
+    "checklist": [
+      "CALCULATE_CURRENT_LOOK_THROUGH_ASSET_ALLOCATION",
+      "COMPARE_WITH TARGET",
+      "COMPARE_WITH APPROVED_BANDS",
+      "IDENTIFY_UNDERWEIGHT_ASSET_CLASSES",
+      "IDENTIFY_OVERWEIGHT_ASSET_CLASSES",
+      "CHECK_CONCENTRATION_RISK"
+    ],
+
+    "requiredAssetClasses": [
+      "INDIAN_EQUITY",
+      "INTERNATIONAL_EQUITY",
+      "GOLD",
+      "FIXED_INCOME",
+      "CASH_AND LIQUIDITY"
+    ],
+
+    "lookThroughRules": [
+      "NPS_EQUITY_COUNTS_AS EQUITY",
+      "NPS_CORPORATE_DEBT_COUNTS_AS FIXED_INCOME",
+      "NPS_GOVERNMENT_SECURITIES_COUNT_AS FIXED_INCOME",
+      "EPF_COUNTS_AS FIXED_INCOME",
+      "PPF_COUNTS_AS FIXED_INCOME",
+      "CPSE_ETF_COUNTS_AS INDIAN_EQUITY",
+      "BHARAT_22_ETF_COUNTS_AS INDIAN_EQUITY"
+    ]
+  },
+
+  "accumulatedSurplusReview": {
+    "userPreference": "ACCUMULATE_SALARY_SURPLUS_AND REVIEW_DEPLOYMENT_EVERY_3_TO_4_MONTHS",
+
+    "expectedMonthlySurplus": 125000,
+
+    "indicativeAccumulation": {
+      "threeMonths": 375000,
+      "fourMonths": 500000
+    },
+
+    "deploymentSequence": [
+      "FUND_ANY_EMERGENCY_LIQUIDITY_GAP",
+      "RESERVE_KNOWN_NEAR_TERM_EXPENSES",
+      "FUND_GOAL_SHORTFALLS_IF IDENTIFIED",
+      "DIRECT_NEW_MONEY_TO UNDERWEIGHT_ASSET_CLASSES",
+      "ADD_TO_OPPORTUNITY_RESERVE_IF BELOW_POLICY_LEVEL",
+      "INVEST_REMAINING_SURPLUS_ACCORDING_TO STRATEGIC_ALLOCATION"
+    ],
+
+    "rules": [
+      "DO_NOT_WAIT_INDEFINITELY_FOR_A_MARKET_CRASH",
+      "DO_NOT_DEPLOY_ALL_SURPLUS_INTO_THE_RECENT_BEST_PERFORMING_ASSET",
+      "USE_NEW_MONEY_AS_THE_PREFERRED_REBALANCING_TOOL"
+    ]
+  },
+
+  "sipReview": {
+    "checklist": [
+      "CONFIRM_ALL_INTENDED_SIPS_EXECUTED",
+      "CHECK_FOR_FAILED_OR PAUSED_SIPS",
+      "CHECK_CURRENT_TOTAL_MONTHLY_INVESTMENT",
+      "REDIRECT_FUTURE_SIPS_IF ASSET_ALLOCATION_REQUIRES",
+      "CHECK_FOR_REDUNDANT_NEW_FUNDS"
+    ],
+
+    "defaultRule": "Continue approved long-term SIPs unless cash flow, goals, product quality or asset allocation justify a change."
+  },
+
+  "rebalancingReview": {
+    "reference": "data/rebalancing-policy.json",
+
+    "preferredSequence": [
+      "REDIRECT_FUTURE_SIPS",
+      "DEPLOY_ACCUMULATED_SURPLUS",
+      "USE_OTHER_NEW_CASH_FLOWS",
+      "SELL_EXISTING_ASSETS_ONLY_IF REQUIRED"
+    ],
+
+    "decisionOptions": [
+      "NO_ACTION",
+      "SIP_REDIRECTION",
+      "DEPLOY_NEW_CASH",
+      "PARTIAL_REBALANCING",
+      "FULL_POLICY_REBALANCING"
+    ]
+  },
+
+  "marketDeclineCheck": {
+    "reference": "data/crash-playbook.json",
+
+    "checkpointsPercent": [
+      5,
+      10,
+      15,
+      20,
+      30,
+      40,
+      50
+    ],
+
+    "actions": [
+      "IDENTIFY_ACTUAL_DECLINE_FROM RELEVANT_MARKET_HIGH",
+      "CHECK_CRASH_PLAYBOOK",
+      "CHECK_AVAILABLE_OPPORTUNITY_RESERVE",
+      "CHECK_ASSET_ALLOCATION",
+      "EXECUTE_ONLY_PREDEFINED_OR DOCUMENTED_ACTION"
+    ],
+
+    "rule": "A market decline is not automatically a reason to override asset allocation."
+  },
+
+  "portfolioExceptionReview": {
+    "scope": "Review exceptions and material changes rather than conducting a full holding-by-holding analysis every quarter.",
+
+    "checklist": [
+      "IDENTIFY_ANY_FUND_WITH MATERIAL_OBJECTIVE_CHANGE",
+      "IDENTIFY_ANY_MAJOR_FUND_MANAGER_CHANGE_FOR ACTIVE_FUNDS",
+      "IDENTIFY_ETF_LIQUIDITY_OR TRACKING_ISSUES",
+      "IDENTIFY_DIRECT_STOCK_THESIS_BREAK",
+      "IDENTIFY_MAJOR_GOVERNANCE_ISSUE",
+      "IDENTIFY_SINGLE_POSITION_CONCENTRATION",
+      "IDENTIFY_NEW_UNAPPROVED_INVESTMENTS"
+    ],
+
+    "defaultAction": "WATCH_AND DOCUMENT_UNLESS_THE_ISSUE_IS_MATERIAL"
+  },
+
+  "directStockReview": {
+    "reference": "data/direct-stock-exit-policy.json",
+
+    "quarterlyChecks": [
+      "THESIS_BREAK",
+      "GOVERNANCE_RED_FLAG",
+      "MATERIAL_DEBT_DETERIORATION",
+      "POSITION_CONCENTRATION",
+      "CORPORATE_ACTION_REQUIRING_DECISION"
+    ],
+
+    "rule": "Do not trade direct stocks merely to create quarterly activity."
+  },
+
+  "goldReview": {
+    "checklist": [
+      "CALCULATE_CURRENT_GOLD_ALLOCATION",
+      "COMPARE_WITH TARGET_RANGE",
+      "CHECK_FORM_OF GOLD_HOLDING",
+      "CHECK_IF_NEW_PURCHASE_IS INVESTMENT_OR CONSUMPTION"
+    ],
+
+    "rule": "Gold purchases should follow the approved portfolio role and allocation rather than recent price momentum."
+  },
+
+  "internationalEquityReview": {
+    "checklist": [
+      "CALCULATE_CURRENT_INTERNATIONAL_ALLOCATION",
+      "CHECK_PRODUCT_AVAILABILITY",
+      "VERIFY_CURRENT_TAX_TREATMENT_BEFORE_NEW_DEPLOYMENT",
+      "CHECK_CONCENTRATION_IN US_TECH_OR NASDAQ",
+      "CHECK_OWNERSHIP_ACCOUNT"
+    ],
+
+    "rule": "International investing should serve diversification rather than return chasing."
+  },
+
+  "motherAssetsReview": {
+    "scope": "Only review items relevant to family financial coordination while preserving legal ownership separation.",
+
+    "checklist": [
+      "KEEP_MOTHER_ASSET_RECORDS_SEPARATE",
+      "CHECK_ANY_PLANNED_LARGE_WITHDRAWAL",
+      "CHECK_LUCKNOW_PLOT_STATUS_IF ACTIVE",
+      "DOCUMENT_ANY_LARGE_TRANSFER",
+      "PRESERVE_MOTHER_LIFETIME_FINANCIAL_SECURITY"
+    ]
+  },
+
+  "businessTriggerReview": {
+    "currentIndicativeMaximumCapital": 5000000,
+
+    "activationQuestions": [
+      "HAS_A_SPECIFIC_BUSINESS_IDEA_BEEN_SELECTED?",
+      "IS_CAPITAL_REQUIRED_WITHIN_36_MONTHS?",
+      "HAS_A_FEASIBILITY_STUDY_STARTED?",
+      "IS_A_LARGE_EQUITY_WITHDRAWAL_BEING_CONSIDERED?"
+    ],
+
+    "ifAnyAnswerIsYes": [
+      "CREATE_SEPARATE_BUSINESS_CAPITAL_PLAN",
+      "DEFINE_MAXIMUM_CAPITAL_AT RISK",
+      "CREATE_DE_RISKING_TIMELINE",
+      "PROTECT_CORE_FAMILY_GOALS",
+      "DO_NOT_TREAT_LONG_TERM_EQUITY_AS GUARANTEED_BUSINESS_CAPITAL"
+    ]
+  },
+
+  "insuranceAndRiskAlerts": {
+    "reference": "data/insurance-and-risk-management-policy.json",
+
+    "quarterlyScope": [
+      "CHECK_IF_MAJOR_FAMILY_OR EMPLOYMENT_CHANGE_OCCURRED",
+      "CHECK_IF_TERM_INSURANCE_ACTION_REMAINS_PENDING",
+      "CHECK_FOR POLICY_LAPSE_OR RENEWAL_ISSUE",
+      "CHECK_NOMINEE_CHANGES_IF FAMILY_EVENT_OCCURRED"
+    ],
+
+    "rule": "Full insurance review is annual, but material protection gaps should not wait for the annual review."
+  },
+
+  "taxAlerts": {
+    "reference": "data/tax-optimization-policy.json",
+
+    "checklist": [
+      "CHECK_MATERIAL_REALIZED_GAINS",
+      "CHECK_MATERIAL_REALIZED_LOSSES",
+      "CHECK_LARGE_REDEMPTIONS",
+      "CHECK_FOREIGN_INVESTMENT_REPORTING_IMPLICATIONS",
+      "CHECK_ADVANCE_TAX_IMPLICATIONS_IF MATERIAL"
+    ]
+  },
+
+  "behaviourReview": {
+    "questions": [
+      "DID_I_PANIC_BECAUSE_OF_MARKET_NEWS?",
+      "DID_I_CHASE_RECENT_PERFORMANCE?",
+      "DID_I_ADD_ANY_UNNECESSARY_PRODUCT?",
+      "DID_I_DEVIATE_FROM_THE_PLAN_WITHOUT_DOCUMENTATION?",
+      "DID_I_DELAY_INVESTING_ONLY_BECAUSE_I_WAS_WAITING_FOR_A_CRASH?",
+      "DID_I_MAKE_ANY_DECISION_BASED_ONLY_ON_AI_OUTPUT?"
+    ],
+
+    "reference": "data/never-do-list.json"
+  },
+
+  "quarterlyDashboard": {
+    "requiredMetrics": [
+      "TOTAL_FINANCIAL_ASSETS",
+      "TOTAL_NET_WORTH",
+      "MONTHLY_SURPLUS",
+      "ACCUMULATED_UNDEPLOYED_SURPLUS",
+      "PERSONAL_LIQUIDITY",
+      "INDIAN_EQUITY_PERCENT",
+      "INTERNATIONAL_EQUITY_PERCENT",
+      "GOLD_PERCENT",
+      "FIXED_INCOME_PERCENT",
+      "CASH_PERCENT",
+      "LARGEST_SINGLE_POSITION_PERCENT",
+      "NUMBER_OF_ACTIVE_FUNDS",
+      "GOAL_ALERT_COUNT",
+      "POLICY_EXCEPTION_COUNT"
+    ]
+  },
+
+  "decisionClassification": {
+    "GREEN": {
+      "meaning": "No material issue.",
+      "action": "CONTINUE_PLAN"
+    },
+    "AMBER": {
+      "meaning": "Requires monitoring or a minor corrective action.",
+      "action": "DOCUMENT_AND CORRECT"
+    },
+    "RED": {
+      "meaning": "Material risk, policy breach or major financial change.",
+      "action": "STOP_AND PERFORM_DETAILED_REVIEW"
+    }
+  },
+
+  "quarterlyOutput": {
+    "requiredSections": [
+      "CURRENT_FINANCIAL_SNAPSHOT",
+      "CHANGES_SINCE_LAST_REVIEW",
+      "ASSET_ALLOCATION_STATUS",
+      "LIQUIDITY_STATUS",
+      "ACCUMULATED_SURPLUS_AVAILABLE",
+      "DEPLOYMENT_DECISION",
+      "REBALANCING_DECISION",
+      "GOAL_ALERTS",
+      "RISK_ALERTS",
+      "ACTION_ITEMS"
+    ],
+
+    "maximumPriorityActions": 5
+  },
+
+  "changeControl": {
+    "normallyAllowed": [
+      "REDIRECT_SIPS_WITHIN_APPROVED_POLICY",
+      "DEPLOY_ACCUMULATED_SURPLUS",
+      "REBALANCE_WITHIN_APPROVED_BANDS",
+      "FIX_OPERATIONAL_ERRORS",
+      "EXECUTE_PREDEFINED_CRASH_PLAYBOOK_ACTION"
+    ],
+
+    "requiresDeeperReview": [
+      "CHANGE_STRATEGIC_ASSET_ALLOCATION",
+      "ADD_NEW_ASSET_CLASS",
+      "MATERIAL_NEW_ACTIVE_FUND",
+      "LARGE_DIRECT_STOCK_ALLOCATION",
+      "BUSINESS_CAPITAL_WITHDRAWAL",
+      "MAJOR_PROPERTY_PURCHASE",
+      "EARLY_RETIREMENT_DECISION"
+    ]
+  },
+
+  "reviewRecordTemplate": {
+    "reviewDate": null,
+    "reviewedBy": "KAPIL",
+    "overallStatus": null,
+    "currentNetWorth": null,
+    "currentFinancialAssets": null,
+    "monthlySurplus": null,
+    "accumulatedSurplus": null,
+    "assetAllocationStatus": null,
+    "liquidityStatus": null,
+    "goalAlerts": [],
+    "riskAlerts": [],
+    "decisions": [],
+    "actionItems": [],
+    "nextReviewDate": null
+  },
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "goals": "data/goals.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "crashPlaybook": "data/crash-playbook.json",
+    "emergencyFund": "data/emergency-fund.json",
+    "directStockExitPolicy": "data/direct-stock-exit-policy.json",
+    "taxOptimizationPolicy": "data/tax-optimization-policy.json",
+    "insuranceAndRiskManagement": "data/insurance-and-risk-management-policy.json",
+    "annualReviewChecklist": "data/annual-review-checklist.json",
+    "neverDoList": "data/never-do-list.json",
+    "familyFinancialContinuity": "data/family-financial-continuity-checklist.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_FWOS_DATA_INDEX"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_DATA_VALIDATION_SCHEMA"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_QUARTERLY_REVIEW_RECORD_TEMPLATE"
+    }
+  ]
+}

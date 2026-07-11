@@ -1,0 +1,621 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/current-portfolio.schema.json",
+  "title": "FWOS Current Portfolio Schema",
+  "description": "Validation schema for investment accounts, holdings, ownership, valuations and portfolio classification.",
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate",
+    "currency",
+    "accounts",
+    "holdings"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "currency": {
+      "$ref": "fwos.schema.json#/$defs/currencyCode"
+    },
+
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "valuationStatus": {
+      "type": "string",
+      "enum": [
+        "COMPLETE",
+        "PARTIAL",
+        "STALE",
+        "PENDING_IMPORT",
+        "PENDING_VERIFICATION"
+      ]
+    },
+
+    "accounts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/account"
+      }
+    },
+
+    "holdings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/holding"
+      }
+    },
+
+    "portfolioSummary": {
+      "$ref": "#/$defs/portfolioSummary"
+    },
+
+    "assetClassSummary": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assetClassSummary"
+      }
+    },
+
+    "ownerSummary": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ownerSummary"
+      }
+    },
+
+    "dataQuality": {
+      "$ref": "#/$defs/dataQuality"
+    },
+
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+
+  "$defs": {
+    "account": {
+      "type": "object",
+
+      "required": [
+        "accountId",
+        "legalOwner",
+        "accountType"
+      ],
+
+      "properties": {
+        "accountId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "accountName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "legalOwner": {
+          "$ref": "fwos.schema.json#/$defs/owner"
+        },
+
+        "accountType": {
+          "type": "string",
+          "enum": [
+            "DEMAT",
+            "MUTUAL_FUND",
+            "NPS",
+            "EPF",
+            "PPF",
+            "BANK",
+            "BROKERAGE",
+            "RETIREMENT",
+            "OTHER"
+          ]
+        },
+
+        "institution": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "accountReference": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Masked or internal reference only. Do not store sensitive credentials."
+        },
+
+        "active": {
+          "type": "boolean"
+        },
+
+        "includeInInvestablePortfolio": {
+          "type": "boolean"
+        },
+
+        "includeInNetWorth": {
+          "type": "boolean"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "holding": {
+      "type": "object",
+
+      "required": [
+        "holdingId",
+        "productName",
+        "instrumentType",
+        "assetClass",
+        "legalOwner",
+        "accountId"
+      ],
+
+      "properties": {
+        "holdingId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "productId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "productName": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "symbol": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "isin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{2}[A-Z0-9]{9}[0-9]$"
+        },
+
+        "instrumentType": {
+          "type": "string",
+          "enum": [
+            "DIRECT_STOCK",
+            "INDEX_MUTUAL_FUND",
+            "ACTIVE_MUTUAL_FUND",
+            "ETF",
+            "GOLD_ETF",
+            "GOLD_MUTUAL_FUND",
+            "PHYSICAL_GOLD",
+            "INTERNATIONAL_FUND",
+            "FUND_OF_FUNDS",
+            "EPF",
+            "PPF",
+            "NPS",
+            "FIXED_DEPOSIT",
+            "LIQUID_FUND",
+            "SAVINGS_ACCOUNT",
+            "BOND",
+            "OTHER"
+          ]
+        },
+
+        "assetClass": {
+          "$ref": "fwos.schema.json#/$defs/assetClass"
+        },
+
+        "subAssetClass": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "legalOwner": {
+          "$ref": "fwos.schema.json#/$defs/owner"
+        },
+
+        "accountId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "quantity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "averageCostPerUnit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "totalCost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "currentPricePerUnit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "currentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "unrealizedGainLoss": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "unrealizedGainLossPercent": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "portfolioWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "assetClassWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "purchaseDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "valuationDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "investmentStatus": {
+          "oneOf": [
+            {
+              "$ref": "fwos.schema.json#/$defs/investmentStatus"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+
+        "approvedForNewMoney": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+
+        "goalAssignments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/goalAssignment"
+          }
+        },
+
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "goalAssignment": {
+      "type": "object",
+
+      "required": [
+        "goalId"
+      ],
+
+      "properties": {
+        "goalId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "assignedValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "assignedPercentOfHolding": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+
+      "additionalProperties": false
+    },
+
+    "portfolioSummary": {
+      "type": "object",
+
+      "properties": {
+        "totalCurrentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "totalCost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "totalUnrealizedGainLoss": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "totalUnrealizedGainLossPercent": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "holdingCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+
+        "accountCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+
+        "lastCompleteValuationDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "assetClassSummary": {
+      "type": "object",
+
+      "required": [
+        "assetClass"
+      ],
+
+      "properties": {
+        "assetClass": {
+          "$ref": "fwos.schema.json#/$defs/assetClass"
+        },
+
+        "currentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "portfolioWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "targetWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "deviationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -100,
+          "maximum": 100
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "ownerSummary": {
+      "type": "object",
+
+      "required": [
+        "legalOwner"
+      ],
+
+      "properties": {
+        "legalOwner": {
+          "$ref": "fwos.schema.json#/$defs/owner"
+        },
+
+        "currentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "holdingCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+
+        "portfolioWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "dataQuality": {
+      "type": "object",
+
+      "properties": {
+        "overallStatus": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "INCOMPLETE",
+            "PENDING_IMPORT",
+            "PENDING_VERIFICATION"
+          ]
+        },
+
+        "missingHoldingCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "unpricedHoldingCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "staleHoldingCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "criticalMissingData": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+
+      "additionalProperties": true
+    }
+  },
+
+  "additionalProperties": true
+}

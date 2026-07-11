@@ -1,0 +1,414 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "INCOMPLETE_PENDING_PORTFOLIO_IMPORT",
+
+  "purpose": {
+    "primaryObjective": "Maintain the latest verified holding-level snapshot of Kapil's investable portfolio.",
+    "principle": "Store facts and current values here. Investment policy, targets and recommendations belong in separate FWOS policy files."
+  },
+
+  "scope": {
+    "primaryPortfolioOwner": "KAPIL",
+    "includeMotherAssets": false,
+    "includeRealEstate": false,
+    "includePersonalUseAssets": false,
+    "includeFinancialAssets": true,
+    "ownershipRule": "Only assets legally owned by Kapil are included in the primary portfolio.",
+    "familyViewRule": "Mother's assets and real estate may be consolidated separately in the family balance sheet without changing legal ownership."
+  },
+
+  "valuationRules": {
+    "listedSecurities": "LATEST_AVAILABLE_MARKET_VALUE",
+    "mutualFunds": "LATEST_AVAILABLE_NAV_BASED_VALUE",
+    "epf": "LATEST_AVAILABLE_VERIFIED_BALANCE",
+    "ppf": "LATEST_AVAILABLE_VERIFIED_BALANCE",
+    "nps": "LATEST_AVAILABLE_MARKET_VALUE",
+    "cash": "CURRENT_ACCOUNT_BALANCE",
+    "gold": "CURRENT_MARKET_VALUE_WHERE_PRACTICAL",
+    "staleDataFlagDays": {
+      "listedSecurities": 7,
+      "mutualFunds": 7,
+      "cash": 30,
+      "nps": 90,
+      "epf": 365,
+      "ppf": 365
+    }
+  },
+
+  "knownPortfolioSummary": {
+    "directEquityAndMutualFundsApproximate": 7500000,
+    "ppfApproximate": 1730000,
+    "epfApproximate": 3000000,
+    "npsApproximate": 1400000,
+    "personalSavingsAccountRange": {
+      "minimum": 300000,
+      "maximum": 500000
+    },
+    "knownFinancialAssetsApproximateMinimum": 13930000,
+    "note": "The direct equity and mutual fund figure is historical context and must be replaced by verified holding-level data."
+  },
+
+  "accounts": [
+    {
+      "accountId": "KAPIL_PRIMARY_SAVINGS",
+      "owner": "KAPIL",
+      "accountType": "SAVINGS_ACCOUNT",
+      "institution": null,
+      "maskedAccountReference": null,
+      "currentValue": null,
+      "lastVerifiedDate": null,
+      "includedInPortfolio": true,
+      "liquidityClassification": "IMMEDIATE_LIQUIDITY",
+      "status": "PENDING_DATA"
+    },
+    {
+      "accountId": "KAPIL_MUTUAL_FUNDS",
+      "owner": "KAPIL",
+      "accountType": "MUTUAL_FUNDS",
+      "institution": "MULTIPLE",
+      "currentValue": null,
+      "lastVerifiedDate": null,
+      "includedInPortfolio": true,
+      "status": "PENDING_HOLDING_IMPORT"
+    },
+    {
+      "accountId": "KAPIL_DEMAT",
+      "owner": "KAPIL",
+      "accountType": "DEMAT",
+      "institution": null,
+      "currentValue": null,
+      "lastVerifiedDate": null,
+      "includedInPortfolio": true,
+      "status": "PENDING_HOLDING_IMPORT"
+    },
+    {
+      "accountId": "KAPIL_EPF",
+      "owner": "KAPIL",
+      "accountType": "EPF",
+      "institution": "EPFO",
+      "currentValue": 3000000,
+      "valueType": "APPROXIMATE",
+      "lastVerifiedDate": null,
+      "includedInPortfolio": true,
+      "assetClass": "FIXED_INCOME",
+      "liquidityClassification": "RESTRICTED_LONG_TERM",
+      "status": "APPROXIMATE"
+    },
+    {
+      "accountId": "KAPIL_PPF",
+      "owner": "KAPIL",
+      "accountType": "PPF",
+      "institution": null,
+      "currentValue": 1730000,
+      "valueType": "APPROXIMATE",
+      "lastVerifiedDate": null,
+      "includedInPortfolio": true,
+      "assetClass": "FIXED_INCOME",
+      "liquidityClassification": "RESTRICTED_LONG_TERM",
+      "status": "APPROXIMATE"
+    },
+    {
+      "accountId": "KAPIL_NPS",
+      "owner": "KAPIL",
+      "accountType": "NPS",
+      "institution": null,
+      "currentValue": 1400000,
+      "valueType": "APPROXIMATE",
+      "lastVerifiedDate": null,
+      "includedInPortfolio": true,
+      "liquidityClassification": "RETIREMENT_RESTRICTED",
+      "status": "APPROXIMATE"
+    }
+  ],
+
+  "holdings": [
+    {
+      "holdingId": "NPS_EQUITY",
+      "accountId": "KAPIL_NPS",
+      "owner": "KAPIL",
+      "instrumentType": "NPS_ASSET_CLASS",
+      "instrumentName": "NPS Equity Scheme E",
+      "tickerOrIdentifier": "NPS_E",
+      "assetClass": "INDIAN_EQUITY",
+      "allocationPercentWithinAccount": 63,
+      "currentValue": 882000,
+      "valueType": "DERIVED_FROM_APPROXIMATE_ACCOUNT_VALUE",
+      "status": "APPROXIMATE"
+    },
+    {
+      "holdingId": "NPS_CORPORATE_DEBT",
+      "accountId": "KAPIL_NPS",
+      "owner": "KAPIL",
+      "instrumentType": "NPS_ASSET_CLASS",
+      "instrumentName": "NPS Corporate Debt Scheme C",
+      "tickerOrIdentifier": "NPS_C",
+      "assetClass": "FIXED_INCOME",
+      "allocationPercentWithinAccount": 12,
+      "currentValue": 168000,
+      "valueType": "DERIVED_FROM_APPROXIMATE_ACCOUNT_VALUE",
+      "status": "APPROXIMATE"
+    },
+    {
+      "holdingId": "NPS_GOVERNMENT_SECURITIES",
+      "accountId": "KAPIL_NPS",
+      "owner": "KAPIL",
+      "instrumentType": "NPS_ASSET_CLASS",
+      "instrumentName": "NPS Government Securities Scheme G",
+      "tickerOrIdentifier": "NPS_G",
+      "assetClass": "FIXED_INCOME",
+      "allocationPercentWithinAccount": 25,
+      "currentValue": 350000,
+      "valueType": "DERIVED_FROM_APPROXIMATE_ACCOUNT_VALUE",
+      "status": "APPROXIMATE"
+    },
+    {
+      "holdingId": "CPSE_ETF",
+      "accountId": "KAPIL_DEMAT",
+      "owner": "KAPIL",
+      "instrumentType": "ETF",
+      "instrumentName": "CPSE ETF",
+      "tickerOrIdentifier": null,
+      "assetClass": "INDIAN_EQUITY",
+      "subAssetClass": "THEMATIC_PSU",
+      "quantity": null,
+      "averageCost": null,
+      "investedValue": null,
+      "currentPrice": null,
+      "currentValue": null,
+      "portfolioWeightPercent": null,
+      "status": "PENDING_DATA"
+    },
+    {
+      "holdingId": "BHARAT_22_ETF",
+      "accountId": "KAPIL_DEMAT",
+      "owner": "KAPIL",
+      "instrumentType": "ETF",
+      "instrumentName": "Bharat 22 ETF",
+      "tickerOrIdentifier": null,
+      "assetClass": "INDIAN_EQUITY",
+      "subAssetClass": "THEMATIC_PSU_AND_STRATEGIC_HOLDINGS",
+      "quantity": null,
+      "averageCost": null,
+      "investedValue": null,
+      "currentPrice": null,
+      "currentValue": null,
+      "portfolioWeightPercent": null,
+      "status": "PENDING_DATA"
+    }
+  ],
+
+  "mutualFundHoldingTemplate": {
+    "holdingId": null,
+    "accountId": "KAPIL_MUTUAL_FUNDS",
+    "owner": "KAPIL",
+    "instrumentType": "MUTUAL_FUND",
+    "instrumentName": null,
+    "schemeCode": null,
+    "folioReference": null,
+    "plan": "DIRECT_OR_REGULAR_TO_BE_VERIFIED",
+    "option": "GROWTH_OR_OTHER_TO_BE_VERIFIED",
+    "assetClass": null,
+    "subAssetClass": null,
+    "units": null,
+    "averageCost": null,
+    "investedValue": null,
+    "currentNAV": null,
+    "currentValue": null,
+    "absoluteGain": null,
+    "portfolioWeightPercent": null,
+    "lastVerifiedDate": null,
+    "status": "PENDING_DATA"
+  },
+
+  "directStockHoldingTemplate": {
+    "holdingId": null,
+    "accountId": "KAPIL_DEMAT",
+    "owner": "KAPIL",
+    "instrumentType": "DIRECT_EQUITY",
+    "instrumentName": null,
+    "tickerOrIdentifier": null,
+    "sector": null,
+    "quantity": null,
+    "averageCost": null,
+    "investedValue": null,
+    "currentPrice": null,
+    "currentValue": null,
+    "absoluteGain": null,
+    "portfolioWeightPercent": null,
+    "investmentThesisReference": null,
+    "status": "PENDING_DATA"
+  },
+
+  "goldHoldingTemplate": {
+    "holdingId": null,
+    "accountId": null,
+    "owner": "KAPIL",
+    "instrumentType": "PHYSICAL_GOLD_OR_ETF_OR_MUTUAL_FUND",
+    "instrumentName": null,
+    "assetClass": "GOLD",
+    "quantity": null,
+    "unit": null,
+    "investedValue": null,
+    "currentValue": null,
+    "investmentOrConsumption": null,
+    "status": "PENDING_DATA"
+  },
+
+  "assetClassSummary": {
+    "INDIAN_EQUITY": {
+      "currentValue": null,
+      "portfolioWeightPercent": null
+    },
+    "INTERNATIONAL_EQUITY": {
+      "currentValue": 0,
+      "portfolioWeightPercent": null
+    },
+    "GOLD": {
+      "currentValue": 0,
+      "portfolioWeightPercent": null
+    },
+    "FIXED_INCOME": {
+      "knownApproximateValue": 5248000,
+      "currentValue": null,
+      "portfolioWeightPercent": null,
+      "knownComponents": [
+        "EPF",
+        "PPF",
+        "NPS_CORPORATE_DEBT",
+        "NPS_GOVERNMENT_SECURITIES"
+      ]
+    },
+    "CASH_AND_LIQUIDITY": {
+      "currentValue": null,
+      "knownRange": {
+        "minimum": 300000,
+        "maximum": 500000
+      },
+      "portfolioWeightPercent": null
+    }
+  },
+
+  "concentrationMetrics": {
+    "largestSingleHolding": null,
+    "largestSingleHoldingPercent": null,
+    "largestFundHouseExposurePercent": null,
+    "largestSectorExposurePercent": null,
+    "thematicAndSectorExposurePercent": null,
+    "directStockExposurePercent": null,
+    "topFiveHoldingsPercent": null
+  },
+
+  "portfolioMetrics": {
+    "totalInvestedCost": null,
+    "totalCurrentValue": null,
+    "totalUnrealizedGain": null,
+    "totalUnrealizedGainPercent": null,
+    "totalFinancialAssets": null,
+    "numberOfMutualFunds": null,
+    "numberOfETFs": null,
+    "numberOfDirectStocks": null,
+    "numberOfTotalHoldings": null
+  },
+
+  "dataQuality": {
+    "overallStatus": "INCOMPLETE",
+    "knownApproximateDataPresent": true,
+    "holdingLevelPortfolioImported": false,
+    "duplicateHoldingsChecked": false,
+    "assetClassificationCompleted": false,
+    "currentMarketValuesVerified": false,
+    "portfolioWeightsCalculated": false,
+
+    "missingCriticalData": [
+      "COMPLETE_MUTUAL_FUND_HOLDINGS",
+      "COMPLETE_DIRECT_STOCK_HOLDINGS",
+      "ETF_QUANTITIES_AND_VALUES",
+      "CURRENT_SAVINGS_BALANCE",
+      "CURRENT_EPF_BALANCE",
+      "CURRENT_PPF_BALANCE",
+      "CURRENT_NPS_BALANCE",
+      "NPS_FUND_MANAGER_DETAILS",
+      "CURRENT_GOLD_HOLDINGS_IF_ANY"
+    ]
+  },
+
+  "importSources": {
+    "preferred": [
+      "CONSOLIDATED_ACCOUNT_STATEMENT",
+      "BROKER_HOLDING_EXPORT",
+      "MUTUAL_FUND_PLATFORM_EXPORT",
+      "EPF_STATEMENT",
+      "PPF_STATEMENT",
+      "NPS_STATEMENT"
+    ],
+    "rule": "Source documents should be used to populate verified facts. AI must not infer missing quantities, values or ownership."
+  },
+
+  "excludedAssets": {
+    "motherSavingsApproximate": 8000000,
+    "reason": "SEPARATE_LEGAL_OWNER",
+
+    "realEstate": [
+      {
+        "asset": "FARIDABAD_2BHK",
+        "approximateValue": 4500000
+      },
+      {
+        "asset": "BUILT_HOME_OR_LAND_PROPERTY",
+        "approximateValue": 5000000
+      }
+    ],
+
+    "reasonForRealEstateExclusion": "Tracked in family balance sheet rather than liquid investment portfolio."
+  },
+
+  "updateProcess": [
+    "IMPORT_OR_ENTER_VERIFIED_HOLDINGS",
+    "NORMALIZE_INSTRUMENT_NAMES",
+    "REMOVE_DUPLICATES",
+    "CLASSIFY_EACH_HOLDING",
+    "UPDATE_CURRENT_VALUES",
+    "CALCULATE_PORTFOLIO_TOTAL",
+    "CALCULATE_HOLDING_WEIGHTS",
+    "CALCULATE_LOOK_THROUGH_ASSET_ALLOCATION",
+    "CALCULATE_CONCENTRATION_METRICS",
+    "COMPARE_WITH_ASSET_ALLOCATION_POLICY",
+    "RECORD_DATA_VERIFICATION_DATE"
+  ],
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "dataIndex": "data/fwos-data-index.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "directStockExitPolicy": "data/direct-stock-exit-policy.json",
+    "goldPolicy": "data/gold-policy.json",
+    "internationalEquityPolicy": "data/international-equity-policy.json",
+    "familyBalanceSheet": "data/family-balance-sheet.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "IMPORT_COMPLETE_MUTUAL_FUND_PORTFOLIO"
+    },
+    {
+      "priority": 2,
+      "action": "IMPORT_COMPLETE_DEMAT_HOLDINGS"
+    },
+    {
+      "priority": 3,
+      "action": "UPDATE_RETIREMENT_ACCOUNT_BALANCES"
+    },
+    {
+      "priority": 4,
+      "action": "CALCULATE_LIVE_LOOK_THROUGH_ASSET_ALLOCATION"
+    },
+    {
+      "priority": 5,
+      "action": "CREATE_FAMILY_BALANCE_SHEET"
+    }
+  ]
+}

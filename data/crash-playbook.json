@@ -1,0 +1,393 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Define decisions before a market crash so that fear, headlines and short-term predictions do not control portfolio actions.",
+    "principle": "A market crash is expected during a long investment horizon and should be managed through liquidity, diversification, rebalancing and disciplined behaviour."
+  },
+
+  "referenceFramework": {
+    "primaryMarketReference": "BROAD_INDIAN_EQUITY_INDEX",
+    "exactIndex": "PENDING_FINALIZATION",
+    "preferredCandidate": "NIFTY_500",
+    "measurement": "DECLINE_FROM_MOST_RECENT_CLOSING_ALL_TIME_HIGH",
+    "useClosingValues": true
+  },
+
+  "alwaysApplicableRules": [
+    "DO_NOT_PANIC_SELL_DIVERSIFIED_LONG_TERM_EQUITY",
+    "DO_NOT_STOP_REGULAR_SIPS_SOLELY_BECAUSE_MARKETS_ARE_FALLING",
+    "DO_NOT_USE_EMERGENCY_FUND_TO_BUY_EQUITY",
+    "DO_NOT_BORROW_TO_BUY_THE_DIP",
+    "DO_NOT_ATTEMPT_TO_PREDICT_THE_EXACT_BOTTOM",
+    "DO_NOT_CHANGE_STRATEGIC_ASSET_ALLOCATION_BASED_ONLY_ON_HEADLINES",
+    "DO_NOT_BUY_AN_ASSET_ONLY_BECAUSE_ITS_PRICE_HAS_FALLEN",
+    "DO_NOT_AVERAGE_DOWN_INDIVIDUAL_STOCKS_WITHOUT_REVALIDATING_THE_THESIS",
+    "CHECK_PERSONAL_CASH_FLOW_BEFORE_DEPLOYING_EXTRA_CAPITAL",
+    "FOLLOW_PREDEFINED_PORTFOLIO_AND_CONCENTRATION_LIMITS"
+  ],
+
+  "preDeploymentSafetyCheck": {
+    "requiredBeforeAnySpecialDeployment": true,
+
+    "questions": [
+      {
+        "question": "IS_EMPLOYMENT_INCOME_REASONABLY_SECURE?",
+        "requiredAnswer": "YES_OR_MANAGEABLE"
+      },
+      {
+        "question": "IS_THE_EMERGENCY_FUND_INTACT?",
+        "requiredAnswer": "YES"
+      },
+      {
+        "question": "ARE_MAJOR_NEAR_TERM_EXPENSES_FUNDED?",
+        "requiredAnswer": "YES"
+      },
+      {
+        "question": "ARE_ESSENTIAL_GOALS_STILL_ON_TRACK?",
+        "requiredAnswer": "YES_OR_CORRECTABLE"
+      },
+      {
+        "question": "IS_THE_INVESTMENT_ASSET_STILL_STRUCTURALLY_SOUND?",
+        "requiredAnswer": "YES"
+      }
+    ],
+
+    "failureAction": "PAUSE_SPECIAL_DEPLOYMENT_AND_PRESERVE_LIQUIDITY"
+  },
+
+  "marketStages": [
+    {
+      "stageId": "NORMAL",
+      "declineRange": "0_TO_LESS_THAN_10_PERCENT",
+
+      "interpretation": "NORMAL_MARKET_VOLATILITY",
+
+      "actions": {
+        "regularSips": "CONTINUE",
+        "opportunityFund": "NO_SPECIAL_DEPLOYMENT",
+        "rebalancing": "NORMAL_POLICY_ONLY",
+        "portfolioReview": "NO_SPECIAL_REVIEW_REQUIRED"
+      },
+
+      "behaviour": [
+        "IGNORE_ROUTINE_MARKET_NOISE",
+        "DO_NOT_BUILD_EXTRA_CASH_SOLELY_BECAUSE_A_CRASH_IS_PREDICTED"
+      ]
+    },
+
+    {
+      "stageId": "CORRECTION_10",
+      "declineThreshold": 0.10,
+
+      "interpretation": "NORMAL_BUT_MEANINGFUL_MARKET_CORRECTION",
+
+      "actions": {
+        "regularSips": "CONTINUE",
+        "opportunityFundIncrementalDeployment": 0.10,
+        "opportunityFundCumulativeDeployment": 0.10,
+        "rebalancing": "CHECK_FOR_UNDERWEIGHT_EQUITY",
+        "portfolioReview": "LIGHT_REVIEW"
+      },
+
+      "preferredDeployment": [
+        "BROAD_DIVERSIFIED_INDEX",
+        "UNDERWEIGHT_APPROVED_CORE_EQUITY"
+      ],
+
+      "prohibitedReaction": [
+        "ASSUME_THIS_IS_THE_BOTTOM",
+        "DEPLOY_ALL_AVAILABLE_CASH"
+      ]
+    },
+
+    {
+      "stageId": "BEAR_MARKET_20",
+      "declineThreshold": 0.20,
+
+      "interpretation": "FORMAL_BEAR_MARKET_LEVEL",
+
+      "actions": {
+        "regularSips": "CONTINUE",
+        "opportunityFundIncrementalDeploymentAt20Percent": 0.20,
+        "opportunityFundCumulativeDeployment": 0.45,
+        "rebalancing": "FORMAL_REBALANCING_REVIEW",
+        "portfolioReview": "FULL_PORTFOLIO_RISK_CHECK"
+      },
+
+      "mandatoryChecks": [
+        "JOB_SECURITY",
+        "EMERGENCY_FUND",
+        "GOAL_HORIZONS",
+        "EQUITY_ALLOCATION_AFTER_DECLINE",
+        "CONCENTRATION_RISK"
+      ],
+
+      "behaviour": [
+        "EXPECT_NEGATIVE_NEWS_TO_INTENSIFY",
+        "DO_NOT_CONFUSE_BAD_SENTIMENT_WITH_PERMANENT_IMPAIRMENT"
+      ]
+    },
+
+    {
+      "stageId": "MAJOR_CRASH_30",
+      "declineThreshold": 0.30,
+
+      "interpretation": "MAJOR_EQUITY_MARKET_CRASH",
+
+      "actions": {
+        "regularSips": "CONTINUE_IF_CASH_FLOW_SECURE",
+        "opportunityFundIncrementalDeployment": 0.25,
+        "opportunityFundCumulativeDeployment": 0.70,
+        "rebalancing": "HIGH_PRIORITY_REVIEW",
+        "portfolioReview": "FULL_REVIEW"
+      },
+
+      "mandatoryChecks": [
+        "INCOME_CONTINUITY",
+        "FAMILY_LIQUIDITY",
+        "NEAR_TERM_GOALS",
+        "STRUCTURAL_MARKET_OR_ECONOMIC_CHANGE",
+        "TOTAL_EQUITY_EXPOSURE"
+      ],
+
+      "preferredBehaviour": [
+        "FOLLOW_WRITTEN_RULES",
+        "AVOID_EXCESSIVE_FINANCIAL_NEWS",
+        "DOCUMENT_MATERIAL_INVESTMENT_DECISIONS"
+      ]
+    },
+
+    {
+      "stageId": "SEVERE_CRASH_40",
+      "declineThreshold": 0.40,
+
+      "interpretation": "SEVERE_MARKET_AND_POSSIBLE_ECONOMIC_STRESS",
+
+      "actions": {
+        "regularSips": "CONTINUE_IF_INCOME_AND_LIQUIDITY_SECURE",
+        "opportunityFundIncrementalDeployment": 0.20,
+        "opportunityFundCumulativeDeployment": 0.90,
+        "rebalancing": "REQUIRED_REVIEW",
+        "portfolioReview": "FAMILY_BALANCE_SHEET_STRESS_TEST"
+      },
+
+      "priorityOrder": [
+        "PROTECT_FAMILY_LIQUIDITY",
+        "PROTECT_ESSENTIAL_GOALS",
+        "MAINTAIN_EMPLOYMENT_AND_INCOME_RESILIENCE",
+        "THEN_DEPLOY_ADDITIONAL_CAPITAL"
+      ],
+
+      "warning": "A 40% market decline may coincide with recession, layoffs or business stress. Portfolio opportunity must not be evaluated independently of human-capital risk."
+    },
+
+    {
+      "stageId": "EXTREME_CRASH_50",
+      "declineThreshold": 0.50,
+
+      "interpretation": "EXTREME_MARKET_EVENT",
+
+      "actions": {
+        "regularSips": "CONTINUE_IF_FINANCIALLY_SAFE",
+        "opportunityFundIncrementalDeployment": 0.10,
+        "opportunityFundCumulativeDeployment": 1.00,
+        "rebalancing": "COMPREHENSIVE_REVIEW",
+        "portfolioReview": "FULL_FAMILY_FINANCIAL_STRESS_TEST"
+      },
+
+      "rules": [
+        "DEPLOY_FINAL_PREDEFINED_OPPORTUNITY_CAPITAL_ONLY_IF_SAFETY_CHECKS_PASS",
+        "DO_NOT_USE_EMERGENCY_RESERVES",
+        "DO_NOT_USE_LEVERAGE",
+        "DO_NOT_ASSUME_RECOVERY_WILL_BE_IMMEDIATE",
+        "PREPARE_FOR_PROLONGED_VOLATILITY"
+      ]
+    }
+  ],
+
+  "intermediateThresholds": {
+    "fifteenPercentDecline": {
+      "opportunityFundIncrementalDeployment": 0.15,
+      "cumulativeDeployment": 0.25
+    },
+
+    "purpose": "Preserve consistency with the detailed opportunity-fund deployment policy."
+  },
+
+  "exampleFor750000OpportunityFund": {
+    "at10PercentDecline": {
+      "deploy": 75000,
+      "cumulative": 75000
+    },
+    "at15PercentDecline": {
+      "deploy": 112500,
+      "cumulative": 187500
+    },
+    "at20PercentDecline": {
+      "deploy": 150000,
+      "cumulative": 337500
+    },
+    "at30PercentDecline": {
+      "deploy": 187500,
+      "cumulative": 525000
+    },
+    "at40PercentDecline": {
+      "deploy": 150000,
+      "cumulative": 675000
+    },
+    "at50PercentDecline": {
+      "deploy": 75000,
+      "cumulative": 750000
+    }
+  },
+
+  "deploymentDestinationPolicy": {
+    "defaultPriority": [
+      "UNDERWEIGHT_BROAD_INDIAN_EQUITY_CORE",
+      "UNDERWEIGHT_INTERNATIONAL_EQUITY_IF_WITHIN_POLICY",
+      "OTHER_PRE_APPROVED_DIVERSIFIED_CORE_FUNDS"
+    ],
+
+    "notAutomaticDestinations": [
+      "CPSE_ETF",
+      "BHARAT_22_ETF",
+      "INDIVIDUAL_STOCKS",
+      "SECTOR_FUNDS",
+      "THEMATIC_FUNDS",
+      "SMALL_CAP_FUNDS"
+    ],
+
+    "rule": "The destination is determined by total portfolio allocation and approved investment policy, not by which asset has fallen the most."
+  },
+
+  "individualStockCrashRules": {
+    "marketCrashDoesNotValidateIndividualStocks": true,
+
+    "beforeBuyingMore": [
+      "REVALIDATE_BUSINESS_QUALITY",
+      "REVALIDATE_BALANCE_SHEET",
+      "REVALIDATE_GOVERNANCE",
+      "REVALIDATE_VALUATION",
+      "CHECK_SINGLE_STOCK_LIMIT",
+      "CHECK_SECTOR_LIMIT"
+    ],
+
+    "defaultActionWhenUncertain": "DO_NOT_ADD"
+  },
+
+  "newsAndPredictionPolicy": {
+    "ignoreAsStandaloneDecisionTriggers": [
+      "MARKET_CRASH_PREDICTIONS",
+      "POPULAR_INVESTOR_WARNINGS",
+      "WAR_HEADLINES",
+      "ELECTION_HEADLINES",
+      "SHORT_TERM_INDEX_TARGETS",
+      "SOCIAL_MEDIA_PANIC",
+      "UNVERIFIED_AI_RECOMMENDATIONS"
+    ],
+
+    "actWhen": [
+      "PERSONAL_FINANCIAL_CAPACITY_CHANGES",
+      "GOAL_REQUIREMENTS_CHANGE",
+      "ASSET_ALLOCATION_BREACHES_POLICY",
+      "INVESTMENT_THESIS_IS_STRUCTURALLY_IMPAIRED",
+      "TAX_OR_REGULATORY_CHANGE_MATERIALLY_AFFECTS_STRATEGY"
+    ]
+  },
+
+  "recoveryPolicy": {
+    "afterDeployment": [
+      "DO_NOT_SELL_AUTOMATICALLY_AFTER_MARKET_RECOVERY",
+      "ALLOW_DEPLOYED_CAPITAL_TO_REMAIN_PART_OF_LONG_TERM_PORTFOLIO",
+      "REBALANCE_ONLY_ACCORDING_TO_POLICY"
+    ],
+
+    "opportunityFundReplenishment": {
+      "method": "GRADUALLY_FROM_FUTURE_SURPLUS",
+      "priority": "BELOW_EMERGENCY_FUND_AND_ESSENTIAL_GOAL_FUNDING"
+    }
+  },
+
+  "specialScenarioRules": {
+    "marketCrashPlusJobLoss": {
+      "priority": "LIQUIDITY",
+      "specialOpportunityDeployment": "PAUSE",
+      "regularSips": "REVIEW_AND_REDUCE_IF_REQUIRED"
+    },
+
+    "marketCrashPlusMajorMedicalNeed": {
+      "priority": "FAMILY_FINANCIAL_SECURITY",
+      "specialOpportunityDeployment": "PAUSE"
+    },
+
+    "marketCrashNearEducationGoal": {
+      "priority": "PROTECT_GOAL_CORPUS",
+      "action": "FOLLOW_GOAL_SPECIFIC_GLIDE_PATH"
+    },
+
+    "marketCrashDuringBusinessLaunch": {
+      "priority": "PRESERVE_PRECOMMITTED_BUSINESS_AND_FAMILY_LIQUIDITY",
+      "specialOpportunityDeployment": "REASSESS"
+    }
+  },
+
+  "decisionLog": {
+    "requiredForOpportunityFundDeployment": true,
+
+    "record": [
+      "DATE",
+      "REFERENCE_INDEX",
+      "PREVIOUS_PEAK",
+      "CURRENT_INDEX_LEVEL",
+      "DRAWDOWN_PERCENTAGE",
+      "OPPORTUNITY_FUND_BEFORE_DEPLOYMENT",
+      "AMOUNT_DEPLOYED",
+      "DESTINATION",
+      "PORTFOLIO_ALLOCATION_BEFORE",
+      "PORTFOLIO_ALLOCATION_AFTER",
+      "SAFETY_CHECK_RESULT",
+      "RATIONALE"
+    ]
+  },
+
+  "successDefinition": [
+    "NO_PANIC_SELLING",
+    "REGULAR_INVESTING_CONTINUES_WHEN_FINANCIALLY_SAFE",
+    "EMERGENCY_FUND_REMAINS_PROTECTED",
+    "OPPORTUNITY_CAPITAL_IS_DEPLOYED_ACCORDING_TO_PREDEFINED_RULES",
+    "NO_EXCESSIVE_CONCENTRATION_IS_CREATED",
+    "FAMILY_GOALS_REMAIN_PROTECTED"
+  ],
+
+  "references": {
+    "opportunityFundPolicy": "data/opportunity-fund.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "concentrationLimits": "data/concentration-limits.json",
+    "emergencyFundPolicy": "data/emergency-fund.json",
+    "assetAllocation": "data/asset-allocation.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_MONTHLY_SIP_DEPLOYMENT_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_LUMP_SUM_DEPLOYMENT_POLICY"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_INVESTMENT_DECISION_CHECKLIST"
+    },
+    {
+      "priority": 4,
+      "action": "BACKTEST_CRASH_DEPLOYMENT_RULES"
+    }
+  ]
+}

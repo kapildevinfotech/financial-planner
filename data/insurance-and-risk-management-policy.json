@@ -1,0 +1,509 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Protect the family's financial plan from low-frequency, high-impact risks that could permanently impair long-term goals.",
+    "principle": "Insurance is primarily for risk transfer, not wealth creation."
+  },
+
+  "familyContext": {
+    "primaryMember": "KAPIL",
+    "spouseEmployment": "GOVERNMENT_EMPLOYEE",
+    "children": [
+      {
+        "name": "REYANSH",
+        "ageYears": 6
+      },
+      {
+        "name": "NIKESH",
+        "ageYears": 3
+      }
+    ],
+
+    "majorGoals": [
+      "CHILDREN_GRADUATION",
+      "CHILDREN_POST_GRADUATION",
+      "POSSIBLE_FOREIGN_EDUCATION",
+      "FINANCIAL_INDEPENDENCE",
+      "GENERATIONAL_WEALTH",
+      "PARTIAL_CHILDREN_MARRIAGE_SUPPORT"
+    ]
+  },
+
+  "currentKnownCoverage": {
+    "healthcare": {
+      "cghs": {
+        "status": "AVAILABLE_THROUGH_SPOUSE",
+        "role": "PRIMARY_FAMILY_HEALTHCARE_SAFETY_NET"
+      },
+
+      "corporateHealthInsurance": {
+        "sumInsured": 500000,
+        "status": "EMPLOYMENT_LINKED"
+      }
+    },
+
+    "lifeInsurance": {
+      "termInsurance": {
+        "status": "NONE"
+      },
+
+      "existingLicPolicy": {
+        "sumInsured": 300000,
+        "annualPremium": 17000,
+        "maturityYear": 2034,
+        "classification": "EXISTING_LEGACY_POLICY",
+        "riskProtectionAssessment": "INSUFFICIENT_AS_PRIMARY_LIFE_COVER"
+      }
+    }
+  },
+
+  "riskHierarchy": [
+    {
+      "priority": 1,
+      "risk": "PREMATURE_DEATH_OF_EARNING_PARENT"
+    },
+    {
+      "priority": 2,
+      "risk": "PERMANENT_OR_LONG_TERM_DISABILITY"
+    },
+    {
+      "priority": 3,
+      "risk": "MAJOR_MEDICAL_EVENT"
+    },
+    {
+      "priority": 4,
+      "risk": "JOB_LOSS_OR INCOME_INTERRUPTION"
+    },
+    {
+      "priority": 5,
+      "risk": "LIABILITY_OR PROPERTY_LOSS"
+    },
+    {
+      "priority": 6,
+      "risk": "BUSINESS_FAILURE_OR BUSINESS_LIABILITY"
+    },
+    {
+      "priority": 7,
+      "risk": "OPERATIONAL_AND DOCUMENTATION_FAILURE"
+    }
+  ],
+
+  "lifeInsurancePolicy": {
+    "objective": "Provide sufficient capital so that the surviving family can maintain financial security and fund essential long-term goals without forced asset sales.",
+
+    "preferredProduct": "PURE_TERM_INSURANCE",
+
+    "assessmentMethod": "NEEDS_BASED_ANALYSIS",
+
+    "requiredComponents": [
+      "FAMILY_LIVING_EXPENSES",
+      "CHILDREN_EDUCATION_GOALS",
+      "OUTSTANDING_LIABILITIES",
+      "TRANSITION_AND EMERGENCY_COSTS",
+      "EXISTING_FINANCIAL_ASSETS",
+      "SPOUSE_INCOME_AND BENEFITS",
+      "EXISTING_LIFE_COVER"
+    ],
+
+    "provisionalAssessment": {
+      "kapil": "TERM_INSURANCE_REVIEW_RECOMMENDED",
+      "spouse": "REVIEW_REQUIRED_DESPITE_GOVERNMENT_EMPLOYMENT",
+      "reason": "Both parents contribute economic value and the family has two young dependent children."
+    },
+
+    "rules": [
+      "DO_NOT_USE SIMPLE_INCOME_MULTIPLE_AS THE ONLY METHOD",
+      "DO_NOT_COUNT ILLIQUID_REAL_ESTATE_AT FULL_VALUE_FOR IMMEDIATE_FAMILY_PROTECTION",
+      "DO_NOT_COUNT CHILD_EDUCATION_AS OPTIONAL_WHEN CALCULATING CORE_PROTECTION",
+      "DO_NOT_RELY_ONLY_ON EMPLOYER_PROVIDED_COVER",
+      "DISCLOSE_ALL_MATERIAL_INFORMATION ACCURATELY WHEN APPLYING"
+    ],
+
+    "policyTermPrinciple": "Coverage should generally continue through the period of material financial dependency, subject to affordability and updated net worth.",
+
+    "futureReductionRule": "Life cover may be reduced or allowed to expire when financial assets independently cover remaining family obligations."
+  },
+
+  "termInsuranceUnderwriting": {
+    "preferredFeatures": [
+      "SIMPLE_LEVEL_TERM_COVER",
+      "REPUTABLE_REGULATED_INSURER",
+      "CLEAR_POLICY_WORDING",
+      "AFFORDABLE_LONG_TERM_PREMIUM",
+      "HIGH_DISCLOSURE_ACCURACY",
+      "EASY_NOMINATION_AND DOCUMENTATION"
+    ],
+
+    "avoidByDefault": [
+      "RETURN_OF_PREMIUM_AS PRIMARY_SELECTION_REASON",
+      "COMPLEX_INVESTMENT_LINKED_INSURANCE",
+      "UNNECESSARY_RIDERS_WITHOUT NEEDS_ANALYSIS",
+      "SELECTING_ONLY_BY LOWEST_PREMIUM"
+    ]
+  },
+
+  "healthInsurancePolicy": {
+    "currentPosition": {
+      "primarySupport": "CGHS",
+      "secondarySupport": "CORPORATE_HEALTH_COVER",
+      "overallStatus": "STRONG_PUBLIC_AND EMPLOYER_BACKSTOP_BUT REQUIRES PERIODIC_REVIEW"
+    },
+
+    "keyRisks": [
+      "DEPENDENCE_ON SPOUSE_EMPLOYMENT_OR ELIGIBILITY",
+      "CORPORATE_COVER_CAN CHANGE",
+      "NETWORK_OR ACCESS LIMITATIONS",
+      "NON_COVERED_OR PARTIALLY_COVERED EXPENSES",
+      "FUTURE_RETIREMENT_OR EMPLOYMENT_STATUS_CHANGE"
+    ],
+
+    "reviewQuestions": [
+      "WHO_IS CURRENTLY_ELIGIBLE_UNDER_CGHS?",
+      "DOES_CGHS_CONTINUE_AFTER SPOUSE_RETIREMENT?",
+      "WHAT_MAJOR_EXCLUSIONS_OR PRACTICAL_ACCESS_GAPS_EXIST?",
+      "IS_PRIVATE_SUPPLEMENTARY_COVER NEEDED FOR FLEXIBILITY?",
+      "IS_A SUPER_TOP_UP ECONOMICALLY JUSTIFIED?"
+    ],
+
+    "rule": "Do not purchase duplicate private health insurance automatically; first identify actual gaps in CGHS and existing coverage."
+  },
+
+  "disabilityAndIncomeRisk": {
+    "priority": "HIGH",
+
+    "principle": "Long-term inability to earn can be financially more damaging than premature death because living expenses continue.",
+
+    "requiredReview": [
+      "EMPLOYER_DISABILITY_BENEFITS",
+      "PERSONAL_ACCIDENT_COVER",
+      "PERMANENT_TOTAL_DISABILITY_COVER",
+      "PARTIAL_DISABILITY_COVER",
+      "TERM_POLICY_DISABILITY_RIDERS",
+      "SICK_LEAVE_AND EMPLOYMENT_BENEFITS"
+    ],
+
+    "provisionalStatus": "COVERAGE_GAP_ANALYSIS_REQUIRED"
+  },
+
+  "personalAccidentPolicy": {
+    "status": "TO_BE_EVALUATED",
+
+    "preferredCoverageFocus": [
+      "ACCIDENTAL_DEATH",
+      "PERMANENT_TOTAL_DISABILITY",
+      "PERMANENT_PARTIAL_DISABILITY"
+    ],
+
+    "principle": "Disability protection is generally more important than small hospitalization or daily-cash benefits."
+  },
+
+  "criticalIllnessPolicy": {
+    "status": "OPTIONAL_AFTER_GAP_ANALYSIS",
+
+    "evaluationFactors": [
+      "CGHS_PROTECTION",
+      "CORPORATE_HEALTH_COVER",
+      "EMERGENCY_FUND",
+      "INCOME_INTERRUPTION_RISK",
+      "POLICY_DEFINITIONS",
+      "EXCLUSIONS",
+      "PREMIUM"
+    ],
+
+    "rule": "Do not buy solely because a disease list appears large; evaluate definitions and actual financial need."
+  },
+
+  "emergencyLiquidity": {
+    "currentPersonalSavingsAccountRange": {
+      "minimum": 300000,
+      "maximum": 500000
+    },
+
+    "currentExternalFamilyBackup": {
+      "motherSavingsApproximate": 8000000,
+      "classification": "FAMILY_BACKUP_NOT_PERSONAL_EMERGENCY_FUND"
+    },
+
+    "policy": {
+      "principle": "Kapil's household should maintain sufficient independently accessible liquidity without relying entirely on mother's assets.",
+      "reference": "data/emergency-fund.json"
+    }
+  },
+
+  "jobAndIncomeRisk": {
+    "context": [
+      "KAPIL_WORKS_IN_IT",
+      "AI_AND TECHNOLOGY_CHANGE_MAY AFFECT FUTURE_INCOME_SECURITY",
+      "SPOUSE_HAS GOVERNMENT_EMPLOYMENT",
+      "HOUSEHOLD_HAS SUBSTANTIAL_EXISTING_ASSETS"
+    ],
+
+    "mitigations": [
+      "MAINTAIN_EMERGENCY_LIQUIDITY",
+      "CONTINUE_SKILL_DEVELOPMENT",
+      "AVOID_EXCESSIVE_FIXED_LIFESTYLE_COSTS",
+      "MAINTAIN_DIVERSIFIED_FINANCIAL_ASSETS",
+      "DO_NOT_DEPEND_ON FUTURE_BUSINESS_SUCCESS",
+      "SEPARATE_BUSINESS_RISK_FROM FAMILY_CORE_WEALTH"
+    ]
+  },
+
+  "businessRiskPolicy": {
+    "potentialCapitalMaximum": 5000000,
+
+    "principle": "Future business risk must not threaten children's education, emergency reserves or essential family financial security.",
+
+    "requiredBeforeLaunch": [
+      "SEPARATE_BUSINESS_ENTITY_REVIEW",
+      "SEPARATE_BANKING_AND ACCOUNTING",
+      "CAPITAL_AT_RISK_LIMIT",
+      "REGULATORY_AND PROFESSIONAL_LIABILITY_REVIEW",
+      "BUSINESS_INSURANCE_REVIEW",
+      "CASH_FLOW_STRESS_TEST",
+      "DEFINED_MAXIMUM_ADDITIONAL_CAPITAL_COMMITMENT",
+      "EXIT_OR SHUTDOWN CRITERIA"
+    ],
+
+    "rules": [
+      "DO_NOT_USE EMERGENCY_FUND_AS BUSINESS_CAPITAL",
+      "DO_NOT_PLEDGE_CORE_FAMILY_ASSETS_WITHOUT FORMAL_RISK_REVIEW",
+      "DO_NOT_ALLOW RECURRING_BUSINESS_LOSSES_TO BECOME UNLIMITED CAPITAL_CALLS",
+      "HEALTHCARE_BUSINESSES_REQUIRE SPECIAL REGULATORY_AND PROFESSIONAL_RISK_REVIEW"
+    ]
+  },
+
+  "propertyRisk": {
+    "knownAssets": [
+      {
+        "asset": "FARIDABAD_2BHK",
+        "approximateValue": 4500000
+      },
+      {
+        "asset": "BUILT_HOME_OR LAND_PROPERTY",
+        "approximateValue": 5000000
+      }
+    ],
+
+    "potentialFutureAsset": {
+      "asset": "LUCKNOW_PLOT",
+      "estimatedValueRange": {
+        "minimum": 4000000,
+        "maximum": 5000000
+      }
+    },
+
+    "requiredReview": [
+      "PROPERTY_INSURANCE_WHERE APPROPRIATE",
+      "FIRE_AND NATURAL_HAZARD_COVER",
+      "TITLE_DOCUMENTATION",
+      "NOMINATION_OR SUCCESSION",
+      "TENANT_OR LIABILITY_RISK_IF RENTED"
+    ]
+  },
+
+  "liabilityRisk": {
+    "reviewAreas": [
+      "MOTOR_INSURANCE",
+      "THIRD_PARTY_LIABILITY",
+      "PROPERTY_LIABILITY",
+      "FUTURE_BUSINESS_LIABILITY",
+      "PROFESSIONAL_LIABILITY_FOR REGULATED_BUSINESS"
+    ],
+
+    "rule": "Maintain legally required insurance and evaluate additional liability cover when business or asset exposure increases."
+  },
+
+  "motorInsurancePolicy": {
+    "rules": [
+      "MAINTAIN_MANDATORY_THIRD_PARTY_COVER",
+      "EVALUATE_OWN_DAMAGE_COVER_BASED_ON VEHICLE_VALUE_AND LOSS_CAPACITY",
+      "REVIEW_RSA_AND ADD_ONS_BASED_ON ACTUAL_USE",
+      "DO_NOT_ALLOW COVERAGE_GAPS_UNINTENTIONALLY"
+    ]
+  },
+
+  "insuranceProductRules": {
+    "preferred": [
+      "PURE_RISK_COVER",
+      "SIMPLE_POLICY_STRUCTURE",
+      "CLEAR_CLAIM_PROCESS",
+      "ADEQUATE_COVERAGE",
+      "SUSTAINABLE_PREMIUM"
+    ],
+
+    "avoidByDefault": [
+      "MIXING_INSURANCE_AND INVESTMENT_WITHOUT STRONG_JUSTIFICATION",
+      "BUYING_ONLY_FOR TAX_SAVING",
+      "BUYING_MULTIPLE_OVERLAPPING_SMALL_POLICIES",
+      "UNDISCLOSED_MEDICAL_OR LIFESTYLE_INFORMATION",
+      "RELYING_ONLY_ON CLAIM_SETTLEMENT_RATIO"
+    ]
+  },
+
+  "existingLicPolicy": {
+    "status": "CONTINUE_PENDING_DETAILED_POLICY_REVIEW",
+
+    "knownDetails": {
+      "annualPremium": 17000,
+      "sumInsured": 300000,
+      "maturityYear": 2034
+    },
+
+    "requiredReview": [
+      "POLICY_TYPE",
+      "SURRENDER_VALUE",
+      "PAID_UP_VALUE",
+      "MATURITY_BENEFIT",
+      "BONUS_STRUCTURE",
+      "EXPECTED_IRR",
+      "TAX_TREATMENT"
+    ],
+
+    "rule": "Do not surrender or continue solely on intuition; compare future cash flows from today."
+  },
+
+  "riskFundingHierarchy": [
+    {
+      "level": 1,
+      "method": "AVOID_OR REDUCE_RISK"
+    },
+    {
+      "level": 2,
+      "method": "INSURE_CATASTROPHIC_RISK"
+    },
+    {
+      "level": 3,
+      "method": "SELF_INSURE_SMALL_OR AFFORDABLE_LOSSES"
+    },
+    {
+      "level": 4,
+      "method": "USE_EMERGENCY_LIQUIDITY_FOR UNINSURED_SHORT_TERM_COSTS"
+    }
+  ],
+
+  "familyContinuityPlan": {
+    "objective": "Ensure the family can access money, insurance and essential records if Kapil is unavailable.",
+
+    "requiredItems": [
+      "LIST_OF_BANK_ACCOUNTS",
+      "LIST_OF_INVESTMENT_ACCOUNTS",
+      "INSURANCE_POLICY_LIST",
+      "NOMINEE_DETAILS",
+      "LOAN_DETAILS_IF ANY",
+      "PROPERTY_DOCUMENT_LOCATION",
+      "EMERGENCY_CONTACTS",
+      "CA_OR FINANCIAL_PROFESSIONAL_CONTACTS",
+      "BASIC_INSTRUCTIONS_FOR SPOUSE"
+    ],
+
+    "securityRule": "Do not store passwords or authentication secrets in the general FWOS repository."
+  },
+
+  "nominationPolicy": {
+    "requiredFor": [
+      "BANK_ACCOUNTS",
+      "DEMAT_ACCOUNTS",
+      "MUTUAL_FUNDS",
+      "EPF",
+      "PPF",
+      "NPS",
+      "INSURANCE"
+    ],
+
+    "rule": "Nomination facilitates transmission but does not replace comprehensive estate planning."
+  },
+
+  "annualInsuranceReview": {
+    "frequency": "ANNUALLY",
+
+    "reviewTriggers": [
+      "INCOME_CHANGE",
+      "NEW_CHILD_OR DEPENDENT",
+      "MAJOR_ASSET_PURCHASE",
+      "NEW_LOAN",
+      "JOB_CHANGE",
+      "CGHS_ELIGIBILITY_CHANGE",
+      "BUSINESS_LAUNCH",
+      "MAJOR_HEALTH_OR FAMILY_CHANGE",
+      "SIGNIFICANT_NET_WORTH_INCREASE"
+    ],
+
+    "checklist": [
+      "RECALCULATE_LIFE_INSURANCE_NEED",
+      "REVIEW_HEALTHCARE_COVERAGE_GAPS",
+      "REVIEW_DISABILITY_PROTECTION",
+      "REVIEW_EMERGENCY_FUND",
+      "REVIEW_PROPERTY_AND MOTOR_COVER",
+      "UPDATE_NOMINEES",
+      "UPDATE_FAMILY_CONTINUITY_DOCUMENTS"
+    ]
+  },
+
+  "currentPriorityActions": [
+    {
+      "priority": 1,
+      "action": "COMPLETE_NEEDS_BASED_TERM_INSURANCE_CALCULATION_FOR KAPIL_AND SPOUSE"
+    },
+    {
+      "priority": 2,
+      "action": "VERIFY_CGHS_DEPENDENT_AND LONG_TERM_ELIGIBILITY"
+    },
+    {
+      "priority": 3,
+      "action": "REVIEW_DISABILITY_AND PERSONAL_ACCIDENT_COVERAGE"
+    },
+    {
+      "priority": 4,
+      "action": "REVIEW_EXISTING_LIC_POLICY_USING FORWARD_IRR"
+    },
+    {
+      "priority": 5,
+      "action": "CREATE_FAMILY_FINANCIAL_CONTINUITY_FILE"
+    }
+  ],
+
+  "references": {
+    "emergencyFund": "data/emergency-fund.json",
+    "goals": "data/goals.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "estatePlanningChecklist": "data/estate-planning-checklist.json",
+    "annualReviewChecklist": "data/annual-review-checklist.json"
+  },
+
+  "dataGaps": [
+    "KAPIL_GROSS_ANNUAL_INCOME",
+    "SPOUSE_NET_AND GROSS_ANNUAL_INCOME",
+    "SPOUSE_AGE",
+    "EXACT_CGHS_ELIGIBILITY_AND CONTINUATION_RULES",
+    "CORPORATE_INSURANCE_POLICY_DETAILS",
+    "EMPLOYER_LIFE_AND DISABILITY_BENEFITS",
+    "EXISTING_PERSONAL_ACCIDENT_COVER",
+    "EXISTING_MOTOR_AND PROPERTY_INSURANCE_DETAILS",
+    "LIC_POLICY_TYPE_AND BENEFIT_ILLUSTRATION",
+    "FINAL_GOAL_CORPUS_REQUIREMENTS"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_ESTATE_PLANNING_CHECKLIST"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_ANNUAL_REVIEW_CHECKLIST"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_NEVER_DO_LIST"
+    },
+    {
+      "priority": 4,
+      "action": "CREATE_FAMILY_FINANCIAL_CONTINUITY_CHECKLIST"
+    }
+  ]
+}

@@ -1,0 +1,483 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/goals.schema.json",
+  "title": "FWOS Goals Schema",
+  "description": "Validation schema for financial goals, beneficiaries, timelines, cost assumptions, scenarios and funding requirements.",
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate",
+    "currency",
+    "goals"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "currency": {
+      "$ref": "fwos.schema.json#/$defs/currencyCode"
+    },
+
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "planningBaseYear": {
+      "type": "integer",
+      "minimum": 2000,
+      "maximum": 2200
+    },
+
+    "goals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/goal"
+      }
+    },
+
+    "priorityHierarchy": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+
+    "globalAssumptions": {
+      "$ref": "#/$defs/globalAssumptions"
+    },
+
+    "dataQuality": {
+      "$ref": "#/$defs/dataQuality"
+    },
+
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+
+  "$defs": {
+    "goal": {
+      "type": "object",
+
+      "required": [
+        "goalId",
+        "goalName",
+        "goalCategory",
+        "priority",
+        "status"
+      ],
+
+      "properties": {
+        "goalId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "goalName": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "goalCategory": {
+          "type": "string",
+          "enum": [
+            "CHILD_EDUCATION",
+            "RETIREMENT_AND_FINANCIAL_INDEPENDENCE",
+            "ENTREPRENEURSHIP",
+            "REAL_ESTATE",
+            "FAMILY_SUPPORT",
+            "HEALTHCARE",
+            "LEGACY",
+            "PHILANTHROPY",
+            "OTHER"
+          ]
+        },
+
+        "beneficiaries": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "fwos.schema.json#/$defs/owner"
+          }
+        },
+
+        "priority": {
+          "$ref": "fwos.schema.json#/$defs/goalPriority"
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "PLANNED",
+            "CONTINGENT",
+            "UNQUANTIFIED",
+            "FUNDED",
+            "PARTIALLY_FUNDED",
+            "DEFERRED",
+            "COMPLETED",
+            "CANCELLED"
+          ]
+        },
+
+        "timeline": {
+          "$ref": "#/$defs/timeline"
+        },
+
+        "costModel": {
+          "$ref": "#/$defs/costModel"
+        },
+
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scenario"
+          }
+        },
+
+        "fundingIntent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "fundingSourcePreferences": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+
+        "requiredCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "minimumAcceptableCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "timeline": {
+      "type": "object",
+
+      "properties": {
+        "targetDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "targetYear": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 2000,
+          "maximum": 2200
+        },
+
+        "estimatedYearsToGoal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "flexibilityYears": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 20
+        },
+
+        "fixedDeadline": {
+          "type": "boolean"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "costModel": {
+      "type": "object",
+
+      "properties": {
+        "costBasisDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "currentEquivalentCost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "inflationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 30
+        },
+
+        "futureRequiredCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "contingencyPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "currency": {
+          "$ref": "fwos.schema.json#/$defs/currencyCode"
+        },
+
+        "calculationStatus": {
+          "type": "string",
+          "enum": [
+            "NOT_STARTED",
+            "ASSUMPTIONS_PENDING",
+            "PROVISIONAL",
+            "CALCULATED",
+            "VERIFIED"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "scenario": {
+      "type": "object",
+
+      "required": [
+        "scenarioId",
+        "scenarioName"
+      ],
+
+      "properties": {
+        "scenarioId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "scenarioName": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "scenarioType": {
+          "type": "string",
+          "enum": [
+            "BASE",
+            "LOW_COST",
+            "HIGH_COST",
+            "INDIA",
+            "FOREIGN",
+            "STRESS",
+            "CUSTOM"
+          ]
+        },
+
+        "probability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+
+        "currentEquivalentCost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "inflationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 30
+        },
+
+        "futureRequiredCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "currency": {
+          "$ref": "fwos.schema.json#/$defs/currencyCode"
+        },
+
+        "selectedForPlanning": {
+          "type": "boolean"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "globalAssumptions": {
+      "type": "object",
+
+      "properties": {
+        "generalInflationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 30
+        },
+
+        "indiaEducationInflationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 30
+        },
+
+        "foreignEducationInflationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 30
+        },
+
+        "marriageInflationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 30
+        },
+
+        "planningReturnBasis": {
+          "type": "string",
+          "enum": [
+            "NOMINAL_PRE_TAX",
+            "NOMINAL_POST_TAX",
+            "REAL_RETURN",
+            "TO_BE_DEFINED"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "dataQuality": {
+      "type": "object",
+
+      "properties": {
+        "overallStatus": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "INCOMPLETE",
+            "PENDING_RESEARCH",
+            "PENDING_VERIFICATION"
+          ]
+        },
+
+        "criticalMissingInputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+
+        "lastReviewedDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+
+      "additionalProperties": true
+    }
+  },
+
+  "additionalProperties": true
+}

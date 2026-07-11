@@ -1,0 +1,559 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "status": "ACTIVE_REGISTRY",
+
+  "system": {
+    "name": "FAMILY_WEALTH_OPERATING_SYSTEM",
+    "shortName": "FWOS",
+    "primaryOwner": "KAPIL",
+    "masterDocument": "FWOS_MASTER.md",
+    "purpose": "Provide a central machine-readable registry of FWOS data files, policies, dependencies, review frequencies and implementation status."
+  },
+
+  "registryRules": [
+    "EVERY_CORE_DATA_FILE_SHOULD_BE_REGISTERED_HERE",
+    "FILE_PATHS_MUST_BE_UNIQUE",
+    "DEPENDENCIES_SHOULD_REFERENCE_REGISTERED_FILES",
+    "STATUS_SHOULD_BE_UPDATED_WHEN_A_FILE_IS_CREATED_OR MATERIALLY_REVISED",
+    "DEPRECATED_FILES_SHOULD_NOT_BE_DELETED_WITHOUT MIGRATION_DOCUMENTATION",
+    "SENSITIVE_AUTHENTICATION_INFORMATION_MUST_NOT_BE STORED_IN FWOS"
+  ],
+
+  "statusDefinitions": {
+    "ACTIVE": "Current and approved for operational use.",
+    "PROVISIONAL": "Usable framework but contains unresolved data gaps or assumptions.",
+    "DRAFT": "Under development and not yet approved.",
+    "PENDING": "Planned but not yet created.",
+    "DEPRECATED": "Retained for historical or migration purposes but not for current use."
+  },
+
+  "updateFrequencies": {
+    "EVENT_DRIVEN": "Update whenever a material relevant event occurs.",
+    "QUARTERLY": "Review approximately every three to four months.",
+    "ANNUALLY": "Review once per year.",
+    "MONTHLY_OR_TRANSACTIONAL": "Update from regular transactions or portfolio records.",
+    "RARE": "Update only when strategic policy changes."
+  },
+
+  "files": [
+    {
+      "id": "MASTER",
+      "path": "FWOS_MASTER.md",
+      "category": "SYSTEM",
+      "type": "MARKDOWN",
+      "purpose": "Canonical human-readable master context for the complete FWOS.",
+      "status": "ACTIVE",
+      "updateFrequency": "EVENT_DRIVEN",
+      "dependencies": []
+    },
+    {
+      "id": "GOALS",
+      "path": "data/goals.json",
+      "category": "PLANNING",
+      "type": "JSON",
+      "purpose": "Define family financial goals, priorities, horizons and funding assumptions.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "MASTER"
+      ]
+    },
+    {
+      "id": "ASSET_ALLOCATION",
+      "path": "data/asset-allocation.json",
+      "category": "PORTFOLIO_POLICY",
+      "type": "JSON",
+      "purpose": "Define strategic asset allocation targets, ranges and look-through classification rules.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "MASTER",
+        "GOALS"
+      ]
+    },
+    {
+      "id": "MONTHLY_SIP_POLICY",
+      "path": "data/monthly-sip-policy.json",
+      "category": "PORTFOLIO_IMPLEMENTATION",
+      "type": "JSON",
+      "purpose": "Define the monthly investment deployment framework for recurring surplus.",
+      "status": "ACTIVE",
+      "updateFrequency": "QUARTERLY",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "GOALS"
+      ]
+    },
+    {
+      "id": "LUMP_SUM_DEPLOYMENT_POLICY",
+      "path": "data/lump-sum-deployment-policy.json",
+      "category": "PORTFOLIO_IMPLEMENTATION",
+      "type": "JSON",
+      "purpose": "Define rules for deploying large cash amounts and accumulated surplus.",
+      "status": "ACTIVE",
+      "updateFrequency": "RARE",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "EMERGENCY_FUND",
+        "REBALANCING_POLICY"
+      ]
+    },
+    {
+      "id": "REBALANCING_POLICY",
+      "path": "data/rebalancing-policy.json",
+      "category": "PORTFOLIO_POLICY",
+      "type": "JSON",
+      "purpose": "Define portfolio drift thresholds, rebalancing hierarchy and execution rules.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "ASSET_ALLOCATION"
+      ]
+    },
+    {
+      "id": "CRASH_PLAYBOOK",
+      "path": "data/crash-playbook.json",
+      "category": "BEHAVIOURAL_POLICY",
+      "type": "JSON",
+      "purpose": "Define predefined actions during significant market declines.",
+      "status": "ACTIVE",
+      "updateFrequency": "RARE",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "REBALANCING_POLICY",
+        "EMERGENCY_FUND"
+      ]
+    },
+    {
+      "id": "EMERGENCY_FUND",
+      "path": "data/emergency-fund.json",
+      "category": "LIQUIDITY",
+      "type": "JSON",
+      "purpose": "Define personal emergency liquidity targets, structure and permitted uses.",
+      "status": "ACTIVE",
+      "updateFrequency": "QUARTERLY",
+      "dependencies": [
+        "MASTER"
+      ]
+    },
+    {
+      "id": "OPPORTUNITY_RESERVE",
+      "path": "data/opportunity-reserve-policy.json",
+      "category": "LIQUIDITY",
+      "type": "JSON",
+      "purpose": "Define the size, accumulation, deployment and replenishment rules for tactical buying reserves.",
+      "status": "ACTIVE",
+      "updateFrequency": "QUARTERLY",
+      "dependencies": [
+        "EMERGENCY_FUND",
+        "CRASH_PLAYBOOK",
+        "ASSET_ALLOCATION"
+      ]
+    },
+    {
+      "id": "DIRECT_STOCK_EXIT_POLICY",
+      "path": "data/direct-stock-exit-policy.json",
+      "category": "PORTFOLIO_POLICY",
+      "type": "JSON",
+      "purpose": "Define review, concentration, trimming and exit rules for direct equity holdings.",
+      "status": "ACTIVE",
+      "updateFrequency": "QUARTERLY",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "INVESTMENT_DECISION_CHECKLIST"
+      ]
+    },
+    {
+      "id": "GOLD_POLICY",
+      "path": "data/gold-policy.json",
+      "category": "ASSET_CLASS_POLICY",
+      "type": "JSON",
+      "purpose": "Define the role, target allocation, acceptable instruments and purchase rules for gold.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "ASSET_ALLOCATION"
+      ]
+    },
+    {
+      "id": "INTERNATIONAL_EQUITY_POLICY",
+      "path": "data/international-equity-policy.json",
+      "category": "ASSET_CLASS_POLICY",
+      "type": "JSON",
+      "purpose": "Define international equity objectives, allocation, product selection and account ownership considerations.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "TAX_OPTIMIZATION_POLICY"
+      ]
+    },
+    {
+      "id": "INVESTMENT_DECISION_CHECKLIST",
+      "path": "data/investment-decision-checklist.json",
+      "category": "DECISION_GOVERNANCE",
+      "type": "JSON",
+      "purpose": "Provide a structured pre-investment decision process for new products and material purchases.",
+      "status": "ACTIVE",
+      "updateFrequency": "RARE",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "NEVER_DO_LIST"
+      ]
+    },
+    {
+      "id": "TAX_OPTIMIZATION_POLICY",
+      "path": "data/tax-optimization-policy.json",
+      "category": "TAX",
+      "type": "JSON",
+      "purpose": "Define tax-aware investment and transaction principles subject to current Indian tax law.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "MASTER"
+      ]
+    },
+    {
+      "id": "INSURANCE_RISK_MANAGEMENT",
+      "path": "data/insurance-and-risk-management-policy.json",
+      "category": "RISK_MANAGEMENT",
+      "type": "JSON",
+      "purpose": "Define insurance gaps, risk transfer priorities and protection review requirements.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "GOALS",
+        "EMERGENCY_FUND"
+      ]
+    },
+    {
+      "id": "ESTATE_PLANNING_CHECKLIST",
+      "path": "data/estate-planning-checklist.json",
+      "category": "ESTATE_PLANNING",
+      "type": "JSON",
+      "purpose": "Define estate planning, nomination, will, guardianship and succession requirements.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "MASTER"
+      ]
+    },
+    {
+      "id": "ANNUAL_REVIEW_CHECKLIST",
+      "path": "data/annual-review-checklist.json",
+      "category": "GOVERNANCE",
+      "type": "JSON",
+      "purpose": "Define the comprehensive annual FWOS review process.",
+      "status": "ACTIVE",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "GOALS",
+        "ASSET_ALLOCATION",
+        "REBALANCING_POLICY",
+        "TAX_OPTIMIZATION_POLICY",
+        "INSURANCE_RISK_MANAGEMENT",
+        "ESTATE_PLANNING_CHECKLIST",
+        "NEVER_DO_LIST"
+      ]
+    },
+    {
+      "id": "NEVER_DO_LIST",
+      "path": "data/never-do-list.json",
+      "category": "BEHAVIOURAL_POLICY",
+      "type": "JSON",
+      "purpose": "Define permanent behavioural, investment, leverage, family-money and AI-use guardrails.",
+      "status": "ACTIVE",
+      "updateFrequency": "RARE",
+      "dependencies": [
+        "MASTER"
+      ]
+    },
+    {
+      "id": "FAMILY_FINANCIAL_CONTINUITY",
+      "path": "data/family-financial-continuity-checklist.json",
+      "category": "CONTINUITY",
+      "type": "JSON",
+      "purpose": "Provide a family operating roadmap if the primary financial coordinator is unavailable.",
+      "status": "PROVISIONAL",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "ESTATE_PLANNING_CHECKLIST",
+        "INSURANCE_RISK_MANAGEMENT",
+        "EMERGENCY_FUND"
+      ]
+    },
+    {
+      "id": "QUARTERLY_REVIEW_CHECKLIST",
+      "path": "data/quarterly-review-checklist.json",
+      "category": "GOVERNANCE",
+      "type": "JSON",
+      "purpose": "Define the lightweight three-to-four-month operational portfolio review.",
+      "status": "ACTIVE",
+      "updateFrequency": "QUARTERLY",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "REBALANCING_POLICY",
+        "CRASH_PLAYBOOK",
+        "EMERGENCY_FUND",
+        "NEVER_DO_LIST"
+      ]
+    },
+    {
+      "id": "CURRENT_PORTFOLIO",
+      "path": "data/current-portfolio.json",
+      "category": "PORTFOLIO_DATA",
+      "type": "JSON",
+      "purpose": "Store the latest verified portfolio holdings and current values.",
+      "status": "PENDING",
+      "updateFrequency": "MONTHLY_OR_TRANSACTIONAL",
+      "dependencies": [
+        "ASSET_ALLOCATION"
+      ]
+    },
+    {
+      "id": "FAMILY_BALANCE_SHEET",
+      "path": "data/family-balance-sheet.json",
+      "category": "FINANCIAL_DATA",
+      "type": "JSON",
+      "purpose": "Track assets and liabilities by legal owner while also supporting a separate family economic view.",
+      "status": "PENDING",
+      "updateFrequency": "QUARTERLY",
+      "dependencies": [
+        "CURRENT_PORTFOLIO"
+      ]
+    },
+    {
+      "id": "GOAL_FUNDING_STATUS",
+      "path": "data/goal-funding-status.json",
+      "category": "GOAL_DATA",
+      "type": "JSON",
+      "purpose": "Track goal corpus requirements, current funding, funding ratios and projected shortfalls.",
+      "status": "PENDING",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "GOALS",
+        "CURRENT_PORTFOLIO"
+      ]
+    },
+    {
+      "id": "APPROVED_INVESTMENTS",
+      "path": "data/approved-investments.json",
+      "category": "PORTFOLIO_IMPLEMENTATION",
+      "type": "JSON",
+      "purpose": "Maintain the approved investable universe and rationale for each product.",
+      "status": "PENDING",
+      "updateFrequency": "EVENT_DRIVEN",
+      "dependencies": [
+        "ASSET_ALLOCATION",
+        "INVESTMENT_DECISION_CHECKLIST"
+      ]
+    },
+    {
+      "id": "QUARTERLY_REVIEW_RECORDS",
+      "path": "records/quarterly/",
+      "category": "RECORDS",
+      "type": "DIRECTORY",
+      "purpose": "Store dated completed quarterly review records.",
+      "status": "PENDING",
+      "updateFrequency": "QUARTERLY",
+      "dependencies": [
+        "QUARTERLY_REVIEW_CHECKLIST"
+      ]
+    },
+    {
+      "id": "ANNUAL_REVIEW_RECORDS",
+      "path": "records/annual/",
+      "category": "RECORDS",
+      "type": "DIRECTORY",
+      "purpose": "Store dated completed annual review records.",
+      "status": "PENDING",
+      "updateFrequency": "ANNUALLY",
+      "dependencies": [
+        "ANNUAL_REVIEW_CHECKLIST"
+      ]
+    },
+    {
+      "id": "DECISION_RECORDS",
+      "path": "records/decisions/",
+      "category": "RECORDS",
+      "type": "DIRECTORY",
+      "purpose": "Store material investment and policy decision records.",
+      "status": "PENDING",
+      "updateFrequency": "EVENT_DRIVEN",
+      "dependencies": [
+        "INVESTMENT_DECISION_CHECKLIST"
+      ]
+    },
+    {
+      "id": "DATA_VALIDATION_SCHEMA",
+      "path": "schemas/fwos.schema.json",
+      "category": "SYSTEM",
+      "type": "JSON_SCHEMA",
+      "purpose": "Validate structural consistency and required fields across FWOS data.",
+      "status": "PENDING",
+      "updateFrequency": "EVENT_DRIVEN",
+      "dependencies": [
+        "FWOS_DATA_INDEX"
+      ]
+    }
+  ],
+
+  "categoryIndex": {
+    "SYSTEM": [
+      "MASTER",
+      "FWOS_DATA_INDEX",
+      "DATA_VALIDATION_SCHEMA"
+    ],
+    "PLANNING": [
+      "GOALS"
+    ],
+    "PORTFOLIO_POLICY": [
+      "ASSET_ALLOCATION",
+      "REBALANCING_POLICY",
+      "DIRECT_STOCK_EXIT_POLICY"
+    ],
+    "PORTFOLIO_IMPLEMENTATION": [
+      "MONTHLY_SIP_POLICY",
+      "LUMP_SUM_DEPLOYMENT_POLICY",
+      "APPROVED_INVESTMENTS"
+    ],
+    "ASSET_CLASS_POLICY": [
+      "GOLD_POLICY",
+      "INTERNATIONAL_EQUITY_POLICY"
+    ],
+    "LIQUIDITY": [
+      "EMERGENCY_FUND",
+      "OPPORTUNITY_RESERVE"
+    ],
+    "BEHAVIOURAL_POLICY": [
+      "CRASH_PLAYBOOK",
+      "NEVER_DO_LIST"
+    ],
+    "DECISION_GOVERNANCE": [
+      "INVESTMENT_DECISION_CHECKLIST"
+    ],
+    "TAX": [
+      "TAX_OPTIMIZATION_POLICY"
+    ],
+    "RISK_MANAGEMENT": [
+      "INSURANCE_RISK_MANAGEMENT"
+    ],
+    "ESTATE_PLANNING": [
+      "ESTATE_PLANNING_CHECKLIST"
+    ],
+    "CONTINUITY": [
+      "FAMILY_FINANCIAL_CONTINUITY"
+    ],
+    "GOVERNANCE": [
+      "QUARTERLY_REVIEW_CHECKLIST",
+      "ANNUAL_REVIEW_CHECKLIST"
+    ],
+    "PORTFOLIO_DATA": [
+      "CURRENT_PORTFOLIO"
+    ],
+    "FINANCIAL_DATA": [
+      "FAMILY_BALANCE_SHEET"
+    ],
+    "GOAL_DATA": [
+      "GOAL_FUNDING_STATUS"
+    ],
+    "RECORDS": [
+      "QUARTERLY_REVIEW_RECORDS",
+      "ANNUAL_REVIEW_RECORDS",
+      "DECISION_RECORDS"
+    ]
+  },
+
+  "sourceOfTruthHierarchy": [
+    "CURRENT_VERIFIED_PRIMARY_SOURCE_DATA",
+    "CURRENT_PORTFOLIO_AND BALANCE_SHEET_DATA",
+    "APPROVED_FWOS_POLICY_FILES",
+    "FWOS_MASTER_CONTEXT",
+    "HISTORICAL_REVIEW_RECORDS",
+    "AI_GENERATED_ANALYSIS"
+  ],
+
+  "conflictResolution": {
+    "rules": [
+      "CURRENT_VERIFIED_FACTS_OVERRIDE_OLD_SNAPSHOTS",
+      "SPECIFIC_POLICY_FILE_OVERRIDES_GENERAL_MASTER_SUMMARY_FOR_ITS_DOMAIN",
+      "LEGAL_OWNERSHIP_OVERRIDES_FAMILY_ECONOMIC_ASSUMPTIONS",
+      "CURRENT_LAW_OVERRIDES_STORED_TAX_ASSUMPTIONS",
+      "MATERIAL_CONFLICTS_MUST_BE_DOCUMENTED_AND RESOLVED"
+    ]
+  },
+
+  "minimumOperationalDataset": [
+    "MASTER",
+    "GOALS",
+    "ASSET_ALLOCATION",
+    "CURRENT_PORTFOLIO",
+    "FAMILY_BALANCE_SHEET",
+    "MONTHLY_SIP_POLICY",
+    "REBALANCING_POLICY",
+    "EMERGENCY_FUND",
+    "QUARTERLY_REVIEW_CHECKLIST",
+    "NEVER_DO_LIST"
+  ],
+
+  "currentBuildStatus": {
+    "policyLayer": "SUBSTANTIALLY_COMPLETE",
+    "liveDataLayer": "PENDING",
+    "recordKeepingLayer": "PENDING",
+    "validationLayer": "PENDING",
+    "automationLayer": "FUTURE"
+  },
+
+  "highestPriorityMissingFiles": [
+    {
+      "priority": 1,
+      "id": "CURRENT_PORTFOLIO",
+      "reason": "Required to convert the FWOS from a policy framework into a live portfolio operating system."
+    },
+    {
+      "priority": 2,
+      "id": "FAMILY_BALANCE_SHEET",
+      "reason": "Required for accurate ownership-separated net worth and asset allocation analysis."
+    },
+    {
+      "priority": 3,
+      "id": "GOAL_FUNDING_STATUS",
+      "reason": "Required to measure whether current assets and future contributions are sufficient for major goals."
+    },
+    {
+      "priority": 4,
+      "id": "APPROVED_INVESTMENTS",
+      "reason": "Required to define the actual investable implementation universe."
+    },
+    {
+      "priority": 5,
+      "id": "DATA_VALIDATION_SCHEMA",
+      "reason": "Required for automated consistency checks as the project grows."
+    }
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_CURRENT_PORTFOLIO_DATA_FILE"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_FAMILY_BALANCE_SHEET_DATA_FILE"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_GOAL_FUNDING_STATUS_FILE"
+    },
+    {
+      "priority": 4,
+      "action": "CREATE_APPROVED_INVESTMENTS_FILE"
+    },
+    {
+      "priority": 5,
+      "action": "CREATE_DATA_VALIDATION_SCHEMA"
+    }
+  ]
+}

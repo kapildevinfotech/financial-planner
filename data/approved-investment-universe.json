@@ -1,0 +1,552 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Define which investment categories and structures may be considered within FWOS.",
+    "principle": "Being in the approved universe means an investment may be evaluated. It does not mean it should automatically be purchased."
+  },
+
+  "approvalStatuses": {
+    "APPROVED_CORE": "Suitable for strategic core allocation subject to product-level due diligence.",
+    "APPROVED": "Permitted where required by asset allocation or goals.",
+    "CONDITIONAL": "Permitted only with documented rationale and applicable limits.",
+    "WATCHLIST_ONLY": "Research permitted but no purchase without explicit policy approval.",
+    "PROHIBITED": "Outside the normal FWOS investment mandate."
+  },
+
+  "globalRules": [
+    "ASSET_ALLOCATION_DECISION_PRECEDES_PRODUCT_SELECTION",
+    "EVERY_INVESTMENT_MUST_HAVE_A_DEFINED_PORTFOLIO_ROLE",
+    "SPECIFIC_PRODUCTS_REQUIRE_CURRENT_DATA_VERIFICATION",
+    "LOW_COST_SIMPLE_TRANSPARENT_PRODUCTS_ARE_PREFERRED",
+    "DIRECT_PLANS_ARE_PREFERRED_FOR_MUTUAL_FUNDS_WHERE_APPROPRIATE",
+    "GROWTH_OPTION_IS_PREFERRED_FOR_LONG_TERM_ACCUMULATION_WHERE_APPROPRIATE",
+    "NEW_PRODUCTS_MUST_PASS_THE_INVESTMENT_DECISION_CHECKLIST",
+    "CONCENTRATION_LIMITS_OVERRIDE_APPROVAL_STATUS",
+    "LEGAL_AND_BENEFICIAL_OWNERSHIP_MUST_BE_CLEAR"
+  ],
+
+  "indianEquity": {
+    "strategicRole": "PRIMARY_LONG_TERM_GROWTH_ENGINE",
+
+    "categories": [
+      {
+        "category": "BROAD_MARKET_INDEX_FUNDS_AND_ETFS",
+        "status": "APPROVED_CORE",
+        "examples": [
+          "NIFTY_50",
+          "NIFTY_100",
+          "NIFTY_500",
+          "BSE_500_OR_EQUIVALENT_BROAD_MARKET_INDEX"
+        ],
+        "selectionCriteria": [
+          "LOW_EXPENSE_RATIO",
+          "LOW_TRACKING_DIFFERENCE",
+          "LOW_TRACKING_ERROR",
+          "ADEQUATE_AUM",
+          "OPERATIONAL_STABILITY",
+          "FOR_ETF_ADEQUATE_LIQUIDITY_AND_SPREAD"
+        ]
+      },
+      {
+        "category": "LARGE_AND_MID_CAP_INDEX",
+        "status": "CONDITIONAL",
+        "role": "CORE_OR_COMPLEMENTARY",
+        "condition": "Must improve portfolio construction without unnecessary overlap."
+      },
+      {
+        "category": "MID_CAP_INDEX_OR_DIVERSIFIED_FUND",
+        "status": "CONDITIONAL",
+        "role": "SATELLITE",
+        "condition": "Subject to total mid-cap allocation limits."
+      },
+      {
+        "category": "SMALL_CAP_INDEX_OR_DIVERSIFIED_FUND",
+        "status": "CONDITIONAL",
+        "role": "SATELLITE",
+        "condition": "Subject to strict allocation limits, long horizon and volatility tolerance."
+      },
+      {
+        "category": "DIVERSIFIED_ACTIVE_EQUITY_FUND",
+        "status": "CONDITIONAL",
+        "role": "CORE_COMPLEMENT_OR_SATELLITE",
+        "requirements": [
+          "CLEAR_ROLE_ALONGSIDE_INDEX_CORE",
+          "REPEATABLE_INVESTMENT_PROCESS",
+          "STYLE_CONSISTENCY",
+          "REASONABLE_COST",
+          "ACCEPTABLE_PORTFOLIO_OVERLAP",
+          "EVALUATION_ACROSS_FULL_MARKET_CYCLES"
+        ]
+      },
+      {
+        "category": "FACTOR_OR_SMART_BETA_INDEX",
+        "status": "CONDITIONAL",
+        "role": "SATELLITE",
+        "requirements": [
+          "UNDERSTANDABLE_FACTOR_PREMISE",
+          "ROBUST_INDEX_CONSTRUCTION",
+          "ACCEPTABLE_VALUATION_AND_TURNOVER",
+          "LIMITED_TOTAL_ALLOCATION"
+        ]
+      },
+      {
+        "category": "SECTORAL_AND_THEMATIC_FUNDS",
+        "status": "CONDITIONAL",
+        "role": "SATELLITE_ONLY",
+        "condition": "Subject to combined thematic and sector concentration limits."
+      },
+      {
+        "category": "PSU_THEMATIC_EXPOSURE",
+        "status": "CONDITIONAL",
+        "role": "SATELLITE_ONLY",
+        "examples": [
+          "CPSE_ETF",
+          "BHARAT_22_ETF",
+          "OTHER_PSU_HEAVY_PRODUCTS"
+        ],
+        "condition": "Total PSU exposure must be measured on a look-through basis."
+      }
+    ]
+  },
+
+  "directEquity": {
+    "status": "CONDITIONAL",
+    "role": "OPTIONAL_SATELLITE",
+
+    "requirements": [
+      "WRITTEN_INVESTMENT_THESIS",
+      "DEFINED_POSITION_SIZE",
+      "DEFINED_KEY_RISKS",
+      "DEFINED_EXIT_OR_REVIEW_TRIGGERS",
+      "CONCENTRATION_CHECK",
+      "PORTFOLIO_OVERLAP_CHECK"
+    ],
+
+    "rules": [
+      "NO_MINIMUM_ALLOCATION_REQUIRED",
+      "CORE_INDEX_INVESTING_TAKES_PRIORITY",
+      "TRADING_IS_SEPARATE_FROM_LONG_TERM_INVESTING",
+      "AI_ASSISTANCE_DOES_NOT_REPLACE_PRIMARY_SOURCE_VALIDATION"
+    ]
+  },
+
+  "internationalEquity": {
+    "strategicRole": "GEOGRAPHIC_AND_CURRENCY_DIVERSIFICATION",
+    "strategicTarget": 0.10,
+
+    "categories": [
+      {
+        "category": "BROAD_GLOBAL_OR_DEVELOPED_MARKET_INDEX",
+        "status": "APPROVED_CORE",
+        "preferredRole": "PRIMARY_INTERNATIONAL_EXPOSURE"
+      },
+      {
+        "category": "BROAD_US_MARKET_OR_SP500_INDEX",
+        "status": "APPROVED",
+        "preferredRole": "CORE_INTERNATIONAL_EXPOSURE"
+      },
+      {
+        "category": "NASDAQ_100",
+        "status": "CONDITIONAL",
+        "preferredRole": "SATELLITE_WITHIN_INTERNATIONAL_EQUITY",
+        "reason": "Higher concentration in large growth and technology-oriented companies."
+      },
+      {
+        "category": "SINGLE_COUNTRY_EX_US_FUNDS",
+        "status": "WATCHLIST_ONLY"
+      },
+      {
+        "category": "INTERNATIONAL_SECTOR_OR_THEME_FUNDS",
+        "status": "WATCHLIST_ONLY"
+      }
+    ],
+
+    "eligibleStructures": [
+      {
+        "structure": "INDIAN_MUTUAL_FUND_OR_FOF",
+        "status": "APPROVED_SUBJECT_TO_AVAILABILITY_AND_CURRENT_RULES"
+      },
+      {
+        "structure": "INDIAN_LISTED_ETF",
+        "status": "APPROVED_SUBJECT_TO_LIQUIDITY_AND_TRACKING"
+      },
+      {
+        "structure": "DIRECT_OVERSEAS_INVESTMENT",
+        "status": "CONDITIONAL",
+        "requirements": [
+          "LRS_COMPLIANCE",
+          "TAX_ANALYSIS",
+          "ESTATE_AND_SUCCESSION_REVIEW",
+          "COST_ANALYSIS"
+        ]
+      }
+    ],
+
+    "ownershipRule": "Mother's account and Kapil's account must be evaluated as legally separate ownership structures."
+  },
+
+  "gold": {
+    "strategicRole": "DIVERSIFIER_AND_PORTFOLIO_RESILIENCE",
+    "strategicTarget": 0.07,
+    "minimum": 0.05,
+    "maximum": 0.10,
+
+    "categories": [
+      {
+        "category": "GOLD_ETF",
+        "status": "APPROVED",
+        "preferredFor": "DEMAT_BASED_LONG_TERM_GOLD_ALLOCATION"
+      },
+      {
+        "category": "GOLD_MUTUAL_FUND_OR_FOF",
+        "status": "APPROVED",
+        "preferredFor": "NON_DEMAT_OR_SIP_CONVENIENCE"
+      },
+      {
+        "category": "SOVEREIGN_GOLD_BOND_EXISTING_HOLDINGS_OR_SECONDARY_MARKET",
+        "status": "CONDITIONAL",
+        "requirements": [
+          "VALUATION_ANALYSIS",
+          "LIQUIDITY_ANALYSIS",
+          "MATURITY_AND_TAX_ANALYSIS"
+        ]
+      },
+      {
+        "category": "PHYSICAL_GOLD_COINS_OR_BARS",
+        "status": "CONDITIONAL",
+        "requirements": [
+          "SECURE_STORAGE",
+          "AUTHENTICITY",
+          "BUY_SELL_SPREAD_ANALYSIS"
+        ]
+      },
+      {
+        "category": "JEWELLERY",
+        "status": "PROHIBITED_AS_INVESTMENT_ALLOCATION",
+        "note": "Personal-use jewellery is a consumption or family asset, not strategic portfolio gold."
+      },
+      {
+        "category": "DIGITAL_GOLD",
+        "status": "WATCHLIST_ONLY"
+      }
+    ]
+  },
+
+  "debtAndFixedIncome": {
+    "strategicRole": "STABILITY_GOAL_MATCHING_AND_CAPITAL_PRESERVATION",
+
+    "existingCoreAssets": [
+      {
+        "product": "EPF",
+        "status": "APPROVED_CORE"
+      },
+      {
+        "product": "PPF",
+        "status": "APPROVED_CORE"
+      },
+      {
+        "product": "NPS_CORPORATE_DEBT",
+        "status": "APPROVED"
+      },
+      {
+        "product": "NPS_GOVERNMENT_SECURITIES",
+        "status": "APPROVED"
+      }
+    ],
+
+    "additionalCategories": [
+      {
+        "category": "BANK_FIXED_DEPOSIT",
+        "status": "APPROVED",
+        "role": "DEFINED_SHORT_OR_MEDIUM_TERM_NEED"
+      },
+      {
+        "category": "TREASURY_BILLS_AND_GOVERNMENT_SECURITIES",
+        "status": "APPROVED"
+      },
+      {
+        "category": "TARGET_MATURITY_DEBT_FUND",
+        "status": "CONDITIONAL",
+        "condition": "Duration should match the intended goal horizon."
+      },
+      {
+        "category": "LIQUID_OR_MONEY_MARKET_FUND",
+        "status": "APPROVED",
+        "role": "LIQUIDITY_OR_TEMPORARY_PARKING"
+      },
+      {
+        "category": "HIGH_QUALITY_SHORT_DURATION_DEBT_FUND",
+        "status": "CONDITIONAL"
+      },
+      {
+        "category": "CREDIT_RISK_FUND",
+        "status": "PROHIBITED"
+      },
+      {
+        "category": "LOW_QUALITY_HIGH_YIELD_DEBT",
+        "status": "PROHIBITED"
+      }
+    ]
+  },
+
+  "cashAndLiquidity": {
+    "categories": [
+      {
+        "category": "SAVINGS_ACCOUNT",
+        "status": "APPROVED",
+        "role": "IMMEDIATE_LIQUIDITY"
+      },
+      {
+        "category": "SWEEP_FIXED_DEPOSIT",
+        "status": "APPROVED",
+        "role": "OPTIONAL_LIQUIDITY_OPTIMIZATION"
+      },
+      {
+        "category": "LIQUID_FUND",
+        "status": "APPROVED",
+        "role": "EMERGENCY_OR_TEMPORARY_LIQUIDITY_SUBJECT_TO_PRODUCT_SELECTION"
+      },
+      {
+        "category": "MONEY_MARKET_FUND",
+        "status": "APPROVED",
+        "role": "SHORT_TERM_PARKING"
+      }
+    ]
+  },
+
+  "realEstate": {
+    "status": "CONDITIONAL",
+    "role": "FAMILY_USE_OR_LONG_TERM_REAL_ASSET",
+
+    "existingAssets": [
+      "FARIDABAD_2BHK",
+      "BUILT_HOME_OR_LAND_PROPERTY"
+    ],
+
+    "plannedPotentialAsset": "LUCKNOW_PLOT",
+
+    "rules": [
+      "REAL_ESTATE_MUST_BE INCLUDED_IN_FAMILY_NET_WORTH_ANALYSIS",
+      "DO_NOT_TREAT_ILLIQUID_REAL_ESTATE_AS EMERGENCY_LIQUIDITY",
+      "NEW_REAL_ESTATE_PURCHASES_REQUIRE OPPORTUNITY_COST_ANALYSIS",
+      "LUCKNOW_PLOT_FUNDING_MUST_REMAIN_SEPARATE_FROM KAPIL_LONG_TERM_FINANCIAL_PORTFOLIO_UNLESS_POLICY_CHANGES"
+    ]
+  },
+
+  "businessInvestment": {
+    "status": "CONDITIONAL_SEPARATE_CAPITAL_BUCKET",
+    "maximumIndicativeCapital": 5000000,
+
+    "possibleAreas": [
+      "DIAGNOSTIC_CENTRE",
+      "ULTRASOUND_OR_HEALTHCARE_SERVICE_SUBJECT_TO_REGULATORY_REQUIREMENTS",
+      "PHARMACY",
+      "OTHER_NON_IT_BUSINESS"
+    ],
+
+    "rules": [
+      "BUSINESS_CAPITAL_IS_NOT_A NORMAL_PORTFOLIO_ASSET_CLASS",
+      "BUSINESS_INVESTMENT_REQUIRES SEPARATE_DUE_DILIGENCE",
+      "DO_NOT_COUNT_EXPECTED_BUSINESS_SUCCESS_AS GUARANTEED_RETIREMENT_FUNDING",
+      "RING_FENCE_CAPITAL_AS_LAUNCH_PROBABILITY_INCREASES"
+    ]
+  },
+
+  "alternativeAssets": {
+    "reit": {
+      "status": "WATCHLIST_ONLY",
+      "reason": "Existing direct real-estate exposure must be considered first."
+    },
+
+    "invit": {
+      "status": "WATCHLIST_ONLY"
+    },
+
+    "pms": {
+      "status": "WATCHLIST_ONLY",
+      "reason": "Higher complexity, concentration and cost require strong justification."
+    },
+
+    "aif": {
+      "status": "WATCHLIST_ONLY"
+    },
+
+    "privateEquity": {
+      "status": "WATCHLIST_ONLY"
+    },
+
+    "structuredProducts": {
+      "status": "PROHIBITED_BY_DEFAULT"
+    }
+  },
+
+  "speculativeAssets": {
+    "cryptocurrency": {
+      "status": "PROHIBITED_BY_DEFAULT",
+      "exception": "Future explicit speculative allocation policy."
+    },
+
+    "futuresAndOptions": {
+      "status": "PROHIBITED_FOR_LONG_TERM_PORTFOLIO",
+      "exception": "No exception without a separate formally approved trading or hedging mandate."
+    },
+
+    "leveragedTrading": {
+      "status": "PROHIBITED"
+    },
+
+    "intradayTrading": {
+      "status": "OUTSIDE_FWOS_LONG_TERM_PORTFOLIO"
+    },
+
+    "aiAssistedTrading": {
+      "status": "WATCHLIST_ONLY",
+      "rule": "Must remain completely separate from long-term family wealth and require a dedicated risk budget before any implementation."
+    }
+  },
+
+  "insuranceProducts": {
+    "termInsurance": {
+      "status": "APPROVED_FOR_RISK_TRANSFER",
+      "classification": "INSURANCE_NOT_INVESTMENT"
+    },
+
+    "traditionalEndowmentPlans": {
+      "status": "PROHIBITED_AS_NEW_INVESTMENT_BY_DEFAULT"
+    },
+
+    "ulip": {
+      "status": "PROHIBITED_AS_NEW_INVESTMENT_BY_DEFAULT"
+    },
+
+    "existingLicPolicy": {
+      "status": "GRANDFATHERED_PENDING_REVIEW",
+      "annualPremium": 17000,
+      "sumInsured": 300000,
+      "maturityYear": 2034
+    }
+  },
+
+  "productApprovalCriteria": {
+    "mandatory": [
+      "DEFINED_PORTFOLIO_ROLE",
+      "SUITABLE_TIME_HORIZON",
+      "ASSET_ALLOCATION_FIT",
+      "ACCEPTABLE_CONCENTRATION",
+      "ACCEPTABLE_COST",
+      "ACCEPTABLE_LIQUIDITY",
+      "UNDERSTANDABLE_STRUCTURE",
+      "CURRENT_DATA_VERIFICATION"
+    ],
+
+    "preferred": [
+      "LOW_COST",
+      "HIGH_TRANSPARENCY",
+      "LOW_COMPLEXITY",
+      "TAX_EFFICIENCY",
+      "OPERATIONAL_RELIABILITY",
+      "EASY_MONITORING"
+    ]
+  },
+
+  "specificProductRegistry": {
+    "status": "TO_BE_BUILT",
+
+    "futureFields": [
+      "PRODUCT_NAME",
+      "CATEGORY",
+      "AMC_OR_ISSUER",
+      "PORTFOLIO_ROLE",
+      "APPROVAL_STATUS",
+      "EXPENSE_RATIO",
+      "TRACKING_DIFFERENCE",
+      "AUM",
+      "LIQUIDITY",
+      "TAX_TREATMENT",
+      "RATIONALE",
+      "APPROVAL_DATE",
+      "LAST_REVIEW_DATE",
+      "NEXT_REVIEW_DATE",
+      "REPLACEMENT_CANDIDATE"
+    ],
+
+    "rule": "Specific product data must be refreshed before material new investment decisions."
+  },
+
+  "currentKnownHoldingsRequiringClassification": [
+    {
+      "investment": "CPSE_ETF",
+      "provisionalStatus": "CONDITIONAL_EXISTING_HOLDING",
+      "requiredAction": "COMPLETE_WEIGHT_AND_OVERLAP_ANALYSIS"
+    },
+    {
+      "investment": "BHARAT_22_ETF",
+      "provisionalStatus": "CONDITIONAL_EXISTING_HOLDING",
+      "requiredAction": "COMPLETE_WEIGHT_AND_OVERLAP_ANALYSIS"
+    },
+    {
+      "investment": "DIRECT_STOCKS",
+      "provisionalStatus": "CONDITIONAL_EXISTING_HOLDINGS",
+      "requiredAction": "IMPORT_COMPLETE_HOLDINGS_AND_REVIEW"
+    }
+  ],
+
+  "prohibitedByDefault": [
+    "UNREGULATED_INVESTMENT_SCHEMES",
+    "GUARANTEED_HIGH_RETURN_SCHEMES_WITHOUT CREDIBLE BACKING",
+    "LEVERAGED_SPECULATION",
+    "BORROWING_TO_INVEST_IN_EQUITY",
+    "CREDIT_RISK_FUNDS",
+    "LOW_QUALITY_HIGH_YIELD_DEBT",
+    "NEW_ENDOWMENT_POLICIES_AS_INVESTMENTS",
+    "NEW_ULIPS_AS_INVESTMENTS",
+    "COMPLEX_PRODUCTS_THAT_CANNOT_BE CLEARLY_UNDERSTOOD"
+  ],
+
+  "reviewPolicy": {
+    "categoryLevelReview": "ANNUALLY_OR_AFTER_MAJOR_REGULATORY_CHANGE",
+    "specificProductReview": "AT_LEAST_ANNUALLY",
+    "immediateReviewTriggers": [
+      "MATERIAL_REGULATORY_CHANGE",
+      "MATERIAL_TAX_CHANGE",
+      "FUND_MANDATE_CHANGE",
+      "INDEX_METHODOLOGY_CHANGE",
+      "FUND_MANAGER_OR_PROCESS_CHANGE_FOR_ACTIVE_FUNDS",
+      "MATERIAL_TRACKING_DETERIORATION",
+      "LIQUIDITY_DETERIORATION",
+      "STRUCTURAL_PRODUCT_RISK"
+    ]
+  },
+
+  "references": {
+    "investmentDecisionChecklist": "data/investment-decision-checklist.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "concentrationLimits": "data/concentration-limits.json",
+    "monthlySipPolicy": "data/monthly-sip-policy.json",
+    "lumpSumDeploymentPolicy": "data/lump-sum-deployment-policy.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_DIRECT_STOCK_EXIT_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_TAX_OPTIMIZATION_POLICY"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_INSURANCE_AND_RISK_MANAGEMENT_POLICY"
+    },
+    {
+      "priority": 4,
+      "action": "BUILD_SPECIFIC_PRODUCT_REGISTRY_USING_CURRENT_DATA"
+    }
+  ]
+}

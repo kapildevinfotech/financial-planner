@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-11",
+  "currency": "INR",
+  "status": "GOALS_IDENTIFIED_MODELLING_PENDING",
+
+  "goalPolicy": {
+    "essentialGoalsMustNotDependOn": [
+      "SPECULATIVE_RETURNS",
+      "TRADING_PROFITS",
+      "UNCONFIRMED_INHERITANCE",
+      "UNCONFIRMED_BUSINESS_INCOME"
+    ],
+    "priorityOrder": [
+      "CHILDREN_EDUCATION",
+      "FINANCIAL_INDEPENDENCE",
+      "FAMILY_MEDICAL_SECURITY",
+      "BUSINESS_OPTIONALITY",
+      "MARRIAGE_SUPPORT",
+      "GENERATIONAL_WEALTH",
+      "PHILANTHROPY"
+    ],
+    "fundingRule": "Each material goal must eventually have a target corpus, existing allocation, funding gap and investment strategy."
+  },
+
+  "goals": [
+    {
+      "goalId": "GOAL-REYANSH-GRAD",
+      "ownerId": "REYANSH",
+      "goalType": "EDUCATION",
+      "name": "Reyansh Graduation",
+      "priority": "ESSENTIAL",
+      "targetYear": 2038,
+      "yearsRemainingApprox": 12,
+      "possiblePaths": [
+        "IIT",
+        "NIT",
+        "TOP_GOVERNMENT_COLLEGE",
+        "TOP_PRIVATE_COLLEGE"
+      ],
+      "currentCost": null,
+      "inflationRate": null,
+      "futureCorpus": null,
+      "existingAllocatedCorpus": null,
+      "fundingGap": null,
+      "fundingStatus": "NOT_MODELLED"
+    },
+    {
+      "goalId": "GOAL-REYANSH-MASTERS",
+      "ownerId": "REYANSH",
+      "goalType": "EDUCATION",
+      "name": "Reyansh Master's or Postgraduate Education",
+      "priority": "HIGH",
+      "targetYear": 2041,
+      "yearsRemainingApprox": 15,
+      "scenarios": [
+        "INDIA",
+        "FOREIGN_EDUCATION"
+      ],
+      "currentCost": null,
+      "inflationRate": null,
+      "currencyAssumption": null,
+      "futureCorpus": null,
+      "existingAllocatedCorpus": null,
+      "fundingGap": null,
+      "fundingStatus": "NOT_MODELLED"
+    },
+    {
+      "goalId": "GOAL-NIKESH-GRAD",
+      "ownerId": "NIKESH",
+      "goalType": "EDUCATION",
+      "name": "Nikesh Graduation",
+      "priority": "ESSENTIAL",
+      "targetYear": 2041,
+      "yearsRemainingApprox": 15,
+      "possiblePaths": [
+        "IIT",
+        "NIT",
+        "TOP_GOVERNMENT_COLLEGE",
+        "TOP_PRIVATE_COLLEGE"
+      ],
+      "currentCost": null,
+      "inflationRate": null,
+      "futureCorpus": null,
+      "existingAllocatedCorpus": null,
+      "fundingGap": null,
+      "fundingStatus": "NOT_MODELLED"
+    },
+    {
+      "goalId": "GOAL-NIKESH-MASTERS",
+      "ownerId": "NIKESH",
+      "goalType": "EDUCATION",
+      "name": "Nikesh Master's or Postgraduate Education",
+      "priority": "HIGH",
+      "targetYear": 2044,
+      "yearsRemainingApprox": 18,
+      "scenarios": [
+        "INDIA",
+        "FOREIGN_EDUCATION"
+      ],
+      "currentCost": null,
+      "inflationRate": null,
+      "currencyAssumption": null,
+      "futureCorpus": null,
+      "existingAllocatedCorpus": null,
+      "fundingGap": null,
+      "fundingStatus": "NOT_MODELLED"
+    },
+    {
+      "goalId": "GOAL-FINANCIAL-INDEPENDENCE",
+      "ownerId": "KAPIL_FAMILY",
+      "goalType": "FINANCIAL_INDEPENDENCE",
+      "name": "Financial Independence",
+      "priority": "ESSENTIAL",
+      "targetAgePrimary": 55,
+      "scenarioAges": [
+        50,
+        55,
+        60
+      ],
+      "currentAge": 37,
+      "currentMonthlyExpense": 75000,
+      "planningMonthlyExpenseRange": {
+        "minimum": 120000,
+        "maximum": 150000,
+        "basis": "TODAYS_PURCHASING_POWER"
+      },
+      "retirementCorpus": null,
+      "fundingStatus": "NOT_MODELLED",
+      "notes": [
+        "Financial independence is an option rather than a mandatory retirement date.",
+        "Future business income must not be required for the base-case plan."
+      ]
+    },
+    {
+      "goalId": "GOAL-BUSINESS-OPTIONALITY",
+      "ownerId": "KAPIL",
+      "goalType": "BUSINESS_CAPITAL",
+      "name": "Non-IT Business Optionality",
+      "priority": "MEDIUM_HIGH",
+      "targetYear": null,
+      "estimatedCapitalRange": {
+        "minimum": 3000000,
+        "maximum": 5000000
+      },
+      "possibleBusinessTypes": [
+        "DIAGNOSTIC_CENTRE",
+        "ULTRASOUND_CENTRE",
+        "PHARMACY",
+        "OTHER_NON_IT_BUSINESS"
+      ],
+      "existingAllocatedCorpus": 0,
+      "fundingStatus": "OPTIONAL_NOT_FUNDED",
+      "constraints": [
+        "MUST_NOT_COMPROMISE_CHILDREN_ESSENTIAL_EDUCATION",
+        "MUST_NOT_COMPROMISE_FINANCIAL_INDEPENDENCE",
+        "MUST_NOT_USE_EMERGENCY_FUND"
+      ]
+    },
+    {
+      "goalId": "GOAL-CHILDREN-MARRIAGE",
+      "ownerId": "FAMILY",
+      "goalType": "MARRIAGE_SUPPORT",
+      "name": "Partial Support for Children's Marriage",
+      "priority": "LOWER_THAN_EDUCATION_AND_RETIREMENT",
+      "targetYear": null,
+      "targetCorpus": null,
+      "fundingStatus": "NOT_MODELLED"
+    },
+    {
+      "goalId": "GOAL-GENERATIONAL-WEALTH",
+      "ownerId": "FAMILY",
+      "goalType": "LEGACY",
+      "name": "Generational Wealth and Inheritance",
+      "priority": "LONG_TERM",
+      "targetYear": null,
+      "targetCorpus": null,
+      "fundingStatus": "ONGOING",
+      "notes": [
+        "Legacy is subordinate to lifetime financial security and children's education."
+      ]
+    },
+    {
+      "goalId": "GOAL-PHILANTHROPY",
+      "ownerId": "FAMILY",
+      "goalType": "PHILANTHROPY",
+      "name": "Future Philanthropy",
+      "priority": "ASPIRATIONAL",
+      "targetYear": null,
+      "targetCorpus": null,
+      "fundingStatus": "NOT_MODELLED"
+    }
+  ],
+
+  "nonDedicatedCashFlowGoals": [
+    {
+      "goalId": "GOAL-DOMESTIC-TRAVEL",
+      "name": "Domestic Indian Travel",
+      "expectedHorizonYears": "5_TO_10",
+      "fundingMethod": "ONGOING_CASH_FLOW",
+      "dedicatedCorpusRequired": false
+    }
+  ],
+
+  "separatePlannedTransactions": [
+    {
+      "transactionId": "PLANNED-LUCKNOW-PLOT",
+      "name": "Lucknow Plot Purchase",
+      "estimatedCostRange": {
+        "minimum": 4000000,
+        "maximum": 5000000
+      },
+      "expectedPrimaryFundingSource": "MOTHER_OWNED_ASSETS",
+      "treatment": "SEPARATE_FROM_KAPIL_CORE_GOAL_PORTFOLIO",
+      "status": "PLANNED"
+    }
+  ],
+
+  "goalModellingAssumptionsPending": [
+    "Current cost of Indian undergraduate education",
+    "Current cost of premium private undergraduate education",
+    "Current cost of Indian postgraduate education",
+    "Current cost of foreign postgraduate education",
+    "Education inflation rate",
+    "Foreign education currency depreciation assumption",
+    "Expected portfolio return by goal horizon",
+    "Financial independence inflation rate",
+    "Post-retirement real return",
+    "Life expectancy assumption",
+    "Spouse pension and retirement benefits"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_ASSUMPTIONS_REGISTRY"
+    },
+    {
+      "priority": 2,
+      "action": "MODEL_EDUCATION_GOAL_SCENARIOS"
+    },
+    {
+      "priority": 3,
+      "action": "MODEL_FINANCIAL_INDEPENDENCE_SCENARIOS"
+    },
+    {
+      "priority": 4,
+      "action": "MAP_EXISTING_ASSETS_TO_GOALS"
+    },
+    {
+      "priority": 5,
+      "action": "CALCULATE_GOAL_FUNDING_GAPS"
+    }
+  ]
+}

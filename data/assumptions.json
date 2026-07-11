@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_ASSUMPTIONS",
+
+  "governance": {
+    "principle": "All financial projections must reference centralized assumptions.",
+    "statuses": [
+      "CONFIRMED",
+      "PROVISIONAL",
+      "PENDING",
+      "SCENARIO_ONLY"
+    ],
+    "reviewFrequency": "ANNUAL_OR_MATERIAL_CHANGE",
+    "rules": [
+      "Do not present projections as guaranteed outcomes.",
+      "Use conservative assumptions for essential goals.",
+      "Keep nominal returns, inflation and real returns conceptually separate.",
+      "Model ranges where uncertainty is material.",
+      "Record assumption changes in CHANGELOG.md."
+    ]
+  },
+
+  "personal": {
+    "kapilCurrentAge": {
+      "value": 37,
+      "status": "CONFIRMED"
+    },
+    "financialIndependenceTargetAge": {
+      "baseCase": 55,
+      "scenarios": [50, 55, 60],
+      "status": "PROVISIONAL"
+    },
+    "lifeExpectancyPlanningAge": {
+      "value": 90,
+      "stressCase": 95,
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "income": {
+    "currentMonthlyInHandSalary": {
+      "value": 225000,
+      "status": "CONFIRMED"
+    },
+    "annualIncomeGrowthRate": {
+      "baseCase": 0.05,
+      "status": "PROVISIONAL",
+      "reason": "Conservative assumption considering career and AI-related uncertainty."
+    },
+    "currentMonthlyInvestmentCapacity": {
+      "value": 125000,
+      "status": "CONFIRMED"
+    }
+  },
+
+  "expenses": {
+    "currentTypicalMonthlyExpense": {
+      "value": 75000,
+      "status": "CONFIRMED"
+    },
+    "financialIndependencePlanningMonthlyExpense": {
+      "minimum": 120000,
+      "baseCase": 135000,
+      "maximum": 150000,
+      "basis": "TODAYS_PURCHASING_POWER",
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "inflation": {
+    "generalInflation": {
+      "baseCase": 0.06,
+      "range": {
+        "minimum": 0.05,
+        "maximum": 0.07
+      },
+      "status": "PROVISIONAL"
+    },
+    "educationInflationIndia": {
+      "baseCase": 0.08,
+      "range": {
+        "minimum": 0.07,
+        "maximum": 0.10
+      },
+      "status": "PROVISIONAL"
+    },
+    "medicalInflation": {
+      "baseCase": 0.10,
+      "range": {
+        "minimum": 0.08,
+        "maximum": 0.12
+      },
+      "status": "PROVISIONAL"
+    },
+    "foreignEducationCostInflation": {
+      "baseCase": 0.05,
+      "status": "PROVISIONAL",
+      "notes": [
+        "Must be combined with currency movement when modelling INR funding requirements."
+      ]
+    }
+  },
+
+  "currency": {
+    "inrDepreciationAgainstForeignEducationCurrency": {
+      "baseCase": 0.03,
+      "range": {
+        "minimum": 0.00,
+        "maximum": 0.05
+      },
+      "status": "SCENARIO_ONLY"
+    }
+  },
+
+  "investmentReturns": {
+    "principle": "Planning returns are not expected market forecasts.",
+
+    "indianEquity": {
+      "nominalAnnualReturn": {
+        "conservative": 0.09,
+        "baseCase": 0.10,
+        "optimistic": 0.12
+      },
+      "status": "PROVISIONAL"
+    },
+
+    "internationalEquity": {
+      "nominalAnnualReturnInINRTerms": {
+        "conservative": 0.08,
+        "baseCase": 0.10,
+        "optimistic": 0.12
+      },
+      "status": "PROVISIONAL"
+    },
+
+    "gold": {
+      "nominalAnnualReturn": {
+        "conservative": 0.05,
+        "baseCase": 0.06,
+        "optimistic": 0.08
+      },
+      "status": "PROVISIONAL"
+    },
+
+    "debt": {
+      "nominalAnnualReturn": {
+        "conservative": 0.06,
+        "baseCase": 0.07,
+        "optimistic": 0.075
+      },
+      "status": "PROVISIONAL"
+    },
+
+    "cash": {
+      "nominalAnnualReturn": {
+        "baseCase": 0.04
+      },
+      "status": "PROVISIONAL"
+    },
+
+    "balancedLongTermPortfolio": {
+      "nominalAnnualReturn": {
+        "conservative": 0.075,
+        "baseCase": 0.085,
+        "optimistic": 0.10
+      },
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "retirement": {
+    "preFinancialIndependenceGeneralInflation": {
+      "value": 0.06,
+      "status": "PROVISIONAL"
+    },
+    "postFinancialIndependenceInflation": {
+      "value": 0.06,
+      "status": "PROVISIONAL"
+    },
+    "postFinancialIndependenceNominalPortfolioReturn": {
+      "conservative": 0.07,
+      "baseCase": 0.08,
+      "status": "PROVISIONAL"
+    },
+    "safeWithdrawalRate": {
+      "conservative": 0.03,
+      "baseCase": 0.035,
+      "upperScenario": 0.04,
+      "status": "SCENARIO_ONLY",
+      "notes": [
+        "Must not be used as the sole retirement corpus calculation method.",
+        "Detailed cash-flow and longevity modelling should also be performed."
+      ]
+    }
+  },
+
+  "education": {
+    "reyanShGraduation": {
+      "yearsRemainingApprox": 12,
+      "currentCost": null,
+      "status": "PENDING"
+    },
+    "reyanShMasters": {
+      "yearsRemainingApprox": 15,
+      "indiaCurrentCost": null,
+      "foreignCurrentCost": null,
+      "status": "PENDING"
+    },
+    "nikeshGraduation": {
+      "yearsRemainingApprox": 15,
+      "currentCost": null,
+      "status": "PENDING"
+    },
+    "nikeshMasters": {
+      "yearsRemainingApprox": 18,
+      "indiaCurrentCost": null,
+      "foreignCurrentCost": null,
+      "status": "PENDING"
+    }
+  },
+
+  "strategicAssetAllocation": {
+    "status": "PROVISIONAL_PENDING_GOAL_VALIDATION",
+    "target": {
+      "indianEquity": 0.55,
+      "internationalEquity": 0.10,
+      "gold": 0.07,
+      "debt": 0.23,
+      "cashAndOpportunityCapital": 0.05
+    },
+    "ranges": {
+      "indianEquity": {
+        "minimum": 0.50,
+        "maximum": 0.60
+      },
+      "internationalEquity": {
+        "minimum": 0.08,
+        "maximum": 0.12
+      },
+      "gold": {
+        "minimum": 0.05,
+        "maximum": 0.10
+      },
+      "debt": {
+        "minimum": 0.20,
+        "maximum": 0.30
+      },
+      "cashAndOpportunityCapital": {
+        "minimum": 0.03,
+        "maximum": 0.08
+      }
+    }
+  },
+
+  "opportunityCapital": {
+    "targetAmountRange": {
+      "minimum": 500000,
+      "maximum": 1000000
+    },
+    "status": "PROVISIONAL",
+    "potentialMarketCorrectionLevels": [
+      0.05,
+      0.10,
+      0.15,
+      0.20,
+      0.30,
+      0.40,
+      0.50
+    ],
+    "deploymentRulesStatus": "PENDING"
+  },
+
+  "business": {
+    "capitalRequirement": {
+      "minimum": 3000000,
+      "baseCase": 4000000,
+      "maximum": 5000000,
+      "status": "PROVISIONAL"
+    },
+    "businessIncomeInBaseFinancialIndependencePlan": {
+      "value": 0,
+      "status": "PROVISIONAL",
+      "reason": "Uncertain future business income should not be required for essential goal success."
+    }
+  },
+
+  "property": {
+    "lucknowPlotEstimatedCost": {
+      "minimum": 4000000,
+      "maximum": 5000000,
+      "status": "PROVISIONAL"
+    },
+    "expectedFundingFromMotherAssets": {
+      "value": 4000000,
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "insurance": {
+    "termInsuranceRequiredCover": {
+      "value": null,
+      "status": "PENDING_NEEDS_ANALYSIS"
+    },
+    "emergencyFundMonths": {
+      "minimum": 6,
+      "baseCase": 9,
+      "maximum": 12,
+      "status": "PROVISIONAL"
+    }
+  },
+
+  "tax": {
+    "rule": "Tax rates must not be hard-coded as permanent assumptions.",
+    "sourceRequirement": "CURRENT_APPLICABLE_INDIAN_TAX_LAW",
+    "status": "DYNAMIC_VERIFICATION_REQUIRED"
+  },
+
+  "pendingResearch": [
+    "Current cost scenarios for IIT, NIT and top private undergraduate education",
+    "Current Indian postgraduate education cost",
+    "Current foreign postgraduate education cost by destination",
+    "Spouse pension and retirement benefits",
+    "Exact term insurance requirement",
+    "Appropriate emergency fund size",
+    "Portfolio-specific expected return after costs and taxes"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "VALIDATE_EDUCATION_COST_ASSUMPTIONS"
+    },
+    {
+      "priority": 2,
+      "action": "CALCULATE_GOAL_CORPUS_SCENARIOS"
+    },
+    {
+      "priority": 3,
+      "action": "VALIDATE_STRATEGIC_ASSET_ALLOCATION"
+    }
+  ]
+}

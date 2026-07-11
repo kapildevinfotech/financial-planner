@@ -1,0 +1,677 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/direct-stock-exit-policy.schema.json",
+  "title": "FWOS Direct Stock Exit Policy Schema",
+  "description": "Validation schema for systematic review, hold, reduce and exit decisions for existing direct equity holdings.",
+  "type": "object",
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate",
+    "status",
+    "policy",
+    "stockReviews"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "PROVISIONAL",
+        "ACTIVE",
+        "PENDING_REVIEW",
+        "SUPERSEDED",
+        "ARCHIVED"
+      ]
+    },
+
+    "policy": {
+      "$ref": "#/$defs/policy"
+    },
+
+    "stockReviews": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/stockReview"
+      }
+    },
+
+    "portfolioSummary": {
+      "$ref": "#/$defs/portfolioSummary"
+    },
+
+    "dataQuality": {
+      "$ref": "#/$defs/dataQuality"
+    },
+
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+
+  "$defs": {
+    "policy": {
+      "type": "object",
+
+      "required": [
+        "objective",
+        "defaultNewMoneyRule",
+        "decisionFramework"
+      ],
+
+      "properties": {
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "defaultNewMoneyRule": {
+          "type": "string",
+          "enum": [
+            "NO_NEW_DIRECT_STOCKS",
+            "EXCEPTION_ONLY",
+            "LIMITED_SATELLITE_ALLOCATION",
+            "PERMITTED"
+          ]
+        },
+
+        "targetMaximumDirectEquityPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "targetDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "decisionFramework": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/decisionRule"
+          }
+        },
+
+        "immediateExitTriggers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/exitTrigger"
+          }
+        },
+
+        "taxAwareExecutionRules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+
+        "prohibitedReasonsToHold": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "decisionRule": {
+      "type": "object",
+
+      "required": [
+        "ruleId",
+        "criterion",
+        "possibleActions"
+      ],
+
+      "properties": {
+        "ruleId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "criterion": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "possibleActions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/stockAction"
+          }
+        },
+
+        "mandatory": {
+          "type": "boolean"
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "exitTrigger": {
+      "type": "object",
+
+      "required": [
+        "triggerId",
+        "condition",
+        "defaultAction"
+      ],
+
+      "properties": {
+        "triggerId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "condition": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "defaultAction": {
+          "$ref": "#/$defs/stockAction"
+        },
+
+        "exceptionAllowed": {
+          "type": "boolean"
+        },
+
+        "exceptionRequirements": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "stockReview": {
+      "type": "object",
+
+      "required": [
+        "reviewId",
+        "holdingId",
+        "stockName",
+        "reviewDate",
+        "recommendedAction"
+      ],
+
+      "properties": {
+        "reviewId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "holdingId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "stockName": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "symbol": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "reviewDate": {
+          "type": "string",
+          "format": "date"
+        },
+
+        "currentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "portfolioWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "unrealizedGainLoss": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "unrealizedGainLossPercent": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "investmentThesis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "thesisStatus": {
+          "type": "string",
+          "enum": [
+            "INTACT",
+            "WEAKENING",
+            "BROKEN",
+            "UNKNOWN"
+          ]
+        },
+
+        "businessQuality": {
+          "$ref": "#/$defs/assessment"
+        },
+
+        "financialQuality": {
+          "$ref": "#/$defs/assessment"
+        },
+
+        "governanceQuality": {
+          "$ref": "#/$defs/assessment"
+        },
+
+        "valuationAssessment": {
+          "$ref": "#/$defs/valuationAssessment"
+        },
+
+        "portfolioFit": {
+          "$ref": "#/$defs/portfolioFit"
+        },
+
+        "exitTriggers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/triggerResult"
+          }
+        },
+
+        "recommendedAction": {
+          "$ref": "#/$defs/stockAction"
+        },
+
+        "actionRationale": {
+          "type": "string"
+        },
+
+        "executionPlan": {
+          "$ref": "#/$defs/executionPlan"
+        },
+
+        "nextReviewDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "fwos.schema.json#/$defs/sourceRecord"
+          }
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "assessment": {
+      "type": "object",
+
+      "properties": {
+        "rating": {
+          "type": "string",
+          "enum": [
+            "EXCELLENT",
+            "GOOD",
+            "ACCEPTABLE",
+            "WEAK",
+            "POOR",
+            "UNKNOWN"
+          ]
+        },
+
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "valuationAssessment": {
+      "type": "object",
+
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "UNDERVALUED",
+            "FAIRLY_VALUED",
+            "OVERVALUED",
+            "EXTREMELY_OVERVALUED",
+            "UNKNOWN"
+          ]
+        },
+
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "portfolioFit": {
+      "type": "object",
+
+      "properties": {
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "overlapWithFunds": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "concentrationRisk": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MODERATE",
+            "HIGH",
+            "VERY_HIGH",
+            "UNKNOWN"
+          ]
+        },
+
+        "stillRequiredInPortfolio": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "triggerResult": {
+      "type": "object",
+
+      "required": [
+        "triggerId",
+        "triggered"
+      ],
+
+      "properties": {
+        "triggerId": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "triggered": {
+          "type": "boolean"
+        },
+
+        "evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+
+      "additionalProperties": false
+    },
+
+    "executionPlan": {
+      "type": "object",
+
+      "properties": {
+        "executionType": {
+          "type": "string",
+          "enum": [
+            "IMMEDIATE_FULL_EXIT",
+            "STAGED_EXIT",
+            "PARTIAL_REDUCTION",
+            "HOLD_AND_REVIEW",
+            "NO_ACTION"
+          ]
+        },
+
+        "targetReductionPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "maximumExecutionPeriodMonths": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "taxImpactReviewed": {
+          "type": "boolean"
+        },
+
+        "estimatedTaxImpact": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+
+        "destinationOfProceeds": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+
+        "completionStatus": {
+          "type": "string",
+          "enum": [
+            "NOT_STARTED",
+            "IN_PROGRESS",
+            "COMPLETED",
+            "DEFERRED"
+          ]
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "portfolioSummary": {
+      "type": "object",
+
+      "properties": {
+        "totalDirectEquityValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "directEquityPortfolioPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+
+        "holdingCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "holdCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "reduceCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "exitCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "pendingReviewCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "dataQuality": {
+      "type": "object",
+
+      "properties": {
+        "overallStatus": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "INCOMPLETE",
+            "PENDING_HOLDINGS_IMPORT",
+            "PENDING_RESEARCH",
+            "PENDING_VERIFICATION"
+          ]
+        },
+
+        "unreviewedHoldingCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+
+        "criticalMissingData": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+
+      "additionalProperties": true
+    },
+
+    "stockAction": {
+      "type": "string",
+      "enum": [
+        "HOLD",
+        "HOLD_NO_NEW_MONEY",
+        "REDUCE",
+        "EXIT",
+        "IMMEDIATE_EXIT",
+        "REVIEW_REQUIRED"
+      ]
+    }
+  },
+
+  "additionalProperties": true
+}

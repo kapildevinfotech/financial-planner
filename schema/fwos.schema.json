@@ -1,0 +1,575 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwos.local/schemas/fwos.schema.json",
+  "title": "FWOS Base Schema",
+  "description": "Shared validation definitions for the Family Wealth Operating System.",
+  "type": "object",
+
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "currencyCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "default": "INR"
+    },
+
+    "isoDate": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "year": {
+      "type": "integer",
+      "minimum": 2000,
+      "maximum": 2200
+    },
+
+    "nonNegativeAmount": {
+      "type": "number",
+      "minimum": 0
+    },
+
+    "positiveAmount": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+
+    "percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "signedPercentage": {
+      "type": "number",
+      "minimum": -100,
+      "maximum": 1000
+    },
+
+    "allocationPercentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+
+    "ageYears": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 130
+    },
+
+    "yearsDuration": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "amountRange": {
+      "type": "object",
+      "required": [
+        "minimum",
+        "maximum"
+      ],
+      "properties": {
+        "minimum": {
+          "$ref": "#/$defs/nonNegativeAmount"
+        },
+        "maximum": {
+          "$ref": "#/$defs/nonNegativeAmount"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "percentageRange": {
+      "type": "object",
+      "required": [
+        "minimum",
+        "maximum"
+      ],
+      "properties": {
+        "minimum": {
+          "$ref": "#/$defs/percentage"
+        },
+        "maximum": {
+          "$ref": "#/$defs/percentage"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "targetRange": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "$ref": "#/$defs/percentage"
+        },
+        "target": {
+          "$ref": "#/$defs/percentage"
+        },
+        "maximum": {
+          "$ref": "#/$defs/percentage"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "dataStatus": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "PROVISIONAL",
+        "INCOMPLETE",
+        "PENDING_VERIFICATION",
+        "VERIFIED",
+        "ACTIVE",
+        "INACTIVE",
+        "SUPERSEDED",
+        "ARCHIVED"
+      ]
+    },
+
+    "investmentStatus": {
+      "type": "string",
+      "enum": [
+        "APPROVED_FOR_NEW_MONEY",
+        "APPROVED_HOLD",
+        "WATCHLIST",
+        "LEGACY",
+        "LEGACY_PENDING_REVIEW",
+        "EXIT_OR_CONSOLIDATE",
+        "REJECTED",
+        "PRODUCT_SELECTION_PENDING"
+      ]
+    },
+
+    "goalPriority": {
+      "type": "string",
+      "enum": [
+        "CRITICAL",
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "ASPIRATIONAL",
+        "OPTIONAL_STRATEGIC",
+        "LONG_TERM"
+      ]
+    },
+
+    "goalFundingStatus": {
+      "type": "string",
+      "enum": [
+        "OVERFUNDED",
+        "ON_TRACK",
+        "WATCH",
+        "UNDERFUNDED",
+        "UNMEASURED",
+        "CONTINGENT",
+        "UNQUANTIFIED",
+        "OPEN_ENDED",
+        "FUTURE"
+      ]
+    },
+
+    "assetClass": {
+      "type": "string",
+      "enum": [
+        "INDIAN_EQUITY",
+        "INTERNATIONAL_EQUITY",
+        "FIXED_INCOME",
+        "GOLD",
+        "CASH_AND_LIQUIDITY",
+        "REAL_ESTATE",
+        "BUSINESS",
+        "OTHER"
+      ]
+    },
+
+    "owner": {
+      "type": "string",
+      "enum": [
+        "KAPIL",
+        "SPOUSE",
+        "REYANSH",
+        "NIKESH",
+        "MOTHER",
+        "JOINT",
+        "FAMILY",
+        "TO_BE_CONFIRMED",
+        "TO_BE_DECIDED"
+      ]
+    },
+
+    "familyMember": {
+      "type": "object",
+      "required": [
+        "memberId",
+        "relationship"
+      ],
+      "properties": {
+        "memberId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "relationship": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "ageYears": {
+          "$ref": "#/$defs/ageYears"
+        },
+        "dependent": {
+          "type": "boolean"
+        },
+        "employment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "asset": {
+      "type": "object",
+      "required": [
+        "assetId",
+        "category",
+        "legalOwner"
+      ],
+      "properties": {
+        "assetId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "category": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "subCategory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "legalOwner": {
+          "$ref": "#/$defs/owner"
+        },
+        "approximateValue": {
+          "$ref": "#/$defs/nonNegativeAmount"
+        },
+        "currentValue": {
+          "$ref": "#/$defs/nonNegativeAmount"
+        },
+        "currency": {
+          "$ref": "#/$defs/currencyCode"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "liability": {
+      "type": "object",
+      "required": [
+        "liabilityId",
+        "legalBorrower",
+        "outstandingAmount"
+      ],
+      "properties": {
+        "liabilityId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "legalBorrower": {
+          "$ref": "#/$defs/owner"
+        },
+        "outstandingAmount": {
+          "$ref": "#/$defs/nonNegativeAmount"
+        },
+        "interestRatePercent": {
+          "$ref": "#/$defs/percentage"
+        },
+        "currency": {
+          "$ref": "#/$defs/currencyCode"
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "goal": {
+      "type": "object",
+      "required": [
+        "goalId",
+        "goalCategory",
+        "priority"
+      ],
+      "properties": {
+        "goalId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "goalCategory": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "beneficiary": {
+          "type": [
+            "string",
+            "array"
+          ]
+        },
+        "priority": {
+          "$ref": "#/$defs/goalPriority"
+        },
+        "targetYear": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 2000,
+          "maximum": 2200
+        },
+        "estimatedYearsToGoal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "requiredCorpus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "fundingRatioPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "investmentProduct": {
+      "type": "object",
+      "required": [
+        "productId",
+        "productName",
+        "instrumentType",
+        "status"
+      ],
+      "properties": {
+        "productId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "productName": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "instrumentType": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "assetClass": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/investmentStatus"
+        },
+        "approvedForNewMoney": {
+          "type": "boolean"
+        },
+        "currentValue": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "portfolioWeightPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "allocation": {
+      "type": "object",
+      "required": [
+        "assetClass"
+      ],
+      "properties": {
+        "assetClass": {
+          "$ref": "#/$defs/assetClass"
+        },
+        "minimumPercent": {
+          "$ref": "#/$defs/percentage"
+        },
+        "targetPercent": {
+          "$ref": "#/$defs/percentage"
+        },
+        "maximumPercent": {
+          "$ref": "#/$defs/percentage"
+        },
+        "currentPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "decisionRecord": {
+      "type": "object",
+      "required": [
+        "decisionId",
+        "decisionDate",
+        "decision"
+      ],
+      "properties": {
+        "decisionId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "decisionDate": {
+          "$ref": "#/$defs/isoDate"
+        },
+        "decision": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "reviewDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "sourceRecord": {
+      "type": "object",
+      "required": [
+        "sourceType"
+      ],
+      "properties": {
+        "sourceType": {
+          "type": "string",
+          "enum": [
+            "USER_PROVIDED",
+            "ACCOUNT_STATEMENT",
+            "BROKER_STATEMENT",
+            "AMC_DOCUMENT",
+            "REGULATORY_SOURCE",
+            "OFFICIAL_WEBSITE",
+            "RESEARCH_SOURCE",
+            "CALCULATED",
+            "OTHER"
+          ]
+        },
+        "sourceName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retrievedDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "verified": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "auditMetadata": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "changeReason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "asOfDate"
+  ],
+
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+
+    "dataVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "asOfDate": {
+      "$ref": "#/$defs/isoDate"
+    },
+
+    "currency": {
+      "$ref": "#/$defs/currencyCode"
+    },
+
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "audit": {
+      "$ref": "#/$defs/auditMetadata"
+    }
+  },
+
+  "additionalProperties": true
+}

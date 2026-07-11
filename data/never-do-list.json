@@ -1,0 +1,553 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "status": "ACTIVE_GUARDRAILS",
+
+  "purpose": {
+    "primaryObjective": "Prevent avoidable financial mistakes caused by fear, greed, complexity, leverage, poor verification, conflicts between goals and investments, or uncontrolled business risk.",
+    "principle": "Long-term wealth is protected as much by avoiding major mistakes as by selecting good investments."
+  },
+
+  "priorityLevels": {
+    "HARD_STOP": "Do not proceed unless the FWOS policy itself is formally amended after documented analysis.",
+    "STRONG_DEFAULT": "Avoid unless there is a specific, documented and evidence-based justification.",
+    "CAUTION": "Proceed only after completing the relevant decision checklist."
+  },
+
+  "marketBehaviour": [
+    {
+      "rule": "NEVER_PANIC_SELL_BECAUSE_OF_HEADLINES",
+      "priority": "HARD_STOP",
+      "examples": [
+        "MARKET_CRASH_PREDICTIONS",
+        "WAR_HEADLINES",
+        "RECESSION_PREDICTIONS",
+        "POPULAR_INVESTOR_WARNINGS",
+        "SOCIAL_MEDIA_PANIC"
+      ],
+      "exception": "A documented structural change that invalidates the investment thesis or strategic asset allocation."
+    },
+    {
+      "rule": "NEVER_EXIT_EQUITY_ONLY_BECAUSE_THE_MARKET_HAS_FALLEN",
+      "priority": "HARD_STOP",
+      "requiredAction": "FOLLOW_CRASH_PLAYBOOK_AND_REBALANCING_POLICY"
+    },
+    {
+      "rule": "NEVER_BUY_ONLY_BECAUSE_PRICES_HAVE_FALLEN",
+      "priority": "STRONG_DEFAULT",
+      "requiredChecks": [
+        "ASSET_IS_APPROVED",
+        "VALUATION_AND FUNDAMENTALS_ARE_ACCEPTABLE",
+        "ASSET_ALLOCATION_SUPPORTS_PURCHASE",
+        "LIQUIDITY_IS_NOT_COMPROMISED"
+      ]
+    },
+    {
+      "rule": "NEVER_TRY_TO_PREDICT_EXACT_MARKET_TOPS_OR_BOTTOMS",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_STOP_LONG_TERM_SIPS_ONLY_BECAUSE_MARKETS_ARE_VOLATILE",
+      "priority": "STRONG_DEFAULT",
+      "exceptions": [
+        "CASH_FLOW_STRESS",
+        "GOAL_REACHED",
+        "ASSET_ALLOCATION_REQUIRES_REDIRECTION",
+        "INVESTMENT_PRODUCT_NO_LONGER_PASSES REVIEW"
+      ]
+    }
+  ],
+
+  "performanceChasing": [
+    {
+      "rule": "NEVER_BUY_A_FUND_ONLY_BECAUSE_IT_IS_A_RECENT_TOP_PERFORMER",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_SWITCH_FUNDS_FOR_SMALL_SHORT_TERM_PERFORMANCE_DIFFERENCES",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_COMPARE_DIFFERENT_ASSET_CLASSES_ONLY_BY_RECENT_RETURNS",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ASSUME_HIGHER_PAST_RETURN_MEANS_HIGHER_FUTURE_RETURN",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "portfolioComplexity": [
+    {
+      "rule": "NEVER_ADD_A_NEW_FUND_WITHOUT_A_CLEAR_PORTFOLIO_ROLE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ADD_MULTIPLE_FUNDS_FOR_THE_SAME_EXPOSURE_WITHOUT_JUSTIFICATION",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_INCREASE_THE_NUMBER_OF_FUNDS_ONLY_BECAUSE_INVESTABLE_SURPLUS_INCREASES",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_CONFUSE_NUMBER_OF_PRODUCTS_WITH_DIVERSIFICATION",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_RETAIN_A_PRODUCT_ONLY_BECAUSE_IT_HAS_ALREADY_BEEN_HELD_FOR_MANY_YEARS",
+      "priority": "CAUTION"
+    }
+  ],
+
+  "assetAllocation": [
+    {
+      "rule": "NEVER_IGNORE_TOTAL_PORTFOLIO_ASSET_ALLOCATION",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_EVALUATE_EACH_ACCOUNT_AS_IF_IT_WERE_AN_INDEPENDENT_PORTFOLIO",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_CHANGE_STRATEGIC_ASSET_ALLOCATION_BECAUSE_OF_SHORT_TERM_MARKET_FORECASTS",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_EXCEED_APPROVED_ASSET_CLASS_BANDS_WITHOUT_FORMAL_REVIEW",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_HIDE_UNDERLYING_EXPOSURE_INSIDE_PRODUCT_LABELS",
+      "priority": "HARD_STOP",
+      "examples": [
+        "NPS_MUST_BE_SPLIT_INTO_EQUITY_AND_DEBT",
+        "HYBRID_FUNDS_REQUIRE_LOOK_THROUGH_WHERE_MATERIAL",
+        "CPSE_ETF_AND_BHARAT_22_ETF_ARE_EQUITY"
+      ]
+    }
+  ],
+
+  "equityRisk": [
+    {
+      "rule": "NEVER_INVEST_NEAR_TERM_REQUIRED_MONEY_IN_EQUITY",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ASSUME_EQUITY_RETURNS_ARE_LINEAR_OR_GUARANTEED",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_USE_LEVERAGE_TO_INCREASE_LONG_TERM_EQUITY_EXPOSURE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_BORROW_TO_BUY_THE_DIP",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "directStocks": [
+    {
+      "rule": "NEVER_BUY_A_STOCK_WITHOUT_A_WRITTEN_THESIS",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_AVERAGE_DOWN_ONLY_TO_REDUCE_THE_AVERAGE_PURCHASE_PRICE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_HOLD_A_STOCK_ONLY_TO_GET_BACK_TO_BREAK_EVEN",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_IGNORE_GOVERNANCE_OR_BALANCE_SHEET_RISK_BECAUSE_THE_STOCK_LOOKS_CHEAP",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ALLOW_SINGLE_STOCK_CONCENTRATION_TO_GROW_WITHOUT_REVIEW",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_TREAT_UNREALIZED_PROFIT_AS_PROOF_OF_INVESTMENT_SKILL",
+      "priority": "CAUTION"
+    }
+  ],
+
+  "indexAndActiveInvesting": [
+    {
+      "rule": "NEVER_REPLACE_CORE_INDEX_EXPOSURE_WITH_AN_ACTIVE_FUND_ONLY_BECAUSE_OF_RECENT_OUTPERFORMANCE",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_SELECT_AN_INDEX_PRODUCT_USING_EXPENSE_RATIO_ALONE",
+      "priority": "HARD_STOP",
+      "requiredFactors": [
+        "TRACKING_DIFFERENCE",
+        "TRACKING_ERROR",
+        "LIQUIDITY",
+        "BID_ASK_SPREAD_FOR_ETF",
+        "AUM_AND_OPERATIONAL_QUALITY"
+      ]
+    },
+    {
+      "rule": "NEVER_ADD_AN_ACTIVE_FUND_WITHOUT_DEFINING_WHAT_ROLE_IT_PLAYS_BEYOND_THE_CORE_INDEX_PORTFOLIO",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "internationalInvesting": [
+    {
+      "rule": "NEVER_BUY_INTERNATIONAL_EQUITY_ONLY_BECAUSE_THE_RUPEE_IS_EXPECTED_TO_FALL",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_CHASE_NASDAQ_OR_US_TECH_AFTER_STRONG_RECENT_RETURNS",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_IGNORE_INDIAN_TAX_TREATMENT_OF_INTERNATIONAL_FUNDS",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_USE_MOTHER_ACCOUNT_ONLY_FOR_TAX_ARBITRAGE_WITHOUT_CONFIRMING_LEGAL_OWNERSHIP_AND_TAX_CONSEQUENCES",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "gold": [
+    {
+      "rule": "NEVER_BUY_GOLD_ONLY_BECAUSE_GOLD_PRICES_ARE_RISING",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_TREAT_JEWELLERY_AS_AN_EFFICIENT_INVESTMENT_ASSET",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_IGNORE_MAKING_CHARGES_STORAGE_LIQUIDITY_OR_TAX_WHEN_COMPARING_GOLD_OPTIONS",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ALLOW_GOLD_ALLOCATION_TO_DRIFT_MATERIALLY_ABOVE_THE_APPROVED_RANGE_WITHOUT_REBALANCING_REVIEW",
+      "priority": "STRONG_DEFAULT"
+    }
+  ],
+
+  "fixedIncome": [
+    {
+      "rule": "NEVER_CHASE_EXTRA_YIELD_WITHOUT_UNDERSTANDING_CREDIT_AND_LIQUIDITY_RISK",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ASSUME_DEBT_PRODUCTS_ARE_RISK_FREE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_IGNORE_EPF_PPF_NPS_DEBT_AND_CASH_WHEN_CALCULATING_TOTAL_FIXED_INCOME_EXPOSURE",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "emergencyFund": [
+    {
+      "rule": "NEVER_USE_EMERGENCY_FUND_TO_BUY_A_NORMAL_MARKET_DIP",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_USE_EMERGENCY_FUND_AS_BUSINESS_CAPITAL",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_COUNT_MOTHER_ASSETS_AS_A_PERMANENT_REPLACEMENT_FOR_PERSONAL_EMERGENCY_LIQUIDITY",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_INVEST_ALL_AVAILABLE_CASH_WITHOUT_RETAINING_REQUIRED_LIQUIDITY",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "opportunityReserve": [
+    {
+      "rule": "NEVER_DEPLOY_THE_FULL_OPPORTUNITY_RESERVE_ON_A_SMALL_MARKET_DECLINE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_REDEFINE_A_NORMAL_CORRECTION_AS_A_ONCE_IN_A_LIFETIME_OPPORTUNITY",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_USE_LEVERAGE_AFTER_THE_OPPORTUNITY_RESERVE_IS_EXHAUSTED",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_CONFUSE_OPPORTUNITY_RESERVE_WITH_EMERGENCY_FUND",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "goalFunding": [
+    {
+      "rule": "NEVER_SACRIFICE_CORE_CHILD_EDUCATION_GOALS_FOR_SPECULATIVE_RETURN",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_TREAT_ALL_GOALS_AS_EQUAL_PRIORITY",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_FULLY_COMMIT_TO_THE_MOST_EXPENSIVE_FOREIGN_EDUCATION_SCENARIO_WITHOUT_PERIODIC_REASSESSMENT",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_LEAVE_GOAL_FUNDING_UNMEASURED_FOR_MULTIPLE_YEARS",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "businessRisk": [
+    {
+      "rule": "NEVER_USE_CHILD_EDUCATION_CORPUS_AS_THE_DEFAULT_SOURCE_OF_BUSINESS_CAPITAL",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ALLOW_BUSINESS_CAPITAL_CALLS_TO_BECOME_UNLIMITED",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_START_A_BUSINESS_WITHOUT_A_DEFINED_MAXIMUM_CAPITAL_AT_RISK",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ASSUME_A_HEALTHCARE_BUSINESS_IS_LOW_RISK_ONLY_BECAUSE_DEMAND_IS_STABLE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_IGNORE_REGULATORY_PROFESSIONAL_AND_OPERATIONAL_RISK",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_PLEDGE_CORE_FAMILY_ASSETS_WITHOUT_FORMAL_RISK_REVIEW",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "familyMoney": [
+    {
+      "rule": "NEVER_TREAT_MOTHER_ASSETS_AS_LEGALLY_OWNED_BY_KAPIL",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_COMBINE_KAPIL_AND_MOTHER_NET_WORTH_IN_FORMAL_PERSONAL_NET_WORTH_REPORTING",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_MAKE_LARGE_CROSS_FAMILY_TRANSFERS_WITHOUT_DOCUMENTING_OWNERSHIP_PURPOSE_AND_TAX_IMPLICATIONS",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_COMPROMISE_MOTHER_LIFETIME_FINANCIAL_OR_MEDICAL_SECURITY_FOR_KAPIL_INVESTMENT_GOALS",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "insurance": [
+    {
+      "rule": "NEVER_TREAT_INVESTMENT_CORPUS_AS_AN_AUTOMATIC_SUBSTITUTE_FOR_RISK_ANALYSIS",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_RELY_ONLY_ON_EMPLOYER_PROVIDED_INSURANCE",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_HIDE_OR_MISSTATE_MATERIAL_INFORMATION_IN_AN_INSURANCE_APPLICATION",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_BUY_INSURANCE_ONLY_FOR_TAX_SAVING",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_SURRENDER_A_LEGACY_POLICY_WITHOUT_COMPARING_FORWARD_CASH_FLOWS",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "tax": [
+    {
+      "rule": "NEVER_MAKE_AN_INVESTMENT_ONLY_TO_SAVE_TAX",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ALLOW_TAX_AVOIDANCE_TO_OVERRIDE_PORTFOLIO_RISK_MANAGEMENT",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_EXECUTE_A_MAJOR_TRANSACTION_USING_OUTDATED_TAX_RULES",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_IGNORE_TAX_REPORTING_REQUIREMENTS_FOR_FOREIGN_ASSETS_OR_INCOME",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "estatePlanning": [
+    {
+      "rule": "NEVER_ASSUME_NOMINATION_ALONE_IS_A_COMPLETE_ESTATE_PLAN",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_LEAVE_MAJOR_ASSET_OWNERSHIP_UNDOCUMENTED",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_STORE_PASSWORDS_PRIVATE_KEYS_PINS_OR_OTP_SECRETS_IN_THE_FWOS_REPOSITORY",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ASSUME_EXPECTED_INHERITANCE_IS_ALREADY_AVAILABLE_CAPITAL",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "aiAndAdvice": [
+    {
+      "rule": "NEVER_EXECUTE_A_MATERIAL_FINANCIAL_DECISION_BASED_ONLY_ON_ONE_AI_RESPONSE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ASSUME_AI_GENERATED_NUMBERS_ARE_CURRENT_OR_CORRECT",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_ACCEPT_A_CITATION_WITHOUT_VERIFYING_THAT_IT_SUPPORTS_THE_CLAIM",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_USE_MULTIPLE_LLM_AGREEMENT_AS_PROOF_OF_FACT",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_REPLACE_REQUIRED_LEGAL_TAX_MEDICAL_OR_REGULATED_PROFESSIONAL_ADVICE_WITH_AI",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_GIVE_AI_UNNECESSARY_PASSWORDS_PINS_PRIVATE_KEYS_OR_FULL_FINANCIAL_IDENTIFIERS",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "tradingAndSpeculation": [
+    {
+      "rule": "NEVER_RECLASSIFY_TRADING_AS_PASSIVE_INCOME_WITHOUT_EVIDENCE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_USE_CORE_LONG_TERM_PORTFOLIO_CAPITAL_FOR_UNCONTROLLED_TRADING",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_USE_AI_AUTOMATION_FOR_LIVE_TRADING_WITHOUT_STRICT_CAPITAL_LIMITS_TESTING_AND_HUMAN_OVERSIGHT",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_INCREASE_SPECULATIVE_CAPITAL_TO_RECOVER_PRIOR_LOSSES",
+      "priority": "HARD_STOP"
+    }
+  ],
+
+  "decisionDiscipline": [
+    {
+      "rule": "NEVER_BUY_AN_INVESTMENT_THAT_CANNOT_BE_EXPLAINED_IN_SIMPLE_LANGUAGE",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_BUY_WITHOUT_KNOWING_WHICH_ASSET_CLASS_AND_GOAL_THE_INVESTMENT_SERVES",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_MAKE_A_MAJOR_PORTFOLIO_CHANGE_WITHOUT_CHECKING_TAX_COST_AND_ASSET_ALLOCATION_IMPACT",
+      "priority": "HARD_STOP"
+    },
+    {
+      "rule": "NEVER_CONFUSE_ACTIVITY_WITH_PROGRESS",
+      "priority": "STRONG_DEFAULT"
+    },
+    {
+      "rule": "NEVER_CHANGE_A_GOOD_LONG_TERM_PLAN_SIMPLY_BECAUSE_DOING_NOTHING_FEELS_UNCOMFORTABLE",
+      "priority": "STRONG_DEFAULT"
+    }
+  ],
+
+  "exceptionProcess": {
+    "requiredFor": [
+      "HARD_STOP_OVERRIDE",
+      "MATERIAL_POLICY_EXCEPTION"
+    ],
+
+    "mandatoryDocumentation": [
+      "RULE_BEING_OVERRIDDEN",
+      "REASON",
+      "SUPPORTING_DATA",
+      "ALTERNATIVES_CONSIDERED",
+      "DOWNSIDE_SCENARIO",
+      "MAXIMUM_CAPITAL_AT_RISK",
+      "TAX_IMPACT",
+      "EFFECT_ON_GOALS",
+      "REVIEW_DATE"
+    ],
+
+    "coolingOffPeriod": {
+      "default": "48_HOURS",
+      "exceptions": [
+        "TRUE_EMERGENCY",
+        "PREDEFINED_REBALANCING_ACTION",
+        "PREDEFINED_CRASH_PLAYBOOK_ACTION"
+      ]
+    }
+  },
+
+  "preTradeStopQuestions": [
+    "WHAT_GOAL_DOES_THIS_SERVE?",
+    "WHAT_ASSET_CLASS_IS_THIS?",
+    "IS_IT_ALREADY_APPROVED?",
+    "AM_I_BUYING_BECAUSE_OF_FOMO_OR_FEAR?",
+    "WHAT_HAPPENS_IF_IT_FALLS_50_PERCENT?",
+    "DOES_THIS_CREATE_DUPLICATION?",
+    "WHAT_IS_THE_TOTAL_PORTFOLIO_IMPACT?",
+    "WHAT_ARE_THE_TAX_AND_LIQUIDITY_CONSEQUENCES?",
+    "WOULD_I_STILL_BUY_IF_I_COULD_NOT_CHECK_THE_PRICE_FOR_FIVE_YEARS?"
+  ],
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "investmentDecisionChecklist": "data/investment-decision-checklist.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "crashPlaybook": "data/crash-playbook.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "directStockExitPolicy": "data/direct-stock-exit-policy.json",
+    "emergencyFund": "data/emergency-fund.json",
+    "insuranceAndRiskManagement": "data/insurance-and-risk-management-policy.json",
+    "estatePlanningChecklist": "data/estate-planning-checklist.json",
+    "annualReviewChecklist": "data/annual-review-checklist.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_FAMILY_FINANCIAL_CONTINUITY_CHECKLIST"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_QUARTERLY_REVIEW_CHECKLIST"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_FWOS_DATA_INDEX"
+    }
+  ]
+}

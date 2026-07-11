@@ -1,0 +1,558 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Prevent impulsive, redundant, unsuitable or poorly researched investments.",
+    "coreQuestion": "SHOULD_I_BUY_THIS?",
+    "principle": "An investment must earn a place in the portfolio by serving a defined purpose."
+  },
+
+  "scope": {
+    "appliesTo": [
+      "MUTUAL_FUNDS",
+      "ETFS",
+      "DIRECT_STOCKS",
+      "INTERNATIONAL_INVESTMENTS",
+      "GOLD_PRODUCTS",
+      "DEBT_PRODUCTS",
+      "ALTERNATIVE_INVESTMENTS",
+      "NEW_INVESTMENT_STRATEGIES"
+    ],
+
+    "routineExecutionExemption": [
+      "EXISTING_APPROVED_SIPS",
+      "RULE_BASED_REBALANCING",
+      "PREDEFINED_CRASH_PLAYBOOK_DEPLOYMENT"
+    ],
+
+    "exemptionCondition": "The underlying investment remains on the approved investment list and within portfolio limits."
+  },
+
+  "decisionSequence": [
+    "DEFINE_PURPOSE",
+    "CHECK_GOAL_ALIGNMENT",
+    "CHECK_ASSET_ALLOCATION",
+    "CHECK_PORTFOLIO_ROLE",
+    "CHECK_EXISTING_OVERLAP",
+    "CHECK_CONCENTRATION",
+    "EVALUATE_PRODUCT",
+    "EVALUATE_COST",
+    "EVALUATE_TAX",
+    "EVALUATE_LIQUIDITY",
+    "EVALUATE_RISK",
+    "CHECK_BEHAVIOURAL_MOTIVATION",
+    "VERIFY_DATA",
+    "MAKE_DECISION",
+    "DOCUMENT_DECISION"
+  ],
+
+  "stage1Purpose": {
+    "mandatoryQuestions": [
+      "WHAT_SPECIFIC_PURPOSE_DOES_THIS_INVESTMENT_SERVE?",
+      "WHICH_GOAL_OR_PORTFOLIO_ROLE DOES_IT SUPPORT?",
+      "WHY_IS_THE_EXISTING_PORTFOLIO_INSUFFICIENT?",
+      "WHAT_PROBLEM_DOES_THIS INVESTMENT SOLVE?"
+    ],
+
+    "acceptablePurposes": [
+      "CORE_LONG_TERM_GROWTH",
+      "GOAL_FUNDING",
+      "ASSET_CLASS_DIVERSIFICATION",
+      "GEOGRAPHIC_DIVERSIFICATION",
+      "INFLATION_HEDGE",
+      "CAPITAL_PRESERVATION",
+      "LIQUIDITY",
+      "CONTROLLED_SATELLITE_STRATEGY"
+    ],
+
+    "automaticRejectWhen": [
+      "NO_CLEAR_PURPOSE",
+      "PURCHASE_IS_ONLY_BECAUSE_PRICE_IS_RISING",
+      "PURCHASE_IS_ONLY_BECAUSE SOMEONE_RECOMMENDED_IT",
+      "PURCHASE_IS_ONLY_BECAUSE OF RECENT_HIGH_RETURNS"
+    ]
+  },
+
+  "stage2GoalAlignment": {
+    "questions": [
+      "WHAT_IS_THE_INVESTMENT_HORIZON?",
+      "WHEN_MIGHT_THIS_MONEY_BE_REQUIRED?",
+      "CAN_THE_ASSET_DECLINE MATERIALLY BEFORE THE GOAL DATE?",
+      "IS_THE_ASSET APPROPRIATE FOR THE GOAL'S CURRENT GLIDE PATH?"
+    ],
+
+    "rules": [
+      "DO_NOT_USE_HIGH_VOLATILITY_ASSETS_FOR_NEAR_TERM_REQUIRED_MONEY",
+      "DO_NOT_CONFUSE LONG_TERM_RETURN POTENTIAL WITH SHORT_TERM SUITABILITY"
+    ]
+  },
+
+  "stage3AssetAllocation": {
+    "questions": [
+      "WHAT_ASSET_CLASS DOES THIS BELONG TO?",
+      "IS_THAT_ASSET CLASS CURRENTLY UNDERWEIGHT?",
+      "WHAT_WILL THE PORTFOLIO WEIGHT BE AFTER PURCHASE?",
+      "DOES THIS MOVE THE PORTFOLIO TOWARD OR AWAY FROM TARGET?"
+    ],
+
+    "defaultRule": "Prefer new money toward underweight approved asset classes.",
+
+    "rejectOrDeferWhen": [
+      "ASSET_CLASS_IS_ABOVE_POLICY_MAXIMUM",
+      "PURCHASE_MATERIALLY_WORSENS_PORTFOLIO_IMBALANCE"
+    ]
+  },
+
+  "stage4PortfolioRole": {
+    "requiredClassification": [
+      "CORE",
+      "SATELLITE",
+      "GOAL_SPECIFIC",
+      "LIQUIDITY",
+      "HEDGE"
+    ],
+
+    "questions": [
+      "IS_THIS CORE OR SATELLITE?",
+      "WHAT EXISTING HOLDING DOES IT COMPLEMENT?",
+      "WOULD THE PORTFOLIO BE MEANINGFULLY WORSE WITHOUT IT?"
+    ],
+
+    "rule": "Every investment must have one clearly documented primary role."
+  },
+
+  "stage5Overlap": {
+    "questions": [
+      "DO_I_ALREADY OWN THE SAME UNDERLYING EXPOSURE?",
+      "HOW MUCH HOLDINGS OVERLAP EXISTS?",
+      "DOES THIS CREATE REAL DIVERSIFICATION OR ONLY ADD ANOTHER PRODUCT?",
+      "CAN AN EXISTING HOLDING PERFORM THE SAME ROLE?"
+    ],
+
+    "metrics": [
+      "TOP_10_HOLDINGS_OVERLAP",
+      "WEIGHTED_HOLDINGS_OVERLAP",
+      "SECTOR_OVERLAP",
+      "MARKET_CAP_OVERLAP",
+      "FACTOR_OVERLAP"
+    ],
+
+    "defaultDecision": "REJECT_REDUNDANT_PRODUCTS_UNLESS_A_CLEAR_ADVANTAGE_EXISTS"
+  },
+
+  "stage6Concentration": {
+    "mandatoryChecks": [
+      "SINGLE_STOCK_LIMIT",
+      "SECTOR_LIMIT",
+      "THEME_LIMIT",
+      "PSU_LIMIT",
+      "DIRECT_STOCK_TOTAL_LIMIT",
+      "MID_CAP_LIMIT",
+      "SMALL_CAP_LIMIT",
+      "INTERNATIONAL_LIMIT",
+      "GOLD_LIMIT"
+    ],
+
+    "rule": "Evaluate concentration using direct and indirect exposure where practical."
+  },
+
+  "productSpecificEvaluation": {
+    "mutualFund": {
+      "check": [
+        "CATEGORY_AND_MANDATE",
+        "PORTFOLIO_ROLE",
+        "BENCHMARK",
+        "EXPENSE_RATIO",
+        "TRACK_RECORD_ACROSS_MARKET_CYCLES",
+        "FUND_MANAGER_AND_PROCESS",
+        "PORTFOLIO_CONCENTRATION",
+        "TURNOVER",
+        "STYLE_CONSISTENCY",
+        "AUM_AND_CAPACITY",
+        "EXIT_LOAD",
+        "TAXATION",
+        "OVERLAP"
+      ],
+
+      "rules": [
+        "DO_NOT_SELECT_PRIMARILY_ON_TRAILING_RETURNS",
+        "DIRECT_PLAN_PREFERRED_WHERE APPROPRIATE",
+        "ACTIVE_FUND_MUST_HAVE A CLEAR REASON TO EXIST ALONGSIDE INDEX CORE"
+      ]
+    },
+
+    "etf": {
+      "check": [
+        "UNDERLYING_INDEX",
+        "INDEX_CONSTRUCTION",
+        "EXPENSE_RATIO",
+        "TRACKING_DIFFERENCE",
+        "TRACKING_ERROR",
+        "AUM",
+        "TRADING_VOLUME",
+        "BID_ASK_SPREAD",
+        "MARKET_MAKER_LIQUIDITY",
+        "PREMIUM_OR_DISCOUNT_TO_NAV",
+        "TAXATION"
+      ],
+
+      "rules": [
+        "DO_NOT_EVALUATE ETF LIQUIDITY ONLY BY REPORTED DAILY VOLUME",
+        "USE_LIMIT_ORDERS_WHERE APPROPRIATE",
+        "UNDERSTAND_THE_INDEX_BEFORE_BUYING_THE_ETF"
+      ]
+    },
+
+    "directStock": {
+      "check": [
+        "BUSINESS_MODEL",
+        "COMPETITIVE_ADVANTAGE",
+        "MANAGEMENT_QUALITY",
+        "CORPORATE_GOVERNANCE",
+        "BALANCE_SHEET",
+        "CASH_FLOW",
+        "CAPITAL_ALLOCATION",
+        "INDUSTRY_STRUCTURE",
+        "VALUATION",
+        "KEY_RISKS",
+        "INVESTMENT_THESIS",
+        "EXIT_THESIS"
+      ],
+
+      "mandatoryWrittenThesis": true,
+
+      "rules": [
+        "PRICE_DECLINE_ALONE_IS_NOT_A BUY SIGNAL",
+        "GOOD_COMPANY_DOES_NOT_AUTOMATICALLY_MEAN_GOOD_INVESTMENT_AT_ANY_PRICE",
+        "DO_NOT_BUY_IF_THE_BUSINESS_CANNOT_BE EXPLAINED CLEARLY",
+        "DO_NOT_AVERAGE_DOWN_WITHOUT_THESIS_REVALIDATION"
+      ]
+    },
+
+    "internationalInvestment": {
+      "check": [
+        "GEOGRAPHIC_EXPOSURE",
+        "INDEX_CONCENTRATION",
+        "SECTOR_CONCENTRATION",
+        "CURRENCY_EXPOSURE",
+        "PRODUCT_STRUCTURE",
+        "REGULATORY_LIMITS",
+        "TAXATION",
+        "TRACKING_QUALITY",
+        "FUND_AVAILABILITY",
+        "ACCOUNT_OWNERSHIP"
+      ],
+
+      "rules": [
+        "NASDAQ_100_MUST_BE TREATED AS A CONCENTRATED INDEX",
+        "INTERNATIONAL_INVESTING_SHOULD_IMPROVE PORTFOLIO DIVERSIFICATION",
+        "PRODUCT_SELECTION_MUST_ACCOUNT_FOR CURRENT_INDIAN_REGULATORY_AND_TAX_RULES"
+      ]
+    },
+
+    "gold": {
+      "check": [
+        "PURPOSE",
+        "CURRENT_GOLD_ALLOCATION",
+        "VEHICLE_STRUCTURE",
+        "EXPENSE_RATIO",
+        "TRACKING_DIFFERENCE",
+        "LIQUIDITY",
+        "STORAGE_OR_CUSTODY",
+        "TAXATION",
+        "BUY_SELL_SPREAD"
+      ],
+
+      "rules": [
+        "GOLD_IS_A DIVERSIFIER_NOT_A PRIMARY_RETURN_ENGINE",
+        "PERSONAL_USE_JEWELLERY_IS_NOT_STRATEGIC_INVESTMENT_GOLD",
+        "DO_NOT_EXCEED_POLICY_MAXIMUM_BECAUSE_OF_RECENT_GOLD_RETURNS"
+      ]
+    },
+
+    "debtProduct": {
+      "check": [
+        "GOAL",
+        "TIME_HORIZON",
+        "CREDIT_RISK",
+        "DURATION_RISK",
+        "LIQUIDITY",
+        "TAXATION",
+        "EXPECTED_RETURN_AFTER_TAX",
+        "EXISTING_EPF_PPF_AND_NPS_DEBT_EXPOSURE"
+      ],
+
+      "rule": "Do not chase small additional yield by taking disproportionate credit or duration risk."
+    }
+  },
+
+  "costEvaluation": {
+    "questions": [
+      "WHAT_IS_THE_TOTAL_ANNUAL_COST?",
+      "ARE_THERE_HIDDEN_OR_TRANSACTION_COSTS?",
+      "WHAT_IS_THE_BID_ASK_SPREAD?",
+      "WHAT_IS_THE_EXIT_LOAD?",
+      "IS_A LOWER_COST EQUIVALENT AVAILABLE?"
+    ],
+
+    "principle": "Costs are certain; excess returns are not.",
+
+    "rule": "Higher cost requires a clear and defensible expected benefit."
+  },
+
+  "taxEvaluation": {
+    "questions": [
+      "HOW_WILL_INCOME_AND_CAPITAL_GAINS_BE TAXED?",
+      "DOES_ACCOUNT_OWNERSHIP_CHANGE THE TAX OUTCOME?",
+      "WILL_REBALANCING_CREATE AVOIDABLE TAX?",
+      "IS_THE PRODUCT STRUCTURE TAX EFFICIENT FOR THE INTENDED HOLDING PERIOD?"
+    ],
+
+    "rule": "Tax efficiency matters but must not justify holding an unsuitable investment."
+  },
+
+  "liquidityEvaluation": {
+    "questions": [
+      "HOW_QUICKLY_CAN_THE_ASSET_BE SOLD?",
+      "WHAT_COULD_THE_EXIT_COST BE DURING MARKET STRESS?",
+      "IS_THERE_A_LOCK_IN?",
+      "DOES_THE_LIQUIDITY_MATCH THE GOAL?"
+    ]
+  },
+
+  "behaviouralFilter": {
+    "mandatoryQuestions": [
+      "AM_I_BUYING_BECAUSE_OF_FOMO?",
+      "AM_I_REACTING_TO RECENT RETURNS?",
+      "AM_I_REACTING TO A MARKET PREDICTION?",
+      "AM_I TRYING TO RECOVER A PREVIOUS LOSS?",
+      "AM_I BORED WITH THE CURRENT PORTFOLIO?",
+      "AM_I ADDING COMPLEXITY BECAUSE SIMPLE INVESTING FEELS TOO SLOW?",
+      "WOULD_I STILL BUY THIS IF I COULD NOT CHECK ITS PRICE FOR THREE YEARS?"
+    ],
+
+    "redFlags": [
+      "FOMO",
+      "PERFORMANCE_CHASING",
+      "RECENCY_BIAS",
+      "AUTHORITY_BIAS",
+      "OVERCONFIDENCE",
+      "ACTION_BIAS",
+      "LOSS_CHASING"
+    ]
+  },
+
+  "informationValidation": {
+    "principle": "AI may assist analysis but does not replace source verification or professional judgement.",
+
+    "preferredSources": [
+      "REGULATOR",
+      "AMC_OR_ISSUER_DOCUMENTS",
+      "EXCHANGE_DATA",
+      "INDEX_PROVIDER",
+      "AUDITED_FINANCIAL_STATEMENTS",
+      "OFFICIAL_TAX_AND_REGULATORY_SOURCES"
+    ],
+
+    "aiRules": [
+      "VERIFY_MATERIAL_FACTS_FROM PRIMARY_SOURCES",
+      "CHECK_DATA_DATE",
+      "USE_MULTIPLE_ANALYTICAL_PERSPECTIVES_FOR_COMPLEX_DECISIONS",
+      "DO_NOT_ACCEPT_UNCITED_NUMERICAL_CLAIMS",
+      "SEPARATE_FACT_FROM_ASSUMPTION_AND_OPINION"
+    ],
+
+    "humanAdviceRequiredWhen": [
+      "TAX_CONSEQUENCES_ARE_MATERIAL_OR_COMPLEX",
+      "LEGAL_OWNERSHIP_OR_SUCCESSION_IS_INVOLVED",
+      "INSURANCE_NEEDS_ARE_COMPLEX",
+      "BUSINESS_CAPITAL_DECISIONS_ARE MATERIAL",
+      "A DECISION_COULD_MATERIALLY_AFFECT_FAMILY_FINANCIAL_SECURITY"
+    ]
+  },
+
+  "decisionScoring": {
+    "status": "OPTIONAL_SUPPORT_TOOL_NOT_A SUBSTITUTE_FOR_JUDGEMENT",
+
+    "maximumScore": 100,
+
+    "categories": [
+      {
+        "category": "PURPOSE_AND_GOAL_ALIGNMENT",
+        "maximumPoints": 20
+      },
+      {
+        "category": "ASSET_ALLOCATION_FIT",
+        "maximumPoints": 20
+      },
+      {
+        "category": "DIVERSIFICATION_AND_OVERLAP",
+        "maximumPoints": 15
+      },
+      {
+        "category": "PRODUCT_QUALITY",
+        "maximumPoints": 20
+      },
+      {
+        "category": "COST_AND_TAX_EFFICIENCY",
+        "maximumPoints": 10
+      },
+      {
+        "category": "LIQUIDITY_AND_RISK",
+        "maximumPoints": 10
+      },
+      {
+        "category": "BEHAVIOURAL_DISCIPLINE",
+        "maximumPoints": 5
+      }
+    ],
+
+    "interpretation": [
+      {
+        "score": "85_TO_100",
+        "decision": "STRONG_CANDIDATE_SUBJECT_TO_NO_HARD_POLICY_BREACH"
+      },
+      {
+        "score": "70_TO_84",
+        "decision": "CONSIDER_WITH_DOCUMENTED_RATIONALE"
+      },
+      {
+        "score": "50_TO_69",
+        "decision": "DEFER_AND_RESEARCH_FURTHER"
+      },
+      {
+        "score": "BELOW_50",
+        "decision": "REJECT"
+      }
+    ],
+
+    "overrideRule": "A high score cannot override a hard concentration, liquidity, ownership or suitability breach."
+  },
+
+  "coolingOffRules": {
+    "routineApprovedInvestment": {
+      "minimumCoolingOffPeriod": "NONE"
+    },
+
+    "newFundOrEtf": {
+      "minimumCoolingOffPeriod": "48_HOURS"
+    },
+
+    "newDirectStock": {
+      "minimumCoolingOffPeriod": "72_HOURS"
+    },
+
+    "thematicOrSectorInvestment": {
+      "minimumCoolingOffPeriod": "7_DAYS"
+    },
+
+    "largeMaterialInvestment": {
+      "minimumCoolingOffPeriod": "7_DAYS_OR_FORMAL_REVIEW"
+    },
+
+    "exception": "PREDEFINED_RULE_BASED_REBALANCING_OR_CRASH_PLAYBOOK_EXECUTION"
+  },
+
+  "automaticRejectConditions": [
+    "NO_CLEAR_PORTFOLIO_ROLE",
+    "MONEY_IS_REQUIRED_TOO_SOON_FOR_THE_ASSET_RISK",
+    "PURCHASE_BREACHES_HARD_CONCENTRATION_LIMIT",
+    "PRODUCT_CANNOT_BE UNDERSTOOD",
+    "MATERIAL_DATA_CANNOT_BE VERIFIED",
+    "INVESTMENT_DEPENDS_PRIMARILY_ON A SHORT_TERM_PREDICTION",
+    "PURCHASE_REQUIRES_BORROWED_MONEY",
+    "PURCHASE_USES_EMERGENCY_FUND",
+    "LEGAL_OR_BENEFICIAL_OWNERSHIP_IS_UNCLEAR",
+    "INVESTMENT_IS_PRIMARILY_DRIVEN_BY_FOMO"
+  ],
+
+  "possibleDecisions": [
+    "APPROVE",
+    "APPROVE_WITH_POSITION_LIMIT",
+    "DEFER",
+    "RESEARCH_FURTHER",
+    "REJECT",
+    "REPLACE_EXISTING_HOLDING",
+    "ADD_TO_WATCHLIST"
+  ],
+
+  "decisionRecord": {
+    "requiredFor": [
+      "NEW_FUND",
+      "NEW_ETF",
+      "NEW_DIRECT_STOCK",
+      "NEW_ASSET_CLASS",
+      "MATERIAL_LUMP_SUM_PURCHASE",
+      "THEMATIC_OR_SECTOR_INVESTMENT"
+    ],
+
+    "fields": [
+      "DATE",
+      "INVESTMENT_NAME",
+      "PRODUCT_TYPE",
+      "LEGAL_OWNER",
+      "PORTFOLIO_ROLE",
+      "GOAL",
+      "PROPOSED_AMOUNT",
+      "PROPOSED_PORTFOLIO_WEIGHT",
+      "CURRENT_ASSET_CLASS_WEIGHT",
+      "POST_PURCHASE_ASSET_CLASS_WEIGHT",
+      "OVERLAP_ANALYSIS",
+      "CONCENTRATION_CHECK",
+      "COST_ANALYSIS",
+      "TAX_ANALYSIS",
+      "LIQUIDITY_ANALYSIS",
+      "KEY_RISKS",
+      "DATA_SOURCES",
+      "DECISION_SCORE",
+      "FINAL_DECISION",
+      "RATIONALE",
+      "REVIEW_DATE"
+    ]
+  },
+
+  "userSpecificGuardrails": [
+    "INDEX_FIRST_DOES_NOT_MEAN_INDEX_ONLY",
+    "ACTIVE_FUNDS_REQUIRE_A CLEAR ROLE_AND_STRONG_SELECTION_RATIONALE",
+    "CPSE_ETF_AND_BHARAT_22_ETF_ARE_SATELLITE_EXPOSURES",
+    "NASDAQ_100_IS_NOT_AUTOMATICALLY_A COMPLETE_INTERNATIONAL_PORTFOLIO",
+    "GOLD_TARGET_MUST_BE EVALUATED AT TOTAL_PORTFOLIO_LEVEL",
+    "MOTHER_OWNED_ASSETS_MUST_NOT_BE AUTOMATICALLY_TREATED_AS KAPIL_OWNED_ASSETS",
+    "BUSINESS_CAPITAL_MUST_BE PROTECTED AS THE BUSINESS PLAN BECOMES MORE CERTAIN",
+    "CHILD_EDUCATION_AND_FAMILY_FINANCIAL_SECURITY_TAKE_PRIORITY_OVER MAXIMIZING_RETURNS"
+  ],
+
+  "references": {
+    "investmentPolicyStatement": "FWOS_MASTER.md",
+    "assetAllocation": "data/asset-allocation.json",
+    "goals": "data/goals.json",
+    "concentrationLimits": "data/concentration-limits.json",
+    "monthlySipPolicy": "data/monthly-sip-policy.json",
+    "lumpSumDeploymentPolicy": "data/lump-sum-deployment-policy.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "crashPlaybook": "data/crash-playbook.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_APPROVED_INVESTMENT_UNIVERSE"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_DIRECT_STOCK_EXIT_POLICY"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_TAX_OPTIMIZATION_POLICY"
+    },
+    {
+      "priority": 4,
+      "action": "CREATE_INSURANCE_AND_RISK_MANAGEMENT_POLICY"
+    }
+  ]
+}

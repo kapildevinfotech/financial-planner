@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-11",
+  "currency": "INR",
+  "status": "PARTIAL_DATA",
+  "notes": [
+    "This file is the canonical machine-readable inventory of financial investments.",
+    "Market values are approximate until reconciled against statements.",
+    "Mother-owned assets must remain legally and analytically separate from Kapil's personal portfolio.",
+    "Real estate is maintained in assets.json rather than portfolio.json."
+  ],
+
+  "summary": {
+    "knownUserFinancialAssets": {
+      "minimumApproximateValue": 13930000,
+      "reconciliationStatus": "PENDING"
+    },
+    "equityPortfolio": {
+      "approximateValue": 7500000,
+      "detailStatus": "INCOMPLETE"
+    }
+  },
+
+  "accounts": [
+    {
+      "accountId": "KDY-EQUITY-001",
+      "ownerId": "KAPIL",
+      "accountType": "CONSOLIDATED_EQUITY",
+      "institution": null,
+      "approximateMarketValue": 7500000,
+      "holdingsDetailStatus": "PENDING",
+      "knownHoldings": [
+        {
+          "holdingId": "KDY-ETF-CPSE",
+          "name": "CPSE ETF",
+          "instrumentType": "ETF",
+          "assetClass": "INDIAN_EQUITY",
+          "category": "THEMATIC_PSU",
+          "marketValue": null,
+          "costValue": null,
+          "units": null,
+          "portfolioDecision": "REVIEW"
+        },
+        {
+          "holdingId": "KDY-ETF-BHARAT22",
+          "name": "Bharat 22 ETF",
+          "instrumentType": "ETF",
+          "assetClass": "INDIAN_EQUITY",
+          "category": "CONCENTRATED_INDEX",
+          "marketValue": null,
+          "costValue": null,
+          "units": null,
+          "portfolioDecision": "REVIEW"
+        }
+      ]
+    },
+
+    {
+      "accountId": "KDY-EPF-001",
+      "ownerId": "KAPIL",
+      "accountType": "EPF",
+      "assetClass": "DEBT",
+      "approximateMarketValue": 3000000,
+      "primaryPurpose": "RETIREMENT",
+      "liquidity": "RESTRICTED",
+      "portfolioDecision": "KEEP"
+    },
+
+    {
+      "accountId": "KDY-PPF-001",
+      "ownerId": "KAPIL",
+      "accountType": "PPF",
+      "assetClass": "DEBT",
+      "approximateMarketValue": 1730000,
+      "primaryPurpose": "LONG_TERM_WEALTH_AND_RETIREMENT",
+      "liquidity": "RESTRICTED",
+      "portfolioDecision": "KEEP"
+    },
+
+    {
+      "accountId": "KDY-NPS-001",
+      "ownerId": "KAPIL",
+      "accountType": "NPS",
+      "approximateMarketValue": 1400000,
+      "primaryPurpose": "RETIREMENT",
+      "liquidity": "HIGHLY_RESTRICTED",
+      "allocation": {
+        "equity": 0.63,
+        "corporateDebt": 0.12,
+        "governmentSecurities": 0.25
+      },
+      "portfolioDecision": "REVIEW_ALLOCATION"
+    },
+
+    {
+      "accountId": "KDY-CASH-001",
+      "ownerId": "KAPIL",
+      "accountType": "SAVINGS_ACCOUNT",
+      "assetClass": "CASH",
+      "approximateMarketValueRange": {
+        "minimum": 300000,
+        "maximum": 500000
+      },
+      "primaryPurpose": "IMMEDIATE_LIQUIDITY",
+      "portfolioDecision": "REVIEW_EMERGENCY_FUND"
+    },
+
+    {
+      "accountId": "MOTHER-CASH-001",
+      "ownerId": "MOTHER",
+      "accountType": "SAVINGS_ACCOUNT",
+      "assetClass": "CASH",
+      "approximateMarketValue": 8000000,
+      "plannedUse": {
+        "purpose": "POTENTIAL_LUCKNOW_PLOT",
+        "approximateAmount": 4000000
+      },
+      "includeInKapilPersonalNetWorth": false,
+      "includeInFamilyResilienceAnalysis": true,
+      "portfolioDecision": "SEPARATE_PLANNING_REQUIRED"
+    }
+  ],
+
+  "dataGaps": [
+    "Complete mutual fund inventory",
+    "Complete ETF inventory",
+    "Complete direct stock inventory",
+    "Market value of CPSE ETF",
+    "Market value of Bharat 22 ETF",
+    "Cost basis of all taxable holdings",
+    "Units held",
+    "Investment account and broker mapping",
+    "Existing physical gold value",
+    "Spouse-owned financial assets",
+    "Exact personal savings balance"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "IMPORT_COMPLETE_EQUITY_PORTFOLIO"
+    },
+    {
+      "priority": 2,
+      "action": "RECONCILE_CURRENT_MARKET_VALUES"
+    },
+    {
+      "priority": 3,
+      "action": "CALCULATE_CURRENT_ASSET_ALLOCATION"
+    },
+    {
+      "priority": 4,
+      "action": "COMPARE_CURRENT_ALLOCATION_WITH_FWOS_TARGET"
+    }
+  ]
+}

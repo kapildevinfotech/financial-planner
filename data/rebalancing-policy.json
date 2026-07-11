@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Maintain the approved strategic asset allocation while minimizing unnecessary taxes, transaction costs and behavioural decisions.",
+    "principle": "Rebalancing manages portfolio risk. It is not a market forecasting mechanism."
+  },
+
+  "scope": {
+    "includedAssets": [
+      "INDIAN_EQUITY",
+      "INTERNATIONAL_EQUITY",
+      "GOLD",
+      "DEBT",
+      "CASH_AND_OPPORTUNITY_CAPITAL"
+    ],
+    "excludedAssets": [
+      "EMERGENCY_FUND",
+      "PERSONAL_USE_REAL_ESTATE",
+      "MOTHER_OWNED_ASSETS",
+      "BUSINESS_ASSETS",
+      "JEWELLERY_NOT_HELD_AS_INVESTMENT"
+    ]
+  },
+
+  "strategicTargets": {
+    "indianEquity": {
+      "target": 0.55,
+      "minimum": 0.50,
+      "maximum": 0.60
+    },
+    "internationalEquity": {
+      "target": 0.10,
+      "minimum": 0.08,
+      "maximum": 0.12
+    },
+    "gold": {
+      "target": 0.07,
+      "minimum": 0.05,
+      "maximum": 0.10
+    },
+    "debt": {
+      "target": 0.23,
+      "minimum": 0.20,
+      "maximum": 0.30
+    },
+    "cashAndOpportunityCapital": {
+      "target": 0.05,
+      "minimum": 0.03,
+      "maximum": 0.08
+    }
+  },
+
+  "monitoringPolicy": {
+    "portfolioCalculationFrequency": "MONTHLY",
+    "formalReviewFrequency": "QUARTERLY",
+    "mandatoryFullReviewFrequency": "ANNUAL",
+
+    "eventDrivenReviews": [
+      "MAJOR_MARKET_CRASH",
+      "LARGE_LUMP_SUM_RECEIVED",
+      "BUSINESS_LAUNCH",
+      "PROPERTY_PURCHASE",
+      "JOB_LOSS_OR_MAJOR_INCOME_CHANGE",
+      "GOAL_HORIZON_CHANGE",
+      "MAJOR_TAX_OR_REGULATORY_CHANGE"
+    ]
+  },
+
+  "rebalancingHierarchy": [
+    {
+      "priority": 1,
+      "method": "NEW_MONTHLY_CONTRIBUTIONS",
+      "action": "DIRECT_NEW_INVESTMENTS_TO_UNDERWEIGHT_ASSET_CLASSES"
+    },
+    {
+      "priority": 2,
+      "method": "REDIRECT_EXISTING_SIPS",
+      "action": "REDUCE_OR_PAUSE_CONTRIBUTIONS_TO_OVERWEIGHT_ASSET_CLASSES"
+    },
+    {
+      "priority": 3,
+      "method": "USE_NEW_LUMP_SUMS",
+      "action": "DEPLOY_TOWARD_UNDERWEIGHT_ASSET_CLASSES"
+    },
+    {
+      "priority": 4,
+      "method": "USE_NATURAL_CASH_FLOWS",
+      "action": "USE_INTEREST_DIVIDENDS_MATURITIES_OR_REDEMPTIONS_WHERE_APPROPRIATE"
+    },
+    {
+      "priority": 5,
+      "method": "SELL_AND_REALLOCATE",
+      "action": "USE_ONLY_WHEN_REQUIRED_AFTER_TAX_COST_AND_PORTFOLIO_QUALITY_ANALYSIS"
+    }
+  ],
+
+  "triggerFramework": {
+    "primaryTrigger": "POLICY_RANGE_BREACH",
+
+    "rules": [
+      {
+        "condition": "ASSET_CLASS_WITHIN_APPROVED_RANGE",
+        "action": "NO_FORCED_REBALANCING"
+      },
+      {
+        "condition": "ASSET_CLASS_OUTSIDE_APPROVED_RANGE",
+        "action": "BEGIN_REBALANCING_REVIEW"
+      },
+      {
+        "condition": "MINOR_BREACH_CAN_BE_CORRECTED_WITH_NEW_CASH_FLOWS",
+        "action": "USE_CASH_FLOW_REBALANCING"
+      },
+      {
+        "condition": "MATERIAL_BREACH_CANNOT_BE_CORRECTED_WITHIN_REASONABLE_TIME",
+        "action": "CONSIDER_ASSET_SALES"
+      }
+    ]
+  },
+
+  "toleranceBandAlternative": {
+    "status": "PENDING_BACKTEST_AND_FINALIZATION",
+
+    "relativeBandMethod": {
+      "description": "Trigger review when an asset class moves materially away from its target based on a relative percentage threshold.",
+      "candidateRelativeThreshold": 0.20
+    },
+
+    "absoluteBandMethod": {
+      "description": "Trigger review when an asset class moves a predefined number of percentage points away from target.",
+      "candidateAbsoluteThreshold": 0.05
+    },
+
+    "finalMethod": "PENDING"
+  },
+
+  "monthlyContributionRebalancing": {
+    "monthlyAvailableAmount": 125000,
+
+    "allocationMethod": [
+      "CALCULATE_CURRENT_TOTAL_PORTFOLIO_WEIGHTS",
+      "COMPARE_WITH_STRATEGIC_TARGETS_AND_RANGES",
+      "IDENTIFY_UNDERWEIGHT_ASSET_CLASSES",
+      "CHECK_GOAL_FUNDING_PRIORITY",
+      "DIRECT_MONTHLY_CONTRIBUTIONS_ACCORDINGLY"
+    ],
+
+    "rule": "The ₹1.25 lakh monthly surplus does not require a permanently fixed percentage split if the portfolio is materially away from target."
+  },
+
+  "marketCrashPolicy": {
+    "normalSips": "CONTINUE_IF_CASH_FLOW_REMAINS_SECURE",
+    "automaticEquitySellingBecauseOfCrash": false,
+    "opportunityFundPolicyReference": "data/opportunity-fund.json",
+
+    "rules": [
+      "A_MARKET_CRASH_DOES_NOT_AUTOMATICALLY_CHANGE_STRATEGIC_TARGETS",
+      "FALLING_EQUITY_PRICES_MAY_CREATE_NATURAL_REBALANCING_NEEDS",
+      "DEPLOYMENT_MUST_CONSIDER_TOTAL_PORTFOLIO_ALLOCATION",
+      "DO_NOT_OVERRIDE_EMERGENCY_LIQUIDITY_REQUIREMENTS"
+    ]
+  },
+
+  "taxAwareRebalancing": {
+    "principle": "Evaluate after-tax benefit before selling solely to rebalance.",
+
+    "considerations": [
+      "CAPITAL_GAINS_TAX",
+      "EXIT_LOAD",
+      "TRANSACTION_COSTS",
+      "HOLDING_PERIOD",
+      "TAX_LOSS_HARVESTING_OPPORTUNITIES",
+      "EXPECTED_TIME_FOR_NEW_CASH_FLOWS_TO_CORRECT_DRIFT"
+    ],
+
+    "taxRulesSource": "CURRENT_APPLICABLE_INDIAN_TAX_LAW",
+    "hardCodeTaxRates": false
+  },
+
+  "accountAwareRebalancing": {
+    "principle": "Evaluate the household portfolio globally while respecting ownership, liquidity and account restrictions.",
+
+    "specialCases": {
+      "epf": {
+        "classification": "DEBT",
+        "liquidity": "RESTRICTED"
+      },
+      "ppf": {
+        "classification": "DEBT",
+        "liquidity": "RESTRICTED"
+      },
+      "nps": {
+        "classification": "LOOK_THROUGH_BY_ASSET_CLASS",
+        "liquidity": "RESTRICTED"
+      },
+      "motherPortfolio": {
+        "ownership": "SEPARATE",
+        "combineWithKapilPortfolio": false,
+        "analyseAtFamilyLevel": true
+      }
+    }
+  },
+
+  "goalBasedOverride": {
+    "principle": "Goal safety takes precedence over maintaining a single household-level allocation.",
+
+    "rules": [
+      "NEAR_TERM_GOALS_MAY_REQUIRE_LOWER_EQUITY_THAN_STRATEGIC_PORTFOLIO",
+      "GOAL_SPECIFIC_GLIDE_PATHS_OVERRIDE_GENERAL_TARGETS_FOR_RING_FENCED_ASSETS",
+      "DO_NOT_RE_RISK_A_NEAR_TERM_GOAL_SIMPLY_TO_RESTORE_GLOBAL_EQUITY_TARGET"
+    ]
+  },
+
+  "concentrationRebalancing": {
+    "status": "PENDING_COMPLETE_HOLDINGS_ANALYSIS",
+
+    "reviewDimensions": [
+      "SINGLE_STOCK",
+      "SECTOR",
+      "THEME",
+      "PSU_EXPOSURE",
+      "FUND_OVERLAP",
+      "MARKET_CAP",
+      "GEOGRAPHY"
+    ],
+
+    "knownReviewItems": [
+      "CPSE_ETF",
+      "BHARAT_22_ETF",
+      "DIRECT_STOCK_PORTFOLIO"
+    ]
+  },
+
+  "prohibitedActions": [
+    "REBALANCE_BASED_ONLY_ON_MARKET_PREDICTIONS",
+    "CHANGE_TARGETS_DURING_PANIC_WITHOUT_STRUCTURAL_REASON",
+    "SELL_DIVERSIFIED_EQUITY_ONLY_BECAUSE_MARKETS_HAVE_FALLEN",
+    "IGNORE_TAX_COSTS",
+    "USE_EMERGENCY_FUND_FOR_REBALANCING",
+    "TREAT_MOTHER_OWNED_ASSETS_AS_KAPIL_OWNED_ASSETS",
+    "REBALANCE_TOO_FREQUENTLY_FOR_SMALL_DEVIATIONS"
+  ],
+
+  "decisionLogRequirement": {
+    "requiredForMaterialChanges": true,
+
+    "record": [
+      "DATE",
+      "CURRENT_ALLOCATION",
+      "TARGET_ALLOCATION",
+      "TRIGGER",
+      "ACTION",
+      "TAX_IMPACT",
+      "RATIONALE",
+      "EXPECTED_RESULT"
+    ]
+  },
+
+  "successMetrics": [
+    "PORTFOLIO_REMAINS_WITHIN_APPROVED_RISK_RANGE",
+    "MINIMAL_UNNECESSARY_TAXABLE_TURNOVER",
+    "NEW_CASH_FLOWS_USED_EFFECTIVELY",
+    "GOAL_FUNDING_REMAINS_ON_TRACK",
+    "NO_EMOTIONAL_REBALANCING_DURING_MARKET_STRESS"
+  ],
+
+  "dataGaps": [
+    "Complete current holdings",
+    "Final strategic asset allocation",
+    "Final rebalancing threshold methodology",
+    "Goal-specific glide paths",
+    "Final concentration limits"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_CONCENTRATION_LIMITS_POLICY"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_CRASH_PLAYBOOK"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_MONTHLY_SIP_DEPLOYMENT_POLICY"
+    },
+    {
+      "priority": 4,
+      "action": "INTEGRATE_GOAL_SPECIFIC_GLIDE_PATHS"
+    }
+  ]
+}

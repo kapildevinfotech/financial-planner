@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_POLICY",
+
+  "purpose": {
+    "primaryObjective": "Maintain limited optional capital for disciplined deployment during meaningful equity market corrections.",
+    "secondaryObjective": "Reduce emotional decision-making by defining deployment rules before market stress occurs.",
+    "opportunityFundIsNot": [
+      "EMERGENCY_FUND",
+      "BUSINESS_CAPITAL",
+      "PROPERTY_PURCHASE_CAPITAL",
+      "MARKET_TIMING_PORTFOLIO",
+      "REPLACEMENT_FOR_REGULAR_SIPS"
+    ]
+  },
+
+  "strategicPrinciple": {
+    "defaultPosition": "REGULAR_INVESTING_CONTINUES_REGARDLESS_OF_MARKET_LEVEL",
+    "opportunityFundRole": "SUPPLEMENTARY_ONLY",
+    "maximumImportance": "LIMITED",
+    "reason": "Holding excessive cash while waiting for a crash can create long-term opportunity cost."
+  },
+
+  "targetSize": {
+    "userPreferredRange": {
+      "minimum": 500000,
+      "maximum": 1000000
+    },
+    "provisionalBaseTarget": 750000,
+    "status": "PROVISIONAL",
+
+    "constraints": [
+      "MUST_NOT_REDUCE_EMERGENCY_FUND_BELOW_TARGET",
+      "MUST_NOT_DELAY_ESSENTIAL_GOAL_FUNDING",
+      "MUST_BE_EVALUATED_AS_PERCENTAGE_OF_TOTAL_INVESTABLE_PORTFOLIO",
+      "SHOULD_NOT_GROW_INDEFINITELY_WHILE_WAITING_FOR_A_CRASH"
+    ]
+  },
+
+  "fundingPolicy": {
+    "userPreferredAccumulationPattern": "EVERY_3_TO_4_MONTHS_FROM_SAVED_SALARY",
+
+    "preferredSources": [
+      "MONTHLY_SURPLUS_AFTER_CORE_SIPS",
+      "BONUS_OR_VARIABLE_INCOME",
+      "CASH_FLOW_ABOVE_REQUIRED_LIQUIDITY"
+    ],
+
+    "prohibitedSources": [
+      "EMERGENCY_FUND",
+      "BORROWED_MONEY",
+      "NEAR_TERM_EDUCATION_GOAL_ASSETS",
+      "MONEY_REQUIRED_FOR_PLANNED_EXPENSES"
+    ],
+
+    "whenTargetIsReached": "STOP_ACCUMULATING_AND_REDIRECT_SURPLUS_TO_STRATEGIC_PORTFOLIO"
+  },
+
+  "marketReference": {
+    "primaryReferenceIndex": "BROAD_INDIAN_EQUITY_MARKET_INDEX",
+    "exactIndex": "PENDING_FINALIZATION",
+
+    "preferredCandidates": [
+      "NIFTY_50",
+      "NIFTY_500"
+    ],
+
+    "measurementMethod": "DECLINE_FROM_MOST_RECENT_CLOSING_ALL_TIME_HIGH",
+
+    "rules": [
+      "USE_ONE_PREDEFINED_REFERENCE_INDEX",
+      "DO_NOT_CHANGE_REFERENCE_INDEX_DURING_A_CORRECTION",
+      "USE_CLOSING_VALUES_RATHER_THAN_INTRADAY_MOVEMENTS",
+      "DO_NOT_USE INDIVIDUAL_STOCK_DECLINES_AS MARKET_CRASH_TRIGGERS"
+    ]
+  },
+
+  "deploymentFramework": {
+    "status": "PROVISIONAL",
+
+    "principle": "Deploy progressively because the market bottom cannot be known in advance.",
+
+    "tranches": [
+      {
+        "marketDeclineFromPeak": 0.05,
+        "incrementalFundDeployment": 0.00,
+        "cumulativeDeployment": 0.00,
+        "action": "NO_SPECIAL_DEPLOYMENT",
+        "notes": "A 5% decline is common market volatility. Continue regular SIPs."
+      },
+      {
+        "marketDeclineFromPeak": 0.10,
+        "incrementalFundDeployment": 0.10,
+        "cumulativeDeployment": 0.10,
+        "action": "DEPLOY_FIRST_TRANCHE"
+      },
+      {
+        "marketDeclineFromPeak": 0.15,
+        "incrementalFundDeployment": 0.15,
+        "cumulativeDeployment": 0.25,
+        "action": "DEPLOY_SECOND_TRANCHE"
+      },
+      {
+        "marketDeclineFromPeak": 0.20,
+        "incrementalFundDeployment": 0.20,
+        "cumulativeDeployment": 0.45,
+        "action": "DEPLOY_THIRD_TRANCHE"
+      },
+      {
+        "marketDeclineFromPeak": 0.30,
+        "incrementalFundDeployment": 0.25,
+        "cumulativeDeployment": 0.70,
+        "action": "DEPLOY_FOURTH_TRANCHE"
+      },
+      {
+        "marketDeclineFromPeak": 0.40,
+        "incrementalFundDeployment": 0.20,
+        "cumulativeDeployment": 0.90,
+        "action": "DEPLOY_FIFTH_TRANCHE"
+      },
+      {
+        "marketDeclineFromPeak": 0.50,
+        "incrementalFundDeployment": 0.10,
+        "cumulativeDeployment": 1.00,
+        "action": "DEPLOY_FINAL_TRANCHE"
+      }
+    ]
+  },
+
+  "exampleDeployment": {
+    "fundSize": 750000,
+    "tranches": [
+      {
+        "marketDecline": "10%",
+        "amount": 75000
+      },
+      {
+        "marketDecline": "15%",
+        "amount": 112500
+      },
+      {
+        "marketDecline": "20%",
+        "amount": 150000
+      },
+      {
+        "marketDecline": "30%",
+        "amount": 187500
+      },
+      {
+        "marketDecline": "40%",
+        "amount": 150000
+      },
+      {
+        "marketDecline": "50%",
+        "amount": 75000
+      }
+    ]
+  },
+
+  "deploymentDestination": {
+    "default": "UNDERWEIGHT_LONG_TERM_EQUITY_ASSETS",
+
+    "priorityOrder": [
+      "BROAD_DIVERSIFIED_INDEX_FUNDS",
+      "UNDERWEIGHT_STRATEGIC_EQUITY_BUCKETS",
+      "OTHER_PRE_APPROVED_CORE_FUNDS"
+    ],
+
+    "notDefaultDestinations": [
+      "INDIVIDUAL_STOCKS",
+      "SECTOR_FUNDS",
+      "THEMATIC_FUNDS",
+      "CPSE_ETF",
+      "BHARAT_22_ETF",
+      "LEVERAGED_PRODUCTS"
+    ],
+
+    "rule": "A falling asset is not automatically a buying opportunity."
+  },
+
+  "assetAllocationOverride": {
+    "allowed": false,
+    "principle": "Opportunity deployment must remain consistent with strategic asset allocation.",
+
+    "ifEquityAlreadyAboveMaximum": {
+      "action": "DO_NOT_AUTOMATICALLY_DEPLOY_ADDITIONAL_CASH_TO_EQUITY",
+      "alternative": "REBALANCE_BASED_ON_TOTAL_PORTFOLIO"
+    }
+  },
+
+  "structuralRiskFilter": {
+    "requiredBeforeDeployment": true,
+
+    "questions": [
+      "HAS_THE_LONG_TERM_INVESTMENT_THESIS_CHANGED?",
+      "IS_THE_MARKET_DECLINE_PRIMARILY_PRICE_VOLATILITY_OR_A_PERMANENT_IMPAIRMENT_RISK?",
+      "IS_THE_SELECTED_ASSET_STILL DIVERSIFIED_AND_SUITABLE?",
+      "HAS_THE_INVESTOR'S_INCOME_OR_LIQUIDITY_POSITION_DETERIORATED?",
+      "ARE_ESSENTIAL_GOALS_STILL_SECURE?"
+    ],
+
+    "rule": "Market decline alone is not sufficient justification for buying a concentrated or structurally impaired asset."
+  },
+
+  "regularSipPolicy": {
+    "during5PercentDecline": "CONTINUE",
+    "during10PercentDecline": "CONTINUE",
+    "during20PercentDecline": "CONTINUE",
+    "during30PercentDecline": "CONTINUE",
+    "during40PercentDecline": "CONTINUE_IF_CASH_FLOW_REMAINS_SECURE",
+    "during50PercentDecline": "CONTINUE_IF_CASH_FLOW_REMAINS_SECURE",
+
+    "rule": "Opportunity-fund deployment is additional to regular investing, not a replacement for it."
+  },
+
+  "replenishmentPolicy": {
+    "userPreference": "IMMEDIATELY",
+
+    "refinedPolicy": {
+      "priority": "AFTER_EMERGENCY_FUND_AND_ESSENTIAL_GOAL_CONTRIBUTIONS",
+      "method": "REBUILD_GRADUALLY_FROM_FUTURE_SURPLUS",
+      "maximumTarget": 1000000,
+      "rule": "Do not reduce normal long-term investing excessively merely to rebuild opportunity capital."
+    }
+  },
+
+  "resetPolicy": {
+    "status": "PROVISIONAL",
+
+    "afterMarketRecovery": {
+      "rule": "DEPLOYED_CAPITAL_REMAINS_INVESTED",
+      "doNot": "SELL_AUTOMATICALLY_SIMPLY_BECAUSE_THE_MARKET_RECOVERS"
+    },
+
+    "newPeak": {
+      "rule": "A new closing all-time high resets the drawdown reference point."
+    }
+  },
+
+  "antiMarketTimingRules": [
+    "DO_NOT_STOP_SIPS_WHILE_WAITING_FOR_A_CRASH",
+    "DO_NOT_BUILD_UNLIMITED_CASH_BECAUSE_MARKET_VALUATIONS_APPEAR_HIGH",
+    "DO_NOT_WAIT_FOR_EXACT_BOTTOM_CONFIRMATION",
+    "DO_NOT_DOUBLE_DEPLOYMENT_BASED_ON NEWS_OR_EMOTION",
+    "DO_NOT_BORROW_TO_BUY_A_CRASH",
+    "DO_NOT_USE_EMERGENCY_MONEY",
+    "DO_NOT_BUY_AN_ASSET_ONLY_BECAUSE_IT_HAS_FALLEN_SHARPLY",
+    "DO_NOT_CHANGE_THE_RULES_DURING_MARKET_PANIC"
+  ],
+
+  "relationshipWithEmergencyFund": {
+    "emergencyFundProvisionalTarget": 900000,
+    "opportunityFundProvisionalTarget": 750000,
+    "combinedBaseCashReserve": 1650000,
+    "principle": "The two pools must remain logically and operationally separate."
+  },
+
+  "reviewPolicy": {
+    "frequency": "ANNUAL",
+    "reviewQuestions": [
+      "HAS_THE_FUND_CREATED_EXCESSIVE_CASH_DRAG?",
+      "WAS_THE_DEPLOYMENT_POLICY_FOLLOWED?",
+      "IS_THE_TARGET_SIZE APPROPRIATE_RELATIVE_TO_TOTAL_PORTFOLIO?",
+      "HAS_RISK_CAPACITY_CHANGED?",
+      "SHOULD_THE_REFERENCE_INDEX_OR_TRANCHE_STRUCTURE_CHANGE?"
+    ]
+  },
+
+  "dataGaps": [
+    "Final reference index",
+    "Final opportunity fund target as percentage of investable assets",
+    "Backtest of alternative deployment schedules",
+    "Final strategic asset allocation",
+    "Approved destination funds"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_GOALS_DATA_MODEL"
+    },
+    {
+      "priority": 2,
+      "action": "CALCULATE_EDUCATION_CORPUS_REQUIREMENTS"
+    },
+    {
+      "priority": 3,
+      "action": "BACKTEST_OPPORTUNITY_FUND_POLICY"
+    },
+    {
+      "priority": 4,
+      "action": "INTEGRATE_WITH_CRASH_PLAYBOOK"
+    }
+  ]
+}

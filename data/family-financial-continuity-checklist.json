@@ -1,0 +1,540 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "country": "INDIA",
+  "currency": "INR",
+  "status": "PROVISIONAL_CHECKLIST",
+
+  "purpose": {
+    "primaryObjective": "Enable the family to locate, understand and manage essential financial affairs if Kapil is temporarily unavailable, incapacitated or deceased.",
+    "principle": "The continuity system should provide a roadmap to assets and actions without exposing passwords, PINs, OTP secrets or private keys."
+  },
+
+  "activationScenarios": [
+    "TEMPORARY_UNAVAILABILITY",
+    "SERIOUS_MEDICAL_EVENT",
+    "LONG_TERM_INCAPACITY",
+    "PREMATURE_DEATH",
+    "MAJOR_FAMILY_EMERGENCY"
+  ],
+
+  "familyContext": {
+    "primaryFinancialCoordinator": "KAPIL",
+    "spouse": {
+      "status": "GOVERNMENT_EMPLOYEE",
+      "continuityRole": "PRIMARY_FAMILY_FINANCIAL_SUCCESSOR"
+    },
+    "children": [
+      {
+        "name": "REYANSH",
+        "ageYears": 6,
+        "status": "MINOR"
+      },
+      {
+        "name": "NIKESH",
+        "ageYears": 3,
+        "status": "MINOR"
+      }
+    ],
+    "mother": {
+      "status": "LIVING",
+      "assetsMustRemainLegallySeparate": true
+    }
+  },
+
+  "continuityPrinciples": [
+    "KEEP_INSTRUCTIONS_SIMPLE",
+    "MAINTAIN_CLEAR_LEGAL_OWNERSHIP",
+    "SEPARATE_KAPIL_AND_MOTHER_ASSETS",
+    "DO_NOT_STORE_AUTHENTICATION_SECRETS_IN_FWOS",
+    "ENSURE_AT_LEAST_ONE_TRUSTED_PERSON_KNOWS_THE_DOCUMENT_ACCESS_PROCESS",
+    "AVOID_FORCED_INVESTMENT_DECISIONS_DURING_CRISIS",
+    "USE_QUALIFIED_PROFESSIONAL_HELP_WHERE_REQUIRED"
+  ],
+
+  "immediateEmergencySequence": [
+    {
+      "order": 1,
+      "action": "SECURE_IMMEDIATE_FAMILY_HEALTH_AND_SAFETY"
+    },
+    {
+      "order": 2,
+      "action": "ENSURE_ACCESS_TO_30_TO_90_DAYS_OF HOUSEHOLD_LIQUIDITY"
+    },
+    {
+      "order": 3,
+      "action": "LOCATE_FAMILY_CONTINUITY_FILE"
+    },
+    {
+      "order": 4,
+      "action": "IDENTIFY_RELEVANT_INSURANCE_AND EMPLOYER_BENEFITS"
+    },
+    {
+      "order": 5,
+      "action": "LOCATE_WILL_AND LEGAL_DOCUMENTS_IF APPLICABLE"
+    },
+    {
+      "order": 6,
+      "action": "CONTACT_TRUSTED_CA_LEGAL_OR FINANCIAL_PROFESSIONAL_AS_REQUIRED"
+    },
+    {
+      "order": 7,
+      "action": "CREATE_A_RECORD_OF CLAIMS_DOCUMENTS_AND TRANSACTIONS"
+    },
+    {
+      "order": 8,
+      "action": "AVOID_UNNECESSARY_ASSET_SALES_OR PORTFOLIO_CHANGES"
+    }
+  ],
+
+  "continuityFileContents": {
+    "familyInformation": [
+      "FAMILY_MEMBER_NAMES",
+      "RELATIONSHIPS",
+      "DEPENDENT_STATUS",
+      "EMERGENCY_CONTACTS"
+    ],
+
+    "financialRelationships": [
+      "BANK_NAMES",
+      "BROKER_NAMES",
+      "MUTUAL_FUND_PLATFORMS",
+      "EPF_INFORMATION",
+      "PPF_INFORMATION",
+      "NPS_INFORMATION",
+      "INSURANCE_COMPANIES",
+      "EMPLOYER_BENEFIT_CONTACTS"
+    ],
+
+    "propertyInformation": [
+      "PROPERTY_LIST",
+      "LEGAL_OWNER",
+      "DOCUMENT_LOCATION",
+      "LOAN_STATUS_IF_ANY",
+      "PROPERTY_TAX_INFORMATION"
+    ],
+
+    "professionalContacts": [
+      "CA",
+      "LAWYER",
+      "INSURANCE_CONTACT",
+      "TRUSTED_FINANCIAL_ADVISER_IF APPOINTED"
+    ],
+
+    "legalDocuments": [
+      "WILL_LOCATION",
+      "NOMINATION_STATUS",
+      "POWER_OF_ATTORNEY_IF ANY",
+      "PROPERTY_DOCUMENT_LOCATION"
+    ]
+  },
+
+  "prohibitedInformation": [
+    "PASSWORDS",
+    "PINS",
+    "OTP_SECRETS",
+    "PRIVATE_KEYS",
+    "SEED_PHRASES",
+    "UNENCRYPTED_RECOVERY_CODES",
+    "FULL_CREDIT_CARD_DETAILS",
+    "UNNECESSARY_FULL_IDENTITY_DOCUMENTS"
+  ],
+
+  "accountInventoryTemplate": {
+    "requiredFields": [
+      "ASSET_CATEGORY",
+      "LEGAL_OWNER",
+      "INSTITUTION_NAME",
+      "MASKED_ACCOUNT_OR_FOLIO_REFERENCE",
+      "APPROXIMATE_VALUE_RANGE",
+      "NOMINEE_STATUS",
+      "DOCUMENT_LOCATION",
+      "CONTACT_OR OFFICIAL_ACCESS_ROUTE"
+    ],
+
+    "assetCategories": [
+      "SAVINGS_ACCOUNT",
+      "FIXED_DEPOSIT_IF ANY",
+      "MUTUAL_FUNDS",
+      "ETFS",
+      "DIRECT_STOCKS",
+      "EPF",
+      "PPF",
+      "NPS",
+      "GOLD",
+      "REAL_ESTATE",
+      "INSURANCE",
+      "BUSINESS_INTEREST_IF ANY"
+    ]
+  },
+
+  "knownKapilAssets": {
+    "personalLiquidity": {
+      "savingsAccountTypicalRange": {
+        "minimum": 300000,
+        "maximum": 500000
+      }
+    },
+
+    "retirementAndFixedIncome": {
+      "ppfApproximate": 1730000,
+      "epfApproximate": 3000000,
+      "npsApproximate": 1400000,
+      "npsAllocation": {
+        "equityPercent": 63,
+        "corporateDebtPercent": 12,
+        "governmentSecuritiesPercent": 25
+      }
+    },
+
+    "otherFinancialAssets": [
+      "MUTUAL_FUNDS",
+      "DIRECT_STOCKS",
+      "CPSE_ETF",
+      "BHARAT_22_ETF",
+      "POTENTIAL_FUTURE_GOLD_INVESTMENTS"
+    ],
+
+    "realEstate": [
+      {
+        "asset": "FARIDABAD_2BHK",
+        "approximateValue": 4500000,
+        "legalOwner": "TO_BE_CONFIRMED"
+      },
+      {
+        "asset": "BUILT_HOME_OR LAND_PROPERTY",
+        "approximateValue": 5000000,
+        "legalOwner": "TO_BE_CONFIRMED"
+      }
+    ]
+  },
+
+  "motherAssetSeparation": {
+    "knownSavingsApproximate": 8000000,
+
+    "rules": [
+      "TRACK_MOTHER_ASSETS_SEPARATELY",
+      "DO_NOT_DESCRIBE_MOTHER_ASSETS_AS KAPIL_PERSONAL_NET_WORTH",
+      "MOTHER_RETAINS_LEGAL_CONTROL_OF HER_ASSETS",
+      "DOCUMENT_ANY_LARGE_TRANSFER_OR ASSET_PURCHASE_USING_MOTHER_FUNDS",
+      "PRESERVE_SUFFICIENT_ASSETS_FOR MOTHER_LIFETIME_NEEDS"
+    ],
+
+    "potentialLucknowPlot": {
+      "estimatedCostRange": {
+        "minimum": 4000000,
+        "maximum": 5000000
+      },
+      "expectedFundingSource": "MOTHER_ASSETS",
+      "requiredBeforePurchase": [
+        "DECIDE_LEGAL_OWNER",
+        "DOCUMENT_SOURCE_OF FUNDS",
+        "REVIEW_TAX_IMPLICATIONS",
+        "DOCUMENT_SUCCESSION_PATH"
+      ]
+    }
+  },
+
+  "monthlyHouseholdContinuity": {
+    "knownNormalMonthlyExpenditure": 75000,
+
+    "planningBufferRange": {
+      "minimum": 120000,
+      "maximum": 150000
+    },
+
+    "continuityInstructions": [
+      "IDENTIFY_ESSENTIAL_MONTHLY_EXPENSES",
+      "IDENTIFY_AUTOMATIC_PAYMENTS",
+      "IDENTIFY_SIPS_AND INVESTMENT_DEBITS",
+      "IDENTIFY_INSURANCE_PREMIUMS",
+      "IDENTIFY_SCHOOL_AND CHILDCARE_PAYMENTS",
+      "IDENTIFY_UTILITY_AND HOUSING_PAYMENTS"
+    ],
+
+    "crisisRule": "Investment SIPs may be temporarily paused if required to protect essential family cash flow."
+  },
+
+  "investmentContinuityPolicy": {
+    "defaultAction": "DO_NOT_MAKE_IMMEDIATE_MAJOR_PORTFOLIO_CHANGES",
+
+    "instructionsForFamily": [
+      "DO_NOT_PANIC_SELL_EQUITY",
+      "DO_NOT_BUY_NEW_COMPLEX_PRODUCTS",
+      "DO_NOT_ACT_ON UNSOLICITED_FINANCIAL_ADVICE",
+      "DO_NOT_SHARE_OTP_OR PASSWORDS",
+      "DO_NOT_TRANSFER_ASSETS_TO UNKNOWN_INTERMEDIARIES",
+      "VERIFY_ALL_CLAIMS_AND PROCEDURES_USING_OFFICIAL_CHANNELS",
+      "SEEK_PROFESSIONAL_HELP_BEFORE_MAJOR_TRANSACTIONS"
+    ],
+
+    "existingStrategy": {
+      "philosophy": "INDEX_FIRST_LONG_TERM_INVESTING",
+      "equityRiskPreference": "MODERATE",
+      "longTermEquityRangePercent": {
+        "minimum": 50,
+        "maximum": 65
+      }
+    }
+  },
+
+  "insuranceContinuity": {
+    "knownCoverage": {
+      "cghs": "AVAILABLE_THROUGH_SPOUSE",
+      "corporateHealthCover": 500000,
+      "licPolicy": {
+        "sumInsured": 300000,
+        "annualPremium": 17000,
+        "maturityYear": 2034
+      },
+      "termInsurance": "NONE_CURRENTLY"
+    },
+
+    "claimPreparationChecklist": [
+      "POLICY_NUMBER_OR MASKED_REFERENCE",
+      "INSURER_NAME",
+      "NOMINEE_DETAILS",
+      "CLAIM_CONTACT_ROUTE",
+      "POLICY_DOCUMENT_LOCATION",
+      "EMPLOYER_BENEFIT_CONTACT",
+      "REQUIRED_CERTIFICATES_AND DOCUMENTS"
+    ]
+  },
+
+  "employerContinuity": {
+    "requiredInformation": [
+      "EMPLOYER_NAME",
+      "HR_CONTACT_ROUTE",
+      "GROUP_INSURANCE_DETAILS",
+      "GRATUITY_ELIGIBILITY",
+      "EPF_PROCESS",
+      "LEAVE_ENCASHMENT",
+      "FINAL_SALARY_AND BENEFITS",
+      "OTHER_EMPLOYEE_BENEFITS"
+    ],
+
+    "status": "TO_BE_DOCUMENTED"
+  },
+
+  "childrenContinuity": {
+    "primaryObjectives": [
+      "CONTINUE_EDUCATION",
+      "MAINTAIN_STABLE_LIVING_ARRANGEMENTS",
+      "PROTECT_LONG_TERM_EDUCATION_ASSETS"
+    ],
+
+    "requiredPlanning": [
+      "PRIMARY_GUARDIAN_IF BOTH_PARENTS_ARE_UNAVAILABLE",
+      "ALTERNATE_GUARDIAN",
+      "FINANCIAL_ASSET_MANAGER_FOR MINOR_CHILDREN",
+      "EDUCATION_FUNDING_INSTRUCTIONS",
+      "AGE_AND CONDITIONS_FOR CONTROL_OF INHERITED_WEALTH"
+    ],
+
+    "children": [
+      {
+        "name": "REYANSH",
+        "ageYears": 6,
+        "majorEducationHorizonsYearsFrom2026": [
+          12,
+          15
+        ]
+      },
+      {
+        "name": "NIKESH",
+        "ageYears": 3,
+        "majorEducationHorizonsYearsFrom2026": [
+          15,
+          18
+        ]
+      }
+    ]
+  },
+
+  "documentStorage": {
+    "physical": {
+      "recommended": true,
+      "contents": [
+        "ORIGINAL_WILL",
+        "PROPERTY_DOCUMENTS",
+        "IMPORTANT_INSURANCE_DOCUMENTS",
+        "OTHER_ORIGINAL_LEGAL_DOCUMENTS"
+      ],
+      "location": "TO_BE_DEFINED"
+    },
+
+    "digital": {
+      "recommended": true,
+      "requirements": [
+        "ENCRYPTED_STORAGE",
+        "BACKUP",
+        "CONTROLLED_ACCESS",
+        "CLEAR_ACCESS_INSTRUCTIONS"
+      ],
+      "location": "TO_BE_DEFINED"
+    },
+
+    "fwosRepository": {
+      "purpose": "POLICIES_CHECKLISTS_AND MASKED_FINANCIAL_INFORMATION",
+      "mustNotContain": [
+        "PASSWORDS",
+        "PRIVATE_KEYS",
+        "OTP_SECRETS",
+        "FULL_SENSITIVE_ACCOUNT_CREDENTIALS"
+      ]
+    }
+  },
+
+  "trustedPeopleFramework": {
+    "rolesToAssign": [
+      "PRIMARY_FAMILY_FINANCIAL_SUCCESSOR",
+      "ALTERNATE_TRUSTED_CONTACT",
+      "EXECUTOR",
+      "ALTERNATE_EXECUTOR",
+      "CHILD_GUARDIAN",
+      "ALTERNATE_CHILD_GUARDIAN"
+    ],
+
+    "selectionCriteria": [
+      "TRUSTWORTHY",
+      "FINANCIALLY_RESPONSIBLE",
+      "AVAILABLE",
+      "UNDERSTANDS_FAMILY_CONTEXT",
+      "WILLING_TO_ACCEPT_THE_ROLE"
+    ]
+  },
+
+  "fraudPreventionDuringCrisis": {
+    "rules": [
+      "NEVER_SHARE_OTP_PIN_OR PASSWORD",
+      "DO_NOT_TRUST_UNSOLICITED_CALLERS_CLAIMING_TO HELP_WITH CLAIMS",
+      "USE_OFFICIAL_BANK_INSURER_AMC_BROKER_AND GOVERNMENT_CHANNELS",
+      "VERIFY_PAYMENT_REQUESTS",
+      "DO_NOT_INSTALL_REMOTE_ACCESS_SOFTWARE_ON REQUEST_OF UNKNOWN_CALLERS",
+      "KEEP_WRITTEN_RECORDS_OF MATERIAL_COMMUNICATIONS"
+    ]
+  },
+
+  "professionalHelpTriggers": [
+    "DEATH_OF A FAMILY_MEMBER",
+    "INCAPACITY",
+    "LARGE_INSURANCE_CLAIM",
+    "PROPERTY_SUCCESSION",
+    "MINOR_CHILD_INHERITANCE",
+    "LARGE_ASSET_TRANSFER",
+    "DISPUTED_OWNERSHIP",
+    "COMPLEX_TAX_EVENT",
+    "BUSINESS_SUCCESSION"
+  ],
+
+  "annualContinuityDrill": {
+    "frequency": "ANNUALLY",
+
+    "objective": "Confirm that the spouse can locate and understand the essential financial roadmap without Kapil's assistance.",
+
+    "checklist": [
+      "SPOUSE_CAN_LOCATE_CONTINUITY_FILE",
+      "SPOUSE_KNOWS_MAJOR_FINANCIAL_INSTITUTIONS",
+      "SPOUSE_KNOWS_DOCUMENT_STORAGE_LOCATIONS",
+      "CONTACT_INFORMATION_IS_CURRENT",
+      "ASSET_INVENTORY_IS_CURRENT",
+      "NOMINATIONS_HAVE_BEEN_REVIEWED",
+      "WILL_STATUS_HAS_BEEN_REVIEWED",
+      "NO_SECRETS_HAVE_BEEN_COMMITTED_TO FWOS",
+      "BACKUPS_ARE_ACCESSIBLE"
+    ]
+  },
+
+  "completionChecklist": [
+    {
+      "priority": 1,
+      "action": "CREATE_COMPLETE_MASKED_ASSET_INVENTORY",
+      "status": "PENDING"
+    },
+    {
+      "priority": 2,
+      "action": "DOCUMENT_FINANCIAL_INSTITUTIONS_AND OFFICIAL_ACCESS_ROUTES",
+      "status": "PENDING"
+    },
+    {
+      "priority": 3,
+      "action": "DOCUMENT_EMPLOYER_BENEFITS_AND HR_CONTACT_ROUTE",
+      "status": "PENDING"
+    },
+    {
+      "priority": 4,
+      "action": "DEFINE_PHYSICAL_DOCUMENT_STORAGE_LOCATION",
+      "status": "PENDING"
+    },
+    {
+      "priority": 5,
+      "action": "DEFINE_SECURE_DIGITAL_STORAGE_AND BACKUP",
+      "status": "PENDING"
+    },
+    {
+      "priority": 6,
+      "action": "ASSIGN_EXECUTOR_AND ALTERNATE",
+      "status": "PENDING"
+    },
+    {
+      "priority": 7,
+      "action": "ASSIGN_CHILD_GUARDIAN_AND ALTERNATE",
+      "status": "PENDING"
+    },
+    {
+      "priority": 8,
+      "action": "COMPLETE_WILLS_AND NOMINATION_REVIEW",
+      "status": "PENDING"
+    },
+    {
+      "priority": 9,
+      "action": "EXPLAIN_THE_CONTINUITY_SYSTEM_TO SPOUSE",
+      "status": "PENDING"
+    },
+    {
+      "priority": 10,
+      "action": "PERFORM_FIRST_CONTINUITY_DRILL",
+      "status": "PENDING"
+    }
+  ],
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "goals": "data/goals.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "emergencyFund": "data/emergency-fund.json",
+    "insuranceAndRiskManagement": "data/insurance-and-risk-management-policy.json",
+    "estatePlanningChecklist": "data/estate-planning-checklist.json",
+    "annualReviewChecklist": "data/annual-review-checklist.json",
+    "neverDoList": "data/never-do-list.json"
+  },
+
+  "dataGaps": [
+    "SPOUSE_NAME",
+    "PRIMARY_AND_ALTERNATE_EXECUTOR",
+    "PRIMARY_AND_ALTERNATE_CHILD_GUARDIAN",
+    "TRUSTED_PROFESSIONAL_CONTACTS",
+    "COMPLETE_ASSET_INVENTORY",
+    "LEGAL_OWNER_OF EACH_PROPERTY",
+    "EMPLOYER_BENEFIT_DETAILS",
+    "DOCUMENT_STORAGE_LOCATIONS",
+    "CURRENT_NOMINATION_STATUS",
+    "CURRENT_WILL_STATUS"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_QUARTERLY_REVIEW_CHECKLIST"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_FWOS_DATA_INDEX"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_DATA_VALIDATION_SCHEMA"
+    }
+  ]
+}

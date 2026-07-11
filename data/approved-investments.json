@@ -1,0 +1,477 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "PROVISIONAL_PENDING_PRODUCT_SELECTION",
+
+  "purpose": {
+    "primaryObjective": "Maintain a controlled universe of investment products permitted for FWOS portfolio implementation.",
+    "principle": "Asset allocation decisions come before product selection. A good product is not automatically suitable for the portfolio."
+  },
+
+  "statusDefinitions": {
+    "APPROVED_FOR_NEW_MONEY": "Approved for recurring or lump-sum investment when allocation rules permit.",
+    "APPROVED_HOLD": "Suitable to continue holding but not necessarily preferred for new investment.",
+    "WATCHLIST": "Under evaluation and not approved for investment.",
+    "LEGACY": "Existing holding retained temporarily for tax, exit or transition reasons.",
+    "EXIT_OR_CONSOLIDATE": "Position should be reviewed for reduction, exit or consolidation.",
+    "REJECTED": "Not permitted under the current FWOS strategy."
+  },
+
+  "portfolioArchitecture": {
+    "philosophy": "INDEX_FIRST_WITH_SELECTIVE_ACTIVE_EXCEPTIONS",
+    "preferredCharacteristics": [
+      "LOW_COST",
+      "HIGH_TRANSPARENCY",
+      "LOW_UNNECESSARY_COMPLEXITY",
+      "HIGH_LIQUIDITY_WHERE_RELEVANT",
+      "CLEAR_PORTFOLIO_ROLE",
+      "LOW_OVERLAP",
+      "LONG_TERM_SUITABILITY"
+    ],
+
+    "defaultRule": "Use a broad, low-cost index solution unless an alternative has a clearly defined and evidence-supported role.",
+
+    "activeFundRule": "Active funds may be approved selectively when there is a durable rationale that is not adequately served by the preferred passive implementation.",
+
+    "productCountRule": {
+      "objective": "MINIMIZE_UNNECESSARY_PRODUCT_COUNT",
+      "maximumProducts": null,
+      "rule": "No arbitrary maximum is imposed, but every product must have a distinct portfolio role."
+    }
+  },
+
+  "approvedUniverse": {
+    "indianEquityCore": {
+      "targetRole": "PRIMARY_LONG_TERM_EQUITY_GROWTH_ENGINE",
+
+      "preferredImplementationTypes": [
+        "BROAD_MARKET_INDEX_FUND",
+        "BROAD_MARKET_ETF"
+      ],
+
+      "products": [],
+
+      "selectionCriteria": [
+        "INDEX_SUITABILITY",
+        "EXPENSE_RATIO",
+        "TRACKING_DIFFERENCE",
+        "TRACKING_ERROR",
+        "AUM_AND_SCALE",
+        "ETF_LIQUIDITY_IF_APPLICABLE",
+        "BID_ASK_SPREAD_IF_APPLICABLE",
+        "FUND_HOUSE_OPERATIONAL_QUALITY",
+        "TAX_AND_ACCOUNT_SUITABILITY"
+      ],
+
+      "status": "PRODUCT_SELECTION_PENDING"
+    },
+
+    "indianEquitySatellite": {
+      "targetRole": "LIMITED_COMPLEMENTARY_EXPOSURE",
+
+      "permittedCategories": [
+        "MID_CAP",
+        "SMALL_CAP",
+        "FACTOR_OR_SMART_BETA_IF_JUSTIFIED",
+        "SELECTIVE_ACTIVE_FUND_IF_JUSTIFIED"
+      ],
+
+      "products": [],
+
+      "rules": [
+        "SATELLITE_EXPOSURE_MUST_NOT_REPLACE_CORE_DIVERSIFICATION",
+        "HIGHER_RISK_CATEGORIES_REQUIRE_EXPLICIT_ALLOCATION_LIMITS",
+        "PAST_PERFORMANCE_ALONE_IS_NOT_AN_APPROVAL_REASON"
+      ],
+
+      "status": "PRODUCT_SELECTION_PENDING"
+    },
+
+    "thematicAndConcentratedEquity": {
+      "targetRole": "LIMITED_OR_LEGACY_EXPOSURE",
+
+      "knownExistingProducts": [
+        {
+          "productId": "CPSE_ETF",
+          "productName": "CPSE ETF",
+          "instrumentType": "ETF",
+          "assetClass": "INDIAN_EQUITY",
+          "subAssetClass": "THEMATIC_PSU",
+          "currentStatus": "LEGACY_PENDING_PORTFOLIO_REVIEW",
+          "approvedForNewMoney": false,
+          "currentValue": null,
+          "portfolioWeightPercent": null,
+          "decisionRequired": "REVIEW_AGAINST_CONCENTRATION_AND_EXIT_POLICY"
+        },
+        {
+          "productId": "BHARAT_22_ETF",
+          "productName": "Bharat 22 ETF",
+          "instrumentType": "ETF",
+          "assetClass": "INDIAN_EQUITY",
+          "subAssetClass": "CONCENTRATED_STRATEGIC_AND_PSU_EXPOSURE",
+          "currentStatus": "LEGACY_PENDING_PORTFOLIO_REVIEW",
+          "approvedForNewMoney": false,
+          "currentValue": null,
+          "portfolioWeightPercent": null,
+          "decisionRequired": "REVIEW_AGAINST_CONCENTRATION_AND_EXIT_POLICY"
+        }
+      ],
+
+      "rules": [
+        "NO_AUTOMATIC_NEW_INVESTMENT_BECAUSE_OF_RECENT_OUTPERFORMANCE",
+        "CONCENTRATION_MUST_BE_MEASURED_AT_TOTAL_PORTFOLIO_LEVEL",
+        "OVERLAP_WITH_DIRECT_STOCKS_AND_OTHER_FUNDS_MUST_BE_CHECKED"
+      ]
+    },
+
+    "internationalEquity": {
+      "targetRole": "GEOGRAPHIC_AND_CURRENCY_DIVERSIFICATION",
+
+      "preferredExposureTypes": [
+        "BROAD_US_EQUITY",
+        "NASDAQ_100_IF_APPROVED_AS_GROWTH_TILT",
+        "BROADER_GLOBAL_EQUITY_IF_SUITABLE"
+      ],
+
+      "knownCandidate": {
+        "productCategory": "NASDAQ_100_FUND_OF_FUNDS",
+        "possibleOwner": "MOTHER",
+        "status": "WATCHLIST",
+        "reason": "Product, taxation, account ownership and concentration implications require current review."
+      },
+
+      "products": [],
+
+      "rules": [
+        "DO_NOT_TREAT_NASDAQ_100_AS_FULL_GLOBAL_DIVERSIFICATION",
+        "ACCOUNT_OWNERSHIP_MUST_BE_EXPLICIT",
+        "CURRENT_INDIAN_TAX_RULES_MUST_BE_VERIFIED_BEFORE_SELECTION",
+        "FUND_STRUCTURE_AND_OVERSEAS_INVESTMENT_RESTRICTIONS_MUST_BE_CHECKED",
+        "AVOID_DUPLICATING_EXISTING_US_TECH_CONCENTRATION"
+      ],
+
+      "status": "PRODUCT_SELECTION_PENDING"
+    },
+
+    "gold": {
+      "targetRole": "PORTFOLIO_DIVERSIFIER_AND_CRISIS_RESILIENCE",
+
+      "preferredOwnership": "KAPIL",
+
+      "permittedImplementationTypes": [
+        "PHYSICAL_GOLD",
+        "GOLD_ETF",
+        "GOLD_MUTUAL_FUND"
+      ],
+
+      "candidateProducts": [
+        {
+          "productId": "NIPPON_INDIA_ETF_GOLD_BEES",
+          "productName": "Nippon India ETF Gold BeES",
+          "instrumentType": "GOLD_ETF",
+          "status": "WATCHLIST",
+          "approvedForNewMoney": false,
+          "reviewFactors": [
+            "EXPENSE_RATIO",
+            "TRACKING_DIFFERENCE",
+            "TRACKING_ERROR",
+            "TRADING_VOLUME",
+            "BID_ASK_SPREAD",
+            "AUM",
+            "PREMIUM_OR_DISCOUNT_TO_NAV"
+          ]
+        },
+        {
+          "productId": "HDFC_GOLD_ETF",
+          "productName": "HDFC Gold ETF",
+          "instrumentType": "GOLD_ETF",
+          "status": "WATCHLIST",
+          "approvedForNewMoney": false,
+          "reviewFactors": [
+            "EXPENSE_RATIO",
+            "TRACKING_DIFFERENCE",
+            "TRACKING_ERROR",
+            "TRADING_VOLUME",
+            "BID_ASK_SPREAD",
+            "AUM",
+            "PREMIUM_OR_DISCOUNT_TO_NAV"
+          ]
+        }
+      ],
+
+      "physicalGoldRule": "Jewellery and consumption gold should not automatically be counted as investment allocation.",
+
+      "status": "FINAL_INSTRUMENT_SELECTION_PENDING"
+    },
+
+    "fixedIncome": {
+      "targetRole": "STABILITY_LIQUIDITY_AND_GOAL_PROTECTION",
+
+      "existingCoreInstruments": [
+        {
+          "productId": "EPF",
+          "productName": "Employee Provident Fund",
+          "instrumentType": "RETIREMENT_FIXED_INCOME",
+          "status": "APPROVED_HOLD",
+          "currentApproximateValue": 3000000
+        },
+        {
+          "productId": "PPF",
+          "productName": "Public Provident Fund",
+          "instrumentType": "LONG_TERM_GOVERNMENT_BACKED_FIXED_INCOME",
+          "status": "APPROVED_HOLD",
+          "currentApproximateValue": 1730000
+        },
+        {
+          "productId": "NPS_C",
+          "productName": "NPS Corporate Debt Allocation",
+          "instrumentType": "NPS_FIXED_INCOME",
+          "status": "APPROVED_HOLD",
+          "allocationWithinNPSPercent": 12
+        },
+        {
+          "productId": "NPS_G",
+          "productName": "NPS Government Securities Allocation",
+          "instrumentType": "NPS_FIXED_INCOME",
+          "status": "APPROVED_HOLD",
+          "allocationWithinNPSPercent": 25
+        }
+      ],
+
+      "additionalProducts": [],
+
+      "status": "EXISTING_CORE_PRESENT"
+    },
+
+    "cashAndLiquidity": {
+      "targetRole": "EMERGENCY_LIQUIDITY_AND_OPTIONALITY",
+
+      "permittedInstruments": [
+        "SAVINGS_ACCOUNT",
+        "SWEEP_FIXED_DEPOSIT_IF_APPROVED",
+        "LIQUID_FUND_IF_APPROVED",
+        "OTHER_HIGH_QUALITY_SHORT_TERM_INSTRUMENT"
+      ],
+
+      "currentKnownPosition": {
+        "kapilSavingsRange": {
+          "minimum": 300000,
+          "maximum": 500000
+        },
+        "dedicatedLiquidFund": false,
+        "fixedDeposit": false
+      },
+
+      "products": [],
+      "status": "LIQUIDITY_STRUCTURE_REVIEW_REQUIRED"
+    }
+  },
+
+  "productApprovalChecklist": {
+    "mandatoryQuestions": [
+      "WHAT_EXACT_PORTFOLIO_ROLE_DOES_THIS_PRODUCT_SERVE",
+      "IS_THE_ASSET_CLASS_ALREADY_ADEQUATELY_COVERED",
+      "IS_A_SIMPLER_LOWER_COST_ALTERNATIVE_AVAILABLE",
+      "WHAT_IS_THE_TOTAL_COST",
+      "WHAT_ARE_THE_KEY_RISKS",
+      "WHAT_IS_THE EXPECTED_HOLDING_PERIOD",
+      "HOW_LIQUID_IS_THE_PRODUCT",
+      "WHAT_IS_THE CURRENT_TAX_TREATMENT",
+      "DOES_IT_CREATE_OVERLAP_OR_CONCENTRATION",
+      "IS_THE PRODUCT_STRUCTURE UNDERSTOOD",
+      "WHAT_WOULD_CAUSE THE PRODUCT_TO_BE_REMOVED"
+    ],
+
+    "approvalRule": "A product should not be approved unless its portfolio role can be explained independently of recent returns."
+  },
+
+  "indexFundEvaluationFramework": {
+    "priorityFactors": [
+      "TRACKING_DIFFERENCE",
+      "EXPENSE_RATIO",
+      "TRACKING_ERROR",
+      "FUND_SCALE",
+      "OPERATIONAL_RELIABILITY"
+    ],
+
+    "rule": "Lowest expense ratio alone does not automatically identify the best index fund."
+  },
+
+  "etfEvaluationFramework": {
+    "priorityFactors": [
+      "UNDERLYING_INDEX",
+      "TRACKING_DIFFERENCE",
+      "EXPENSE_RATIO",
+      "AUM",
+      "DAILY_TRADING_LIQUIDITY",
+      "BID_ASK_SPREAD",
+      "PREMIUM_OR_DISCOUNT_TO_NAV",
+      "EXECUTION_PRACTICALITY"
+    ],
+
+    "executionRule": "Use limit orders where appropriate and avoid evaluating liquidity only from one day's trading volume."
+  },
+
+  "activeFundEvaluationFramework": {
+    "requiredEvidence": [
+      "CLEAR_PORTFOLIO_ROLE",
+      "REPEATABLE_INVESTMENT_PROCESS",
+      "REASONABLE_COST",
+      "ACCEPTABLE_STYLE_CONSISTENCY",
+      "RISK_ADJUSTED_OUTCOME",
+      "LOW_UNNECESSARY_OVERLAP",
+      "RATIONALE_BEYOND_RECENT_OUTPERFORMANCE"
+    ],
+
+    "automaticRejectionReasons": [
+      "ONLY_RECENT_TOP_RANKING",
+      "NFO_NOVELTY",
+      "SOCIAL_MEDIA_HYPE",
+      "FOMO",
+      "NO_CLEAR_ROLE"
+    ]
+  },
+
+  "directEquity": {
+    "status": "EXISTING_HOLDINGS_PENDING_IMPORT_AND_REVIEW",
+    "approvedForUnrestrictedNewBuying": false,
+
+    "newInvestmentRule": "New direct-stock investment requires compliance with the direct-stock policy and investment decision checklist.",
+
+    "requiredBeforeApproval": [
+      "COMPANY_THESIS",
+      "VALUATION_RATIONALE",
+      "POSITION_SIZE",
+      "PORTFOLIO_OVERLAP",
+      "DOWNSIDE_RISK",
+      "EXIT_OR_REVIEW_CONDITIONS"
+    ]
+  },
+
+  "prohibitedOrDefaultRejectedProducts": [
+    {
+      "category": "ULIP",
+      "defaultStatus": "REJECTED_UNLESS_EXCEPTIONALLY_JUSTIFIED"
+    },
+    {
+      "category": "ENDOWMENT_POLICY_AS_INVESTMENT",
+      "defaultStatus": "REJECTED_FOR_NEW_WEALTH_CREATION"
+    },
+    {
+      "category": "HIGH_COST_REGULAR_PLAN_WHEN_SUITABLE_DIRECT_PLAN_AVAILABLE",
+      "defaultStatus": "REJECTED"
+    },
+    {
+      "category": "UNREGULATED_INVESTMENT_SCHEME",
+      "defaultStatus": "REJECTED"
+    },
+    {
+      "category": "LEVERAGED_SPECULATION",
+      "defaultStatus": "REJECTED"
+    },
+    {
+      "category": "PRODUCT_WITHOUT_CLEAR_UNDERSTANDING",
+      "defaultStatus": "REJECTED"
+    }
+  ],
+
+  "approvalGovernance": {
+    "newProductApproval": [
+      "IDENTIFY_PORTFOLIO_NEED",
+      "DEFINE_ASSET_CLASS_AND_ROLE",
+      "COMPARE_ALTERNATIVES",
+      "VERIFY_CURRENT_PRODUCT_DATA",
+      "VERIFY_CURRENT_TAX_TREATMENT",
+      "CHECK_PORTFOLIO_OVERLAP",
+      "APPLY_INVESTMENT_DECISION_CHECKLIST",
+      "RECORD_DECISION",
+      "UPDATE_APPROVED_INVESTMENTS_FILE"
+    ],
+
+    "reviewTriggers": [
+      "MATERIAL_CHANGE_IN_PRODUCT_STRUCTURE",
+      "PERSISTENT_TRACKING_PROBLEM",
+      "SIGNIFICANT_COST_DISADVANTAGE",
+      "FUND_MERGER_OR_MANDATE_CHANGE",
+      "REGULATORY_OR_TAX_CHANGE",
+      "PORTFOLIO_ROLE_NO_LONGER_REQUIRED",
+      "EXCESSIVE_PORTFOLIO_OVERLAP"
+    ]
+  },
+
+  "currentApprovalSummary": {
+    "approvedForNewMoney": [],
+    "approvedHold": [
+      "EPF",
+      "PPF",
+      "NPS_C",
+      "NPS_G"
+    ],
+    "watchlist": [
+      "NIPPON_INDIA_ETF_GOLD_BEES",
+      "HDFC_GOLD_ETF",
+      "NASDAQ_100_FUND_OF_FUNDS_CATEGORY"
+    ],
+    "legacyPendingReview": [
+      "CPSE_ETF",
+      "BHARAT_22_ETF"
+    ],
+    "pendingSelection": [
+      "INDIAN_EQUITY_CORE",
+      "INDIAN_EQUITY_SATELLITE",
+      "INTERNATIONAL_EQUITY",
+      "GOLD",
+      "LIQUIDITY_INSTRUMENTS"
+    ]
+  },
+
+  "dataQuality": {
+    "overallStatus": "PROVISIONAL",
+
+    "criticalMissingData": [
+      "COMPLETE_CURRENT_MUTUAL_FUND_HOLDINGS",
+      "COMPLETE_DIRECT_STOCK_HOLDINGS",
+      "CURRENT_PRODUCT_LEVEL_COST_DATA",
+      "CURRENT_TRACKING_DATA",
+      "CURRENT_ETF_LIQUIDITY_DATA",
+      "CURRENT_TAX_RULES",
+      "FINAL_ASSET_ALLOCATION_IMPLEMENTATION_REQUIREMENTS"
+    ]
+  },
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "assetAllocation": "data/asset-allocation.json",
+    "currentPortfolio": "data/current-portfolio.json",
+    "investmentDecisionChecklist": "data/investment-decision-checklist.json",
+    "directStockExitPolicy": "data/direct-stock-exit-policy.json",
+    "goldPolicy": "data/gold-policy.json",
+    "internationalEquityPolicy": "data/international-equity-policy.json",
+    "taxOptimizationPolicy": "data/tax-optimization-policy.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "IMPORT_COMPLETE_CURRENT_PORTFOLIO"
+    },
+    {
+      "priority": 2,
+      "action": "SELECT_INDIAN_EQUITY_CORE_IMPLEMENTATION"
+    },
+    {
+      "priority": 3,
+      "action": "FINALIZE_GOLD_INSTRUMENT"
+    },
+    {
+      "priority": 4,
+      "action": "FINALIZE_INTERNATIONAL_EQUITY_IMPLEMENTATION"
+    },
+    {
+      "priority": 5,
+      "action": "REVIEW_EXISTING_CPSE_AND_BHARAT_22_EXPOSURE"
+    }
+  ]
+}

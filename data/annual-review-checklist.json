@@ -1,0 +1,531 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "currency": "INR",
+  "status": "ACTIVE_FRAMEWORK",
+
+  "purpose": {
+    "primaryObjective": "Perform a structured annual audit of the complete Family Wealth Operating System and determine whether any strategic changes are required.",
+    "principle": "Review the plan systematically rather than reacting to recent market performance."
+  },
+
+  "reviewSchedule": {
+    "frequency": "ANNUALLY",
+    "preferredPeriod": "JANUARY_TO_MARCH",
+    "additionalReview": "AFTER_MAJOR_LIFE_OR_FINANCIAL_EVENT"
+  },
+
+  "reviewHierarchy": [
+    "FAMILY_AND_LIFE_CHANGES",
+    "GOAL_PROGRESS",
+    "NET_WORTH",
+    "LIQUIDITY_AND_RISK",
+    "STRATEGIC_ASSET_ALLOCATION",
+    "PORTFOLIO_STRUCTURE",
+    "INVESTMENT_PERFORMANCE",
+    "TAX",
+    "INSURANCE",
+    "ESTATE_PLANNING",
+    "BEHAVIOUR",
+    "FWOS_GOVERNANCE"
+  ],
+
+  "familyReview": {
+    "checklist": [
+      "UPDATE_AGES_OF_ALL_FAMILY_MEMBERS",
+      "REVIEW_DEPENDENTS",
+      "REVIEW_EMPLOYMENT_STATUS",
+      "REVIEW_INCOME_CHANGES",
+      "REVIEW_HEALTHCARE_COVERAGE_CHANGES",
+      "REVIEW_MAJOR_LIFESTYLE_CHANGES",
+      "REVIEW_POTENTIAL_NEW_FINANCIAL_OBLIGATIONS"
+    ],
+
+    "majorChangeTriggers": [
+      "JOB_CHANGE",
+      "SIGNIFICANT_INCOME_CHANGE",
+      "BUSINESS_LAUNCH",
+      "INHERITANCE",
+      "MAJOR_HEALTH_EVENT",
+      "NEW_DEPENDENT",
+      "PROPERTY_PURCHASE_OR_SALE",
+      "EARLY_RETIREMENT_DECISION"
+    ]
+  },
+
+  "goalReview": {
+    "reference": "data/goals.json",
+
+    "checklist": [
+      "CONFIRM_EACH_GOAL_IS_STILL_RELEVANT",
+      "UPDATE_GOAL_DATE",
+      "UPDATE_CURRENT_COST_ESTIMATE",
+      "UPDATE_INFLATION_ASSUMPTION",
+      "RECALCULATE_FUTURE_CORPUS",
+      "UPDATE_AMOUNT_ALREADY_FUNDED",
+      "CALCULATE_FUNDING_RATIO",
+      "IDENTIFY_FUNDING_GAP",
+      "UPDATE_REQUIRED_MONTHLY_CONTRIBUTION",
+      "REVIEW_GOAL_PRIORITY"
+    ],
+
+    "knownMajorGoals": [
+      {
+        "goal": "REYANSH_GRADUATION",
+        "approximateHorizonYearsFrom2026": 12
+      },
+      {
+        "goal": "REYANSH_POST_GRADUATION",
+        "approximateHorizonYearsFrom2026": 15
+      },
+      {
+        "goal": "NIKESH_GRADUATION",
+        "approximateHorizonYearsFrom2026": 15
+      },
+      {
+        "goal": "NIKESH_POST_GRADUATION",
+        "approximateHorizonYearsFrom2026": 18
+      },
+      {
+        "goal": "FINANCIAL_INDEPENDENCE",
+        "horizon": "LONG_TERM"
+      },
+      {
+        "goal": "GENERATIONAL_WEALTH",
+        "horizon": "MULTI_GENERATIONAL"
+      }
+    ],
+
+    "specialEducationReview": [
+      "REVIEW_DOMESTIC_PUBLIC_COLLEGE_SCENARIO",
+      "REVIEW_TOP_PRIVATE_COLLEGE_SCENARIO",
+      "REVIEW_FOREIGN_POST_GRADUATION_SCENARIO",
+      "DO_NOT_AUTOMATICALLY_FULLY_FUND_THE_MOST_EXPENSIVE_SCENARIO_WITHOUT_REASSESSMENT"
+    ]
+  },
+
+  "netWorthReview": {
+    "checklist": [
+      "UPDATE_ALL_FINANCIAL_ASSET_VALUES",
+      "UPDATE_REAL_ESTATE_VALUES_CONSERVATIVELY",
+      "UPDATE_LIABILITIES",
+      "CALCULATE_KAPIL_NET_WORTH",
+      "CALCULATE_MOTHER_NET_WORTH_SEPARATELY",
+      "CALCULATE_FAMILY_ECONOMIC_VIEW_SEPARATELY",
+      "COMPARE_WITH_PRIOR_YEAR",
+      "IDENTIFY_MAJOR_SOURCES_OF_CHANGE"
+    ],
+
+    "requiredBreakdown": [
+      "INDIAN_EQUITY",
+      "DIRECT_EQUITY",
+      "INTERNATIONAL_EQUITY",
+      "GOLD",
+      "FIXED_INCOME",
+      "EPF",
+      "PPF",
+      "NPS_EQUITY",
+      "NPS_DEBT",
+      "CASH_AND_LIQUIDITY",
+      "REAL_ESTATE",
+      "BUSINESS_ASSETS_IF_ANY"
+    ],
+
+    "rule": "Do not combine mother's legally owned assets with Kapil's personal net worth."
+  },
+
+  "cashFlowReview": {
+    "currentKnownMonthlySurplus": 125000,
+
+    "checklist": [
+      "UPDATE_MONTHLY_NET_HOUSEHOLD_INCOME",
+      "UPDATE_NORMAL_MONTHLY_EXPENDITURE",
+      "UPDATE_STRESS_BUDGET",
+      "CALCULATE_CURRENT_SAVINGS_RATE",
+      "UPDATE_MONTHLY_INVESTABLE_SURPLUS",
+      "IDENTIFY_LARGE_EXPECTED_EXPENSES",
+      "REVIEW_SIP_AFFORDABILITY"
+    ],
+
+    "rule": "SIP commitments should remain sustainable without creating unnecessary cash-flow stress."
+  },
+
+  "liquidityReview": {
+    "checklist": [
+      "UPDATE_PERSONAL_SAVINGS_ACCOUNT_BALANCE",
+      "UPDATE_EMERGENCY_FUND_BALANCE",
+      "CALCULATE_MONTHS_OF_CORE_EXPENSES_AVAILABLE",
+      "IDENTIFY_NEAR_TERM_CASH_REQUIREMENTS",
+      "REVIEW_BUSINESS_CAPITAL_REQUIREMENT",
+      "REVIEW_OPPORTUNITY_RESERVE"
+    ],
+
+    "rules": [
+      "MOTHER_ASSETS_ARE_NOT_A SUBSTITUTE_FOR KAPIL_OWNED_EMERGENCY_LIQUIDITY",
+      "DO_NOT_INVEST_MONEY_REQUIRED_IN THE_NEAR_TERM_IN VOLATILE_ASSETS"
+    ]
+  },
+
+  "assetAllocationReview": {
+    "reference": "data/asset-allocation.json",
+
+    "checklist": [
+      "CALCULATE_CURRENT_LOOK_THROUGH_ASSET_ALLOCATION",
+      "COMPARE_CURRENT_ALLOCATION_WITH TARGET",
+      "COMPARE_WITH MINIMUM_AND MAXIMUM_BANDS",
+      "IDENTIFY_DRIFT",
+      "IDENTIFY_CONCENTRATION",
+      "DETERMINE_REBALANCING_ACTION"
+    ],
+
+    "lookThroughRequirement": [
+      "NPS_MUST_BE_SPLIT_BY UNDERLYING_ASSET_CLASS",
+      "HYBRID_FUNDS_MUST_BE CLASSIFIED_BY UNDERLYING_EXPOSURE_WHERE MATERIAL",
+      "CPSE_ETF_AND BHARAT_22_ETF_COUNT_AS EQUITY",
+      "INTERNATIONAL_EQUITY_REMAINS A SEPARATE_SUB_CLASS",
+      "EPF_AND PPF_COUNT_AS FIXED_INCOME"
+    ],
+
+    "rule": "Asset allocation should be evaluated at total portfolio level, not account by account."
+  },
+
+  "rebalancingReview": {
+    "reference": "data/rebalancing-policy.json",
+
+    "preferredSequence": [
+      "REDIRECT_NEW_MONTHLY_INVESTMENTS",
+      "USE_NEW_LUMP_SUM_CASH",
+      "USE_MATURITIES_OR DISTRIBUTIONS",
+      "SELL_ASSETS_ONLY_WHEN_REQUIRED"
+    ],
+
+    "checklist": [
+      "CHECK_REBALANCING_BANDS",
+      "CHECK_CONCENTRATION_LIMITS",
+      "CHECK_TAX_IMPACT",
+      "CREATE_REBALANCING_ACTION_PLAN",
+      "DOCUMENT_MATERIAL_CHANGES"
+    ]
+  },
+
+  "sipReview": {
+    "checklist": [
+      "UPDATE_MONTHLY_SURPLUS",
+      "REVIEW_CURRENT_SIP_AMOUNT",
+      "REVIEW_ASSET_CLASS_SPLIT",
+      "REVIEW_GOAL_FUNDING_GAPS",
+      "REMOVE_REDUNDANT_FUNDS",
+      "REDIRECT_NEW_MONEY_TO UNDERWEIGHT_ASSETS",
+      "CONSIDER_ANNUAL_SIP_STEP_UP"
+    ],
+
+    "rule": "Do not increase the number of funds merely because investable surplus increases."
+  },
+
+  "portfolioReview": {
+    "checklist": [
+      "LIST_ALL_HOLDINGS",
+      "IDENTIFY_DUPLICATION",
+      "IDENTIFY_STYLE_OVERLAP",
+      "IDENTIFY_SECTOR_CONCENTRATION",
+      "IDENTIFY_SINGLE_STOCK_CONCENTRATION",
+      "IDENTIFY_HIGH_COST_PRODUCTS",
+      "IDENTIFY_LEGACY_PRODUCTS",
+      "IDENTIFY_UNNECESSARY_COMPLEXITY"
+    ],
+
+    "portfolioQuestions": [
+      "DOES_EACH_HOLDING_HAVE_A_CLEAR_ROLE?",
+      "WOULD_THIS_INVESTMENT_BE_PURCHASED_TODAY?",
+      "IS_THERE_A_SIMPLER_OR_LOWER_COST_ALTERNATIVE?",
+      "IS_ANY_HOLDING_BEING_RETAINED_ONLY_BECAUSE_OF PURCHASE_PRICE?",
+      "IS_ANY_NEW_FUND_DUPLICATING_EXISTING_EXPOSURE?"
+    ]
+  },
+
+  "directEquityReview": {
+    "reference": "data/direct-stock-exit-policy.json",
+
+    "checklist": [
+      "UPDATE_EACH_POSITION_WEIGHT",
+      "REVIEW_INVESTMENT_THESIS",
+      "REVIEW_GOVERNANCE",
+      "REVIEW_BALANCE_SHEET",
+      "REVIEW_COMPETITIVE_POSITION",
+      "REVIEW_VALUATION",
+      "CLASSIFY_EACH_POSITION",
+      "IDENTIFY_TRIM_OR_EXIT_CANDIDATES"
+    ],
+
+    "classificationOptions": [
+      "BUY_OR_ADD",
+      "HOLD",
+      "HOLD_BUT_DO_NOT_ADD",
+      "WATCHLIST_FOR_EXIT",
+      "TRIM",
+      "EXIT"
+    ]
+  },
+
+  "fundAndEtfReview": {
+    "checklist": [
+      "VERIFY_FUND_OBJECTIVE_HAS_NOT_CHANGED",
+      "VERIFY_EXPENSE_RATIO",
+      "VERIFY_TRACKING_DIFFERENCE_FOR INDEX_PRODUCTS",
+      "VERIFY_TRACKING_ERROR",
+      "VERIFY_AUM_AND LIQUIDITY_WHERE RELEVANT",
+      "VERIFY_BID_ASK_SPREAD_FOR ETF",
+      "VERIFY_FUND_MANAGER_CHANGE_FOR ACTIVE_FUNDS",
+      "COMPARE_WITH APPROVED_ALTERNATIVES"
+    ],
+
+    "rule": "Do not switch funds for small short-term performance differences."
+  },
+
+  "performanceReview": {
+    "requiredMetrics": [
+      "PORTFOLIO_XIRR",
+      "ASSET_CLASS_RETURNS",
+      "GOAL_FUNDING_PROGRESS",
+      "BENCHMARK_COMPARISON_WHERE APPROPRIATE",
+      "AFTER_TAX_RETURN_WHERE PRACTICAL"
+    ],
+
+    "evaluationPeriods": [
+      "ONE_YEAR_FOR_RECORD_KEEPING",
+      "THREE_YEAR_FOR CONTEXT",
+      "FIVE_YEAR_OR LONGER_FOR STRATEGIC_EVALUATION"
+    ],
+
+    "rules": [
+      "DO_NOT_JUDGE_LONG_TERM_STRATEGY_FROM ONE_YEAR_PERFORMANCE",
+      "DO_NOT_COMPARE_DIFFERENT_ASSET_CLASSES_USING THE SAME_EXPECTATION",
+      "DO_NOT_CHASE_LAST_YEAR_WINNERS",
+      "FOCUS_ON WHETHER_THE_PORTFOLIO_IS_MEETING_GOALS"
+    ]
+  },
+
+  "costReview": {
+    "checklist": [
+      "CALCULATE_WEIGHTED_PORTFOLIO_COST_WHERE PRACTICAL",
+      "REVIEW_MUTUAL_FUND_EXPENSE_RATIOS",
+      "REVIEW_ETF_TOTAL_OWNERSHIP_COST",
+      "REVIEW_BROKERAGE_AND TRANSACTION_COSTS",
+      "REVIEW_EXIT_LOADS",
+      "IDENTIFY_HIGH_COST_LEGACY_PRODUCTS"
+    ],
+
+    "rule": "Lower cost is preferred when investment exposure and implementation quality are comparable."
+  },
+
+  "taxReview": {
+    "reference": "data/tax-optimization-policy.json",
+
+    "checklist": [
+      "REVIEW_REALIZED_CAPITAL_GAINS",
+      "REVIEW_REALIZED_CAPITAL_LOSSES",
+      "REVIEW_TAX_LOSS_HARVESTING_OPPORTUNITIES",
+      "REVIEW_GAIN_REALIZATION_IF LEGALLY_BENEFICIAL",
+      "VERIFY_FOREIGN_ASSET_REPORTING",
+      "REVIEW_ADVANCE_TAX_REQUIREMENTS",
+      "REVIEW_NPS_EPF_AND PPF_TAX_TREATMENT",
+      "VERIFY_CURRENT_TAX_RULES_BEFORE ACTION"
+    ]
+  },
+
+  "insuranceReview": {
+    "reference": "data/insurance-and-risk-management-policy.json",
+
+    "checklist": [
+      "RECALCULATE_TERM_INSURANCE_NEED",
+      "REVIEW_CGHS_STATUS",
+      "REVIEW_CORPORATE_HEALTH_COVER",
+      "REVIEW_DISABILITY_PROTECTION",
+      "REVIEW_PERSONAL_ACCIDENT_COVER",
+      "REVIEW_MOTOR_INSURANCE",
+      "REVIEW_PROPERTY_INSURANCE",
+      "UPDATE_NOMINEES"
+    ]
+  },
+
+  "estatePlanningReview": {
+    "reference": "data/estate-planning-checklist.json",
+
+    "checklist": [
+      "VERIFY_WILL_STATUS",
+      "VERIFY_EXECUTOR",
+      "VERIFY_CHILD_GUARDIANSHIP_PLAN",
+      "VERIFY_ALL_NOMINATIONS",
+      "UPDATE_ASSET_INVENTORY",
+      "VERIFY_DOCUMENT_STORAGE",
+      "REVIEW_MOTHER_ESTATE_PLAN",
+      "UPDATE_FAMILY_CONTINUITY_FILE"
+    ]
+  },
+
+  "businessReview": {
+    "status": "ACTIVATE_WHEN_BUSINESS_PLANNING_BECOMES_MATERIAL",
+
+    "checklist": [
+      "REASSESS_BUSINESS_OBJECTIVE",
+      "REASSESS_REQUIRED_CAPITAL",
+      "VERIFY_MAXIMUM_CAPITAL_AT_RISK",
+      "CONFIRM_CHILD_EDUCATION_AND EMERGENCY_ASSETS_ARE PROTECTED",
+      "REVIEW_BUSINESS_STRUCTURE",
+      "REVIEW_REGULATORY_RISK",
+      "REVIEW_EXIT_CRITERIA"
+    ],
+
+    "currentIndicativeMaximumCapital": 5000000
+  },
+
+  "behaviourReview": {
+    "checklist": [
+      "COUNT_UNPLANNED_PORTFOLIO_CHANGES",
+      "REVIEW_PANIC_SELLING_OR PERFORMANCE_CHASING",
+      "REVIEW_MARKET_TIMING_ATTEMPTS",
+      "REVIEW_REACTIONS_TO NEWS_AND EXPERT_PREDICTIONS",
+      "REVIEW_ADHERENCE_TO CRASH_PLAYBOOK",
+      "REVIEW_USE_OF AI_AND HUMAN_ADVICE"
+    ],
+
+    "questions": [
+      "DID_I_CHANGE_STRATEGY_BECAUSE_OF FEAR?",
+      "DID_I_BUY_BECAUSE_OF FOMO?",
+      "DID_I_IGNORE_MY ASSET_ALLOCATION?",
+      "DID_I TAKE_A DECISION_WITHOUT VERIFYING_DATA?",
+      "DID_I ADD_UNNECESSARY_COMPLEXITY?"
+    ]
+  },
+
+  "aiGovernanceReview": {
+    "checklist": [
+      "VERIFY_MATERIAL_AI_GENERATED_FACTS",
+      "CHECK_FOR OUTDATED_DATA",
+      "USE_PRIMARY_SOURCES_FOR IMPORTANT_DECISIONS",
+      "COMPARE_MAJOR_RECOMMENDATIONS_WITH INDEPENDENT_ANALYSIS",
+      "SEEK_QUALIFIED_HUMAN_ADVICE_WHERE REQUIRED"
+    ],
+
+    "rule": "AI may assist analysis but does not replace legal, tax, insurance or regulated investment advice where professional judgment is required."
+  },
+
+  "fwosHealthScore": {
+    "categories": [
+      "DIVERSIFICATION",
+      "COSTS",
+      "TAX_EFFICIENCY",
+      "GOAL_FUNDING",
+      "LIQUIDITY",
+      "INSURANCE",
+      "BEHAVIOUR",
+      "ASSET_ALLOCATION",
+      "SIMPLICITY"
+    ],
+
+    "scoringRange": {
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "previousSelfAssessment": {
+      "diversification": 85,
+      "costs": 50,
+      "taxEfficiency": 100,
+      "goalFunding": 0,
+      "liquidity": 50,
+      "insurance": 0,
+      "behaviour": 75,
+      "assetAllocation": 75,
+      "simplicity": 75
+    },
+
+    "rule": "Scores should be evidence based and updated only after completing the relevant review."
+  },
+
+  "annualDecisionOutput": {
+    "requiredSections": [
+      "WHAT_CHANGED_THIS_YEAR",
+      "GOAL_FUNDING_STATUS",
+      "CURRENT_NET_WORTH",
+      "CURRENT_ASSET_ALLOCATION",
+      "TARGET_ASSET_ALLOCATION",
+      "REBALANCING_ACTIONS",
+      "SIP_CHANGES",
+      "PORTFOLIO_CHANGES",
+      "RISK_AND INSURANCE_ACTIONS",
+      "TAX_ACTIONS",
+      "ESTATE_PLANNING_ACTIONS",
+      "TOP_FIVE_PRIORITIES_FOR_NEXT_YEAR"
+    ]
+  },
+
+  "changeControl": {
+    "minorChanges": [
+      "SIP_REDIRECTION_WITHIN_APPROVED_BANDS",
+      "REBALANCING_WITHIN_EXISTING_POLICY",
+      "REPLACING_AN_APPROVED_PRODUCT_WITH A BETTER_IMPLEMENTATION_OF SAME_EXPOSURE"
+    ],
+
+    "majorChanges": [
+      "CHANGE_TO STRATEGIC_ASSET_ALLOCATION",
+      "NEW_ASSET_CLASS",
+      "MATERIAL_CHANGE_TO EQUITY_RANGE",
+      "LARGE_BUSINESS_CAPITAL_DEPLOYMENT",
+      "EARLY_RETIREMENT_DECISION",
+      "MATERIAL_CHANGE_TO GOAL_PRIORITY"
+    ],
+
+    "majorChangeRequirements": [
+      "DOCUMENT_REASON",
+      "VERIFY_DATA",
+      "CONSIDER_TAX_IMPACT",
+      "STRESS_TEST",
+      "UPDATE_RELEVANT_FWOS_FILES"
+    ]
+  },
+
+  "reviewCompletionStatus": {
+    "familyReview": "PENDING",
+    "goalReview": "PENDING",
+    "netWorthReview": "PENDING",
+    "cashFlowReview": "PENDING",
+    "liquidityReview": "PENDING",
+    "assetAllocationReview": "PENDING",
+    "portfolioReview": "PENDING",
+    "performanceReview": "PENDING",
+    "taxReview": "PENDING",
+    "insuranceReview": "PENDING",
+    "estatePlanningReview": "PENDING",
+    "behaviourReview": "PENDING"
+  },
+
+  "references": {
+    "master": "FWOS_MASTER.md",
+    "goals": "data/goals.json",
+    "assetAllocation": "data/asset-allocation.json",
+    "rebalancingPolicy": "data/rebalancing-policy.json",
+    "emergencyFund": "data/emergency-fund.json",
+    "directStockExitPolicy": "data/direct-stock-exit-policy.json",
+    "taxOptimizationPolicy": "data/tax-optimization-policy.json",
+    "insuranceAndRiskManagement": "data/insurance-and-risk-management-policy.json",
+    "estatePlanningChecklist": "data/estate-planning-checklist.json",
+    "neverDoList": "data/never-do-list.json"
+  },
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_NEVER_DO_LIST"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_FAMILY_FINANCIAL_CONTINUITY_CHECKLIST"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_QUARTERLY_REVIEW_CHECKLIST"
+    }
+  ]
+}

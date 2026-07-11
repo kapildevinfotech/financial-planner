@@ -1,0 +1,510 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026.07",
+  "asOfDate": "2026-07-12",
+  "country": "INDIA",
+  "currency": "INR",
+  "status": "PROVISIONAL_CHECKLIST",
+
+  "purpose": {
+    "primaryObjective": "Ensure orderly transfer, access, management and protection of family assets in the event of death, incapacity or other major disruption.",
+    "principle": "Estate planning must reflect legal ownership and valid succession documents rather than informal family assumptions."
+  },
+
+  "familyContext": {
+    "primaryMember": "KAPIL",
+    "spouse": "MARRIED_GOVERNMENT_EMPLOYEE",
+    "children": [
+      {
+        "name": "REYANSH",
+        "ageYears": 6,
+        "status": "MINOR"
+      },
+      {
+        "name": "NIKESH",
+        "ageYears": 3,
+        "status": "MINOR"
+      }
+    ],
+    "mother": {
+      "status": "LIVING",
+      "familyContext": "KAPIL_IS_SINGLE_SON",
+      "knownFinancialAssetsApproximate": 8000000
+    }
+  },
+
+  "corePrinciples": [
+    "LEGAL_OWNERSHIP_MUST_BE_DOCUMENTED",
+    "NOMINATION_DOES_NOT_AUTOMATICALLY_REPLACE_SUCCESSION_PLANNING",
+    "MINOR_CHILDREN_REQUIRE_GUARDIANSHIP_AND ASSET_MANAGEMENT_PLANNING",
+    "MOTHER_ASSETS_REQUIRE HER_OWN_ESTATE_PLAN",
+    "KAPIL_AND MOTHER_ASSETS_MUST_BE TRACKED_SEPARATELY",
+    "ALL_MAJOR_ASSETS_SHOULD_HAVE A CLEAR_SUCCESSION_PATH",
+    "ESTATE_DOCUMENTS_REQUIRE PERIODIC_REVIEW",
+    "PASSWORDS_AND AUTHENTICATION_SECRETS_MUST_NOT BE STORED_IN THE GENERAL_FWOS_REPOSITORY"
+  ],
+
+  "estatePlanningStructure": {
+    "separatePlansRequiredFor": [
+      "KAPIL",
+      "SPOUSE",
+      "MOTHER"
+    ],
+
+    "principle": "Each legal owner requires an independent estate plan even when the family manages wealth collectively."
+  },
+
+  "willPolicy": {
+    "kapil": {
+      "status": "RECOMMENDED",
+      "priority": "HIGH"
+    },
+    "spouse": {
+      "status": "RECOMMENDED",
+      "priority": "HIGH"
+    },
+    "mother": {
+      "status": "RECOMMENDED",
+      "priority": "HIGH"
+    },
+
+    "minimumWillTopics": [
+      "IDENTIFICATION_OF TESTATOR",
+      "REVOCATION_OF PRIOR_WILLS",
+      "LIST_OR CLASSIFICATION_OF ASSETS",
+      "BENEFICIARIES",
+      "EXECUTOR",
+      "ALTERNATE_EXECUTOR",
+      "MINOR_CHILD_GUARDIANSHIP",
+      "ALTERNATE_GUARDIAN",
+      "MANAGEMENT_OF ASSETS_FOR MINOR_CHILDREN",
+      "RESIDUARY_ESTATE",
+      "DEBTS_AND LIABILITIES",
+      "SIGNATURE_AND WITNESS_REQUIREMENTS"
+    ],
+
+    "rules": [
+      "USE_CLEAR_UNAMBIGUOUS_LANGUAGE",
+      "FOLLOW_CURRENT_INDIAN_LEGAL_EXECUTION_REQUIREMENTS",
+      "USE_INDEPENDENT_WITNESSES_WHERE APPROPRIATE",
+      "DO_NOT_LEAVE THE ONLY_COPY_IN AN_INACCESSIBLE_LOCATION",
+      "REVIEW_AFTER_MAJOR_FAMILY_OR ASSET_CHANGES"
+    ]
+  },
+
+  "minorChildrenPlanning": {
+    "children": [
+      "REYANSH",
+      "NIKESH"
+    ],
+
+    "requiredDecisions": [
+      "PRIMARY_GUARDIAN_IF BOTH_PARENTS_DIE",
+      "ALTERNATE_GUARDIAN",
+      "WHO_MANAGES_INHERITED_FINANCIAL_ASSETS",
+      "AGE_OR CONDITIONS_FOR CHILDREN_TO CONTROL_INHERITED_WEALTH",
+      "EDUCATION_FUNDING_INSTRUCTIONS",
+      "HEALTHCARE_AND LIVING_EXPENSE_INSTRUCTIONS"
+    ],
+
+    "principle": "Guardianship of children and management of inherited money should be considered separately where appropriate.",
+
+    "risk": "An outright large inheritance to a child immediately upon reaching legal adulthood may not align with long-term wealth preservation."
+  },
+
+  "executorPolicy": {
+    "required": [
+      "PRIMARY_EXECUTOR",
+      "ALTERNATE_EXECUTOR"
+    ],
+
+    "selectionCriteria": [
+      "TRUSTWORTHY",
+      "FINANCIALLY_RESPONSIBLE",
+      "CAPABLE_OF HANDLING_DOCUMENTATION",
+      "LIKELY_TO BE AVAILABLE",
+      "UNDERSTANDS_FAMILY_CONTEXT"
+    ],
+
+    "rule": "The executor should know where the original will and essential asset information can be found."
+  },
+
+  "nominationChecklist": {
+    "assets": [
+      {
+        "assetType": "BANK_ACCOUNTS",
+        "status": "VERIFY"
+      },
+      {
+        "assetType": "DEMAT_ACCOUNTS",
+        "status": "VERIFY"
+      },
+      {
+        "assetType": "MUTUAL_FUNDS",
+        "status": "VERIFY"
+      },
+      {
+        "assetType": "EPF",
+        "status": "VERIFY"
+      },
+      {
+        "assetType": "PPF",
+        "status": "VERIFY"
+      },
+      {
+        "assetType": "NPS",
+        "status": "VERIFY"
+      },
+      {
+        "assetType": "LIFE_INSURANCE",
+        "status": "VERIFY"
+      },
+      {
+        "assetType": "OTHER_INSURANCE",
+        "status": "VERIFY"
+      }
+    ],
+
+    "rules": [
+      "VERIFY_NOMINEE_NAME_AND RELATIONSHIP",
+      "VERIFY_NOMINEE_CONTACT_DETAILS",
+      "UPDATE_AFTER FAMILY_CHANGES",
+      "ALIGN_NOMINATIONS_WITH ESTATE_PLAN_WHERE LEGALLY_APPROPRIATE",
+      "DO_NOT_ASSUME_NOMINATION_ALONE_DETERMINES_FINAL_BENEFICIAL_OWNERSHIP"
+    ]
+  },
+
+  "assetInventory": {
+    "kapilKnownAssets": [
+      "BANK_SAVINGS",
+      "MUTUAL_FUNDS",
+      "DIRECT_EQUITY",
+      "ETFS",
+      "EPF",
+      "PPF",
+      "NPS",
+      "GOLD_OR FUTURE_GOLD_INVESTMENTS",
+      "REAL_ESTATE",
+      "INSURANCE_BENEFITS"
+    ],
+
+    "motherKnownAssets": [
+      "BANK_SAVINGS_APPROXIMATELY_80_LAKH",
+      "OTHER_ASSETS_TO_BE_IDENTIFIED"
+    ],
+
+    "requiredFields": [
+      "ASSET_TYPE",
+      "LEGAL_OWNER",
+      "INSTITUTION",
+      "ACCOUNT_OR FOLIO_IDENTIFIER_MASKED",
+      "APPROXIMATE_VALUE",
+      "NOMINEE_STATUS",
+      "DOCUMENT_LOCATION",
+      "SUCCESSION_PATH"
+    ],
+
+    "rule": "Do not store full account numbers, passwords, PINs, OTP secrets or recovery codes in the FWOS repository."
+  },
+
+  "realEstatePlanning": {
+    "knownFamilyProperties": [
+      {
+        "asset": "FARIDABAD_2BHK",
+        "approximateValue": 4500000,
+        "legalOwner": "TO_BE_CONFIRMED"
+      },
+      {
+        "asset": "BUILT_HOME_OR LAND_PROPERTY",
+        "approximateValue": 5000000,
+        "legalOwner": "TO_BE_CONFIRMED"
+      },
+      {
+        "asset": "POTENTIAL_LUCKNOW_PLOT",
+        "estimatedValueRange": {
+          "minimum": 4000000,
+          "maximum": 5000000
+        },
+        "fundingSource": "EXPECTED_FROM_MOTHER_ASSETS",
+        "legalOwner": "TO_BE_DECIDED_BEFORE_PURCHASE"
+      }
+    ],
+
+    "mandatoryRecords": [
+      "TITLE_DEED",
+      "PURCHASE_DOCUMENTS",
+      "REGISTRATION_DOCUMENTS",
+      "TAX_RECEIPTS",
+      "LOAN_RELEASE_DOCUMENTS_IF APPLICABLE",
+      "PROPERTY_IDENTIFICATION_DETAILS",
+      "LEGAL_OWNER",
+      "SUCCESSION_PATH"
+    ],
+
+    "lucknowPlotRule": "Before purchase, explicitly decide and document the legal owner, source of funds, tax implications and intended succession path."
+  },
+
+  "motherEstatePlanning": {
+    "priority": "HIGH",
+
+    "principles": [
+      "MOTHER_RETAINS FULL_LEGAL_OWNERSHIP_AND CONTROL_OF HER_ASSETS_UNLESS LEGALLY_CHANGED",
+      "EXPECTED_INHERITANCE_IS_NOT A SUBSTITUTE_FOR KAPIL_OWNED_EMERGENCY_LIQUIDITY",
+      "HER_LIFETIME_FINANCIAL_AND HEALTHCARE_SECURITY_TAKES_PRIORITY",
+      "SUCCESSION_SHOULD_BE DOCUMENTED_RATHER_THAN ASSUMED"
+    ],
+
+    "requiredActions": [
+      "CREATE_MOTHER_ASSET_INVENTORY",
+      "VERIFY_ALL_NOMINATIONS",
+      "CREATE_OR REVIEW_WILL",
+      "IDENTIFY_EXECUTOR",
+      "DOCUMENT_PROPERTY_OWNERSHIP",
+      "DOCUMENT_LARGE_FUND_TRANSFERS",
+      "MAINTAIN_SUFFICIENT_LIFETIME_LIQUIDITY"
+    ]
+  },
+
+  "incapacityPlanning": {
+    "objective": "Ensure essential financial and administrative matters can be managed if a family member becomes temporarily or permanently incapable.",
+
+    "requiredReview": [
+      "BANK_OPERATION_ARRANGEMENTS",
+      "VALID_AUTHORITY_OR POWER_OF_ATTORNEY_WHERE APPROPRIATE",
+      "MEDICAL_DOCUMENT_ACCESS",
+      "INSURANCE_ACCESS",
+      "BILL_AND LIABILITY_MANAGEMENT",
+      "INVESTMENT_INFORMATION_ACCESS"
+    ],
+
+    "rule": "Any power of attorney or similar authority should be created only with appropriate legal advice and safeguards."
+  },
+
+  "digitalEstate": {
+    "inventoryCategories": [
+      "PRIMARY_EMAIL_ACCOUNTS",
+      "BANKING_RELATIONSHIPS",
+      "BROKERAGE_RELATIONSHIPS",
+      "MUTUAL_FUND_PLATFORMS",
+      "INSURANCE_PORTALS",
+      "GOVERNMENT_FINANCIAL_PORTALS",
+      "CLOUD_DOCUMENT_STORAGE",
+      "IMPORTANT_SUBSCRIPTIONS"
+    ],
+
+    "securityRules": [
+      "DO_NOT_STORE_PASSWORDS_IN FWOS_SOURCE_CODE",
+      "DO_NOT_COMMIT_SECRETS_TO GIT",
+      "USE_A SECURE_PASSWORD_MANAGER_OR OFFLINE_SECURE_METHOD",
+      "ENSURE_SPOUSE_OR TRUSTED_PERSON_KNOWS_THE ACCESS_PROCESS_WITHOUT EXPOSING_SECRETS"
+    ]
+  },
+
+  "familyContinuityFile": {
+    "purpose": "Provide a simple roadmap for the family without exposing sensitive credentials.",
+
+    "contents": [
+      "FAMILY_CONTACTS",
+      "CA_CONTACT",
+      "LAWYER_CONTACT_IF APPLICABLE",
+      "INSURANCE_AGENT_OR INSURER_CONTACTS",
+      "LIST_OF_FINANCIAL_INSTITUTIONS",
+      "ASSET_CATEGORY_SUMMARY",
+      "LIABILITY_SUMMARY",
+      "INSURANCE_SUMMARY",
+      "PROPERTY_DOCUMENT_LOCATIONS",
+      "WILL_LOCATION",
+      "EMERGENCY_ACTION_SEQUENCE"
+    ],
+
+    "excludedContents": [
+      "PASSWORDS",
+      "PINS",
+      "OTP_SECRETS",
+      "FULL_CREDIT_CARD_NUMBERS",
+      "UNENCRYPTED_RECOVERY_CODES"
+    ]
+  },
+
+  "emergencyActionSequence": [
+    "SECURE_IMMEDIATE_FAMILY_CASH_FLOW",
+    "LOCATE_WILL_AND ESTATE_DOCUMENTS",
+    "NOTIFY_RELEVANT_INSURERS",
+    "NOTIFY_EMPLOYER_AND CLAIM_EMPLOYEE_BENEFITS",
+    "IDENTIFY_ALL_BANK_AND INVESTMENT_ACCOUNTS",
+    "OBTAIN_REQUIRED_LEGAL_CERTIFICATES",
+    "CONTACT_CA_OR LEGAL_PROFESSIONAL",
+    "AVOID_RUSHED_ASSET_SALES",
+    "MAINTAIN_RECORD_OF ALL_CLAIMS_AND TRANSACTIONS"
+  ],
+
+  "inheritancePolicy": {
+    "principle": "Inherited assets should be integrated into the family asset allocation only after legal transmission, tax review and liquidity assessment.",
+
+    "rules": [
+      "DO_NOT_PRE_SPEND_EXPECTED_INHERITANCE",
+      "DO_NOT_ASSUME_INHERITED_ASSETS_MUST_BE RETAINED_IN THEIR_EXISTING_FORM",
+      "REVIEW_CONCENTRATION_AFTER INHERITANCE",
+      "VERIFY_COST_BASIS_AND TAX_RULES_BEFORE SALE",
+      "UPDATE_THE IPS_AFTER MATERIAL_INHERITANCE"
+    ]
+  },
+
+  "businessSuccession": {
+    "status": "FUTURE_REQUIREMENT_IF BUSINESS_IS_ESTABLISHED",
+
+    "requiredPlanning": [
+      "LEGAL_OWNERSHIP",
+      "SUCCESSOR_OR SALE_PLAN",
+      "KEY_PERSON_DEPENDENCY",
+      "BUSINESS_BANK_ACCESS",
+      "BUSINESS_LIABILITIES",
+      "SHARE_OR PARTNERSHIP_TRANSFER",
+      "BUSINESS_INSURANCE"
+    ],
+
+    "rule": "A future healthcare or other non-IT business must have a succession plan separate from the personal estate plan."
+  },
+
+  "documentStorage": {
+    "recommendedStructure": [
+      "ORIGINAL_LEGAL_DOCUMENTS_IN SECURE_PHYSICAL_STORAGE",
+      "ENCRYPTED_DIGITAL_COPIES",
+      "OFFSITE_OR SECONDARY_BACKUP",
+      "ACCESS_INSTRUCTIONS_FOR TRUSTED_FAMILY"
+    ],
+
+    "gitRepositoryPolicy": {
+      "allowed": [
+        "CHECKLISTS",
+        "MASKED_ASSET_INVENTORY",
+        "DOCUMENT_STATUS",
+        "POLICY_FILES"
+      ],
+      "prohibited": [
+        "PASSWORDS",
+        "PRIVATE_KEYS",
+        "OTP_SEEDS",
+        "FULL_BANK_ACCOUNT_DETAILS",
+        "UNENCRYPTED_IDENTITY_DOCUMENTS",
+        "SIGNED_WILL_IF REPOSITORY_SECURITY_IS NOT SPECIFICALLY DESIGNED_FOR IT"
+      ]
+    }
+  },
+
+  "reviewFrequency": {
+    "routine": "ANNUALLY",
+
+    "eventDrivenTriggers": [
+      "BIRTH_OR ADOPTION",
+      "DEATH_IN FAMILY",
+      "MARRIAGE_OR DIVORCE",
+      "MAJOR_ASSET_PURCHASE_OR SALE",
+      "LARGE_INHERITANCE",
+      "BUSINESS_LAUNCH",
+      "CHANGE_IN LEGAL_OWNERSHIP",
+      "CHANGE_IN GUARDIAN_OR EXECUTOR",
+      "RELOCATION",
+      "MATERIAL_CHANGE_IN LAW"
+    ]
+  },
+
+  "estatePlanningChecklist": [
+    {
+      "priority": 1,
+      "action": "CREATE_KAPIL_ASSET_INVENTORY",
+      "status": "PENDING"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_MOTHER_ASSET_INVENTORY",
+      "status": "PENDING"
+    },
+    {
+      "priority": 3,
+      "action": "VERIFY_ALL_NOMINATIONS",
+      "status": "PENDING"
+    },
+    {
+      "priority": 4,
+      "action": "CREATE_OR REVIEW_KAPIL_WILL",
+      "status": "PENDING"
+    },
+    {
+      "priority": 5,
+      "action": "CREATE_OR REVIEW_SPOUSE_WILL",
+      "status": "PENDING"
+    },
+    {
+      "priority": 6,
+      "action": "CREATE_OR REVIEW_MOTHER_WILL",
+      "status": "PENDING"
+    },
+    {
+      "priority": 7,
+      "action": "SELECT_PRIMARY_AND ALTERNATE_GUARDIANS_FOR CHILDREN",
+      "status": "PENDING"
+    },
+    {
+      "priority": 8,
+      "action": "SELECT_EXECUTORS_AND ALTERNATES",
+      "status": "PENDING"
+    },
+    {
+      "priority": 9,
+      "action": "CREATE_FAMILY_FINANCIAL_CONTINUITY_FILE",
+      "status": "PENDING"
+    },
+    {
+      "priority": 10,
+      "action": "ESTABLISH_SECURE_DOCUMENT_STORAGE_AND ACCESS_PROCESS",
+      "status": "PENDING"
+    }
+  ],
+
+  "professionalAdviceTriggers": [
+    "DRAFTING_OR EXECUTING_WILLS",
+    "MINOR_CHILD_INHERITANCE_STRUCTURE",
+    "POWER_OF_ATTORNEY",
+    "LARGE_FAMILY_ASSET_TRANSFER",
+    "PROPERTY_OWNERSHIP_RESTRUCTURING",
+    "BUSINESS_SUCCESSION",
+    "COMPLEX_OR DISPUTED_SUCCESSION",
+    "CREATION_OF TRUST_OR OTHER_SPECIAL_STRUCTURE"
+  ],
+
+  "references": {
+    "insuranceAndRiskManagement": "data/insurance-and-risk-management-policy.json",
+    "taxOptimizationPolicy": "data/tax-optimization-policy.json",
+    "familyContinuityChecklist": "data/family-financial-continuity-checklist.json",
+    "annualReviewChecklist": "data/annual-review-checklist.json"
+  },
+
+  "dataGaps": [
+    "SPOUSE_NAME_AND AGE",
+    "LEGAL_OWNER_OF EACH_EXISTING_PROPERTY",
+    "CURRENT_NOMINEES",
+    "CURRENT_WILL_STATUS_FOR KAPIL",
+    "CURRENT_WILL_STATUS_FOR SPOUSE",
+    "CURRENT_WILL_STATUS_FOR MOTHER",
+    "PREFERRED_GUARDIANS_FOR CHILDREN",
+    "PREFERRED_EXECUTORS",
+    "COMPLETE_MOTHER_ASSET_INVENTORY",
+    "COMPLETE_KAPIL_ASSET_INVENTORY"
+  ],
+
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "CREATE_ANNUAL_REVIEW_CHECKLIST"
+    },
+    {
+      "priority": 2,
+      "action": "CREATE_NEVER_DO_LIST"
+    },
+    {
+      "priority": 3,
+      "action": "CREATE_FAMILY_FINANCIAL_CONTINUITY_CHECKLIST"
+    }
+  ]
+}
